@@ -41,7 +41,8 @@ amass intel -org paypal -max-dns-queries 2500 | awk -F, '{print $1}' ORS=',' | s
 > @OFJAAAH
 > @b51b5b43
 
-> tutorial do comando
+- [Explicated comand](https://bit.ly/2QnQAyW)
+
 ```bash
 chaos -d http://att.com | httpx -silent | xargs -I@ -P20 sh -c 'gospider -a -s "@" -d 2' | grep -Eo "(http|https)://[^/"].*.js+" | sed "s#] - #\n#g" | anew | grep "http://att.com"'
 ```
@@ -82,11 +83,11 @@ curl "https://recon.dev/api/search?key=apiKEY&domain=paypal.com" |jq -r '.[].raw
 psql -A -F , -f querycrt -h http://crt.sh -p 5432 -U guest certwatch 2>/dev/null | tr ', ' '\n' | grep twitch | anew'
 ```
 
-###  Search subdomains using github
+###  Search subdomains using github and httpx
 > @OFJAAAH
 > @b51b5b43
 
-> Using python3 
+> Using python3 to search subdomains, httpx filter hosts by up status-code response (200)
 
 ```python
 ./github-subdomains.py -t APYKEYGITHUB -d domaintosearch | httpx --title
