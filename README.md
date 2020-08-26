@@ -149,6 +149,15 @@ curl -s "https://crt.sh/?q=%25.tesla.com&output=json" | jq -r '.[].name_value' |
 ```bash
 curl -s "https://crt.sh/?q=%25.enjoei.com.br&output=json" | jq -r '.[].name_value' | assetfinder -subs-only | httpx -silent -path /.git/HEAD -content-length -status-code 301,302 -timeout 3 -retries 0 -ports 80,8080,443 -threads 500 -title | anew
 ```
+###  Search list
+> @OFJAAAH
+> @b51b5b43
+
+- [Explained comand](https://bit.ly/3aWIwyI)
+
+```bash
+xargs -P 500 -a pay -I@ sh -c 'nc -w1 -z -v @ 443 2>/dev/null && echo @' | xargs -I@ -P10 sh -c 'gospider -a -s "https://@" -d 2 | grep -Eo "(http|https)://[^/\"].*.js+" | sed "s#\] \- #\n#g" | anew'
+```
 
 # Project
 
