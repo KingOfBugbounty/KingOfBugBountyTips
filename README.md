@@ -91,7 +91,7 @@ psql -A -F , -f querycrt -h http://crt.sh -p 5432 -U guest certwatch 2>/dev/null
 > @OFJAAAH
 > @b51b5b43
 
-- [Explaining command] - Using python3 to search subdomains, httpx filter hosts by up status-code response (200)
+- [Github-search](https://github.com/gwen001/github-search) - Using python3 to search subdomains, httpx filter hosts by up status-code response (200)
 
 ```python
 ./github-subdomains.py -t APYKEYGITHUB -d domaintosearch | httpx --title
