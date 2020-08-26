@@ -131,10 +131,10 @@ assetfinder -subs-only http://tesla.com -silent | httpx -timeout 3 -threads 300 
 > @OFJAAAH
 > @b51b5b43
 
-- [Explained comand](https://bit.ly/2YyWAt1)
+- [Explained comand](https://bit.ly/2QrvMXl)
 
 ```bash
-curl -s "https://crt.sh/?q=%25.att.com&output=json" | jq -r '.[].name_value' | sed 's/\*\.//g'
+curl -s "https://crt.sh/?q=%25.att.com&output=json" | jq -r '.[].name_value' | sed 's/\*\.//g' | httpx -title -silent | anew
 ```
 
 
