@@ -72,7 +72,7 @@ curl "https://recon.dev/api/search?key=apiKEY&domain=paypal.com" |jq -r '.[].raw
 ###  PSQL - search subdomain using cert.sh
 > @OFJAAAH
 > @b51b5b43
-> tutorial do comando
+> tutorial do comando 
 ```bash
 psql -A -F , -f querycrt -h http://crt.sh -p 5432 -U guest certwatch 2>/dev/null | tr ', ' '\n' | grep twitch | anew'
 ```
