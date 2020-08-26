@@ -6,7 +6,8 @@ To run the project, you will need to install the following programs:
 - [Qsreplace Tomnomnom](https://github.com/tomnomnom/qsreplace)
 - [Gospider ](https://github.com/jaeles-project/gospider)
 - [Subfinder ProjectDiscovery](https://github.com/projectdiscovery/subfinder)
-- [Gospider ](https://github.com/jaeles-project/gospider)
+- [Gospider j3ssiejjj](https://github.com/jaeles-project/gospider)
+- [Github-Search Gwen001 ](https://github.com/gwen001/github-search)
 
 
 
