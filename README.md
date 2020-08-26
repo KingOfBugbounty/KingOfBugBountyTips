@@ -34,7 +34,8 @@ To run the project, you will need to install the following programs:
 ```bash
 amass intel -org paypal -max-dns-queries 2500 | awk -F, '{print $1}' ORS=',' | sed 's/,$//' | xargs -P3 -I@ -d ',' amass intel -asn @ -max-dns-queries 2500'
 ```
-> Search asn to using amass
+## What comand?
+teste dos teste
 
 
 ###  Using chaos search js
