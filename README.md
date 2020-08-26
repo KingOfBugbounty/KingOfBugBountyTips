@@ -5,6 +5,12 @@ Our main goal is to share tips from some well-known bughunters. Using recon meth
 [![GitHub followers](https://img.shields.io/github/followers/bminossi.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/bminossi?tab=followers) 
 [![GitHub followers](https://img.shields.io/github/followers/OfJAAH.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/OfJAAH?tab=followers)
 
+## Special thanks
+
+- [Anew @Tomnomnom](https://github.com/tomnomnom/anew)
+- [Qsreplace @Tomnomnom](https://github.com/tomnomnom/qsreplace)
+- [Subfinder @pdiscoveryio](https://github.com/projectdiscovery/subfinder)
+
 
 ## Scripts that need to be installed
 
@@ -15,6 +21,9 @@ To run the project, you will need to install the following programs:
 - [Subfinder @pdiscoveryio](https://github.com/projectdiscovery/subfinder)
 - [Gospider @j3ssiejjj](https://github.com/jaeles-project/gospider)
 - [Github-Search @Gwen001 ](https://github.com/gwen001/github-search)
+- [Github-Search @jeff_foley](https://github.com/OWASP/Amass)
+
+
 
 
 ###  Search Asn Amass
@@ -27,6 +36,7 @@ amass intel -org paypal -max-dns-queries 2500 | awk -F, '{print $1}' ORS=',' | s
 
 ###  Using chaos search js
 > @OFJAAAH
+> @b51b5b43
 
 ```bash
 chaos -d http://att.com | httpx -silent | xargs -I@ -P20 sh -c 'gospider -a -s "@" -d 2' | grep -Eo "(http|https)://[^/"].*.js+" | sed "s#] - #\n#g" | anew | grep "http://att.com"'
@@ -34,6 +44,7 @@ chaos -d http://att.com | httpx -silent | xargs -I@ -P20 sh -c 'gospider -a -s "
 
 ###  Search Subdomain using Gospider
 > @OFJAAAH
+> @b51b5b43
 
 ```bash
 gospider -d 0 -s "https://site.com" -c 5 -t 100 -d 5 --blacklist jpg,jpeg,gif,css,tif,tiff,png,ttf,woff,woff2,ico,pdf,svg,txt | grep -Eo '(http|https)://[^/"]+' | anew
@@ -62,7 +73,6 @@ curl "https://recon.dev/api/search?key=apiKEY&domain=paypal.com" |jq -r '.[].raw
 ```bash
 psql -A -F , -f querycrt -h http://crt.sh -p 5432 -U guest certwatch 2>/dev/null | tr ', ' '\n' | grep twitch | anew'
 ```
-
 
 
 # Project
