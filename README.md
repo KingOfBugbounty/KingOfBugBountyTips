@@ -17,6 +17,54 @@ To run the project, you will need to install the following programs:
 - [Github-Search @Gwen001 ](https://github.com/gwen001/github-search)
 
 
+###  Search Asn Amass
+> @OFJAAAH
+> @b51b5b43
+
+```bash
+amass intel -org paypal -max-dns-queries 2500 | awk -F, '{print $1}' ORS=',' | sed 's/,$//' | xargs -P3 -I@ -d ',' amass intel -asn @ -max-dns-queries 2500'
+```
+
+###  Using chaos search js
+> @OFJAAAH
+
+```bash
+chaos -d http://att.com | httpx -silent | xargs -I@ -P20 sh -c 'gospider -a -s "@" -d 2' | grep -Eo "(http|https)://[^/"].*.js+" | sed "s#] - #\n#g" | anew | grep "http://att.com"'
+```
+
+###  Search Subdomain using Gospider
+> @OFJAAAH
+
+```bash
+gospider -d 0 -s "https://site.com" -c 5 -t 100 -d 5 --blacklist jpg,jpeg,gif,css,tif,tiff,png,ttf,woff,woff2,ico,pdf,svg,txt | grep -Eo '(http|https)://[^/"]+' | anew
+```
+
+###  Using gospider to chaos
+> @OFJAAAH
+> @b51b5b43
+
+```bash
+chaos -d http://paypal.com -bbq -filter-wildcard -http-url | xargs -I@ -P5 sh -c 'gospider -a -s "@" -d 3'
+```
+
+###  Using recon.dev and gospider crawler subdomains
+> @OFJAAAH
+> @b51b5b43
+
+```bash
+curl "https://recon.dev/api/search?key=apiKEY&domain=paypal.com" |jq -r '.[].rawDomains[]' | sed 's/ //g' | anew |httpx -silent | xargs -I@ gospider -d 0 -s @ -c 5 -t 100 -d 5 --blacklist jpg,jpeg,gif,css,tif,tiff,png,ttf,woff,woff2,ico,pdf,svg,txt | grep -Eo '(http|https)://[^/"]+' | anew'
+```
+
+###  PSQL - search subdomain using cert.sh
+> @OFJAAAH
+> @b51b5b43
+
+```bash
+psql -A -F , -f querycrt -h http://crt.sh -p 5432 -U guest certwatch 2>/dev/null | tr ', ' '\n' | grep twitch | anew'
+```
+
+
+
 # Project
 
 [![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
