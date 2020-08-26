@@ -107,6 +107,25 @@ psql -A -F , -f querycrt -h http://crt.sh -p 5432 -U guest certwatch 2>/dev/null
 grep "="  .txt| qsreplace "' OR '1" | httpx -silent -store-response-dir output -threads 100 | grep -q -rn "syntax\|mysql" output 2>/dev/null && \printf "TARGET \033[0;32mCould Be Exploitable\e[m\n" || printf "TARGET \033[0;31mNot Vulnerable\e[m\n"
 ```
 
+###  Search subdomains using jldc
+> @OFJAAAH
+> @b51b5b43
+
+- [Explained comand](https://bit.ly/2YBlEjm)
+
+```bash
+curl -s "https://jldc.me/anubis/subdomains/att.com" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | anew
+```
+
+###  Search subdomains in assetfinder using hakrawler spider to search links in content responses
+> @OFJAAAH
+> @b51b5b43
+
+- [Explained comand](https://bit.ly/3hxRvZw)
+
+```bash
+assetfinder -subs-only http://tesla.com -silent | httpx -timeout 3 -threads 300 --follow-redirects -silent | xargs -I% -P10 sh -c 'hakrawler -plain -linkfinder -depth 5 -url %' | grep "tesla"
+```
 
 # Project
 
