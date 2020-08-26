@@ -137,6 +137,16 @@ assetfinder -subs-only http://tesla.com -silent | httpx -timeout 3 -threads 300 
 curl -s "https://crt.sh/?q=%25.att.com&output=json" | jq -r '.[].name_value' | sed 's/\*\.//g' | httpx -title -silent | anew
 ```
 
+###  Search subdomains in cert.sh assetfinder to search in link /.git/HEAD
+> @OFJAAAH
+> @b51b5b43
+
+- [Explained comand](https://bit.ly/3lhFcTH)
+
+```bash
+curl -s "https://crt.sh/?q=%25.tesla.com&output=json" | jq -r '.[].name_value' | assetfinder -subs-only | sed 's#$#/.git/HEAD#g' | httpx -silent -content-length -status-code 301,302 -timeout 3 -retries 0 -ports 80,8080,443 -threads 500 -title | anew
+```
+
 
 # Project
 
