@@ -82,6 +82,17 @@ curl "https://recon.dev/api/search?key=apiKEY&domain=paypal.com" |jq -r '.[].raw
 psql -A -F , -f querycrt -h http://crt.sh -p 5432 -U guest certwatch 2>/dev/null | tr ', ' '\n' | grep twitch | anew'
 ```
 
+###  Search subdomains using github
+> @OFJAAAH
+> @b51b5b43
+
+> Using python3 
+
+```python
+./github-subdomains.py -t APYKEYGITHUB -d domaintosearch | httpx --title
+```
+
+
 # Project
 
 [![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
