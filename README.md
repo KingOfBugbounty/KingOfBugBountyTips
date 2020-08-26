@@ -84,6 +84,7 @@ psql -A -F , -f querycrt -h http://crt.sh -p 5432 -U guest certwatch 2>/dev/null
 [![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/ofjaaah)
 [![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/b51b5b43)
 [![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/b51b5b43)
+[![Telegram](https://patrolavia.github.io/telegram-badge/chat.png)](https://telegram.com)
 
 
 
