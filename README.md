@@ -31,7 +31,7 @@ To run the project, you will need to install the following programs:
 > @OFJAAAH
 > @b51b5b43
 
-- [Explained comand](https://bit.ly/2QnQAyW)
+- [Explaining command](https://bit.ly/2QnQAyW)
 
 ```bash
 amass intel -org paypal -max-dns-queries 2500 | awk -F, '{print $1}' ORS=',' | sed 's/,$//' | xargs -P3 -I@ -d ',' amass intel -asn @ -max-dns-queries 2500'
@@ -41,7 +41,7 @@ amass intel -org paypal -max-dns-queries 2500 | awk -F, '{print $1}' ORS=',' | s
 > @OFJAAAH
 > @b51b5b43
 
-- [Explained comand](https://bit.ly/32vfRg7)
+- [Explaining command](https://bit.ly/32vfRg7)
 
 ```bash
 chaos -d http://att.com | httpx -silent | xargs -I@ -P20 sh -c 'gospider -a -s "@" -d 2' | grep -Eo "(http|https)://[^/"].*.js+" | sed "s#] - #\n#g" | anew | grep "http://att.com"'
@@ -51,7 +51,7 @@ chaos -d http://att.com | httpx -silent | xargs -I@ -P20 sh -c 'gospider -a -s "
 > @OFJAAAH
 > @b51b5b43
 
-- [Explained comand](https://bit.ly/2QtG9do)
+- [Explaining command](https://bit.ly/2QtG9do)
 
 ```bash
 gospider -d 0 -s "https://site.com" -c 5 -t 100 -d 5 --blacklist jpg,jpeg,gif,css,tif,tiff,png,ttf,woff,woff2,ico,pdf,svg,txt | grep -Eo '(http|https)://[^/"]+' | anew
@@ -61,7 +61,7 @@ gospider -d 0 -s "https://site.com" -c 5 -t 100 -d 5 --blacklist jpg,jpeg,gif,cs
 > @OFJAAAH
 > @b51b5b43
 
-- [Explained comand](https://bit.ly/2D4vW3W)
+- [Explaining command](https://bit.ly/2D4vW3W)
 
 ```bash
 chaos -d http://paypal.com -bbq -filter-wildcard -http-url | xargs -I@ -P5 sh -c 'gospider -a -s "@" -d 3'
@@ -71,7 +71,7 @@ chaos -d http://paypal.com -bbq -filter-wildcard -http-url | xargs -I@ -P5 sh -c
 > @OFJAAAH
 > @b51b5b43
 
-- [Explained comand](https://bit.ly/32pPRDa)
+- [Explaining command](https://bit.ly/32pPRDa)
 
 ```bash
 curl "https://recon.dev/api/search?key=apiKEY&domain=paypal.com" |jq -r '.[].rawDomains[]' | sed 's/ //g' | anew |httpx -silent | xargs -I@ gospider -d 0 -s @ -c 5 -t 100 -d 5 --blacklist jpg,jpeg,gif,css,tif,tiff,png,ttf,woff,woff2,ico,pdf,svg,txt | grep -Eo '(http|https)://[^/"]+' | anew'
@@ -81,7 +81,7 @@ curl "https://recon.dev/api/search?key=apiKEY&domain=paypal.com" |jq -r '.[].raw
 > @OFJAAAH
 > @b51b5b43
 
-- [Explained comand](https://bit.ly/32rMA6e)
+- [Explaining command](https://bit.ly/32rMA6e)
 
 ```bash
 psql -A -F , -f querycrt -h http://crt.sh -p 5432 -U guest certwatch 2>/dev/null | tr ', ' '\n' | grep twitch | anew'
@@ -91,7 +91,7 @@ psql -A -F , -f querycrt -h http://crt.sh -p 5432 -U guest certwatch 2>/dev/null
 > @OFJAAAH
 > @b51b5b43
 
-> Explained comand - Using python3 to search subdomains, httpx filter hosts by up status-code response (200)
+- [Explaining command] - Using python3 to search subdomains, httpx filter hosts by up status-code response (200)
 
 ```python
 ./github-subdomains.py -t APYKEYGITHUB -d domaintosearch | httpx --title
