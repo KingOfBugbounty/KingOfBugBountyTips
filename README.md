@@ -30,18 +30,16 @@ To run the project, you will need to install the following programs:
 ###  Search Asn Amass
 > @OFJAAAH
 > @b51b5b43
+> tutorial do comando
 
 ```bash
 amass intel -org paypal -max-dns-queries 2500 | awk -F, '{print $1}' ORS=',' | sed 's/,$//' | xargs -P3 -I@ -d ',' amass intel -asn @ -max-dns-queries 2500'
 ```
-## What comand?
-teste dos teste
-
 
 ###  Using chaos search js
 > @OFJAAAH
 > @b51b5b43
-
+> tutorial do comando
 ```bash
 chaos -d http://att.com | httpx -silent | xargs -I@ -P20 sh -c 'gospider -a -s "@" -d 2' | grep -Eo "(http|https)://[^/"].*.js+" | sed "s#] - #\n#g" | anew | grep "http://att.com"'
 ```
@@ -49,7 +47,7 @@ chaos -d http://att.com | httpx -silent | xargs -I@ -P20 sh -c 'gospider -a -s "
 ###  Search Subdomain using Gospider
 > @OFJAAAH
 > @b51b5b43
-
+> tutorial do comando
 ```bash
 gospider -d 0 -s "https://site.com" -c 5 -t 100 -d 5 --blacklist jpg,jpeg,gif,css,tif,tiff,png,ttf,woff,woff2,ico,pdf,svg,txt | grep -Eo '(http|https)://[^/"]+' | anew
 ```
@@ -57,7 +55,7 @@ gospider -d 0 -s "https://site.com" -c 5 -t 100 -d 5 --blacklist jpg,jpeg,gif,cs
 ###  Using gospider to chaos
 > @OFJAAAH
 > @b51b5b43
-
+> tutorial do comando
 ```bash
 chaos -d http://paypal.com -bbq -filter-wildcard -http-url | xargs -I@ -P5 sh -c 'gospider -a -s "@" -d 3'
 ```
@@ -66,6 +64,7 @@ chaos -d http://paypal.com -bbq -filter-wildcard -http-url | xargs -I@ -P5 sh -c
 > @OFJAAAH
 > @b51b5b43
 
+> tutorial do comando
 ```bash
 curl "https://recon.dev/api/search?key=apiKEY&domain=paypal.com" |jq -r '.[].rawDomains[]' | sed 's/ //g' | anew |httpx -silent | xargs -I@ gospider -d 0 -s @ -c 5 -t 100 -d 5 --blacklist jpg,jpeg,gif,css,tif,tiff,png,ttf,woff,woff2,ico,pdf,svg,txt | grep -Eo '(http|https)://[^/"]+' | anew'
 ```
@@ -73,11 +72,10 @@ curl "https://recon.dev/api/search?key=apiKEY&domain=paypal.com" |jq -r '.[].raw
 ###  PSQL - search subdomain using cert.sh
 > @OFJAAAH
 > @b51b5b43
-
+> tutorial do comando
 ```bash
 psql -A -F , -f querycrt -h http://crt.sh -p 5432 -U guest certwatch 2>/dev/null | tr ', ' '\n' | grep twitch | anew'
 ```
-
 
 # Project
 
