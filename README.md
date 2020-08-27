@@ -159,6 +159,15 @@ curl -s "https://crt.sh/?q=%25.enjoei.com.br&output=json" | jq -r '.[].name_valu
 xargs -P 500 -a pay -I@ sh -c 'nc -w1 -z -v @ 443 2>/dev/null && echo @' | xargs -I@ -P10 sh -c 'gospider -a -s "https://@" -d 2 | grep -Eo "(http|https)://[^/\"].*.js+" | sed "s#\] \- #\n#g" | anew'
 ```
 
+###  Subdomain search Bufferover resolving domain to httpx
+> @OFJAAAH
+> @b51b5b43
+
+- [Explained comand](https://bit.ly/3lno9j0)
+
+```bash
+curl -s https://dns.bufferover.run/dns?q=.sony.com |jq -r .FDNS_A[] | sed -s 's/,/\n/g' | httpx -silent | anew
+```
 
 # Project
 
