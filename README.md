@@ -70,7 +70,7 @@ gospider -d 0 -s "https://site.com" -c 5 -t 100 -d 5 --blacklist jpg,jpeg,gif,cs
 - [Explaining command](https://bit.ly/2D4vW3W)
 
 ```bash
-chaos -d http://paypal.com -bbq -filter-wildcard -http-url | xargs -I@ -P5 sh -c 'gospider -a -s "@" -d 3'
+chaos -d paypal.com -bbq -filter-wildcard -http-url | xargs -I@ -P5 sh -c 'gospider -a -s "@" -d 3'
 ```
 
 ###  Using recon.dev and gospider crawler subdomains
