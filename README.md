@@ -50,7 +50,7 @@ amass intel -org paypal -max-dns-queries 2500 | awk -F, '{print $1}' ORS=',' | s
 - [Explaining command](https://bit.ly/32vfRg7)
 
 ```bash
-chaos -d http://att.com | httpx -silent | xargs -I@ -P20 sh -c 'gospider -a -s "@" -d 2' | grep -Eo "(http|https)://[^/"].*.js+" | sed "s#] - #\n#g" | anew | grep "http://att.com"'
+chaos -d att.com | httpx -silent | xargs -I@ -P20 sh -c 'gospider -a -s "@" -d 2' | grep -Eo "(http|https)://[^/"].*.js+" | sed "s#] - #\n#g" | anew | grep "http://att.com"'
 ```
 
 ###  Search Subdomain using Gospider
