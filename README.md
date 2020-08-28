@@ -26,6 +26,7 @@ To run the project, you will need to install the following programs:
 - [Github-Search](https://github.com/gwen001/github-search)
 - [Amass](https://github.com/OWASP/Amass)
 - [Hakrawler](https://github.com/hakluke/hakrawler)
+- [Gargs](https://github.com/brentp/gargs)
 
 
 ###  Search Asn Amass
@@ -171,6 +172,8 @@ curl -s https://dns.bufferover.run/dns?q=.sony.com |jq -r .FDNS_A[] | sed -s 's/
 ```
 
 ###  Using gargs to gospider search with parallel proccess
+- [Gargs](https://github.com/brentp/gargs)
+
 > @OFJAAAH
 > @b51b5b43
 
