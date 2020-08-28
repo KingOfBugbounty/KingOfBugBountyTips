@@ -16,6 +16,7 @@ Our main goal is to share tips from some well-known bughunters. Using recon meth
 - [@TomNomNom](https://twitter.com/TomNomNom)
 - [@jeff_foley](https://twitter.com/@jeff_foley)
 - [@NahamSec](https://twitter.com/NahamSec)
+- [@j3ssiejjj](https://twitter.com/j3ssiejjj)
 
 
 ## Scripts that need to be installed
