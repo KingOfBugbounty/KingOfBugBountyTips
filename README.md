@@ -207,7 +207,7 @@ gospider -S domain.txt -t 3 -c 100 |  tr " " "\n" | grep -v ".js" | grep "https:
 apktool d app.apk -o uberApk;grep -Phro "(https?://)[\w\.-/]+[\"'\`]" uberApk/ | sed 's#"##g' | anew | grep -v "w3\|android\|github\|schemas.android\|google\|goo.gl"
 ```
 
-###  Using Gospider injection IP:PORT 
+###  Chaos to Gospider
 > @OFJAAAH
 > @b51b5b43
 
