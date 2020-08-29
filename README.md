@@ -2,7 +2,7 @@
 
 Our main goal is to share tips from some well-known bughunters. Using recon methodology, we are able to find subdomains, apis, and tokens that are already exploitable, so we can report them. We wish to influence Onelinetips and explain the commands, for the better understanding of new hunters.
 
-## Join Us (Limited to 200 members)
+## Join Us (Limited to 500 members)
 [![Telegram](https://patrolavia.github.io/telegram-badge/chat.png)](https://t.me/KingOfTipsBugBounty)
 
 [![GitHub followers](https://img.shields.io/github/followers/bminossi.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/bminossi?tab=followers) 
@@ -196,6 +196,17 @@ httpx -ports 80,443,8009,8080,8081,8090,8180,8443 -l domain -timeout 5 -threads 
 ```bash
 gospider -S domain.txt -t 3 -c 100 |  tr " " "\n" | grep -v ".js" | grep "https://" | grep "=" | qsreplace '%22><svg%20onload=confirm(1);>'
 ```
+
+###  Extract URL's to apk
+> @OFJAAAH
+> @b51b5b43
+
+- [Explained comand](https://bit.ly/2QzXwJr)
+
+```bash
+apktool d app.apk -o uberApk;grep -Phro "(https?://)[\w\.-/]+[\"'\`]" uberApk/ | sed 's#"##g' | anew | grep -v "w3\|android\|github\|schemas.android\|google\|goo.gl"
+```
+
 
 # Project
 
