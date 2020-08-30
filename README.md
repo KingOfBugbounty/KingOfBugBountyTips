@@ -35,7 +35,7 @@ To run the project, you will need to install the following programs:
 
 ###  Search Asn Amass
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explaining command](https://bit.ly/2QnQAyW)
 
@@ -45,7 +45,7 @@ amass intel -org paypal -max-dns-queries 2500 | awk -F, '{print $1}' ORS=',' | s
 
 ###  Using chaos search js
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explaining command](https://bit.ly/32vfRg7)
 
@@ -55,7 +55,7 @@ chaos -d att.com | httpx -silent | xargs -I@ -P20 sh -c 'gospider -a -s "@" -d 2
 
 ###  Search Subdomain using Gospider
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explaining command](https://bit.ly/2QtG9do)
 
@@ -65,7 +65,7 @@ gospider -d 0 -s "https://site.com" -c 5 -t 100 -d 5 --blacklist jpg,jpeg,gif,cs
 
 ###  Using gospider to chaos
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explaining command](https://bit.ly/2D4vW3W)
 
@@ -75,7 +75,7 @@ chaos -d paypal.com -bbq -filter-wildcard -http-url | xargs -I@ -P5 sh -c 'gospi
 
 ###  Using recon.dev and gospider crawler subdomains
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explaining command](https://bit.ly/32pPRDa)
 
@@ -85,7 +85,7 @@ curl "https://recon.dev/api/search?key=apiKEY&domain=paypal.com" |jq -r '.[].raw
 
 ###  PSQL - search subdomain using cert.sh
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explaining command](https://bit.ly/32rMA6e)
 
@@ -95,7 +95,7 @@ psql -A -F , -f querycrt -h http://crt.sh -p 5432 -U guest certwatch 2>/dev/null
 
 ###  Search subdomains using github and httpx
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Github-search](https://github.com/gwen001/github-search) - Using python3 to search subdomains, httpx filter hosts by up status-code response (200)
 
@@ -105,7 +105,7 @@ psql -A -F , -f querycrt -h http://crt.sh -p 5432 -U guest certwatch 2>/dev/null
 
 ###  Search SQLINJECTION using qsreplace search syntax error
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explained comand](https://bit.ly/3hxFWS2)
 
@@ -115,7 +115,7 @@ grep "="  .txt| qsreplace "' OR '1" | httpx -silent -store-response-dir output -
 
 ###  Search subdomains using jldc
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explained comand](https://bit.ly/2YBlEjm)
 
@@ -125,7 +125,7 @@ curl -s "https://jldc.me/anubis/subdomains/att.com" | grep -Po "((http|https):\/
 
 ###  Search subdomains in assetfinder using hakrawler spider to search links in content responses
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explained comand](https://bit.ly/3hxRvZw)
 
@@ -135,7 +135,7 @@ assetfinder -subs-only http://tesla.com -silent | httpx -timeout 3 -threads 300 
 
 ###  Search subdomains in cert.sh
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explained comand](https://bit.ly/2QrvMXl)
 
@@ -145,7 +145,7 @@ curl -s "https://crt.sh/?q=%25.att.com&output=json" | jq -r '.[].name_value' | s
 
 ###  Search subdomains in cert.sh assetfinder to search in link /.git/HEAD
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explained comand](https://bit.ly/3lhFcTH)
 
@@ -157,7 +157,7 @@ curl -s "https://crt.sh/?q=%25.enjoei.com.br&output=json" | jq -r '.[].name_valu
 ```
 ###  Collect js files from hosts up by gospider
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explained comand](https://bit.ly/3aWIwyI)
 
@@ -167,7 +167,7 @@ xargs -P 500 -a pay -I@ sh -c 'nc -w1 -z -v @ 443 2>/dev/null && echo @' | xargs
 
 ###  Subdomain search Bufferover resolving domain to httpx
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explained comand](https://bit.ly/3lno9j0)
 
@@ -179,7 +179,7 @@ curl -s https://dns.bufferover.run/dns?q=.sony.com |jq -r .FDNS_A[] | sed -s 's/
 - [Gargs](https://github.com/brentp/gargs)
 
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explained comand](https://bit.ly/2EHj1FD)
 
@@ -189,7 +189,7 @@ httpx -ports 80,443,8009,8080,8081,8090,8180,8443 -l domain -timeout 5 -threads 
 
 ###  Injection xss using qsreplace to urls filter to gospider
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explained comand](https://bit.ly/3joryw9)
 
@@ -199,7 +199,7 @@ gospider -S domain.txt -t 3 -c 100 |  tr " " "\n" | grep -v ".js" | grep "https:
 
 ###  Extract URL's to apk
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explained comand](https://bit.ly/2QzXwJr)
 
@@ -209,7 +209,7 @@ apktool d app.apk -o uberApk;grep -Phro "(https?://)[\w\.-/]+[\"'\`]" uberApk/ |
 
 ###  Chaos to Gospider
 > @OFJAAAH
-> @b51b5b43
+> @zeroc00I
 
 - [Explained comand](https://bit.ly/3gFJbpB)
 
@@ -223,7 +223,7 @@ chaos -d att.com -o att -silent | httpx -silent | xargs -P100 -I@ gospider -c 30
 [![made-with-bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg)](https://www.gnu.org/software/bash/)
 [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
 [![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/ofjaaah)
-[![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/b51b5b43)
+[![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/zeroc00I)
 [![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/willxenoo)
 [![Telegram](https://patrolavia.github.io/telegram-badge/chat.png)](https://t.me/KingOfTipsBugBounty)
 
