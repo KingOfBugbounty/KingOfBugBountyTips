@@ -172,7 +172,7 @@ xargs -P 500 -a pay -I@ sh -c 'nc -w1 -z -v @ 443 2>/dev/null && echo @' | xargs
 - [Explained comand](https://bit.ly/3lno9j0)
 
 ```bash
-curl -s https://dns.bufferover.run/dns?q=.sony.com |jq -r .FDNS_A[] | sed -s 's/,/\n/g' | httpx -silent | anew
+curl -s https://dns.bufferover.run/dns?q=.sony.com | jq -r '.FDNS_A[]' | sed -s 's/,/\n/g' | httpx -silent | anew
 ```
 
 ###  Using gargs to gospider search with parallel proccess
