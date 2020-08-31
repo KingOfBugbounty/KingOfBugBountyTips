@@ -237,6 +237,18 @@ xargs -a domain -P1000 -I@ sh -c 'bash cert.sh @ 2> /dev/null' | grep "EXPIRED" 
 shodan domain DOMAIN TO BOUNTY | awk '{print $3}' | httpx -silent | nuclei -t /nuclei-templates/
 ```
 
+###  Open Redirect test using gf.
+> @OFJAAAH
+> @zeroc00I
+
+- [Explained comand](https://bit.ly/3hL263x)
+
+```bash
+echo "domain" | waybackurls | httpx -silent -timeout 2 -threads 100 | gf redirect | anew
+```
+
+
+
 # Project
 
 [![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
