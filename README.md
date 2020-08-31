@@ -227,6 +227,15 @@ chaos -d att.com -o att -silent | httpx -silent | xargs -P100 -I@ gospider -c 30
 xargs -a domain -P1000 -I@ sh -c 'bash cert.sh @ 2> /dev/null' | grep "EXPIRED" | awk '/domain/{print $5}' | httpx
 ```
 
+###  Using shodan & Nuclei
+> @OFJAAAH
+> @zeroc00I
+
+- [Explained comand](https://bit.ly/3jslKle)
+
+```bash
+shodan domain DOMAIN TO BOUNTY | awk '{print $3}' | httpx -silent | nuclei -t /home/ofjaaah/PENTESTER/nuclei-templates/
+```
 
 # Project
 
