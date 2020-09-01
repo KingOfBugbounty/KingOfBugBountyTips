@@ -247,6 +247,15 @@ shodan domain DOMAIN TO BOUNTY | awk '{print $3}' | httpx -silent | nuclei -t /n
 echo "domain" | waybackurls | httpx -silent -timeout 2 -threads 100 | gf redirect | anew
 ```
 
+###  Using shodan to jaeles "How did I find a critical today? well as i said it was very simple, using shodan and jaeles".
+> @OFJAAAH
+> @zeroc00I
+
+- [Explained comand](https://bit.ly/2QQfY0l)
+
+```bash
+shodan domain domain| awk '{print $3}'|  httpx -silent | anew | xargs -I@ jaeles scan -c 100 -s /jaeles-signatures/ -u @
+```
 
 
 # Project
