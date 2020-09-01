@@ -256,7 +256,15 @@ echo "domain" | waybackurls | httpx -silent -timeout 2 -threads 100 | gf redirec
 ```bash
 shodan domain domain| awk '{print $3}'|  httpx -silent | anew | xargs -I@ jaeles scan -c 100 -s /jaeles-signatures/ -u @
 ```
+###  Using Chaos to jaeles "How did I find a critical today?.
+> @OFJAAAH
+> @zeroc00I
 
+- [Explained comand](https://bit.ly/2YXiK8N)
+
+```bash
+chaos -d domain | httpx -silent | anew | xargs -I@ jaeles scan -c 100 -s /jaeles-signatures/ -u @ 
+```
 
 # Project
 
