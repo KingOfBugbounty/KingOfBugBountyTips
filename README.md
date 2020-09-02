@@ -39,6 +39,8 @@ To run the project, you will need to install the following programs:
 
 - [Explaining command](https://bit.ly/2EMooDB)
 
+Amass intel will search the organization "paypal" from a database of ASNs at a faster-than-default rate. It will then take these ASN numbers and scan the complete ASN/IP space for all tld's in that IP space (paypal.com, paypal.co.id, paypal.me).
+
 ```bash
 amass intel -org paypal -max-dns-queries 2500 | awk -F, '{print $1}' ORS=',' | sed 's/,$//' | xargs -P3 -I@ -d ',' amass intel -asn @ -max-dns-queries 2500''
 ```
@@ -49,8 +51,10 @@ amass intel -org paypal -max-dns-queries 2500 | awk -F, '{print $1}' ORS=',' | s
 
 - [Explaining command](https://bit.ly/32vfRg7)
 
+Choas is an API by Project Discovery that discovers subdomains. Here we are querying thier API for all known subdoains of "att.com". We are then using httpx to find which of those domains is live and hosts an HTTP or HTTPs site. We then pass those URLs to GoSpider to visit them and crawl them for all links (javascript, endpoints, etc). We then grep to find all the JS files. We pipe this all through anew so we see the output iterativlely (faster) and grep for "(http|https)://att.com" to make sure we dont recieve output for domains that are not "att.com".
+
 ```bash
-chaos -d att.com | httpx -silent | xargs -I@ -P20 sh -c 'gospider -a -s "@" -d 2' | grep -Eo "(http|https)://[^/"].*.js+" | sed "s#] - #\n#g" | anew | grep "http://att.com"'
+chaos -d att.com | httpx -silent | xargs -I@ -P20 sh -c 'gospider -a -s "@" -d 2' | grep -Eo "(http|https)://[^/"].*.js+" | sed "s#] - #\n#g" | anew | grep -Eo "(http|https)://att.com"
 ```
 
 ###  Search Subdomain using Gospider
