@@ -276,6 +276,16 @@ chaos -d domain | httpx -silent | anew | xargs -I@ jaeles scan -c 100 -s /jaeles
 domain="domaintotest";shodan domain $domain | awk -v domain="$domain" '{print $1"."domain}'| httpx -threads 300 | anew shodanHostsUp | xargs -I@ -P3 sh -c 'jaeles -c 300 scan -s jaeles-signatures/ -u @'| anew JaelesShodanHosts 
 ```
 
+###  Search to files using assetfinder and ffuf
+> @OFJAAAH
+> @zeroc00I
+
+- [Explained comand](https://bit.ly/2Go3Ba4)
+
+```bash
+assetfinder http://att.com | sed 's#*.# #g' | httpx -silent -threads 10 | xargs -I@ sh -c 'ffuf -w path.txt -u @/FUZZ -mc 200 -H "Content-Type: application/json" -t 150 -H "X-Forwarded-For:127.0.0.1"'
+```
+
 
 
 # Project
