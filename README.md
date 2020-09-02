@@ -266,6 +266,18 @@ shodan domain domain| awk '{print $3}'|  httpx -silent | anew | xargs -I@ jaeles
 chaos -d domain | httpx -silent | anew | xargs -I@ jaeles scan -c 100 -s /jaeles-signatures/ -u @ 
 ```
 
+###  Using shodan to jaeles
+> @OFJAAAH
+> @zeroc00I
+
+- [Explained comand](https://bit.ly/2Dkmycu)
+
+```bash
+domain="domaintotest";shodan domain $domain | awk -v domain="$domain" '{print $1"."domain}'| httpx -threads 300 | anew shodanHostsUp | xargs -I@ -P3 sh -c 'jaeles -c 300 scan -s jaeles-signatures/ -u @'| anew JaelesShodanHosts 
+```
+
+
+
 # Project
 
 [![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
