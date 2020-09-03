@@ -72,6 +72,7 @@ gospider -d 0 -s "https://site.com" -c 5 -t 100 -d 5 --blacklist jpg,jpeg,gif,cs
 ###  Using gospider to chaos
 > @OFJAAAH
 > @zeroc00I
+GoSpider to visit them and crawl them for all links (javascript, endpoints, etc) chaos is a subdomain search project, to use it needs the api, to xargs is a command on Unix and most Unix-like operating systems used to build and execute commands from standard input.
 
 - [Explaining command](https://bit.ly/2D4vW3W)
 
