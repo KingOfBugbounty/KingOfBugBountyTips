@@ -276,6 +276,8 @@ shodan domain domain| awk '{print $3}'|  httpx -silent | anew | xargs -I@ jaeles
 
 - [Explained comand](https://bit.ly/2YXiK8N)
 
+To chaos this project to projectdiscovery, Recon subdomains, using httpx, if we see the output from chaos domain.com we need it to be treated as http or https, so we use httpx to get the results. We use anew, a tool that removes duplicates from @TomNomNom, to get the output treated for import into jaeles, where he will scan using his templates. 
+
 ```bash
 chaos -d domain | httpx -silent | anew | xargs -I@ jaeles scan -c 100 -s /jaeles-signatures/ -u @ 
 ```
