@@ -106,7 +106,9 @@ psql -A -F , -f querycrt -h http://crt.sh -p 5432 -U guest certwatch 2>/dev/null
 > @OFJAAAH
 > @zeroc00I
 
-- [Github-search](https://github.com/gwen001/github-search) - Using python3 to search subdomains, httpx filter hosts by up status-code response (200)
+- [Github-search](https://github.com/gwen001/github-search)
+
+Using python3 to search subdomains, httpx filter hosts by up status-code response (200)
 
 ```python
 ./github-subdomains.py -t APYKEYGITHUB -d domaintosearch | httpx --title
@@ -311,6 +313,17 @@ assetfinder att.com | sed 's#*.# #g' | httpx -silent -threads 10 | xargs -I@ sh 
 ```bash
 httpx -l master.txt -silent -no-color -threads 300 -location 301,302 | awk '{print $2}' | grep -Eo '(http|https)://[^/"].*' | tr -d '[]' | anew  | xargs -I@ sh -c 'gospider -d 0 -s @' | tr ' ' '\n' | grep -Eo '(http|https)://[^/"].*' | grep "=" | qsreplace "<svg onload=alert(1)>" "'
 ```
+
+###  Findomain to subdomain and brute-force files to list path.
+> @OFJAAAH
+> @zeroc00I
+
+- [Explained comand](https://bit.ly/2Go3Ba4)
+
+```bash
+findomain -t http://sony.com 2>/dev/null | httpx -silent | xargs -I@ sh -c 'ffuf -w path.txt -u @/FUZZ -t 100 -mc 200 -H "Content-Type: application/json"' 
+```
+
 
 
 # Project
