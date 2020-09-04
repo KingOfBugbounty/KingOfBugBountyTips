@@ -265,16 +265,13 @@ assetfinder att.com | sed 's#*.# #g' | httpx -silent -threads 10 | xargs -I@ sh 
 httpx -l master.txt -silent -no-color -threads 300 -location 301,302 | awk '{print $2}' | grep -Eo '(http|https)://[^/"].*' | tr -d '[]' | anew  | xargs -I@ sh -c 'gospider -d 0 -s @' | tr ' ' '\n' | grep -Eo '(http|https)://[^/"].*' | grep "=" | qsreplace "<svg onload=alert(1)>" "'
 ```
 
-###  Findomain to subdomain and brute-force files to list path.
-> @OFJAAAH
-> @zeroc00I
+###  Grap internal juicy paths and do requests to them.
 
-- [Explained comand](https://bit.ly/2Go3Ba4)
+- [Explained comand](https://bit.ly/357b1IY)
 
 ```bash
-findomain -t sony.com 2>/dev/null | httpx -silent | xargs -I@ sh -c 'ffuf -w path.txt -u @/FUZZ -t 100 -mc 200 -H "Content-Type: application/json"' 
+export domain="https://target";gospider -s $domain -d 3 -c 300 | awk '/linkfinder/{print $NF}' | grep -v "http" | grep -v "http" | unfurl paths | anew | xargs -I@ -P50 sh -c 'echo $domain@ | httpx -silent -content-length'
 ```
-
 
 
 # Project
