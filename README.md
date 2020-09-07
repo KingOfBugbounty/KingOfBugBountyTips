@@ -124,7 +124,7 @@ curl -s "https://jldc.me/anubis/subdomains/att.com" | grep -Po "((http|https):\/
 - [Explained comand](https://bit.ly/3hxRvZw)
 
 ```bash
-assetfinder -subs-only http://tesla.com -silent | httpx -timeout 3 -threads 300 --follow-redirects -silent | xargs -I% -P10 sh -c 'hakrawler -plain -linkfinder -depth 5 -url %' | grep "tesla"
+assetfinder -subs-only tesla.com -silent | httpx -timeout 3 -threads 300 --follow-redirects -silent | xargs -I% -P10 sh -c 'hakrawler -plain -linkfinder -depth 5 -url %' | grep "tesla"
 ```
 
 ###  Search subdomains in cert.sh
@@ -271,6 +271,14 @@ httpx -l master.txt -silent -no-color -threads 300 -location 301,302 | awk '{pri
 
 ```bash
 export domain="https://target";gospider -s $domain -d 3 -c 300 | awk '/linkfinder/{print $NF}' | grep -v "http" | grep -v "http" | unfurl paths | anew | xargs -I@ -P50 sh -c 'echo $domain@ | httpx -silent -content-length'
+```
+
+###  Download to list bounty targets We inject using the sed .git/HEAD command at the end of each url.
+
+- [Explained comand](https://bit.ly/2R2gNn5)
+
+```bash
+wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/domains.txt -nv | cat domains.txt | sed 's#$#/.git/HEAD#g' | httpx -silent -content-length -status-code 301,302 -timeout 3 -retries 0 -ports 80,8080,443 -threads 500 -title | anew
 ```
 
 
