@@ -31,6 +31,7 @@ To run the project, you will need to install the following programs:
 - [Amass](https://github.com/OWASP/Amass)
 - [Hakrawler](https://github.com/hakluke/hakrawler)
 - [Gargs](https://github.com/brentp/gargs)
+- [chaos] (https://github.com/projectdiscovery/chaos-client)
 
 
 ###  Search Asn Amass
