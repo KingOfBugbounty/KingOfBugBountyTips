@@ -32,6 +32,7 @@ To run the project, you will need to install the following programs:
 - [Hakrawler](https://github.com/hakluke/hakrawler)
 - [Gargs](https://github.com/brentp/gargs)
 - [chaos](https://github.com/projectdiscovery/chaos-client)
+- [httpx](https://github.com/encode/httpx)
 
 
 ###  Search Asn Amass
