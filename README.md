@@ -31,9 +31,9 @@ To run the project, you will need to install the following programs:
 - [Amass](https://github.com/OWASP/Amass)
 - [Hakrawler](https://github.com/hakluke/hakrawler)
 - [Gargs](https://github.com/brentp/gargs)
-- [chaos](https://github.com/projectdiscovery/chaos-client)
-- [httpx](https://github.com/projectdiscovery/httpx)
-- [findomain](https://github.com/Edu4rdSHL/findomain)
+- [Chaos](https://github.com/projectdiscovery/chaos-client)
+- [Httpx](https://github.com/projectdiscovery/httpx)
+- [Findomain](https://github.com/Edu4rdSHL/findomain)
 
 
 ###  Search Asn Amass
@@ -290,6 +290,14 @@ wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/
 
 ```bash
 findomain -t testphp.vulnweb.com -q | httpx -silent | anew | waybackurls | gf sqli >> sqli ; sqlmap -m sqli -batch --random-agent --level 1
+```
+
+###  Jaeles scan to bugbounty targets.
+
+- [Explained comand](https://bit.ly/3jXbTnU)
+
+```bash
+wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/domains.txt -nv ; cat domains.txt | anew | httpx -silent -threads 500 | xargs -I@ jaeles scan -s /jaeles-signatures/ -u @
 ```
 
 
