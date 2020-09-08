@@ -33,6 +33,7 @@ To run the project, you will need to install the following programs:
 - [Gargs](https://github.com/brentp/gargs)
 - [chaos](https://github.com/projectdiscovery/chaos-client)
 - [httpx](https://github.com/projectdiscovery/httpx)
+- [findomain](https://github.com/Edu4rdSHL/findomain)
 
 
 ###  Search Asn Amass
