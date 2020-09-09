@@ -300,6 +300,15 @@ findomain -t testphp.vulnweb.com -q | httpx -silent | anew | waybackurls | gf sq
 wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/domains.txt -nv ; cat domains.txt | anew | httpx -silent -threads 500 | xargs -I@ jaeles scan -s /jaeles-signatures/ -u @
 ```
 
+###  JLDC domain search subdomain, using rush and jaeles.
+
+- [Explained comand](https://bit.ly/3hfNV5k)
+
+```bash
+curl -s "https://jldc.me/anubis/subdomains/sony.com" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | httpx -silent -threads 300 | anew | rush -j 10 'jaeles scan -s /jaeles-signatures/ -u {}'
+```
+
+
 
 # Project
 
