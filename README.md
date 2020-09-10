@@ -308,7 +308,13 @@ wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/
 curl -s "https://jldc.me/anubis/subdomains/sony.com" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | httpx -silent -threads 300 | anew | rush -j 10 'jaeles scan -s /jaeles-signatures/ -u {}'
 ```
 
+###  Chaos to search subdomains check cloudflareip scan port.
 
+- [Explained comand](https://bit.ly/3hfNV5k)
+
+```bash
+chaos -silent -d paypal.com | filter-resolved | cf-check | anew | naabu -rate 60000 -silent -verify | httpx -title -silent
+```
 
 # Project
 
