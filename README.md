@@ -315,6 +315,14 @@ curl -s "https://jldc.me/anubis/subdomains/sony.com" | grep -Po "((http|https):\
 ```bash
 chaos -silent -d paypal.com | filter-resolved | cf-check | anew | naabu -rate 60000 -silent -verify | httpx -title -silent
 ```
+###  Search JS to domains file.
+
+- [Explained comand](https://bit.ly/2Zs13yj)
+
+```bash
+cat FILE TO TARGET | httpx -silent | subjs | anew
+```
+
 
 # Project
 
