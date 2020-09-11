@@ -323,6 +323,13 @@ chaos -silent -d paypal.com | filter-resolved | cf-check | anew | naabu -rate 60
 cat FILE TO TARGET | httpx -silent | subjs | anew
 ```
 
+###  Search JS using assetfinder, rush and hakrawler.
+
+- [Explained comand](https://bit.ly/3ioYuV0)
+
+```bash
+assetfinder -subs-only paypal.com -silent | httpx -timeout 3 -threads 300 --follow-redirects -silent | rush 'hakrawler -plain -linkfinder -depth 5 -url {}' | grep "paypal"
+```
 
 # Project
 
