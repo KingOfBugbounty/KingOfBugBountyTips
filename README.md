@@ -34,7 +34,7 @@ To run the project, you will need to install the following programs:
 - [Chaos](https://github.com/projectdiscovery/chaos-client)
 - [Httpx](https://github.com/projectdiscovery/httpx)
 - [Findomain](https://github.com/Edu4rdSHL/findomain)
-- [gf](https://github.com/tomnomnom/gf)
+- [Gf](https://github.com/tomnomnom/gf)
 
 
 ###  Search Asn Amass
