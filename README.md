@@ -35,6 +35,8 @@ To run the project, you will need to install the following programs:
 - [Httpx](https://github.com/projectdiscovery/httpx)
 - [Findomain](https://github.com/Edu4rdSHL/findomain)
 - [Gf](https://github.com/tomnomnom/gf)
+- [Unew](https://github.com/dwisiswant0/unew)
+
 
 
 ###  Search Asn Amass
