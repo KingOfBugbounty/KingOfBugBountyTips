@@ -346,6 +346,13 @@ assetfinder -subs-only paypal.com -silent | httpx -timeout 3 -threads 300 --foll
 assetfinder fitbit.com | httpx -threads 300 -follow-redirects -silent | rush -j200 'curl -m5 -s -I -H "Origin:evil.com" {} |  [[ $(grep -c "evil.com") -gt 0 ]] && printf "\n\033[0;32m[VUL TO CORS] - {}\e[m"' 2>/dev/null"
 ```
 
+###  Search to js using hakrawler and rush & unew
+
+- [Explained comand](https://bit.ly/2Rqn9gn)
+
+```bash
+tac hostsGospider | rush -j 100 'hakrawler -js -plain -usewayback -depth 6 -scope subs -url {} | unew hakrawlerHttpx'
+```
 
 # Project
 
