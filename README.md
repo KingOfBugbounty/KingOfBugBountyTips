@@ -36,7 +36,7 @@ To run the project, you will need to install the following programs:
 - [Findomain](https://github.com/Edu4rdSHL/findomain)
 - [Gf](https://github.com/tomnomnom/gf)
 - [Unew](https://github.com/dwisiswant0/unew)
-- [rush](https://github.com/shenwei356/rush)
+- [Rush](https://github.com/shenwei356/rush)
 
 
 ###  Search Asn Amass
