@@ -364,6 +364,15 @@ tac hostsGospider | rush -j 100 'hakrawler -js -plain -usewayback -depth 6 -scop
 cat hosts | xargs -I@ sh -c 'python3 dirsearch.py -r -b -w path -u @ -i 200, 403, 401, 302 -e php,html,json,aspx,sql,asp,js' 
 ```
 
+###  Assetfinder to run massdns.
+
+- [Explained command](https://bit.ly/32T5W5O)
+
+```bash
+assetfinder DOMAIN --subs-only | anew | massdns -r lists/resolvers.txt -t A -o S -w result.txt ; cat result.txt | sed 's/A.*//; s/CN.*// ; s/\..$//' | httpx -silent
+```
+
+
 # Project
 
 [![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
