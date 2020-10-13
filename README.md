@@ -33,6 +33,7 @@ To run the project, you will need to install the following programs:
 - [Gargs](https://github.com/brentp/gargs)
 - [Chaos](https://github.com/projectdiscovery/chaos-client)
 - [Httpx](https://github.com/projectdiscovery/httpx)
+- [Jaeles](https://github.com/jaeles-project/jaeles)
 - [Findomain](https://github.com/Edu4rdSHL/findomain)
 - [Gf](https://github.com/tomnomnom/gf)
 - [Unew](https://github.com/dwisiswant0/unew)
