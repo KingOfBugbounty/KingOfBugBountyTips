@@ -380,6 +380,14 @@ assetfinder DOMAIN --subs-only | anew | massdns -r lists/resolvers.txt -t A -o S
 cat file.js | grep -aoP "(?<=(\"|\'|\`))\/[a-zA-Z0-9_?&=\/\-\#\.]*(?=(\"|\'|\`))" | sort -u 
 ```
 
+###  Find subdomains and Secrets with jsubfinder
+
+- [Explained command](https://bit.ly/3dvP6xq)
+
+```bash
+cat subdomsains.txt | httpx --silent | jsubfinder -s
+```
+
 # Project
 
 [![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
