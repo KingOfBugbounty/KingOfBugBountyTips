@@ -37,6 +37,7 @@ To run the project, you will need to install the following programs:
 - [Gf](https://github.com/tomnomnom/gf)
 - [Unew](https://github.com/dwisiswant0/unew)
 - [Rush](https://github.com/shenwei356/rush)
+- [Jsubfinder](https://github.com/hiddengearz/jsubfinder)
 
 
 ###  Search Asn Amass
