@@ -4,6 +4,8 @@ Our main goal is to share tips from some well-known bughunters. Using recon meth
 
 ## Join Us
 [![Telegram](https://patrolavia.github.io/telegram-badge/chat.png)](https://t.me/KingOfTipsBugBounty)
+[![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/ofjaaah)
+[![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/zeroc00I)
 
 [![GitHub followers](https://img.shields.io/github/followers/bminossi.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/bminossi?tab=followers) 
 [![GitHub followers](https://img.shields.io/github/followers/OfJAAH.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/OfJAAH?tab=followers)
@@ -395,9 +397,6 @@ cat subdomsains.txt | httpx --silent | jsubfinder -s
 [![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
 [![made-with-bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg)](https://www.gnu.org/software/bash/)
 [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
-[![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/ofjaaah)
-[![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/zeroc00I)
-[![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/willxenoo)
 [![Telegram](https://patrolavia.github.io/telegram-badge/chat.png)](https://t.me/KingOfTipsBugBounty)
 
 
