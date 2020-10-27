@@ -8,7 +8,7 @@ Our main goal is to share tips from some well-known bughunters. Using recon meth
 [![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/zeroc00I)
 
 [![GitHub followers](https://img.shields.io/github/followers/bminossi.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/bminossi?tab=followers) 
-[![GitHub followers](https://img.shields.io/github/followers/OfJAAH.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/OfJAAH?tab=followers)
+[![GitHub followers](https://img.shields.io/github/followers/OfJAAH.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/OFJAAAH?tab=followers)
 
 ## Special thanks
 
