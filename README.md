@@ -390,6 +390,14 @@ cat file.js | grep -aoP "(?<=(\"|\'|\`))\/[a-zA-Z0-9_?&=\/\-\#\.]*(?=(\"|\'|\`))
 cat subdomsains.txt | httpx --silent | jsubfinder -s
 ```
 
+###  Search domains to Range-IPS.
+
+- [Explained command](https://bit.ly/3fa0eAO)
+
+```bash
+cat dod1 | awk '{print $1}' | xargs -I@ sh -c 'prips @ | hakrevdns -r 1.1.1.1' | awk '{print $2}' | sed -r 's/.$//g' | httpx -silent -timeout 25 | anew 
+```
+
 # Project
 
 [![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
