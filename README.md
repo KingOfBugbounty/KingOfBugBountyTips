@@ -40,6 +40,7 @@ To run the project, you will need to install the following programs:
 - [Rush](https://github.com/shenwei356/rush)
 - [Jsubfinder](https://github.com/hiddengearz/jsubfinder)
 
+### OneLiners
 
 ###  Search Asn Amass
 
@@ -397,6 +398,31 @@ cat subdomsains.txt | httpx --silent | jsubfinder -s
 ```bash
 cat dod1 | awk '{print $1}' | xargs -I@ sh -c 'prips @ | hakrevdns -r 1.1.1.1' | awk '{print $2}' | sed -r 's/.$//g' | httpx -silent -timeout 25 | anew 
 ```
+
+
+### Search to Hackers.
+
+```
+-censys.io
+-spyce.com
+-shodan.io
+-viz.greynoise.io
+-zoomeye.org
+-onyphe.io
+-wigle.net
+-intelx.io
+-fofa.so
+-hunter.io
+-zorexeye.com
+-pulsedive.com
+-netograph.io
+-vigilante.pw
+-pipl.com
+-abuse.ch
+-maltiverse.com/search
+-insecam.org
+```
+
 
 # Project
 
