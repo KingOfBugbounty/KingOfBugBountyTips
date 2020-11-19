@@ -402,29 +402,28 @@ cat dod1 | awk '{print $1}' | xargs -I@ sh -c 'prips @ | hakrevdns -r 1.1.1.1' |
 
 ### Search to Hackers.
 
-```
-- [Censys](https://censys.io)
-- [Spyce](https://spyce.com)
-- [Shodan](https://shodan.io)
-- [Viz Grey](https://viz.greynoise.io)
-- [Zoomeye](https://zoomeye.org)
-- [Onyphe](https://onyphe.io)
-- [Wigle](https://wigle.net)
-- [Intelx](https://intelx.io)
-- [Fofa](https://fofa.so)
-- [Hunter](https://hunter.io)
-- [Zorexeye](https://zorexeye.com)
-- [Pulsedive](https://pulsedive.com)
-- [Netograph](https://netograph.io)
-- [Vigilante](https://vigilante.pw)
-- [Pipl](https://pipl.com)
-- [Abuse](https://abuse.ch)
-- [Cert-sh](https://cert.sh)
-- [Maltiverse](https://maltiverse.com/search)
-- [Insecam](https://insecam.org)
-- [Anubis](https://https://jldc.me/anubis/subdomains/att.com)
-- [Dns Dumpster](https://dnsdumpster.com)
-```
+- [Censys].(https://censys.io)
+- [Spyce].(https://spyce.com)
+- [Shodan].(https://shodan.io)
+- [Viz Grey].(https://viz.greynoise.io)
+- [Zoomeye].(https://zoomeye.org)
+- [Onyphe].(https://onyphe.io)
+- [Wigle].(https://wigle.net)
+- [Intelx].(https://intelx.io)
+- [Fofa].(https://fofa.so)
+- [Hunter].(https://hunter.io)
+- [Zorexeye].(https://zorexeye.com)
+- [Pulsedive].(https://pulsedive.com)
+- [Netograph].(https://netograph.io)
+- [Vigilante].(https://vigilante.pw)
+- [Pipl].(https://pipl.com)
+- [Abuse].(https://abuse.ch)
+- [Cert-sh].(https://cert.sh)
+- [Maltiverse].(https://maltiverse.com/search)
+- [Insecam].(https://insecam.org)
+- [Anubis].(https://https://jldc.me/anubis/subdomains/att.com)
+- [Dns Dumpster].(https://dnsdumpster.com)
+
 
 # Project
 
