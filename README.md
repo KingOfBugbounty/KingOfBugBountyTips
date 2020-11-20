@@ -399,6 +399,14 @@ cat subdomsains.txt | httpx --silent | jsubfinder -s
 cat dod1 | awk '{print $1}' | xargs -I@ sh -c 'prips @ | hakrevdns -r 1.1.1.1' | awk '{print $2}' | sed -r 's/.$//g' | httpx -silent -timeout 25 | anew 
 ```
 
+###  Search new's domains using dnsgen.
+
+- [Explained command](https://bit.ly/3kNTHNm)
+
+```bash
+xargs -a army1 -I@ sh -c 'echo @' | dnsgen - | httpx -silent -threads 10000 | anew newdomain
+```
+
 
 ### Search to Hackers.
 
