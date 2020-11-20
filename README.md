@@ -433,6 +433,7 @@ xargs -a army1 -I@ sh -c 'echo @' | dnsgen - | httpx -silent -threads 10000 | an
 - [Dns Dumpster](https://dnsdumpster.com)
 - [PhoneBook](https://phonebook.cz)
 - [Inquest](https://labs.inquest.net)
+- [Scylla](https://scylla.sh)
 
 
 # Project
