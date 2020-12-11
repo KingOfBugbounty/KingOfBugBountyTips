@@ -422,7 +422,7 @@ amass enum -src -ip -active -brute -d navy.mil -o domain ; cat domain | cut -d']
 amass enum -passive -norecursive -d disa.mil -o domain ; httpx -l domain -silent -threads 10 | nuclei -t PATH -o result -timeout 30 
 ```
 
-###  Search domains using amass and search vul to nuclei.
+###  Verify to cert using openssl.
 
 - [Explained command](https://bit.ly/37avq0C)
 
