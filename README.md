@@ -422,6 +422,18 @@ amass enum -src -ip -active -brute -d navy.mil -o domain ; cat domain | cut -d']
 amass enum -passive -norecursive -d disa.mil -o domain ; httpx -l domain -silent -threads 10 | nuclei -t PATH -o result -timeout 30 
 ```
 
+###  Search domains using amass and search vul to nuclei.
+
+- [Explained command](https://bit.ly/37avq0C)
+
+```bash
+sed -ne 's/^\( *\)Subject:/\1/p;/X509v3 Subject Alternative Name/{
+    N;s/^.*\n//;:a;s/^\( *\)\(.*\), /\1\2\n\1/;ta;p;q; }' < <(
+    openssl x509 -noout -text -in <(
+        openssl s_client -ign_eof 2>/dev/null <<<$'HEAD / HTTP/1.0\r\n\r' \
+            -connect hackerone.com:443 ) )
+```
+
 
 ### Search to Hackers.
 
