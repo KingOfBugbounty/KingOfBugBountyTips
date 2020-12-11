@@ -433,7 +433,13 @@ sed -ne 's/^\( *\)Subject:/\1/p;/X509v3 Subject Alternative Name/{
         openssl s_client -ign_eof 2>/dev/null <<<$'HEAD / HTTP/1.0\r\n\r' \
             -connect hackerone.com:443 ) )
 ```
+###  Search domains using openssl to cert.
 
+- [Explained command](https://bit.ly/3m9AsOY)
+
+```bash
+xargs -a recursivedomain -P50 -I@ sh -c 'openssl s_client -connect @:443 2>&1 '| sed -E -e 's/[[:blank:]]+/\n/g' | httpx -silent -threads 1000 | anew 
+```
 
 ### Search to Hackers.
 
