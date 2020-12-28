@@ -4,7 +4,7 @@ Our main goal is to share tips from some well-known bughunters. Using recon meth
 
 ## Join Us
 
-[![Telegram](https://patrolavia.github.io/telegram-badge/chat.png)](https://t.me/KingOfTipsBugBounty)
+[![Telegram](https://patrolavia.github.io/telegram-badge/chat.png)](https://t.me/TheOfJAAAH)
 [![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/ofjaaah)
 
 
