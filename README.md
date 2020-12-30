@@ -4,7 +4,7 @@ Our main goal is to share tips from some well-known bughunters. Using recon meth
 
 ## Join Us
 
-[![Telegram](https://patrolavia.github.io/telegram-badge/chat.png)](https://t.me/KingOfTipsBugBounty)
+[![Telegram](https://patrolavia.github.io/telegram-badge/chat.png)](https://t.me/joinchat/DN_iQksIuhyPKJL1gw0ttA)
 [![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/ofjaaah)
 
 
@@ -17,7 +17,7 @@ Our main goal is to share tips from some well-known bughunters. Using recon meth
 - [@jeff_foley](https://twitter.com/@jeff_foley)
 - [@NahamSec](https://twitter.com/NahamSec)
 - [@j3ssiejjj](https://twitter.com/j3ssiejjj)
-
+- [@zseano](https://twitter.com/zseano)
 
 ## Scripts that need to be installed
 
