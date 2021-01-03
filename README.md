@@ -321,7 +321,7 @@ wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/
 - [Explained command](https://bit.ly/2ZeAhcF)
 
 ```bash
-findomain -t testphp.vulnweb.com -q | httpx -silent | anew | waybackurls | gf sqli >> sqli ; sqlmap -m sqli -batch --random-agent --level 1
+findomain -t testphp.vulnweb.com -q | httpx -silent | anew | waybackurls | gf sqli >> sqli ; sqlmap -m sqli --batch --random-agent --level 1
 ```
 
 ###  Jaeles scan to bugbounty targets.
