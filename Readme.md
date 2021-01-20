@@ -44,6 +44,15 @@ To run the project, you will need to install the following programs:
 ### OneLiners
 
 
+###  This one was huge ... But it collects .js gau + wayback + gospider and makes an analysis of the js. tools you need below.
+
+- [Explaining command](https://bit.ly/3sD0pLv)
+
+```bash
+cat dominios | gau |grep -iE '\.js'|grep -iEv '(\.jsp|\.json)' >> gauJS.txt ; cat dominios | waybackurls | grep -iE '\.js'|grep -iEv '(\.jsp|\.json)' >> waybJS.txt ; gospider -a -S dominios -d 2 | grep -Eo "(http|https)://[^/\"].*\.js+" | sed "s#\] \- #\n#g" >> gospiderJS.txt ; cat gauJS.txt waybJS.txt gospiderJS.txt | sort -u >> saidaJS ; rm -rf *.txt ; cat saidaJS | anti-burl |awk '{print $4}' | sort -u >> AliveJs.txt ; xargs -a AliveJs.txt -n 2 -I@ bash -c "echo -e '\n[URL]: @\n'; python3 linkfinder.py -i @ -o cli" ; cat AliveJs.txt  | python3 collector.py output ; rush -i output/urls.txt 'python3 SecretFinder.py -i {} -o cli | sort -u >> output/resultJSPASS'
+```
+
+
 ###  My recon automation simple. OFJAAAH.sh
 
 - [Explaining command](https://bit.ly/3nWHM22)
