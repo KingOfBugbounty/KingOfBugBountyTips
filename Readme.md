@@ -44,6 +44,15 @@ To run the project, you will need to install the following programs:
 ### OneLiners
 
 
+###  Search .js using 
+
+- [Explaining command](https://bit.ly/362LyQF)
+
+```bash
+assetfinder -subs-only DOMAIN -silent | httpx -timeout 3 -threads 300 --follow-redirects -silent | xargs -I% -P10 sh -c 'hakrawler -plain -linkfinder -depth 5 -url %' | awk '{print $3}' | grep -E "\.js(?:onp?)?$" | anew
+```
+
+
 ###  This one was huge ... But it collects .js gau + wayback + gospider and makes an analysis of the js. tools you need below.
 
 - [Explaining command](https://bit.ly/3sD0pLv)
