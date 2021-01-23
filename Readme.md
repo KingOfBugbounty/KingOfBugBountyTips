@@ -40,8 +40,18 @@ To run the project, you will need to install the following programs:
 - [Rush](https://github.com/shenwei356/rush)
 - [Jsubfinder](https://github.com/hiddengearz/jsubfinder)
 - [Shuffledns](https://github.com/projectdiscovery/shuffledns)
+- [haktldextract](https://github.com/hakluke/haktldextract)
 
 ### OneLiners
+
+###  Domain subdomain extraction 
+
+- [Explaining command](https://bit.ly/3c2t6eG)
+
+```bash
+cat url | haktldextract -s -t 16 | tee subs.txt ; xargs -a subs.txt -I@ sh -c 'assetfinder -subs-only @ | anew | httpx -silent  -threads 100 | anew httpDomain'
+
+```
 
 
 ###  Search .js using 
