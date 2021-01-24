@@ -41,6 +41,7 @@ To run the project, you will need to install the following programs:
 - [Jsubfinder](https://github.com/hiddengearz/jsubfinder)
 - [Shuffledns](https://github.com/projectdiscovery/shuffledns)
 - [haktldextract](https://github.com/hakluke/haktldextract)
+- [Gau](https://github.com/lc/gau)
 
 ### OneLiners
 
