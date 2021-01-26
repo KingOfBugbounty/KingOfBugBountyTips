@@ -18,6 +18,7 @@ Our main goal is to share tips from some well-known bughunters. Using recon meth
 - [@NahamSec](https://twitter.com/NahamSec)
 - [@j3ssiejjj](https://twitter.com/j3ssiejjj)
 - [@zseano](https://twitter.com/zseano)
+- [@@pry0cc](https://twitter.com/pry0cc)
 
 ## Scripts that need to be installed
 
@@ -42,6 +43,7 @@ To run the project, you will need to install the following programs:
 - [Shuffledns](https://github.com/projectdiscovery/shuffledns)
 - [haktldextract](https://github.com/hakluke/haktldextract)
 - [Gau](https://github.com/lc/gau)
+- [Axiom](https://github.com/pry0cc/axiom)
 
 ### OneLiners
 
