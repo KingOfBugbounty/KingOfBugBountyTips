@@ -2,6 +2,8 @@
 
 Our main goal is to share tips from some well-known bughunters. Using recon methodology, we are able to find subdomains, apis, and tokens that are already exploitable, so we can report them. We wish to influence Onelinetips and explain the commands, for the better understanding of new hunters..
 
+Want to earn 100 dollars using my code on ocean-digital? https://m.do.co/c/703ff752fd6f
+
 ## Join Us
 
 [![Telegram](https://patrolavia.github.io/telegram-badge/chat.png)](https://t.me/joinchat/DN_iQksIuhyPKJL1gw0ttA)
