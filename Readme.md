@@ -49,6 +49,14 @@ To run the project, you will need to install the following programs:
 
 ### OneLiners
 
+###  Axiom recon "complet"
+
+- [Explaining command](https://bit.ly/2NIavul)
+
+```bash
+findomain -t domain -q -u url ; axiom-scan url -m subfinder -o subs --threads 3 ; axiom-scan subs -m httpx -o http ; axiom-scan http -m ffuf --threads 15 -o ffuf-output ; cat ffuf-output | tr "," " " | awk '{print $2}' | fff | grep 200 | sort -u 
+```
+
 ###  Domain subdomain extraction 
 
 - [Explaining command](https://bit.ly/3c2t6eG)
