@@ -49,7 +49,7 @@ To run the project, you will need to install the following programs:
 
 ### OneLiners
 
-###  Axiom recon "complet"
+###  Axiom recon "complete"
 
 - [Explaining command](https://bit.ly/2NIavul)
 
