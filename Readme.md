@@ -46,6 +46,7 @@ To run the project, you will need to install the following programs:
 - [haktldextract](https://github.com/hakluke/haktldextract)
 - [Gau](https://github.com/lc/gau)
 - [Axiom](https://github.com/pry0cc/axiom)
+- [Dalfox](https://github.com/hahwul/dalfox)
 
 ### OneLiners
 
