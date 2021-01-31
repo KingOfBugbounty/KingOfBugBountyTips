@@ -47,6 +47,7 @@ To run the project, you will need to install the following programs:
 - [Gau](https://github.com/lc/gau)
 - [Axiom](https://github.com/pry0cc/axiom)
 - [Html-tools](https://github.com/tomnomnom/hacks/tree/master/html-tool)
+- [Dalfox](https://github.com/hahwul/dalfox)
 
 ### OneLiners
 
