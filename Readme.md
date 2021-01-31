@@ -46,8 +46,17 @@ To run the project, you will need to install the following programs:
 - [haktldextract](https://github.com/hakluke/haktldextract)
 - [Gau](https://github.com/lc/gau)
 - [Axiom](https://github.com/pry0cc/axiom)
+- [Html-tools](https://github.com/tomnomnom/hacks/tree/master/html-tool)
 
 ### OneLiners
+
+###  Extract urls to source code comments
+
+- [Explaining command](https://bit.ly/2MKkOxm)
+
+```bash
+cat urls1 | html-tool comments | grep -oE '\b(https?|http)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]' 
+```
 
 ###  Axiom recon "complete"
 
