@@ -48,8 +48,20 @@ To run the project, you will need to install the following programs:
 - [Axiom](https://github.com/pry0cc/axiom)
 - [Html-tools](https://github.com/tomnomnom/hacks/tree/master/html-tool)
 - [Dalfox](https://github.com/hahwul/dalfox)
+- [Gowitness](https://github.com/sensepost/gowitness)
 
 ### OneLiners
+
+
+### Recon subdomains and Screenshot to URL using gowitness
+
+- [Explaining command](https://bit.ly/3aKSSCb)
+
+```bash
+assetfinder -subs-only army.mil | httpx -silent -timeout 50 | xargs -I@ sh -c 'gowitness single @' 
+```
+
+
 
 ###  Extract urls to source code comments
 
