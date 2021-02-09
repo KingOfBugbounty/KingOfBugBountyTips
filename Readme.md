@@ -52,6 +52,14 @@ To run the project, you will need to install the following programs:
 
 ### OneLiners
 
+### Recon subdomains and gau to search vuls DalFox
+
+- [Explaining command](https://bit.ly/3aMXQOF)
+
+```bash
+assetfinder testphp.vulnweb.com | gau |  dalfox pipe
+```
+
 
 ### Recon subdomains and Screenshot to URL using gowitness
 
@@ -60,7 +68,6 @@ To run the project, you will need to install the following programs:
 ```bash
 assetfinder -subs-only army.mil | httpx -silent -timeout 50 | xargs -I@ sh -c 'gowitness single @' 
 ```
-
 
 
 ###  Extract urls to source code comments
