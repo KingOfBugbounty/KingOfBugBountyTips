@@ -49,8 +49,18 @@ To run the project, you will need to install the following programs:
 - [Html-tools](https://github.com/tomnomnom/hacks/tree/master/html-tool)
 - [Dalfox](https://github.com/hahwul/dalfox)
 - [Gowitness](https://github.com/sensepost/gowitness)
+- [Kxss](https://github.com/Emoe/kxss) 
 
 ### OneLiners
+
+### Kxss to search param XSS 
+
+- [Explaining command](https://bit.ly/3aaEDHL)
+
+```bash
+echo http://testphp.vulnweb.com/ | waybackurls | kxss
+```
+
 
 ### Recon subdomains and gau to search vuls DalFox
 
