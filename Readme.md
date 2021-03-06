@@ -54,6 +54,14 @@ To run the project, you will need to install the following programs:
 
 ### OneLiners
 
+### Search .json subdomain
+
+- [Explaining command](https://bit.ly/3kZydis)
+
+```bash
+assetfinder http://tesla.com | waybackurls | grep -E "\.json(?:onp?)?$" | anew 
+```
+
 ### SonarDNS extract subdomains
 
 - [Explaining command](https://bit.ly/2NvXRyv)
