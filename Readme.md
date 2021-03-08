@@ -54,6 +54,15 @@ To run the project, you will need to install the following programs:
 
 ### OneLiners
 
+### Search .json gospider filter anti-burl
+
+- [Explaining command](https://bit.ly/3eoUhSb)
+
+```bash
+gospider -s https://twitch.tv --js | grep -E "\.js(?:onp?)?$" | awk '{print $4}' | tr -d "[]" | anew | anti-burl
+
+```
+
 ### Search .json subdomain
 
 - [Explaining command](https://bit.ly/3kZydis)
