@@ -51,6 +51,17 @@ To run the project, you will need to install the following programs:
 - [Dalfox](https://github.com/hahwul/dalfox)
 - [Gowitness](https://github.com/sensepost/gowitness)
 - [Kxss](https://github.com/Emoe/kxss) 
+- [Metabigor](https://github.com/j3ssie/metabigor)
+
+
+### Search ASN to metabigor and resolvers domain
+
+- [Explaining command](https://bit.ly/3bvghsY)
+
+```bash
+echo 'dod' | metabigor net --org -v | awk '{print $3}' | sed 's/[[0-9]]\+\.//g' | xargs -I@ sh -c 'prips @ | hakrevdns | anew'
+
+```
 
 ### OneLiners
 
