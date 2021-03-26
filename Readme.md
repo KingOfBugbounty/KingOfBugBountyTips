@@ -26,32 +26,46 @@ Want to earn 100 dollars using my code on ocean-digital? https://m.do.co/c/703ff
 
 To run the project, you will need to install the following programs:
 
-- [Anew](https://github.com/tomnomnom/anew)
-- [Assetfinder](https://github.com/tomnomnom/assetfinder)
-- [Qsreplace](https://github.com/tomnomnom/qsreplace)
-- [Subfinder](https://github.com/projectdiscovery/subfinder)
-- [Gospider](https://github.com/jaeles-project/gospider)
-- [Github-Search](https://github.com/gwen001/github-search)
 - [Amass](https://github.com/OWASP/Amass)
-- [Hakrawler](https://github.com/hakluke/hakrawler)
-- [Gargs](https://github.com/brentp/gargs)
+- [Anew](https://github.com/tomnomnom/anew)
+- [Anti-burl](https://github.com/tomnomnom/hacks/tree/master/anti-burl)
+- [Assetfinder](https://github.com/tomnomnom/assetfinder)
+- [Axiom](https://github.com/pry0cc/axiom)
+- [CF-check](https://github.com/dwisiswant0/cf-check)
 - [Chaos](https://github.com/projectdiscovery/chaos-client)
+- [Dalfox](https://github.com/hahwul/dalfox)
+- [DNSgen](https://github.com/ProjectAnte/dnsgen)
+- [Filter-resolved](https://github.com/tomnomnom/hacks/tree/master/filter-resolved)
+- [Findomain](https://github.com/Edu4rdSHL/findomain)
+- [Fuff](https://github.com/ffuf/ffuf)
+- [Gargs](https://github.com/brentp/gargs)
+- [Gau](https://github.com/lc/gau)
+- [Gf](https://github.com/tomnomnom/gf)
+- [Github-Search](https://github.com/gwen001/github-search)
+- [Gospider](https://github.com/jaeles-project/gospider)
+- [Gowitness](https://github.com/sensepost/gowitness)
+- [Hakrawler](https://github.com/hakluke/hakrawler)
+- [HakrevDNS](https://github.com/hakluke/hakrevdns)
+- [Haktldextract](https://github.com/hakluke/haktldextract)
+- [Html-tool](https://github.com/tomnomnom/hacks/tree/master/html-tool)
 - [Httpx](https://github.com/projectdiscovery/httpx)
 - [Jaeles](https://github.com/jaeles-project/jaeles)
-- [Findomain](https://github.com/Edu4rdSHL/findomain)
-- [Gf](https://github.com/tomnomnom/gf)
-- [Unew](https://github.com/dwisiswant0/unew)
-- [Rush](https://github.com/shenwei356/rush)
 - [Jsubfinder](https://github.com/hiddengearz/jsubfinder)
-- [Shuffledns](https://github.com/projectdiscovery/shuffledns)
-- [haktldextract](https://github.com/hakluke/haktldextract)
-- [Gau](https://github.com/lc/gau)
-- [Axiom](https://github.com/pry0cc/axiom)
-- [Html-tools](https://github.com/tomnomnom/hacks/tree/master/html-tool)
-- [Dalfox](https://github.com/hahwul/dalfox)
-- [Gowitness](https://github.com/sensepost/gowitness)
-- [Kxss](https://github.com/Emoe/kxss) 
+- [Kxss](https://github.com/Emoe/kxss)
+- [LinkFinder](https://github.com/GerbenJavado/LinkFinder)
 - [Metabigor](https://github.com/j3ssie/metabigor)
+- [MassDNS](https://github.com/blechschmidt/massdns)
+- [Naabu](https://github.com/projectdiscovery/naabu)
+- [Qsreplace](https://github.com/tomnomnom/qsreplace)
+- [Rush](https://github.com/shenwei356/rush)
+- [SecretFinder](https://github.com/m4ll0k/SecretFinder)
+- [Shodan](https://help.shodan.io/command-line-interface/0-installation)
+- [ShuffleDNS](https://github.com/projectdiscovery/shuffledns)
+- [SQLMap](https://github.com/sqlmapproject/sqlmap)
+- [Subfinder](https://github.com/projectdiscovery/subfinder)
+- [SubJS](https://github.com/lc/subjs)
+- [Unew](https://github.com/dwisiswant0/unew)
+- [WaybackURLs](https://github.com/tomnomnom/waybackurls)
 
 
 ### Search ASN to metabigor and resolvers domain
@@ -87,7 +101,7 @@ assetfinder http://tesla.com | waybackurls | grep -E "\.json(?:onp?)?$" | anew
 - [Explaining command](https://bit.ly/2NvXRyv)
 
 ```bash
-wget https://opendata.rapid7.com/sonar.fdns_v2/2021-02-26-1614298023-fdns_a.json.gz ; gunzip 2021-01-30-1611965078-fdns_a.json ;  cat 2021-01-30-1611965078-fdns_a.json | grep ".DOMAIN.com" | jq .name | tr '" " "' " / " | tee -a sonar
+wget https://opendata.rapid7.com/sonar.fdns_v2/2021-02-26-1614298023-fdns_a.json.gz ; gunzip 2021-02-26-1614298023-fdns_a.json.gz ; cat 2021-02-26-1614298023-fdns_a.json | grep ".DOMAIN.com" | jq .name | tr '" " "' " / " | tee -a sonar
 ```
 
 ### Kxss to search param XSS 
@@ -174,7 +188,7 @@ amass enum -d $1 -o amass1 ; chaos -d $1 -o chaos1 -silent ; assetfinder $1 >> a
 - [Explaining command](https://bit.ly/38wPQ4o)
 
 ```bash
-wget https://raw.githubusercontent.com/KingOfBugbounty/KingOfBugBountyTips/master/downlink ; xargs -a downlink -I@ sh -c 'wget @ -q'; mkdir bounty ; unzip '*.zip' -d bounty/ ; rm -rf *zip ; cat bounty/*.txt >> allbounty ; sort -u allbounty >> domainsBOUNTY ; rm -rf allbounty bounty/ ; echo '@OFJAAAH'
+curl https://chaos-data.projectdiscovery.io/index.json | jq -M '.[] | .URL | @sh' | xargs -I@ sh -c 'wget @ -q'; mkdir bounty ; unzip '*.zip' -d bounty/ ; rm -rf *zip ; cat bounty/*.txt >> allbounty ; sort -u allbounty >> domainsBOUNTY ; rm -rf allbounty bounty/ ; echo '@OFJAAAH'
 ```
 
 ###  Recon to search SSRF Test
@@ -519,7 +533,7 @@ assetfinder fitbit.com | httpx -threads 300 -follow-redirects -silent | rush -j2
 - [Explained command](https://bit.ly/2Rqn9gn)
 
 ```bash
-tac hostsGospider | rush -j 100 'hakrawler -js -plain -usewayback -depth 6 -scope subs -url {} | unew hakrawlerHttpx'
+cat hostsGospider | rush -j 100 'hakrawler -js -plain -usewayback -depth 6 -scope subs -url {} | unew hakrawlerHttpx'
 ```
 
 ###  XARGS to dirsearch brute force.
