@@ -87,7 +87,7 @@ assetfinder http://tesla.com | waybackurls | grep -E "\.json(?:onp?)?$" | anew
 - [Explaining command](https://bit.ly/2NvXRyv)
 
 ```bash
-wget https://opendata.rapid7.com/sonar.fdns_v2/2021-01-30-1611965078-fdns_a.json.gz ; gunzip 2021-01-30-1611965078-fdns_a.json ;  cat 2021-01-30-1611965078-fdns_a.json | grep ".DOMAIN.com" | jq .name | tr '" " "' " / " | tee -a sonar
+wget https://opendata.rapid7.com/sonar.fdns_v2/2021-02-26-1614298023-fdns_a.json.gz ; gunzip 2021-01-30-1611965078-fdns_a.json ;  cat 2021-01-30-1611965078-fdns_a.json | grep ".DOMAIN.com" | jq .name | tr '" " "' " / " | tee -a sonar
 ```
 
 ### Kxss to search param XSS 
