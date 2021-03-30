@@ -66,7 +66,18 @@ To run the project, you will need to install the following programs:
 - [SubJS](https://github.com/lc/subjs)
 - [Unew](https://github.com/dwisiswant0/unew)
 - [WaybackURLs](https://github.com/tomnomnom/waybackurls)
+- [Wingman](https://xsswingman.com/#faq)
+- [Notify](https://github.com/projectdiscovery/notify)
 
+
+### Using Wingman to search XSS reflect / DOM XSS
+
+- [Explaining command](https://bit.ly/3m5ft1g)
+
+```bash
+xargs -a domain -I@ sh -c 'wingman -u @ --crawl | notify'
+
+```
 
 ### Search ASN to metabigor and resolvers domain
 
