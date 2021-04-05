@@ -69,6 +69,11 @@ To run the project, you will need to install the following programs:
 - [Wingman](https://xsswingman.com/#faq)
 - [Notify](https://github.com/projectdiscovery/notify)
 
+### Using chaos list to enumerate endpoint
+
+```bash
+curl -s https://raw.githubusercontent.com/projectdiscovery/public-bugbounty-programs/master/chaos-bugbounty-list.json | jq -r '.programs[].domains[]' | xargs -I@ sh -c 'python3 http://paramspider.py -d'
+```
 
 ### Using Wingman to search XSS reflect / DOM XSS
 
