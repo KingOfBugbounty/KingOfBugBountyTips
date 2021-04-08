@@ -68,6 +68,15 @@ To run the project, you will need to install the following programs:
 - [WaybackURLs](https://github.com/tomnomnom/waybackurls)
 - [Wingman](https://xsswingman.com/#faq)
 - [Notify](https://github.com/projectdiscovery/notify)
+- [Goop](https://github.com/deletescape/goop)
+
+
+### goop to search .git files.
+- [Explaining command](https://bit.ly/3d0VcY5)
+
+```bash
+xargs -a xss -P10 -I@ sh -c 'goop @'
+```
 
 ### Using chaos list to enumerate endpoint
 
