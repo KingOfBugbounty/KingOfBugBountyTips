@@ -514,6 +514,15 @@ findomain -t testphp.vulnweb.com -q | httpx -silent | anew | waybackurls | gf sq
 wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/domains.txt -nv ; cat domains.txt | anew | httpx -silent -threads 500 | xargs -I@ jaeles scan -s /jaeles-signatures/ -u @
 ```
 
+### Dalfox scan to bugbounty targets.
+
+- [Explained command](https://bit.ly/324Sr1x)
+
+```bash
+wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/domains.txt -nv ; cat domains.txt | anew | httpx -silent -threads 500 | xargs -I@ dalfox url @
+```
+
+
 ###  JLDC domain search subdomain, using rush and jaeles.
 
 - [Explained command](https://bit.ly/3hfNV5k)
