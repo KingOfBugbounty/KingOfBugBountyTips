@@ -69,6 +69,7 @@ To run the project, you will need to install the following programs:
 - [Wingman](https://xsswingman.com/#faq)
 - [Notify](https://github.com/projectdiscovery/notify)
 - [Goop](https://github.com/deletescape/goop)
+- [XSStrike](https://github.com/s0md3v/XSStrike)
 
 
 ### goop to search .git files.
@@ -576,6 +577,14 @@ cat hostsGospider | rush -j 100 'hakrawler -js -plain -usewayback -depth 6 -scop
 
 ```bash
 cat hosts | xargs -I@ sh -c 'python3 dirsearch.py -r -b -w path -u @ -i 200, 403, 401, 302 -e php,html,json,aspx,sql,asp,js' 
+```
+
+### XARGS to XSStrike Fuzzing XSS (Using a list of URLs mined by ParamSpider)
+
+- [Explained command](https://bit.ly/3nnEhCj)
+
+```bash
+xargs -a xss-urls.txt -I@ bash -c 'python3 /dir-to-xsstrike/xsstrike.py -u @ --fuzzer'
 ```
 
 ###  Assetfinder to run massdns.
