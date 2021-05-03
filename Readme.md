@@ -69,6 +69,18 @@ To run the project, you will need to install the following programs:
 - [Wingman](https://xsswingman.com/#faq)
 - [Notify](https://github.com/projectdiscovery/notify)
 - [Goop](https://github.com/deletescape/goop)
+- [Tojson](https://github.com/tomnomnom/hacks/tree/master/tojson)
+- [getJS](https://github.com/003random/getJS)
+
+
+
+### Extract .js Subdomains
+- [Explaining command](https://bit.ly/339CN5p)
+
+```bash
+echo "domain" | haktrails subdomains | httpx -silent | getJS --complete | anew JS
+echo "domain" | haktrails subdomains | httpx -silent | getJS --complete | tojson | anew JS1
+```
 
 
 ### goop to search .git files.
