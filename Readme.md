@@ -70,7 +70,8 @@ To run the project, you will need to install the following programs:
 - [Notify](https://github.com/projectdiscovery/notify)
 - [Goop](https://github.com/deletescape/goop)
 - [Tojson](https://github.com/tomnomnom/hacks/tree/master/tojson)
-- [getJS](https://github.com/003random/getJS)
+- [GetJS](https://github.com/003random/getJS)
+- [X8](https://github.com/Sh1Yo/x8)
 
 
 
