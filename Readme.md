@@ -75,10 +75,10 @@ To run the project, you will need to install the following programs:
 
 
 ### Using x8 to Hidden parameters discovery
-- [Explaining command](https://bit.ly/3ycUlvJ)
+- [Explaining command](https://bit.ly/3w48wl8)
 
 ```bash
-xargs -a 200http1 -I@ sh -c 'x8 -u @ -w params.txt -o enumerate'
+assetfinder domain | httpx -silent | sed -s 's/$/\//' | xargs -I@ sh -c 'x8 -u @ -w params.txt -o enumerate'
 ```
 
 
