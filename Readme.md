@@ -74,6 +74,13 @@ To run the project, you will need to install the following programs:
 - [X8](https://github.com/Sh1Yo/x8)
 
 
+### Using x8 to Hidden parameters discovery
+- [Explaining command](https://bit.ly/3ycUlvJ)
+
+```bash
+xargs -a 200http1 -I@ sh -c 'x8 -u @ -w params.txt -o enumerate'
+```
+
 
 ### Extract .js Subdomains
 - [Explaining command](https://bit.ly/339CN5p)
