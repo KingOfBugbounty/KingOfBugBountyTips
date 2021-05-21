@@ -79,6 +79,7 @@ To run the project, you will need to install the following programs:
 - [Tojson](https://github.com/tomnomnom/hacks/tree/master/tojson)
 - [GetJS](https://github.com/003random/getJS)
 - [X8](https://github.com/Sh1Yo/x8)
+- [Unfurl](https://github.com/tomnomnom/unfurl)
 - [XSStrike](https://github.com/s0md3v/XSStrike)
 
 
