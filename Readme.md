@@ -79,7 +79,21 @@ To run the project, you will need to install the following programs:
 - [Tojson](https://github.com/tomnomnom/hacks/tree/master/tojson)
 - [GetJS](https://github.com/003random/getJS)
 - [X8](https://github.com/Sh1Yo/x8)
+- [XSStrike](https://github.com/s0md3v/XSStrike)
 
+
+###  Dalfox scan to bugbounty targets.
+- [Explained command](https://bit.ly/3nnEhCj)
+
+```bash
+xargs -a xss-urls.txt -I@ bash -c 'python3 /dir-to-xsstrike/xsstrike.py -u @ --fuzzer'
+```
+
+### Dalfox scan to bugbounty targets.
+- [Explained command](https://bit.ly/324Sr1x)
+```bash
+wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/domains.txt -nv ; cat domains.txt | anew | httpx -silent -threads 500 | xargs -I@ dalfox url @
+```
 
 ### Using x8 to Hidden parameters discovery
 - [Explaining command](https://bit.ly/3w48wl8)
@@ -87,7 +101,6 @@ To run the project, you will need to install the following programs:
 ```bash
 assetfinder domain | httpx -silent | sed -s 's/$/\//' | xargs -I@ sh -c 'x8 -u @ -w params.txt -o enumerate'
 ```
-
 
 ### Extract .js Subdomains
 - [Explaining command](https://bit.ly/339CN5p)
