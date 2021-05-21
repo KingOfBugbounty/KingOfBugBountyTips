@@ -18,6 +18,7 @@ Want to earn 100 dollars using my code on ocean-digital? https://m.do.co/c/703ff
 ## Special thanks
 
 - [@bt0s3c](https://twitter.com/bt0s3c)
+- [@MrCl0wnLab](https://twitter.com/MrCl0wnLab)
 - [@Stokfredrik](https://twitter.com/stokfredrik)
 - [@Jhaddix](https://twitter.com/Jhaddix)
 - [@pdiscoveryio](https://twitter.com/pdiscoveryio)
