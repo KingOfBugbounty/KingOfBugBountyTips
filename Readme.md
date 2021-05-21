@@ -9,9 +9,15 @@ Want to earn 100 dollars using my code on ocean-digital? https://m.do.co/c/703ff
 [![Telegram](https://patrolavia.github.io/telegram-badge/chat.png)](https://t.me/joinchat/DN_iQksIuhyPKJL1gw0ttA)
 [![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/ofjaaah)
 
+## BugBuntu Download 
+
+- [BugBuntu](https://sourceforge.net/projects/bugbuntu/)
+- [@bt0s3c](https://twitter.com/bt0s3c)
+- [@MrCl0wnLab](https://twitter.com/MrCl0wnLab)
 
 ## Special thanks
 
+- [@bt0s3c](https://twitter.com/bt0s3c)
 - [@Stokfredrik](https://twitter.com/stokfredrik)
 - [@Jhaddix](https://twitter.com/Jhaddix)
 - [@pdiscoveryio](https://twitter.com/pdiscoveryio)
