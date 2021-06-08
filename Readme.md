@@ -4,6 +4,8 @@ Our main goal is to share tips from some well-known bughunters. Using recon meth
 
 Want to earn 100 dollars using my code on ocean-digital? https://m.do.co/c/703ff752fd6f
 
+My corse PT-BR = https://ofjaaah.com
+
 ## Join Us
 
 [![Telegram](https://patrolavia.github.io/telegram-badge/chat.png)](https://t.me/joinchat/DN_iQksIuhyPKJL1gw0ttA)
