@@ -6,7 +6,6 @@ Want to earn 100 dollars using my code on ocean-digital?
 
 [![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=703ff752fd6f&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
 
-My course PT-BR = https://ofjaaah.com
 
 ## Join Us
 
