@@ -1,11 +1,13 @@
-<h1 align="center"> 👑 What is KingOfBugBounty Project </h1> 👑
+<h1 align="center"> 👑 What is KingOfBugBounty Project </h1> 
 
-Our main goal is to share tips from some well-known bughunters. Using recon methodology, we are able to find subdomains, apis, and tokens that are already exploitable, so we can report them. We wish to influence Onelinetips and explain the commands, for the better understanding of new hunters..
+Our main goal is to share tips from some well-known bughunters. Using recon methodology, we are able to find subdomains, apis, and tokens that are already exploitable, so we can report them. We wish to influence Onelinetips and explain the commands, for the better understanding of new hunters.. 👑
 
-Want to earn 100 dollars using my code on ocean-digital? 
+
+## Stats King
+
+![OFJAAAH](https://github-readme-stats.vercel.app/api?username=KingOfBugbounty&show_icons=true&theme=dracula)
 
 [![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=703ff752fd6f&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
-
 
 ## Join Us
 
