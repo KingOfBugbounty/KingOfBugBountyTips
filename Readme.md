@@ -1,20 +1,5 @@
 <h1 align="center"> 👑 What is KingOfBugBounty Project </h1> 👑
 
-<h3 align="left">Languages and Tools:</h3>
-
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=KingOfBugBountyTips)](https://github.com/anuraghazra/github-readme-stats)
-
-
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=KingOfBugBountyTips&" alt="KingOfBugBountyTips" /></p>
-
-<a href="https://www.buymeacoffee.com/OFJAAAH" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 20px !important;width: 50px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
-
-
-
-
-## 👑 What is KingOfBugBounty Project ? 👑
-
 Our main goal is to share tips from some well-known bughunters. Using recon methodology, we are able to find subdomains, apis, and tokens that are already exploitable, so we can report them. We wish to influence Onelinetips and explain the commands, for the better understanding of new hunters..
 
 Want to earn 100 dollars using my code on ocean-digital? 
