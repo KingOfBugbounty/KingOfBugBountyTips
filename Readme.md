@@ -86,6 +86,7 @@ To run the project, you will need to install the following programs:
 - [X8](https://github.com/Sh1Yo/x8)
 - [Unfurl](https://github.com/tomnomnom/unfurl)
 - [XSStrike](https://github.com/s0md3v/XSStrike)
+- [Page-fetch](https://github.com/detectify/page-fetch)
 
 
 ###  .bashrc shortcut.
@@ -101,6 +102,15 @@ anubis(){
 curl -s "[https://jldc.me/anubis/subdomains/$1](https://jldc.me/anubis/subdomains/$1)" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | anew
 }
 ```
+
+###  Running JavaScript on each page send to proxy. 
+- [Explained command](https://bit.ly/3daIyFw)
+
+```bash
+cat 200http | page-fetch --javascript '[...document.querySelectorAll("a")].map(n => n.href)' --proxy http://192.168.15.47:8080
+```
+
+
 
 ###  Dalfox scan to bugbounty targets.
 - [Explained command](https://bit.ly/3nnEhCj)
