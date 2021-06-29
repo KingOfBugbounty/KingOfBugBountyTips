@@ -112,7 +112,7 @@ cat 200http | page-fetch --javascript '[...document.querySelectorAll("a")].map(n
 
 
 
-###  Dalfox scan to bugbounty targets.
+###  Xsstrike scan for XSS to bugbounty targets.
 - [Explained command](https://bit.ly/3nnEhCj)
 
 ```bash
@@ -174,7 +174,7 @@ echo 'dod' | metabigor net --org -v | awk '{print $3}' | sed 's/[[0-9]]\+\.//g' 
 
 ### OneLiners
 
-### Search .json gospider filter anti-burl
+### Search .js gospider filter anti-burl
 
 - [Explaining command](https://bit.ly/3eoUhSb)
 
