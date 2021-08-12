@@ -63,6 +63,7 @@ To run the project, you will need to install the following programs:
 - [Hakrawler](https://github.com/hakluke/hakrawler)
 - [HakrevDNS](https://github.com/hakluke/hakrevdns)
 - [Haktldextract](https://github.com/hakluke/haktldextract)
+- [Haklistgen](https://github.com/hakluke/haklistgen)
 - [Html-tool](https://github.com/tomnomnom/hacks/tree/master/html-tool)
 - [Httpx](https://github.com/projectdiscovery/httpx)
 - [Jaeles](https://github.com/jaeles-project/jaeles)
@@ -93,7 +94,7 @@ To run the project, you will need to install the following programs:
 - [Page-fetch](https://github.com/detectify/page-fetch)
 
 
-###  .bashrc shortcut.
+###  .bashrc shortcut OFJAAAH
 
 ```bash
 reconjs(){
@@ -105,6 +106,14 @@ curl -s "[https://crt.sh/?q=%.$1&output=json](https://crt.sh/?q=%25.$1&output=js
 anubis(){
 curl -s "[https://jldc.me/anubis/subdomains/$1](https://jldc.me/anubis/subdomains/$1)" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | anew
 }
+```
+
+###  Oneliner Haklistgen
+- @hakluke
+
+```bash
+subfinder -silent -d domain | anew subdomains.txt | httpx -silent | anew urls.txt | hakrawler | anew endpoints.txt | while read url; do curl $url --insecure | haklistgen | anew wordlist.txt; done
+cat subdomains.txt urls.txt endpoints.txt | haklistgen | anew wordlist.txt;
 ```
 
 ###  Running JavaScript on each page send to proxy. 
