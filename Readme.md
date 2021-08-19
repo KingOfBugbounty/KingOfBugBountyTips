@@ -37,7 +37,7 @@ Our main goal is to share tips from some well-known bughunters. Using recon meth
 - [@j3ssiejjj](https://twitter.com/j3ssiejjj)
 - [@zseano](https://twitter.com/zseano)
 - [@pry0cc](https://twitter.com/pry0cc)
-
+- [@@wellpunk](https://twitter.com/wellpunk)
 ## Scripts that need to be installed
 
 To run the project, you will need to install the following programs:
