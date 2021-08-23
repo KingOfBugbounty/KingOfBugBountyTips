@@ -14,9 +14,10 @@ Our main goal is to share tips from some well-known bughunters. Using recon meth
 [![Telegram](https://patrolavia.github.io/telegram-badge/chat.png)](https://t.me/joinchat/DN_iQksIuhyPKJL1gw0ttA)
 [![The King](https://aleen42.github.io/badges/src/twitter.svg)](https://twitter.com/ofjaaah)
 
-## Event Bug Bounty Brasil 
-
-- [Link Event](https://canaltech.com.br/hacker/evento-nacional-oferece-recompensas-para-hackers-cacadores-de-falhas-em-sistemas-190613/)
+<div>
+  <a href="https://www.linkedin.com/in/atjunior/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></img></a>
+  <a href="https://www.youtube.com/c/OFJAAAH"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"></a>
+</div>
 
 ## BugBuntu Download 
 
