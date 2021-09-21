@@ -51,6 +51,7 @@ To run the project, you will need to install the following programs:
 - [Axiom](https://github.com/pry0cc/axiom)
 - [CF-check](https://github.com/dwisiswant0/cf-check)
 - [Chaos](https://github.com/projectdiscovery/chaos-client)
+- [Cariddi](https://github.com/edoardottt/cariddi)
 - [Dalfox](https://github.com/hahwul/dalfox)
 - [DNSgen](https://github.com/ProjectAnte/dnsgen)
 - [Filter-resolved](https://github.com/tomnomnom/hacks/tree/master/filter-resolved)
@@ -125,7 +126,12 @@ cat subdomains.txt urls.txt endpoints.txt | haklistgen | anew wordlist.txt;
 cat 200http | page-fetch --javascript '[...document.querySelectorAll("a")].map(n => n.href)' --proxy http://192.168.15.47:8080
 ```
 
+###  Running cariddi to Crawler
+- [Explained command](https://bit.ly/3hQPF8w)
 
+```bash
+echo tesla.com | subfinder -silent | httpx -silent | cariddi -intensive
+```
 
 ###  Dalfox scan to bugbounty targets.
 - [Explained command](https://bit.ly/3nnEhCj)
