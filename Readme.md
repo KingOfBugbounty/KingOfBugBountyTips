@@ -49,6 +49,7 @@ To run the project, you will need to install the following programs:
 - [Anti-burl](https://github.com/tomnomnom/hacks/tree/master/anti-burl)
 - [Assetfinder](https://github.com/tomnomnom/assetfinder)
 - [Axiom](https://github.com/pry0cc/axiom)
+- [Bhedak](https://github.com/R0X4R/bhedak)
 - [CF-check](https://github.com/dwisiswant0/cf-check)
 - [Chaos](https://github.com/projectdiscovery/chaos-client)
 - [Cariddi](https://github.com/edoardottt/cariddi)
@@ -102,6 +103,11 @@ To run the project, you will need to install the following programs:
 bbrf inscope add '*.af.mil' '*.osd.mil' '*.marines.mil' '*.pentagon.mil' '*.disa.mil' '*.health.mil' '*.dau.mil' '*.dtra.mil' '*.ng.mil' '*.dds.mil' '*.uscg.mil' '*.army.mil' '*.dcma.mil' '*.dla.mil' '*.dtic.mil' '*.yellowribbon.mil' '*.socom.mil'
 ```
 
+###  Bhedak
+- [Explained command](https://bit.ly/3oNisxi)
+```bash
+cat urls | bhedak "\"><svg/onload=alert(1)>*'/---+{{7*7}}"
+```
 
 ###  .bashrc shortcut OFJAAAH
 
