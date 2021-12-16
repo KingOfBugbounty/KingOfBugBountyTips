@@ -74,6 +74,7 @@ To run the project, you will need to install the following programs:
 - [Jsubfinder](https://github.com/hiddengearz/jsubfinder)
 - [Kxss](https://github.com/Emoe/kxss)
 - [LinkFinder](https://github.com/GerbenJavado/LinkFinder)
+- [log4j-scan](https://github.com/fullhunt/log4j-scan)
 - [Metabigor](https://github.com/j3ssie/metabigor)
 - [MassDNS](https://github.com/blechschmidt/massdns)
 - [Naabu](https://github.com/projectdiscovery/naabu)
@@ -102,6 +103,14 @@ To run the project, you will need to install the following programs:
 ```bash
 bbrf inscope add '*.af.mil' '*.osd.mil' '*.marines.mil' '*.pentagon.mil' '*.disa.mil' '*.health.mil' '*.dau.mil' '*.dtra.mil' '*.ng.mil' '*.dds.mil' '*.uscg.mil' '*.army.mil' '*.dcma.mil' '*.dla.mil' '*.dtic.mil' '*.yellowribbon.mil' '*.socom.mil'
 ```
+
+
+###  Scan log4j using BBRF and log4j-scan
+- [Explained command](https://bit.ly/3IUivk9)
+```bash
+bbrf domains | httpx -silent | xargs -I@ sh -c 'python3 http://log4j-scan.py -u "@"'
+```
+
 
 ###  Bhedak
 - [Explained command](https://bit.ly/3oNisxi)
