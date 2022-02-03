@@ -71,7 +71,7 @@ To run the project, you will need to install the following programs:
 - [Html-tool](https://github.com/tomnomnom/hacks/tree/master/html-tool)
 - [Httpx](https://github.com/projectdiscovery/httpx)
 - [Jaeles](https://github.com/jaeles-project/jaeles)
-- [Jsubfinder](https://github.com/hiddengearz/jsubfinder)
+- [Jsubfinder](https://github.com/ThreatUnkown/jsubfinder)
 - [Kxss](https://github.com/Emoe/kxss)
 - [LinkFinder](https://github.com/GerbenJavado/LinkFinder)
 - [log4j-scan](https://github.com/fullhunt/log4j-scan)
@@ -702,7 +702,7 @@ cat file.js | grep -aoP "(?<=(\"|\'|\`))\/[a-zA-Z0-9_?&=\/\-\#\.]*(?=(\"|\'|\`))
 - [Explained command](https://bit.ly/3dvP6xq)
 
 ```bash
-cat subdomsains.txt | httpx --silent | jsubfinder -s
+cat subdomsains.txt | httpx --silent | jsubfinder search -s
 ```
 
 ###  Search domains to Range-IPS.
