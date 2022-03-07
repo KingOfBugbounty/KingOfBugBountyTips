@@ -3,6 +3,10 @@
 Our main goal is to share tips from some well-known bughunters. Using recon methodology, we are able to find subdomains, apis, and tokens that are already exploitable, so we can report them. We wish to influence Onelinetips and explain the commands, for the better understanding of new hunters.. 👑
 
 
+## TREINAMENTO NOVO COM VAGAS ABERTAS 10% DE DESCONTO = DESCONTODE10
+
+[![HOTMART](https://2handsart.com/wp-content/uploads/2021/02/hm.png)](https://www.ofjaaah.com.br/automacaorecon)
+
 ## Stats King
 
 ![OFJAAAH](https://github-readme-stats.vercel.app/api?username=KingOfBugbounty&show_icons=true&theme=dracula)
