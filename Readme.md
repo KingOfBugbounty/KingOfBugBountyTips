@@ -107,6 +107,12 @@ To run the project, you will need to install the following programs:
 bbrf inscope add '*.af.mil' '*.osd.mil' '*.marines.mil' '*.pentagon.mil' '*.disa.mil' '*.health.mil' '*.dau.mil' '*.dtra.mil' '*.ng.mil' '*.dds.mil' '*.uscg.mil' '*.army.mil' '*.dcma.mil' '*.dla.mil' '*.dtic.mil' '*.yellowribbon.mil' '*.socom.mil'
 ```
 
+###  Scan All github repo ORG
+- [Explained command]
+```bash
+docker run --rm  mswell/masstrufflehog -o paypal
+
+```
 
 ###  Scan log4j using BBRF and log4j-scan
 - [Explained command](https://bit.ly/3IUivk9)
