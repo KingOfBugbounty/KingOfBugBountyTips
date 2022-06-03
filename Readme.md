@@ -76,6 +76,7 @@ To run the project, you will need to install the following programs:
 - [Jaeles](https://github.com/jaeles-project/jaeles)
 - [Jsubfinder](https://github.com/ThreatUnkown/jsubfinder)
 - [Kxss](https://github.com/Emoe/kxss)
+- [Knoxss](https://knoxss.me/)
 - [LinkFinder](https://github.com/GerbenJavado/LinkFinder)
 - [log4j-scan](https://github.com/fullhunt/log4j-scan)
 - [Metabigor](https://github.com/j3ssie/metabigor)
@@ -106,6 +107,15 @@ To run the project, you will need to install the following programs:
 ```bash
 bbrf inscope add '*.af.mil' '*.osd.mil' '*.marines.mil' '*.pentagon.mil' '*.disa.mil' '*.health.mil' '*.dau.mil' '*.dtra.mil' '*.ng.mil' '*.dds.mil' '*.uscg.mil' '*.army.mil' '*.dcma.mil' '*.dla.mil' '*.dtic.mil' '*.yellowribbon.mil' '*.socom.mil'
 ```
+
+
+
+###  Scan All domains using Knoxss
+- [Explained command]
+```bash
+echo "dominio" | subfinder -silent | gauplus | grep "=" | uro | gf xss | awk '{ print "curl https://knoxss.me/api/v3 -d \"target="$1 "\" -H \"X-API-KEY: APIDOKNOXSS\""}' | sh 
+```
+
 
 ###  Scan All github repo ORG
 - [Explained command]
