@@ -83,6 +83,7 @@ To run the project, you will need to install the following programs:
 - [MassDNS](https://github.com/blechschmidt/massdns)
 - [Naabu](https://github.com/projectdiscovery/naabu)
 - [Notify](https://github.com/projectdiscovery/notify)
+- [Paramspider](https://github.com/devanshbatham/ParamSpider)
 - [Qsreplace](https://github.com/tomnomnom/qsreplace)
 - [Rush](https://github.com/shenwei356/rush)
 - [SecretFinder](https://github.com/m4ll0k/SecretFinder)
