@@ -77,6 +77,7 @@ To run the project, you will need to install the following programs:
 - [Jsubfinder](https://github.com/ThreatUnkown/jsubfinder)
 - [Kxss](https://github.com/Emoe/kxss)
 - [Knoxss](https://knoxss.me/)
+- [Katana](https://github.com/projectdiscovery/katana)
 - [LinkFinder](https://github.com/GerbenJavado/LinkFinder)
 - [log4j-scan](https://github.com/fullhunt/log4j-scan)
 - [Metabigor](https://github.com/j3ssie/metabigor)
@@ -109,6 +110,13 @@ To run the project, you will need to install the following programs:
 bbrf inscope add '*.af.mil' '*.osd.mil' '*.marines.mil' '*.pentagon.mil' '*.disa.mil' '*.health.mil' '*.dau.mil' '*.dtra.mil' '*.ng.mil' '*.dds.mil' '*.uscg.mil' '*.army.mil' '*.dcma.mil' '*.dla.mil' '*.dtic.mil' '*.yellowribbon.mil' '*.socom.mil'
 ```
 
+
+###  Katana crawling
+
+```bash
+subfinder -d hackerone.com -silent -all | httpx -silent | katana -d 5 -silent | grep -iE '\.js'| grep -iEv '(\.jsp|\.json)'
+subfinder -d hackerone.com -silent -all | httpx -silent | katana -d 5 -silent -em js,jsp,json
+```
 
 
 ###  Scan All domains using Knoxss
@@ -851,4 +859,3 @@ xargs -a recursivedomain -P50 -I@ sh -c 'openssl s_client -connect @:443 2>&1 '|
 
 
 <a href="https://www.buymeacoffee.com/OFJAAAH" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 20px !important;width: 50px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
