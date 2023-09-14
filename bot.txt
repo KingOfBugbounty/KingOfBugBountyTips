@@ -1,0 +1,36 @@
+bot telegram 
+
+import os
+import subprocess
+import telebot
+
+
+# Inicializar o bot do Telegram
+bot = telebot.TeleBot('TOKEN')
+
+# Comando "/scan"
+@bot.message_handler(commands=['scan'])
+def handle_scan_command(message):
+    # Verificar se a mensagem contém uma URL
+    if len(message.text.split()) < 2:
+        bot.reply_to(message, 'Por favor, forneça uma URL válida.')
+        return
+
+    # Obter a URL a ser escaneada
+    url = message.text.split()[1]
+
+    # Criar uma pasta com o nome da URL
+    folder_name = url.replace('://', '_').replace('/', '_')
+    os.makedirs(folder_name, exist_ok=True)
+
+    # Enviar mensagem de resposta inicial
+    bot.reply_to(message, f'Iniciando a varredura em {url}...')
+
+    # Definir o diretório de trabalho como a pasta da URL
+    os.chdir(folder_name)
+
+    # Executar as ferramentas
+    subprocess.run(['subfinder', '-d', url, '-o', 'subdomains.txt', '-silent'], capture_output=True)
+    
+    # Enviar mensagem de conclusão
+    bot.reply_to(message, 'Varredura concluída!')
