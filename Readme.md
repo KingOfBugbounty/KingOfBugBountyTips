@@ -104,6 +104,7 @@ To run the project, you will need to install the following programs:
 - [xray](https://github.com/chaitin/xray)
 - [XSStrike](https://github.com/s0md3v/XSStrike)
 - [Page-fetch](https://github.com/detectify/page-fetch)
+- [HEDnsExtractor](https://github.com/HuntDownProject/HEDnsExtractor) 
 
 ###  BBRF SCOPE DoD
 
@@ -825,6 +826,14 @@ xargs -a recursivedomain -P50 -I@ sh -c 'openssl s_client -connect @:443 2>&1 '|
 ```
 
 
+###  Search domains over IP/ASN using Hurricane Electric.
+
+- [Explained command]
+
+```bash
+nslookup hackerone.com | awk '/Address: / {print $2}' | hednsextractor -silent -only-domains | httpx -silent -title -tech-detect -status-code 
+```
+
 
 ### Search to Hackers.
 
@@ -836,7 +845,9 @@ xargs -a recursivedomain -P50 -I@ sh -c 'openssl s_client -connect @:443 2>&1 '|
 - [Onyphe](https://onyphe.io)
 - [Wigle](https://wigle.net)
 - [Intelx](https://intelx.io)
-- [Fofa](https://fofa.so)
+- [Fofa](https://en.fofa.info)
+- [CriminalIP](https://www.criminalip.io)
+- [Netlas](https://netlas.io)
 - [Hunter](https://hunter.io)
 - [Zorexeye](https://zorexeye.com)
 - [Pulsedive](https://pulsedive.com)
