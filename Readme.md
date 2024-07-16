@@ -863,6 +863,7 @@ nslookup hackerone.com | awk '/Address: / {print $2}' | hednsextractor -silent -
 - [PhoneBook](https://phonebook.cz)
 - [Inquest](https://labs.inquest.net)
 - [Scylla](https://scylla.sh)
+- [Predicta Search](https://www.predictasearch.com)
 
 
 # Project
