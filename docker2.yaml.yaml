@@ -1,0 +1,29 @@
+id: docker-registry
+
+info:
+  name: Docker Registry Exposed
+  author: ProjectDiscoveryAI
+  severity: high
+  description: |
+    Detects if a Docker registry is exposed and accessible.
+
+http:
+  - raw:
+      - |
+        GET /v2/ HTTP/1.1
+        Host: {{Hostname}}
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "registry/2.0"
+          - "docker-distribution-api-version"
+
+  - raw:
+      - |
+        GET /v2/_catalog HTTP/1.1
+        Host: {{Hostname}}
+    matchers:
+      - type: word
+        words:
+          - "repositories"
