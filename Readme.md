@@ -71,6 +71,7 @@ To run the project, you will need to install the following programs:
 - [HakrevDNS](https://github.com/hakluke/hakrevdns)
 - [Haktldextract](https://github.com/hakluke/haktldextract)
 - [Haklistgen](https://github.com/hakluke/haklistgen)
+- [Hudson Rock Free Cybercrime Intelligence Toolset](https://www.hudsonrock.com/threat-intelligence-cybercrime-tools)
 - [Html-tool](https://github.com/tomnomnom/hacks/tree/master/html-tool)
 - [Httpx](https://github.com/projectdiscovery/httpx)
 - [Jaeles](https://github.com/jaeles-project/jaeles)
@@ -834,6 +835,13 @@ xargs -a recursivedomain -P50 -I@ sh -c 'openssl s_client -connect @:443 2>&1 '|
 nslookup hackerone.com | awk '/Address: / {print $2}' | hednsextractor -silent -only-domains | httpx -silent -title -tech-detect -status-code 
 ```
 
+###  Search domains using Hudson Rock's cybercrime intelligence data
+
+- [Explained command]
+
+```bash
+https://cavalier.hudsonrock.com/api/json/v2/osint-tools/search-by-domain?domain=tesla.com 
+```
 
 ### Search to Hackers.
 
