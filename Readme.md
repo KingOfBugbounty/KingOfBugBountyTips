@@ -843,6 +843,15 @@ nslookup hackerone.com | awk '/Address: / {print $2}' | hednsextractor -silent -
 https://cavalier.hudsonrock.com/api/json/v2/osint-tools/search-by-domain?domain=tesla.com 
 ```
 
+###  Mass hunting exposed git from a ASN/IP with hednsextractor.
+
+- [Explained command]
+
+```bash
+hednsextractor -target "your target" -silent | httpx -path /.git/config -status-code -ms 200 -silent
+```
+
+
 ### Search to Hackers.
 
 - [Censys](https://censys.io)
