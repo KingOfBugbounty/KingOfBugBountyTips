@@ -871,6 +871,7 @@ https://cavalier.hudsonrock.com/api/json/v2/osint-tools/search-by-domain?domain=
 - [PhoneBook](https://phonebook.cz)
 - [Inquest](https://labs.inquest.net)
 - [Scylla](https://scylla.sh)
+- [Predicta Search](https://www.predictasearch.com)
 
 
 # Project
