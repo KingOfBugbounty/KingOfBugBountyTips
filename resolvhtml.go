@@ -11,24 +11,24 @@ import (
 
 // Define a struct to match the JSON structure
 type HTTPXData struct {
-	Timestamp     string   `json:"timestamp"`
-	Port          string   `json:"port"`
-	URL           string   `json:"url"`
-	Input         string   `json:"input"`
-	Location      string   `json:"location"`
-	Title         string   `json:"title"`
-	Scheme        string   `json:"scheme"`
-	ContentType   string   `json:"content_type"`
-	Method        string   `json:"method"`
-	Host          string   `json:"host"`
-	Path          string   `json:"path"`
-	Time          string   `json:"time"`
+	Timestamp     string `json:"timestamp"`
+	Port          string `json:"port"`
+	URL           string `json:"url"`
+	Input         string `json:"input"`
+	Location      string `json:"location"`
+	Title         string `json:"title"`
+	Scheme        string `json:"scheme"`
+	ContentType   string `json:"content_type"`
+	Method        string `json:"method"`
+	Host          string `json:"host"`
+	Path          string `json:"path"`
+	Time          string `json:"time"`
 	A             []string `json:"a"`
-	Words         int      `json:"words"`
-	Lines         int      `json:"lines"`
-	StatusCode    int      `json:"status_code"`
-	ContentLength int      `json:"content_length"`
-	Failed        bool     `json:"failed"`
+	Words         int    `json:"words"`
+	Lines         int    `json:"lines"`
+	StatusCode    int    `json:"status_code"`
+	ContentLength int    `json:"content_length"`
+	Failed        bool   `json:"failed"`
 	KnowledgeBase struct {
 		PageType string `json:"PageType"`
 		PHash    int    `json:"pHash"`
@@ -44,7 +44,7 @@ func convertJSONToHTML(outputFile string) error {
 	}
 	defer htmlFile.Close()
 
-	// Define the HTML template
+	// Define the HTML template with Dracula theme
 	const tmpl = `
 <!DOCTYPE html>
 <html>
@@ -52,15 +52,49 @@ func convertJSONToHTML(outputFile string) error {
     <meta charset="UTF-8">
     <title>HTTPX Data Report</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid #ddd; padding: 8px; }
-        th { background-color: #f2f2f2; }
-        tr:nth-child(even) { background-color: #f9f9f9; }
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #282a36; 
+            color: #f8f8f2; 
+            margin: 0; 
+            padding: 20px; 
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 20px; 
+        }
+        th, td { 
+            border: 1px solid #44475a; 
+            padding: 8px; 
+            text-align: left; 
+        }
+        th { 
+            background-color: #44475a; 
+            color: #f8f8f2; 
+        }
+        tr:nth-child(even) { 
+            background-color: #44475a; 
+        }
+        tr:nth-child(odd) { 
+            background-color: #282a36; 
+        }
+        input[type="text"] { 
+            padding: 10px; 
+            margin: 10px 0; 
+            border: 1px solid #6272a4; 
+            border-radius: 4px; 
+            background-color: #44475a; 
+            color: #f8f8f2; 
+        }
+        input[type="text"]::placeholder { 
+            color: #6272a4; 
+        }
     </style>
 </head>
 <body>
     <h1>HTTPX Data Report</h1>
+    <input type="text" id="searchInput" placeholder="Search...">
     <table>
         <thead>
             <tr>
@@ -113,6 +147,19 @@ func convertJSONToHTML(outputFile string) error {
             {{end}}
         </tbody>
     </table>
+    <script>
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            var input = this.value.toLowerCase();
+            var rows = document.querySelectorAll('tbody tr');
+            rows.forEach(function(row) {
+                var cells = row.querySelectorAll('td');
+                var match = Array.from(cells).some(function(cell) {
+                    return cell.textContent.toLowerCase().includes(input);
+                });
+                row.style.display = match ? '' : 'none';
+            });
+        });
+    </script>
 </body>
 </html>
 `
