@@ -70,8 +70,8 @@ func convertJSONToHTML(outputFile string) error {
             text-align: left; 
         }
         th { 
-            background-color: #44475a; 
-            color: #f8f8f2; 
+            background-color: #50fa7b; 
+            color: #282a36; 
         }
         tr:nth-child(even) { 
             background-color: #44475a; 
@@ -210,3 +210,4 @@ func main() {
 
 	fmt.Printf("Successfully converted JSON to HTML and saved to %s\n", outputFile)
 }
+
