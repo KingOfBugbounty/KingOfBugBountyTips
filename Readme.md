@@ -875,7 +875,7 @@ hednsextractor -target "your target" -silent | httpx -path /.git/config -status-
 - [Cert-sh](https://cert.sh)
 - [Maltiverse](https://maltiverse.com/search)
 - [Insecam](https://insecam.org)
-- [Anubis](https://https://jldc.me/anubis/subdomains/att.com)
+- [Anubis](https://jldc.me/anubis/subdomains/att.com)
 - [Dns Dumpster](https://dnsdumpster.com)
 - [PhoneBook](https://phonebook.cz)
 - [Inquest](https://labs.inquest.net)
