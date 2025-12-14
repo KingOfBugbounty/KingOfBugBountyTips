@@ -38,16 +38,42 @@
 ## 🎖️ Department of Defense - Bug Bounty Program
 
 <div align="center">
+
+[![DoD VDP](https://img.shields.io/badge/🛡️_DoD-Vulnerability_Disclosure-critical?style=for-the-badge&labelColor=000080)](https://hackerone.com/deptofdefense)
+
 <table>
 <tr>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/United_States_Department_of_Defense_Seal.svg/150px-United_States_Department_of_Defense_Seal.svg.png" width="70"><br><b>DoD</b></td>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Emblem_of_the_United_States_Department_of_the_Army.svg/150px-Emblem_of_the_United_States_Department_of_the_Army.svg.png" width="70"><br><b>Army</b></td>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Seal_of_the_United_States_Department_of_the_Navy.svg/150px-Seal_of_the_United_States_Department_of_the_Navy.svg.png" width="70"><br><b>Navy</b></td>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Seal_of_the_U.S._Air_Force.svg/150px-Seal_of_the_U.S._Air_Force.svg.png" width="70"><br><b>Air Force</b></td>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Seal_of_the_United_States_Marine_Corps.svg/150px-Seal_of_the_United_States_Marine_Corps.svg.png" width="70"><br><b>Marines</b></td>
-<td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Seal_of_the_United_States_Space_Force.svg/150px-Seal_of_the_United_States_Space_Force.svg.png" width="70"><br><b>Space Force</b></td>
+<td align="center">
+  <img src="https://img.shields.io/badge/DoD-000080?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyTDIgN2wzIDEwaDJsMS00aDhsMS4wNCA0SDIwbDMtMTBMMTIgMnptMCAybDcuNSA0TDE4IDE0SDZsLTEuNS02TDEyIDR6Ii8+PC9zdmc+" alt="DoD"><br>
+  <sub><b>Department<br>of Defense</b></sub>
+</td>
+<td align="center">
+  <img src="https://img.shields.io/badge/Army-4B5320?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyTDQgNXYxMWg0djZoOHYtNmg0VjVsLTggM3ptMCAybDYgMi4ydjguOEg2VjkuMkwxMiA0eiIvPjwvc3ZnPg==" alt="Army"><br>
+  <sub><b>U.S.<br>Army</b></sub>
+</td>
+<td align="center">
+  <img src="https://img.shields.io/badge/Navy-000080?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0yMCAxMWgtMVY4YzAtMS4xLS45LTItMi0ySDdDNS45IDYgNSA2LjkgNSA4djNoLTFjLTEuMSAwLTIgLjktMiAydjJoMjB2LTJjMC0xLjEtLjktMi0yLTJ6bS0zIDBoLTR2LTJoNHYyeiIvPjwvc3ZnPg==" alt="Navy"><br>
+  <sub><b>U.S.<br>Navy</b></sub>
+</td>
+<td align="center">
+  <img src="https://img.shields.io/badge/Air_Force-00308F?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0yMSAxNnYtMmwtOC01VjMuNWMwLS44My0uNjctMS41LTEuNS0xLjVTMTAgMi42NyAxMCAzLjV2NS41bC04IDV2Mmw4LTIuNVYxOWwtMiAxLjV2MS41TDEyIDIxbDQgMXYtMS41TDE0IDE5di01LjVsOCAyLjV6Ii8+PC9zdmc+" alt="Air Force"><br>
+  <sub><b>U.S.<br>Air Force</b></sub>
+</td>
+<td align="center">
+  <img src="https://img.shields.io/badge/Marines-CC0000?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyYy0xLjEgMC0yIC45LTIgMnMuOSAyIDIgMiAyLS45IDItMi0uOS0yLTItMnptOSA3aC02Yy0uNTUgMC0xIC40NS0xIDF2OWMwIC41NS40NSAxIDEgMWgxdi0zaDR2M2gxYy41NSAwIDEtLjQ1IDEtMXYtOWMwLS41NS0uNDUtMS0xLTF6TTMgOWgtMS41Yy0uNTUgMC0xIC40NS0xIDF2OWMwIC41NS40NSAxIDEgMWgxdi0zaDR2M2gxYy41NSAwIDEtLjQ1IDEtMXYtOWMwLS41NS0uNDUtMS0xLTFINHoiLz48L3N2Zz4=" alt="Marines"><br>
+  <sub><b>U.S.<br>Marines</b></sub>
+</td>
+<td align="center">
+  <img src="https://img.shields.io/badge/Space_Force-1C3A6E?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyTDkgOWw3IDMtNyAzIDMgN2wtMy03LTcgMy43IDMtNy03LTMgNy0zTDEyIDJ6Ii8+PC9zdmc+" alt="Space Force"><br>
+  <sub><b>U.S.<br>Space Force</b></sub>
+</td>
 </tr>
 </table>
+
+```
+🎯 Scope: *.mil | *.army.mil | *.navy.mil | *.af.mil | *.marines.mil | *.spaceforce.mil
+```
+
 </div>
 
 ---
