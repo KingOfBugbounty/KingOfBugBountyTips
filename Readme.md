@@ -70,9 +70,49 @@
 </tr>
 </table>
 
+[![KingRecon DOD](https://img.shields.io/badge/⚔️_KingRecon__DOD-Automated_Recon_Tool-gold?style=for-the-badge&logo=github)](https://github.com/KingOfBugbounty/KingRecon_DOD)
+
+<details>
+<summary><b>📋 Click to expand full DoD Scope (19 domains)</b></summary>
+
+```bash
+# BBRF Scope - All DoD Domains
+bbrf inscope add \
+  '*.af.mil' \
+  '*.osd.mil' \
+  '*.marines.mil' \
+  '*.pentagon.mil' \
+  '*.disa.mil' \
+  '*.health.mil' \
+  '*.dau.mil' \
+  '*.dtra.mil' \
+  '*.ng.mil' \
+  '*.dds.mil' \
+  '*.uscg.mil' \
+  '*.army.mil' \
+  '*.dcma.mil' \
+  '*.dla.mil' \
+  '*.dtic.mil' \
+  '*.yellowribbon.mil' \
+  '*.socom.mil' \
+  '*.spaceforce.mil' \
+  '*.ussf.mil'
 ```
-🎯 Scope: *.mil | *.army.mil | *.navy.mil | *.af.mil | *.marines.mil | *.spaceforce.mil
-```
+
+| Domain | Branch | Domain | Branch |
+|:-------|:------:|:-------|:------:|
+| `*.af.mil` | Air Force | `*.army.mil` | Army |
+| `*.marines.mil` | Marines | `*.navy.mil` | Navy |
+| `*.spaceforce.mil` | Space Force | `*.ussf.mil` | Space Force |
+| `*.pentagon.mil` | DoD HQ | `*.osd.mil` | Office of SecDef |
+| `*.disa.mil` | Defense Info Systems | `*.dtra.mil` | Threat Reduction |
+| `*.dla.mil` | Logistics Agency | `*.dcma.mil` | Contract Mgmt |
+| `*.dtic.mil` | Tech Info Center | `*.dau.mil` | Acquisition Univ |
+| `*.health.mil` | Military Health | `*.ng.mil` | National Guard |
+| `*.uscg.mil` | Coast Guard | `*.socom.mil` | Special Ops |
+| `*.dds.mil` | Digital Service | `*.yellowribbon.mil` | Yellow Ribbon |
+
+</details>
 
 </div>
 
