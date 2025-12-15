@@ -39,78 +39,94 @@
 
 <div align="center">
 
-[![DoD VDP](https://img.shields.io/badge/🛡️_DoD-Vulnerability_Disclosure-critical?style=for-the-badge&labelColor=000080)](https://hackerone.com/deptofdefense)
+[![DoD VDP](https://img.shields.io/badge/🛡️_DoD-Vulnerability_Disclosure_Program-DC143C?style=for-the-badge&labelColor=000080)](https://hackerone.com/deptofdefense)
+&nbsp;&nbsp;
+[![KingRecon DOD](https://img.shields.io/badge/⚔️_KingRecon__DOD-Automated_Recon-FFD700?style=for-the-badge&logo=github&logoColor=black)](https://github.com/KingOfBugbounty/KingRecon_DOD)
+
+<br><br>
 
 <table>
-<tr>
-<td align="center">
-  <img src="https://img.shields.io/badge/DoD-000080?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyTDIgN2wzIDEwaDJsMS00aDhsMS4wNCA0SDIwbDMtMTBMMTIgMnptMCAybDcuNSA0TDE4IDE0SDZsLTEuNS02TDEyIDR6Ii8+PC9zdmc+" alt="DoD"><br>
-  <sub><b>Department<br>of Defense</b></sub>
-</td>
-<td align="center">
-  <img src="https://img.shields.io/badge/Army-4B5320?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyTDQgNXYxMWg0djZoOHYtNmg0VjVsLTggM3ptMCAybDYgMi4ydjguOEg2VjkuMkwxMiA0eiIvPjwvc3ZnPg==" alt="Army"><br>
-  <sub><b>U.S.<br>Army</b></sub>
-</td>
-<td align="center">
-  <img src="https://img.shields.io/badge/Navy-000080?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0yMCAxMWgtMVY4YzAtMS4xLS45LTItMi0ySDdDNS45IDYgNSA2LjkgNSA4djNoLTFjLTEuMSAwLTIgLjktMiAydjJoMjB2LTJjMC0xLjEtLjktMi0yLTJ6bS0zIDBoLTR2LTJoNHYyeiIvPjwvc3ZnPg==" alt="Navy"><br>
-  <sub><b>U.S.<br>Navy</b></sub>
-</td>
-<td align="center">
-  <img src="https://img.shields.io/badge/Air_Force-00308F?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0yMSAxNnYtMmwtOC01VjMuNWMwLS44My0uNjctMS41LTEuNS0xLjVTMTAgMi42NyAxMCAzLjV2NS41bC04IDV2Mmw4LTIuNVYxOWwtMiAxLjV2MS41TDEyIDIxbDQgMXYtMS41TDE0IDE5di01LjVsOCAyLjV6Ii8+PC9zdmc+" alt="Air Force"><br>
-  <sub><b>U.S.<br>Air Force</b></sub>
-</td>
-<td align="center">
-  <img src="https://img.shields.io/badge/Marines-CC0000?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyYy0xLjEgMC0yIC45LTIgMnMuOSAyIDIgMiAyLS45IDItMi0uOS0yLTItMnptOSA3aC02Yy0uNTUgMC0xIC40NS0xIDF2OWMwIC41NS40NSAxIDEgMWgxdi0zaDR2M2gxYy41NSAwIDEtLjQ1IDEtMXYtOWMwLS41NS0uNDUtMS0xLTF6TTMgOWgtMS41Yy0uNTUgMC0xIC40NS0xIDF2OWMwIC41NS40NSAxIDEgMWgxdi0zaDR2M2gxYy41NSAwIDEtLjQ1IDEtMXYtOWMwLS41NS0uNDUtMS0xLTFINHoiLz48L3N2Zz4=" alt="Marines"><br>
-  <sub><b>U.S.<br>Marines</b></sub>
-</td>
-<td align="center">
-  <img src="https://img.shields.io/badge/Space_Force-1C3A6E?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyTDkgOWw3IDMtNyAzIDMgN2wtMy03LTcgMy43IDMtNy03LTMgNy0zTDEyIDJ6Ii8+PC9zdmc+" alt="Space Force"><br>
-  <sub><b>U.S.<br>Space Force</b></sub>
-</td>
-</tr>
+  <tr>
+    <td align="center" width="140">
+      <img src="https://img.shields.io/badge/-000080?style=for-the-badge" width="80" height="40"><br>
+      <b>🛡️ DoD</b><br>
+      <sub>Department of Defense</sub>
+    </td>
+    <td align="center" width="140">
+      <img src="https://img.shields.io/badge/-4B5320?style=for-the-badge" width="80" height="40"><br>
+      <b>⭐ Army</b><br>
+      <sub>U.S. Army</sub>
+    </td>
+    <td align="center" width="140">
+      <img src="https://img.shields.io/badge/-000080?style=for-the-badge" width="80" height="40"><br>
+      <b>⚓ Navy</b><br>
+      <sub>U.S. Navy</sub>
+    </td>
+    <td align="center" width="140">
+      <img src="https://img.shields.io/badge/-00308F?style=for-the-badge" width="80" height="40"><br>
+      <b>✈️ Air Force</b><br>
+      <sub>U.S. Air Force</sub>
+    </td>
+    <td align="center" width="140">
+      <img src="https://img.shields.io/badge/-CC0000?style=for-the-badge" width="80" height="40"><br>
+      <b>🦅 Marines</b><br>
+      <sub>U.S. Marines</sub>
+    </td>
+    <td align="center" width="140">
+      <img src="https://img.shields.io/badge/-1C3A6E?style=for-the-badge" width="80" height="40"><br>
+      <b>🚀 Space Force</b><br>
+      <sub>U.S. Space Force</sub>
+    </td>
+  </tr>
 </table>
 
-[![KingRecon DOD](https://img.shields.io/badge/⚔️_KingRecon__DOD-Automated_Recon_Tool-gold?style=for-the-badge&logo=github)](https://github.com/KingOfBugbounty/KingRecon_DOD)
+<br>
 
 <details>
-<summary><b>📋 Click to expand full DoD Scope (19 domains)</b></summary>
+<summary><b>📋 Full DoD Scope - 19 Domains (Click to expand)</b></summary>
+
+<br>
 
 ```bash
-# BBRF Scope - All DoD Domains
-bbrf inscope add \
-  '*.af.mil' \
-  '*.osd.mil' \
-  '*.marines.mil' \
-  '*.pentagon.mil' \
-  '*.disa.mil' \
-  '*.health.mil' \
-  '*.dau.mil' \
-  '*.dtra.mil' \
-  '*.ng.mil' \
-  '*.dds.mil' \
-  '*.uscg.mil' \
-  '*.army.mil' \
-  '*.dcma.mil' \
-  '*.dla.mil' \
-  '*.dtic.mil' \
-  '*.yellowribbon.mil' \
-  '*.socom.mil' \
-  '*.spaceforce.mil' \
-  '*.ussf.mil'
+# 🎯 BBRF Scope - All DoD Domains (Copy & Paste Ready)
+bbrf inscope add '*.af.mil' '*.army.mil' '*.marines.mil' '*.navy.mil' '*.spaceforce.mil' '*.ussf.mil' '*.pentagon.mil' '*.osd.mil' '*.disa.mil' '*.dtra.mil' '*.dla.mil' '*.dcma.mil' '*.dtic.mil' '*.dau.mil' '*.health.mil' '*.ng.mil' '*.uscg.mil' '*.socom.mil' '*.dds.mil' '*.yellowribbon.mil'
 ```
 
-| Domain | Branch | Domain | Branch |
-|:-------|:------:|:-------|:------:|
-| `*.af.mil` | Air Force | `*.army.mil` | Army |
-| `*.marines.mil` | Marines | `*.navy.mil` | Navy |
-| `*.spaceforce.mil` | Space Force | `*.ussf.mil` | Space Force |
-| `*.pentagon.mil` | DoD HQ | `*.osd.mil` | Office of SecDef |
-| `*.disa.mil` | Defense Info Systems | `*.dtra.mil` | Threat Reduction |
-| `*.dla.mil` | Logistics Agency | `*.dcma.mil` | Contract Mgmt |
-| `*.dtic.mil` | Tech Info Center | `*.dau.mil` | Acquisition Univ |
-| `*.health.mil` | Military Health | `*.ng.mil` | National Guard |
-| `*.uscg.mil` | Coast Guard | `*.socom.mil` | Special Ops |
-| `*.dds.mil` | Digital Service | `*.yellowribbon.mil` | Yellow Ribbon |
+<table>
+  <tr>
+    <th align="center">🎖️ Military Branches</th>
+    <th align="center">🏛️ DoD Agencies</th>
+    <th align="center">🔧 Support Commands</th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <code>*.af.mil</code> - Air Force<br>
+      <code>*.army.mil</code> - Army<br>
+      <code>*.marines.mil</code> - Marines<br>
+      <code>*.navy.mil</code> - Navy<br>
+      <code>*.spaceforce.mil</code> - Space Force<br>
+      <code>*.ussf.mil</code> - Space Force
+    </td>
+    <td valign="top">
+      <code>*.pentagon.mil</code> - Pentagon HQ<br>
+      <code>*.osd.mil</code> - Office of SecDef<br>
+      <code>*.disa.mil</code> - Defense Info Systems<br>
+      <code>*.dtra.mil</code> - Threat Reduction<br>
+      <code>*.dla.mil</code> - Logistics Agency<br>
+      <code>*.dcma.mil</code> - Contract Management
+    </td>
+    <td valign="top">
+      <code>*.dtic.mil</code> - Tech Info Center<br>
+      <code>*.dau.mil</code> - Acquisition Univ<br>
+      <code>*.health.mil</code> - Military Health<br>
+      <code>*.ng.mil</code> - National Guard<br>
+      <code>*.uscg.mil</code> - Coast Guard<br>
+      <code>*.socom.mil</code> - Special Operations<br>
+      <code>*.dds.mil</code> - Digital Service<br>
+      <code>*.yellowribbon.mil</code> - Yellow Ribbon
+    </td>
+  </tr>
+</table>
 
 </details>
 
