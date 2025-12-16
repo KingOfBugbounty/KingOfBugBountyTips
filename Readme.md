@@ -1,12 +1,39 @@
 <div align="center">
 
-# 👑 KingOfBugBountyTips
+```
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⡿⠋⠉⠉⠉⠉⠉⠉⠙⢿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⡿⠀⠀⢀⣤⣤⡀⠀⢀⣤⣤⡀⠀⢿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⡇⠀⠀⠈⣿⣿⡇⠀⢸⣿⣿⠁⠀⢸⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠘⠛⠃⠀⠘⠛⠃⠀⠀⣼⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣷⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣾⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠈⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⢿⣿⣿⣿⣿⣿⣿⡿⠿⠟⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                              ☠️  K I N G  O F  B U G  B O U N T Y  ☠️
+```
+
+# 💀 KingOfBugBountyTips 💀
 
 <img src="https://user-images.githubusercontent.com/50994705/228697976-c9e7e8b8-f6dd-4c5a-a7be-8c7b2e8e4a8c.gif" width="600" alt="Bug Bounty Hunter">
 
-### 🎯 The Ultimate Bug Bounty Reconnaissance Arsenal
+### ☠️ The Ultimate Bug Bounty Reconnaissance Arsenal ☠️
 
-> *"The best reconnaissance is the foundation of every successful bug bounty hunt"*
+```
+  ██╗  ██╗ █████╗  ██████╗██╗  ██╗    ████████╗██╗  ██╗███████╗    ██████╗ ██╗      █████╗ ███╗   ██╗███████╗████████╗
+  ██║  ██║██╔══██╗██╔════╝██║ ██╔╝    ╚══██╔══╝██║  ██║██╔════╝    ██╔══██╗██║     ██╔══██╗████╗  ██║██╔════╝╚══██╔══╝
+  ███████║███████║██║     █████╔╝        ██║   ███████║█████╗      ██████╔╝██║     ███████║██╔██╗ ██║█████╗     ██║
+  ██╔══██║██╔══██║██║     ██╔═██╗        ██║   ██╔══██║██╔══╝      ██╔═══╝ ██║     ██╔══██║██║╚██╗██║██╔══╝     ██║
+  ██║  ██║██║  ██║╚██████╗██║  ██╗       ██║   ██║  ██║███████╗    ██║     ███████╗██║  ██║██║ ╚████║███████╗   ██║
+  ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝       ╚═╝   ╚═╝  ╚═╝╚══════╝    ╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝
+```
+
+> *"In the shadows we hunt, in the code we trust"* 🏴‍☠️
 
 <p>
   <img src="https://img.shields.io/github/stars/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=yellow&logo=github">
@@ -16,20 +43,26 @@
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/Bug%20Bounty-Hunter-red?style=for-the-badge&logo=hackerone">
-  <img src="https://img.shields.io/badge/Recon-Methodology-blue?style=for-the-badge&logo=target">
-  <img src="https://img.shields.io/badge/Oneliners-Collection-green?style=for-the-badge&logo=gnubash">
-  <img src="https://img.shields.io/badge/DoD-VDP-yellow?style=for-the-badge&logo=shieldsdotio">
+  <img src="https://img.shields.io/badge/💀_Bug%20Bounty-Hunter-red?style=for-the-badge">
+  <img src="https://img.shields.io/badge/☠️_Recon-Methodology-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/🏴‍☠️_Oneliners-Collection-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/⚔️_DoD-VDP-yellow?style=for-the-badge">
 </p>
 
-### 🔗 Connect with Me
+### 🔗 Connect with the Hacker
 
-[![Telegram](https://img.shields.io/badge/Telegram-Join%20Group-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/joinchat/DN_iQksIuhyPKJL1gw0ttA)
+[![Telegram](https://img.shields.io/badge/Telegram-Join%20the%20Crew-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/joinchat/DN_iQksIuhyPKJL1gw0ttA)
 [![Twitter](https://img.shields.io/badge/Twitter-@ofjaaah-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/ofjaaah)
 [![YouTube](https://img.shields.io/badge/YouTube-Subscribe-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/c/OFJAAAH)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/atjunior/)
 
 <img src="https://github-readme-stats.vercel.app/api?username=KingOfBugbounty&show_icons=true&theme=radical" alt="GitHub Stats">
+
+```
+    ╔══════════════════════════════════════════════════════════════════╗
+    ║  "The quieter you become, the more you are able to hear" - Kali  ║
+    ╚══════════════════════════════════════════════════════════════════╝
+```
 
 </div>
 
@@ -263,54 +296,169 @@ bbrf inscope add '*.af.mil' '*.osd.mil' '*.marines.mil' '*.pentagon.mil' '*.disa
 
 ---
 
-## 🔍 Subdomain Enumeration
+## 💀 Subdomain Enumeration ☠️
 
-### Multi-Source Discovery
+```
+   ███████╗██╗   ██╗██████╗ ██████╗  ██████╗ ███╗   ███╗ █████╗ ██╗███╗   ██╗
+   ██╔════╝██║   ██║██╔══██╗██╔══██╗██╔═══██╗████╗ ████║██╔══██╗██║████╗  ██║
+   ███████╗██║   ██║██████╔╝██║  ██║██║   ██║██╔████╔██║███████║██║██╔██╗ ██║
+   ╚════██║██║   ██║██╔══██╗██║  ██║██║   ██║██║╚██╔╝██║██╔══██║██║██║╚██╗██║
+   ███████║╚██████╔╝██████╔╝██████╔╝╚██████╔╝██║ ╚═╝ ██║██║  ██║██║██║ ╚████║
+   ╚══════╝ ╚═════╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝
+                     ☠️ ENUMERATE EVERYTHING ☠️
+```
+
+### 💀 Multi-Source Discovery (All-in-One)
 ```bash
-# Comprehensive subdomain enumeration
+# ☠️ Ultimate subdomain enumeration - All tools combined
 subfinder -d target.com -all -silent | anew subs.txt
 amass enum -passive -d target.com | anew subs.txt
 assetfinder -subs-only target.com | anew subs.txt
 chaos -d target.com -silent | anew subs.txt
+findomain -t target.com -q | anew subs.txt
 cat subs.txt | httpx -silent -threads 200 | anew alive.txt
 ```
 
-### Certificate Transparency
+### 💀 Certificate Transparency Logs
 ```bash
+# ☠️ crt.sh extraction
 curl -s "https://crt.sh/?q=%25.target.com&output=json" | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | httpx -silent
 ```
 
-### Shodan + Nuclei Pipeline
+### 💀 Shodan + Nuclei Pipeline
 ```bash
+# ☠️ Shodan recon -> Nuclei scan
 shodan domain target.com | awk '{print $3}' | httpx -silent | nuclei -t /nuclei-templates/ -severity critical,high
 ```
 
-### ASN Discovery
+### 💀 ASN Discovery & Reverse DNS
 ```bash
+# ☠️ Find all IPs from organization ASN
 echo 'target_org' | metabigor net --org -v | awk '{print $3}' | sed 's/[[0-9]]\+\.//g' | xargs -I@ sh -c 'prips @ | hakrevdns | anew'
 ```
 
-### DNS Bruteforce with Shuffledns
+### 💀 DNS Bruteforce with Shuffledns
 ```bash
 shuffledns -d target.com -w wordlist.txt -r resolvers.txt -silent | httpx -silent | anew
 ```
 
-### Recursive Subdomain Enum
+### 💀 Recursive Subdomain Enum
 ```bash
 subfinder -d target.com -recursive -all -silent | dnsx -silent | httpx -silent | anew recursive_subs.txt
 ```
 
-### Passive DNS with Multiple Sources
+### 💀 Passive DNS - Multiple Sources
 ```bash
-# Using multiple passive DNS sources
+# ☠️ HackerTarget
 curl -s "https://api.hackertarget.com/hostsearch/?q=target.com" | cut -d',' -f1 | anew subs.txt
+
+# ☠️ RapidDNS
 curl -s "https://rapiddns.io/subdomain/target.com?full=1" | grep -oP '(?<=target="_blank">)[^<]+' | grep "target.com" | anew subs.txt
+
+# ☠️ Riddler.io
 curl -s "https://riddler.io/search/exportcsv?q=pld:target.com" | grep -oP '\b([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+target\.com\b' | anew subs.txt
+
+# ☠️ AlienVault OTX
+curl -s "https://otx.alienvault.com/api/v1/indicators/domain/target.com/passive_dns" | jq -r '.passive_dns[].hostname' 2>/dev/null | sort -u | anew subs.txt
+
+# ☠️ URLScan.io
+curl -s "https://urlscan.io/api/v1/search/?q=domain:target.com" | jq -r '.results[].page.domain' 2>/dev/null | sort -u | anew subs.txt
 ```
 
-### Github Subdomain Scraping
+### 💀 GitHub Subdomain Scraping
 ```bash
 github-subdomains -d target.com -t YOUR_GITHUB_TOKEN -o github_subs.txt
+```
+
+### 💀 Censys Subdomain Discovery
+```bash
+# ☠️ Using Censys API
+censys search "target.com" --index-type hosts | jq -r '.[] | .name' | sort -u | anew censys_subs.txt
+```
+
+### 💀 SecurityTrails API
+```bash
+# ☠️ SecurityTrails subdomain enumeration
+curl -s "https://api.securitytrails.com/v1/domain/target.com/subdomains" -H "APIKEY: YOUR_API_KEY" | jq -r '.subdomains[]' | sed 's/$/.target.com/' | anew subs.txt
+```
+
+### 💀 Wayback Machine Subdomains
+```bash
+# ☠️ Extract subdomains from Wayback Machine
+curl -s "http://web.archive.org/cdx/search/cdx?url=*.target.com/*&output=text&fl=original&collapse=urlkey" | sed -e 's_https*://__' -e 's/\/.*//g' | sort -u | anew wayback_subs.txt
+```
+
+### 💀 CommonCrawl Extraction
+```bash
+# ☠️ CommonCrawl subdomain extraction
+curl -s "https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=*.target.com&output=json" | jq -r '.url' | sed -e 's_https*://__' -e 's/\/.*//g' | sort -u | anew commoncrawl_subs.txt
+```
+
+### 💀 VirusTotal Subdomains
+```bash
+# ☠️ VirusTotal API
+curl -s "https://www.virustotal.com/vtapi/v2/domain/report?apikey=YOUR_API_KEY&domain=target.com" | jq -r '.subdomains[]' 2>/dev/null | anew vt_subs.txt
+```
+
+### 💀 DNS Zone Transfer Attempt
+```bash
+# ☠️ Check for zone transfer vulnerability
+dig axfr @ns1.target.com target.com | grep -E "^[a-zA-Z0-9]" | awk '{print $1}' | sed 's/\.$//' | anew zone_transfer.txt
+```
+
+### 💀 Reverse IP Lookup
+```bash
+# ☠️ Find domains on same IP
+host target.com | awk '/has address/ {print $4}' | xargs -I@ sh -c 'curl -s "https://api.hackertarget.com/reverseiplookup/?q=@"' | anew reverse_ip.txt
+```
+
+### 💀 BGP/ASN Range Scanner
+```bash
+# ☠️ Get ASN and scan all IP ranges
+whois -h whois.radb.net -- '-i origin AS12345' | grep -Eo "([0-9.]+){4}/[0-9]+" | xargs -I@ sh -c 'nmap -sL @ | grep "report for" | cut -d" " -f5' | httpx -silent | anew bgp_hosts.txt
+```
+
+### 💀 PTR Records from IP Range
+```bash
+# ☠️ Mass PTR lookup
+prips 192.168.1.0/24 | xargs -P50 -I@ sh -c 'host @ 2>/dev/null | grep "pointer" | cut -d" " -f5' | sed 's/\.$//' | anew ptr_subs.txt
+```
+
+### 💀 All-in-One Mega Oneliner
+```bash
+# ☠️ THE ULTIMATE SUBDOMAIN HUNTER ☠️
+(subfinder -d target.com -all -silent; amass enum -passive -d target.com; assetfinder -subs-only target.com; findomain -t target.com -q; chaos -d target.com -silent; curl -s "https://crt.sh/?q=%25.target.com&output=json" | jq -r '.[].name_value' | sed 's/\*\.//g'; curl -s "https://api.hackertarget.com/hostsearch/?q=target.com" | cut -d',' -f1; curl -s "http://web.archive.org/cdx/search/cdx?url=*.target.com/*&output=text&fl=original&collapse=urlkey" | sed -e 's_https*://__' -e 's/\/.*//g') | sort -u | httpx -silent -threads 100 | anew mega_subs.txt
+```
+
+### 💀 Subdomain Permutation/Bruteforce
+```bash
+# ☠️ Generate permutations and resolve
+cat subs.txt | dnsgen - | shuffledns -d target.com -r resolvers.txt -silent | anew permutation_subs.txt
+```
+
+### 💀 DNS Wordlist Bruteforce with PureDNS
+```bash
+# ☠️ Fast bruteforce with PureDNS
+puredns bruteforce wordlist.txt target.com -r resolvers.txt -w puredns_subs.txt
+```
+
+### 💀 TLS/SSL Certificate Grabber
+```bash
+# ☠️ Extract subdomains from SSL certificates
+echo target.com | httpx -silent | xargs -I@ sh -c 'echo | openssl s_client -connect @:443 2>/dev/null | openssl x509 -noout -text | grep -oP "DNS:[^\s,]+" | sed "s/DNS://"' | sort -u | anew ssl_subs.txt
+```
+
+### 💀 Favicon Hash -> Shodan
+```bash
+# ☠️ Find related hosts via favicon hash
+curl -s https://target.com/favicon.ico | md5sum | awk '{print $1}' | xargs -I@ shodan search "http.favicon.hash:@" --fields ip_str,hostnames | anew favicon_hosts.txt
+```
+
+### 💀 Google Dork Subdomain Discovery
+```bash
+# ☠️ Use Google dorks (manual or with tools)
+# site:*.target.com -www
+# inurl:target.com
 ```
 
 ---
