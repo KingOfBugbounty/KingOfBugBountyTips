@@ -506,6 +506,56 @@ cat js.txt | xargs -I@ curl -s @ | grep -oE "(/api/[^\"\'\`\s\<\>]+|/v[0-9]+/[^\
 cat js.txt | xargs -I@ curl -s @ | grep -iE "(password|passwd|pwd|secret|api_key|apikey|token|auth)" | sort -u
 ```
 
+### 💀 Extract AWS Keys from JS Files
+```bash
+cat js.txt | xargs -I@ curl -s @ | grep -oE "(AKIA[0-9A-Z]{16}|ABIA[0-9A-Z]{16}|ACCA[0-9A-Z]{16})" | sort -u | anew aws_keys.txt
+```
+
+### 💀 Find S3 Buckets in JavaScript
+```bash
+cat js.txt | xargs -I@ curl -s @ | grep -oE "[a-zA-Z0-9.-]+\.s3\.amazonaws\.com|s3://[a-zA-Z0-9.-]+" | sort -u | anew s3_from_js.txt
+```
+
+### 💀 Extract Google API Keys
+```bash
+cat js.txt | xargs -I@ curl -s @ | grep -oE "AIza[0-9A-Za-z\\-_]{35}" | sort -u | anew google_api_keys.txt
+```
+
+### 💀 Find Firebase URLs in JS
+```bash
+cat js.txt | xargs -I@ curl -s @ | grep -oE "https://[a-zA-Z0-9-]+\.firebaseio\.com|https://[a-zA-Z0-9-]+\.firebaseapp\.com" | sort -u | anew firebase_urls.txt
+```
+
+### 💀 Extract GraphQL Endpoints from JS
+```bash
+cat js.txt | xargs -I@ curl -s @ | grep -oE "(graphql|gql|query|mutation)[^\"']*" | grep -oE "/[a-zA-Z0-9/_-]*graphql[a-zA-Z0-9/_-]*" | sort -u | anew graphql_endpoints.txt
+```
+
+### 💀 Find Internal IPs & Hostnames in JS
+```bash
+cat js.txt | xargs -I@ curl -s @ | grep -oE "https?://[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}[^\"' ]*|https?://[a-zA-Z0-9-]+\.(internal|local|corp|lan|intra)[^\"' ]*" | sort -u | anew internal_hosts.txt
+```
+
+### 💀 Extract JWT Tokens from JS Files
+```bash
+cat js.txt | xargs -I@ curl -s @ | grep -oE "eyJ[A-Za-z0-9_-]*\.eyJ[A-Za-z0-9_-]*\.[A-Za-z0-9_-]*" | sort -u | anew jwt_tokens.txt
+```
+
+### 💀 Find Webpack Source Maps
+```bash
+cat js.txt | sed 's/\.js$/.js.map/' | httpx -silent -mc 200 -ct -match-string "sourcesContent" | anew sourcemaps.txt
+```
+
+### 💀 Extract Slack/Discord Webhooks from JS
+```bash
+cat js.txt | xargs -I@ curl -s @ | grep -oE "https://hooks\.slack\.com/services/[A-Za-z0-9/]+|https://discord\.com/api/webhooks/[0-9]+/[A-Za-z0-9_-]+" | sort -u | anew webhooks.txt
+```
+
+### 💀 Find Hidden Admin Routes in JS
+```bash
+cat js.txt | xargs -I@ curl -s @ | grep -oE "[\"\'][/][a-zA-Z0-9_/-]*(admin|dashboard|manage|config|settings|internal|private|debug|api/v[0-9])[a-zA-Z0-9_/-]*[\"\']" | tr -d "\"'" | sort -u | anew hidden_routes.txt
+```
+
 ---
 
 ## 💉 XSS Detection
