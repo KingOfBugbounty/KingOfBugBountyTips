@@ -506,34 +506,59 @@ cat js.txt | xargs -I@ curl -s @ | grep -oE "(/api/[^\"\'\`\s\<\>]+|/v[0-9]+/[^\
 cat js.txt | xargs -I@ curl -s @ | grep -iE "(password|passwd|pwd|secret|api_key|apikey|token|auth)" | sort -u
 ```
 
-### 💀 Extract AWS Keys from JS Files
+### Extract AWS Keys from JS
 ```bash
-cat js.txt | xargs -I@ curl -s @ | grep -oE "(AKIA[0-9A-Z]{16}|ABIA[0-9A-Z]{16}|ACCA[0-9A-Z]{16})" | sort -u | anew aws_keys.txt
+cat js.txt | xargs -I@ curl -s @ | grep -oE "(AKIA[0-9A-Z]{16}|ABIA[0-9A-Z]{16}|ACCA[0-9A-Z]{16}|ASIA[0-9A-Z]{16})" | sort -u | anew aws_keys.txt
 ```
 
-### 💀 Find S3 Buckets in JavaScript
+### Extract Google API Keys from JS
 ```bash
-cat js.txt | xargs -I@ curl -s @ | grep -oE "[a-zA-Z0-9.-]+\.s3\.amazonaws\.com|s3://[a-zA-Z0-9.-]+" | sort -u | anew s3_from_js.txt
+cat js.txt | xargs -I@ curl -s @ | grep -oE "AIza[0-9A-Za-z\-_]{35}" | sort -u | anew google_api_keys.txt
 ```
 
-### 💀 Extract Google API Keys
+### Extract Firebase URLs from JS
 ```bash
-cat js.txt | xargs -I@ curl -s @ | grep -oE "AIza[0-9A-Za-z\\-_]{35}" | sort -u | anew google_api_keys.txt
+cat js.txt | xargs -I@ curl -s @ | grep -oE "https://[a-zA-Z0-9-]+\.firebaseio\.com|https://[a-zA-Z0-9-]+\.firebase\.com" | sort -u | anew firebase_urls.txt
 ```
 
-### 💀 Find Firebase URLs in JS
+### Extract S3 Buckets from JS
 ```bash
-cat js.txt | xargs -I@ curl -s @ | grep -oE "https://[a-zA-Z0-9-]+\.firebaseio\.com|https://[a-zA-Z0-9-]+\.firebaseapp\.com" | sort -u | anew firebase_urls.txt
+cat js.txt | xargs -I@ curl -s @ | grep -oE "[a-zA-Z0-9.-]+\.s3\.amazonaws\.com|s3://[a-zA-Z0-9.-]+|s3-[a-zA-Z0-9-]+\.amazonaws\.com/[a-zA-Z0-9.-]+" | sort -u | anew s3_from_js.txt
+```
+
+### Extract Internal IPs from JS
+```bash
+cat js.txt | xargs -I@ curl -s @ | grep -oE "(10\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|172\.(1[6-9]|2[0-9]|3[0-1])\.[0-9]{1,3}\.[0-9]{1,3}|192\.168\.[0-9]{1,3}\.[0-9]{1,3})" | sort -u | anew internal_ips.txt
+```
+
+### Extract Slack Webhooks from JS
+```bash
+cat js.txt | xargs -I@ curl -s @ | grep -oE "https://hooks\.slack\.com/services/T[a-zA-Z0-9_]+/B[a-zA-Z0-9_]+/[a-zA-Z0-9_]+" | sort -u | anew slack_webhooks.txt
+```
+
+### Extract GitHub Tokens from JS
+```bash
+cat js.txt | xargs -I@ curl -s @ | grep -oE "(ghp_[a-zA-Z0-9]{36}|gho_[a-zA-Z0-9]{36}|ghu_[a-zA-Z0-9]{36}|ghs_[a-zA-Z0-9]{36}|ghr_[a-zA-Z0-9]{36}|github_pat_[a-zA-Z0-9]{22}_[a-zA-Z0-9]{59})" | sort -u | anew github_tokens.txt
+```
+
+### Extract Private Keys from JS
+```bash
+cat js.txt | xargs -I@ curl -s @ | grep -oE "-----BEGIN (RSA |EC |DSA |OPENSSH |PGP )?PRIVATE KEY( BLOCK)?-----" | sort -u | anew private_keys_found.txt
+```
+
+### Extract Email Addresses from JS
+```bash
+cat js.txt | xargs -I@ curl -s @ | grep -oE "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" | sort -u | anew emails_from_js.txt
+```
+
+### Extract Hidden Subdomains from JS
+```bash
+cat js.txt | xargs -I@ curl -s @ | grep -oE "https?://[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" | sed 's|https\?://||' | cut -d'/' -f1 | sort -u | anew subdomains_from_js.txt
 ```
 
 ### 💀 Extract GraphQL Endpoints from JS
 ```bash
 cat js.txt | xargs -I@ curl -s @ | grep -oE "(graphql|gql|query|mutation)[^\"']*" | grep -oE "/[a-zA-Z0-9/_-]*graphql[a-zA-Z0-9/_-]*" | sort -u | anew graphql_endpoints.txt
-```
-
-### 💀 Find Internal IPs & Hostnames in JS
-```bash
-cat js.txt | xargs -I@ curl -s @ | grep -oE "https?://[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}[^\"' ]*|https?://[a-zA-Z0-9-]+\.(internal|local|corp|lan|intra)[^\"' ]*" | sort -u | anew internal_hosts.txt
 ```
 
 ### 💀 Extract JWT Tokens from JS Files
@@ -546,9 +571,9 @@ cat js.txt | xargs -I@ curl -s @ | grep -oE "eyJ[A-Za-z0-9_-]*\.eyJ[A-Za-z0-9_-]
 cat js.txt | sed 's/\.js$/.js.map/' | httpx -silent -mc 200 -ct -match-string "sourcesContent" | anew sourcemaps.txt
 ```
 
-### 💀 Extract Slack/Discord Webhooks from JS
+### 💀 Extract Discord Webhooks from JS
 ```bash
-cat js.txt | xargs -I@ curl -s @ | grep -oE "https://hooks\.slack\.com/services/[A-Za-z0-9/]+|https://discord\.com/api/webhooks/[0-9]+/[A-Za-z0-9_-]+" | sort -u | anew webhooks.txt
+cat js.txt | xargs -I@ curl -s @ | grep -oE "https://discord\.com/api/webhooks/[0-9]+/[A-Za-z0-9_-]+" | sort -u | anew discord_webhooks.txt
 ```
 
 ### 💀 Find Hidden Admin Routes in JS
@@ -754,6 +779,66 @@ cat urls.txt | qsreplace 'param=value1&param=value2' | httpx -silent -mc 200
 ### Ffuf Directory Bruteforce
 ```bash
 ffuf -u https://target.com/FUZZ -w wordlist.txt -mc 200,301,302,403 -ac -c -t 100
+```
+
+### 💀 Recursive Fuzzing - ffuf Deep Scan
+```bash
+# ☠️ Recursive directory bruteforce with depth 3
+ffuf -u https://target.com/FUZZ -w wordlist.txt -recursion -recursion-depth 3 -mc 200,301,302,403 -ac -c -t 100 -o ffuf_recursive.json -of json
+```
+
+### 💀 Feroxbuster Full Recursive Scan
+```bash
+# ☠️ Deep recursive scan with auto-tune and smart filtering
+feroxbuster -u https://target.com -w wordlist.txt -d 5 -L 4 --auto-tune -C 404,500 --smart -o ferox_results.txt
+```
+
+### 💀 Feroxbuster Multi-Target Recursive
+```bash
+# ☠️ Scan multiple targets from file with recursion
+cat alive.txt | xargs -I@ feroxbuster -u @ -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -d 3 -t 50 --no-state -q -o ferox_@.txt
+```
+
+### 💀 ffuf + Feroxbuster Pipeline (Extensions + Recursion)
+```bash
+# ☠️ Find directories with ffuf, then deep scan each with feroxbuster
+ffuf -u https://target.com/FUZZ -w wordlist.txt -mc 200,301,302 -ac -c -t 100 -o dirs.json -of json && cat dirs.json | jq -r '.results[].url' | xargs -I@ feroxbuster -u @ -w wordlist.txt -x php,asp,aspx,jsp,html,js -d 2 -t 30 -q
+```
+
+### 💀 Recursive Fuzzing with Extensions Mass Scan
+```bash
+# ☠️ ffuf recursive with multiple extensions + backup files
+ffuf -u https://target.com/FUZZ -w wordlist.txt -recursion -recursion-depth 2 -e .php,.asp,.aspx,.jsp,.html,.js,.json,.xml,.bak,.old,.txt,.conf,.config,.zip,.tar.gz -mc 200,301,302,403,500 -ac -t 80 -rate 100 -o recursive_ext.json
+```
+
+### 💀 Feroxbuster Parallel Recursive Scan
+```bash
+# ☠️ Parallel scan with multiple wordlists and extensions
+feroxbuster -u https://target.com -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -x php,asp,aspx,jsp,bak,old,zip -d 4 -t 100 -L 5 --parallel 10 --dont-extract-links -C 404 -o ferox_parallel.txt
+```
+
+### 💀 Feroxbuster Silent Recursive + Headers
+```bash
+# ☠️ Stealth recursive scan with custom headers and rate limiting
+feroxbuster -u https://target.com -w wordlist.txt -d 3 -t 30 -r -k --random-agent -H "X-Forwarded-For: 127.0.0.1" -H "X-Custom-IP-Authorization: 127.0.0.1" --rate-limit 50 -C 400,401,403,404,500 -q -o ferox_stealth.txt
+```
+
+### 💀 Feroxbuster Extract Links + Recursive
+```bash
+# ☠️ Extract links from responses and add to scan queue recursively
+feroxbuster -u https://target.com -w wordlist.txt -d 5 --extract-links --collect-words --collect-backups -x php,html,js,json -t 50 -o ferox_extracted.txt
+```
+
+### 💀 Feroxbuster Resume + Filter by Size
+```bash
+# ☠️ Smart filtering by response size and resumable state
+feroxbuster -u https://target.com -w wordlist.txt -d 4 -S 0 -W 1 --filter-status 404,500 --filter-words 20 --filter-lines 5 --resume-from ferox_state.json --state-file ferox_state.json -o ferox_filtered.txt
+```
+
+### 💀 Feroxbuster API Endpoints Discovery
+```bash
+# ☠️ Recursive API fuzzing with JSON content-type
+feroxbuster -u https://target.com/api -w /usr/share/seclists/Discovery/Web-Content/api/api-endpoints.txt -d 3 -x json -t 50 -H "Accept: application/json" -H "Content-Type: application/json" --dont-extract-links -m GET,POST -o ferox_api.txt
 ```
 
 ### Git Exposure
