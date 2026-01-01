@@ -321,6 +321,72 @@ cat subs.txt | httpx -silent -threads 200 | anew alive.txt
 curl -s "https://crt.sh/?q=%25.target.com&output=json" | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | httpx -silent
 ```
 
+### 💀 Certstream Real-Time Monitoring - Basic
+```bash
+# ☠️ Monitor certificates in real-time for specific keyword
+pip install certstream && python3 -c "import certstream; certstream.listen_for_events(lambda msg, ctx: print(msg['data']['leaf_cert']['subject']['CN']) if 'target' in str(msg.get('data',{}).get('leaf_cert',{}).get('subject',{}).get('CN','')) else None, url='wss://certstream.calidog.io/')"
+```
+
+### 💀 Certstream with Domain Filter
+```bash
+# ☠️ Real-time cert monitoring filtered by domain keywords
+certstream --full | jq -r 'select(.data.leaf_cert.subject.CN != null) | .data.leaf_cert.subject.CN' | grep -iE "(target|company|brand)" | anew certstream_targets.txt
+```
+
+### 💀 Certstream to Subdomain Discovery
+```bash
+# ☠️ Extract all SANs (Subject Alternative Names) in real-time
+certstream --full | jq -r '.data.leaf_cert.extensions.subjectAltName // empty' | tr ',' '\n' | sed 's/DNS://g' | grep -E "target\.com$" | sort -u | anew certstream_subs.txt
+```
+
+### 💀 Certstream + httpx Live Pipeline
+```bash
+# ☠️ Real-time cert discovery -> immediate alive check
+certstream --full | jq -r '.data.leaf_cert.all_domains[]? // empty' 2>/dev/null | grep -iE "target" | sort -u | while read domain; do echo "$domain" | httpx -silent -timeout 3 | anew live_certs.txt; done
+```
+
+### 💀 Certstream Phishing Detection
+```bash
+# ☠️ Monitor for potential phishing domains (brand impersonation)
+certstream --full | jq -r '.data.leaf_cert.subject.CN // empty' | grep -iE "(paypal|apple|google|microsoft|amazon|facebook|netflix|bank)" | grep -vE "\.(paypal|apple|google|microsoft|amazon|facebook|netflix)\.com$" | anew phishing_certs.txt
+```
+
+### 💀 Certstream with Nuclei Auto-Scan
+```bash
+# ☠️ Real-time cert discovery -> automatic vulnerability scan
+certstream --full | jq -r '.data.leaf_cert.all_domains[]? // empty' | grep -E "\.target\.com$" | sort -u | while read domain; do echo "https://$domain" | nuclei -t /nuclei-templates/technologies/ -silent; done
+```
+
+### 💀 Certstream Mass Collector Script
+```bash
+# ☠️ Collect all certificates for specific TLDs
+timeout 3600 bash -c 'certstream --full | jq -r ".data.leaf_cert.all_domains[]? // empty" | grep -E "\.(gov|mil|edu)$" | anew gov_mil_edu_certs.txt' &
+```
+
+### 💀 Certstream Wildcard Certificate Hunter
+```bash
+# ☠️ Find wildcard certificates (*.domain.com) in real-time
+certstream --full | jq -r '.data.leaf_cert.subject.CN // empty' | grep "^\*\." | sed 's/^\*\.//' | sort -u | anew wildcard_domains.txt
+```
+
+### 💀 Certstream + Shodan Enrichment
+```bash
+# ☠️ Real-time certs -> resolve IP -> Shodan lookup
+certstream --full | jq -r '.data.leaf_cert.subject.CN // empty' | grep -iE "target" | while read domain; do IP=$(dig +short "$domain" | head -1); [ -n "$IP" ] && echo "$domain,$IP,$(shodan host $IP 2>/dev/null | head -3 | tr '\n' ' ')"; done | anew cert_shodan.txt
+```
+
+### 💀 Certstream JSON Logger with Timestamp
+```bash
+# ☠️ Full certificate logging with timestamps for analysis
+certstream --full | jq -c '{timestamp: now | strftime("%Y-%m-%d %H:%M:%S"), cn: .data.leaf_cert.subject.CN, domains: .data.leaf_cert.all_domains, issuer: .data.leaf_cert.issuer.O}' | grep -i "target" | tee -a certstream_log.json
+```
+
+### 💀 Certstream Bug Bounty Scope Monitor
+```bash
+# ☠️ Monitor multiple bug bounty targets simultaneously
+TARGETS="hackerone|bugcrowd|intigriti|yeswehack"; certstream --full | jq -r '.data.leaf_cert.all_domains[]? // empty' | grep -iE "$TARGETS" | anew bb_new_assets.txt &
+```
+
 ### 💀 Shodan + Nuclei Pipeline
 ```bash
 # ☠️ Shodan recon -> Nuclei scan
