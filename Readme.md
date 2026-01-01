@@ -243,6 +243,7 @@ subfinder -d target.com -silent | httpx -silent | nuclei -severity critical,high
 | **Utilities** | [Anew](https://github.com/tomnomnom/anew), [Qsreplace](https://github.com/tomnomnom/qsreplace), [Unfurl](https://github.com/tomnomnom/unfurl), [Gf](https://github.com/tomnomnom/gf), [Uro](https://github.com/s0md3v/uro) | `go install github.com/tomnomnom/anew@latest` |
 | **Fuzzing** | [Ffuf](https://github.com/ffuf/ffuf), [Feroxbuster](https://github.com/epi052/feroxbuster) | `go install github.com/ffuf/ffuf/v2@latest` |
 | **JS Analysis** | [Subjs](https://github.com/lc/subjs), [LinkFinder](https://github.com/GerbenJavado/LinkFinder), [SecretFinder](https://github.com/m4ll0k/SecretFinder), [Jsubfinder](https://github.com/ThreatUnkown/jsubfinder) | `go install github.com/lc/subjs@latest` |
+| **Cert Monitoring** | [Certstream](https://github.com/CaliDog/certstream-python), [Certstream-go](https://github.com/CaliDog/certstream-go) | `pip install certstream` |
 
 ### Quick Install Script
 
@@ -271,6 +272,11 @@ for tool in "${tools[@]}"; do
     echo "[+] Installing $tool"
     go install -v "$tool"
 done
+
+# Install Python tools
+echo "[+] Installing Python tools..."
+pip install certstream sqlmap ghauri uro
+
 echo "[✓] All tools installed!"
 ```
 
