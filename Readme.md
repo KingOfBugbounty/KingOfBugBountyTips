@@ -182,7 +182,8 @@ bbrf inscope add '*.af.mil' '*.army.mil' '*.marines.mil' '*.navy.mil' '*.spacefo
 | [Cloud Security](#-cloud-security) | AWS, GCP, Azure |
 | [Automation Scripts](#-automation-scripts) | Ready-to-use scripts |
 | [Bash Functions](#-bash-functions) | Shell productivity |
-| [New Oneliners 2024-2025](#-new-oneliners-2024-2025) | Latest techniques |
+| [New Oneliners 2026](#-new-oneliners-2026) | CVE-2026 exploits & techniques |
+| [Oneliners 2024-2025](#-oneliners-2024-2025) | Previous techniques |
 | [Search Engines](#-search-engines-for-hackers) | Hacker search engines |
 | [Wordlists](#-recommended-wordlists) | Best wordlists |
 | [Resources](#-learning-resources) | Books, courses, blogs |
@@ -1076,6 +1077,66 @@ katana -u https://target.com -headless -d 5 -jc -silent | anew headless_crawl.tx
 katana -u https://target.com -f qurl -silent | grep "?" | anew forms.txt
 ```
 
+### 💀 Katana Multi-Target Deep Crawl + JS Parsing
+```bash
+# ☠️ Crawl multiple targets with JavaScript parsing and form extraction
+cat alive.txt | katana -d 8 -jc -kf all -aff -ef woff,css,png,svg,jpg,woff2,jpeg,gif,ico -c 50 -p 20 -silent -o katana_multi.txt
+```
+
+### 💀 Gospider Recursive + Sitemap + Robots
+```bash
+# ☠️ Full crawl with sitemap parsing and robots.txt extraction
+gospider -S alive.txt -c 30 -d 5 -t 20 --sitemap --robots --js -a -w --blacklist ".(jpg|jpeg|gif|css|tif|tiff|png|ttf|woff|woff2|ico|svg)" -o gospider_output && cat gospider_output/* | grep -oE 'https?://[^"]+' | sort -u | anew gospider_urls.txt
+```
+
+### 💀 Hakrawler + Wayback + GAU Combined Crawler
+```bash
+# ☠️ Triple source crawling: live + wayback + gau
+echo target.com | hakrawler -d 5 -subs -u > hakrawler.txt && waybackurls target.com > wayback.txt && gau target.com > gau.txt && cat hakrawler.txt wayback.txt gau.txt | sort -u | httpx -silent | anew all_crawled.txt
+```
+
+### 💀 Katana Headless + Form Autofill + Screenshot
+```bash
+# ☠️ Headless browser crawl with form interaction and XHR capture
+katana -u https://target.com -headless -d 6 -jc -aff -xhr -form -timeout 15 -silent -nc -c 20 | anew headless_interactive.txt
+```
+
+### 💀 Cariddi Full Crawl with Secret Detection
+```bash
+# ☠️ Crawl with built-in secrets/endpoints/parameters extraction
+cariddi -u https://target.com -d 5 -s -e -ext 1 -plain -t 50 -c 20 | tee cariddi_results.txt && grep -E "(api|secret|key|token|pass|auth)" cariddi_results.txt | anew secrets_found.txt
+```
+
+### 💀 Parallel Domain Crawler Pipeline
+```bash
+# ☠️ Mass parallel crawling with deduplication
+cat domains.txt | parallel -j 10 "katana -u https://{} -d 5 -jc -silent" | uro | anew parallel_crawl.txt
+```
+
+### 💀 Katana + Gospider + LinkFinder Chain
+```bash
+# ☠️ Combined crawling + JS endpoint extraction pipeline
+katana -u https://target.com -d 5 -jc -silent | grep "\.js$" | httpx -silent | xargs -I@ bash -c 'curl -s @ | grep -oE "(\/[a-zA-Z0-9_\-\/]+)" | sort -u' | anew js_endpoints.txt && gospider -s https://target.com -d 5 -c 10 --js -q | grep -oE 'https?://[^"]+' | anew combined_crawl.txt
+```
+
+### 💀 Recursive Crawl + Nuclei Auto-Scan Pipeline
+```bash
+# ☠️ Crawl then auto-scan discovered endpoints for vulnerabilities
+katana -u https://target.com -d 6 -jc -kf all -aff -silent | tee crawl_output.txt | grep -E "\.(php|asp|aspx|jsp|do|action)(\?|$)" | nuclei -t /root/nuclei-templates/ -severity high,critical -silent -o crawl_vulns.txt
+```
+
+### 💀 Waymore + Katana Historical + Live Merge
+```bash
+# ☠️ Merge historical URLs with live crawl for maximum coverage
+waymore -i target.com -mode U -oU waymore_urls.txt && katana -u https://target.com -d 5 -jc -aff -silent -o katana_live.txt && cat waymore_urls.txt katana_live.txt | uro | httpx -silent -mc 200,301,302,403 | anew merged_crawl.txt
+```
+
+### 💀 Multi-Crawler Output Dedup + Parameter Extraction
+```bash
+# ☠️ Run all crawlers and extract unique parameters
+(gospider -s https://target.com -d 3 -c 10 -q; hakrawler -url https://target.com -d 3; katana -u https://target.com -d 3 -jc -silent) | sort -u | unfurl -u keys | sort | uniq -c | sort -rn | head -100 | anew top_params.txt
+```
+
 ---
 
 ## 🔑 Parameter Discovery
@@ -1526,7 +1587,134 @@ screenshot() {
 
 ---
 
-## 🆕 New Oneliners 2024-2025
+## 🆕 New Oneliners 2026
+
+### ⚡🔥⚡ Ni8mare - CVE-2026-21858 (CVSS 10.0 - CRITICAL) ⚡🔥⚡
+
+> **💀 Critical Unauthenticated RCE in n8n Workflow Automation - 100,000+ servers affected! Added to CISA KEV 💀**
+
+#### ⚡ Detect n8n Instances (Shodan/Censys)
+```bash
+shodan search "n8n" --fields ip_str,port,hostnames | awk '{print "https://"$1":"$2}' | httpx -silent | anew n8n_targets.txt
+```
+
+#### ⚡ Fingerprint n8n Installations
+```bash
+cat alive.txt | httpx -silent -match-string "n8n" -match-string "workflow" -title | grep -i "n8n" | anew n8n_instances.txt
+```
+
+#### ⚡ Check Vulnerable Webhook Endpoints
+```bash
+cat n8n_targets.txt | xargs -I@ -P20 sh -c 'curl -s -o /dev/null -w "%{http_code}" -X POST @/webhook-test/test -H "Content-Type: multipart/form-data" 2>/dev/null | grep -qE "^(200|400|500)$" && echo "POTENTIAL: @"' | tee n8n_webhook_check.txt
+```
+
+#### ⚡ Content-Type Confusion Detection
+```bash
+curl -s -X POST "https://target.com/webhook/ID" -H "Content-Type: application/json" --data '{"test":1}' -w "\n%{http_code}" | tail -1 | grep -qE "^(200|400)$" && echo "Webhook accepts requests"
+```
+
+#### ⚡ Mass n8n Version Detection
+```bash
+cat n8n_targets.txt | httpx -silent -path /rest/settings -match-regex '"versionCli":"[0-9]+\.[0-9]+\.[0-9]+"' | anew n8n_versions.txt
+```
+
+#### ⚡ Nuclei Template Check for CVE-2026-21858
+```bash
+nuclei -l n8n_targets.txt -t http/cves/2026/CVE-2026-21858.yaml -c 30 -o ni8mare_vuln.txt
+```
+
+> **⚠️ Affected:** n8n < 1.121.0 | **✅ Fix:** Update to n8n 1.121.0+
+
+---
+
+### ⚡🔥⚡ N8n Auth RCE - CVE-2026-21877 (CVSS 10.0 - CRITICAL) ⚡🔥⚡
+
+> **💀 Authenticated RCE via Git Node in n8n - Cloud & Self-hosted affected! 💀**
+
+#### ⚡ Detect Git Node Enabled Instances
+```bash
+cat n8n_targets.txt | httpx -silent -path /rest/node-types -match-string "git" | anew n8n_git_enabled.txt
+```
+
+#### ⚡ Check n8n Authentication Endpoints
+```bash
+cat n8n_targets.txt | httpx -silent -path /rest/login -mc 200,401 -title | anew n8n_auth_endpoints.txt
+```
+
+> **⚠️ Affected:** n8n < 1.121.3 | **✅ Fix:** Update to n8n 1.121.3+
+
+---
+
+### ⚡🔥⚡ D-Link DSL RCE - CVE-2026-0625 (CVSS 9.3 - CRITICAL) ⚡🔥⚡
+
+> **💀 Command Injection in Legacy D-Link DSL Routers - Under active exploitation! 💀**
+
+#### ⚡ Shodan Dork for D-Link DSL Routers
+```bash
+shodan search "D-Link DSL" --fields ip_str,port | awk '{print $1":"$2}' | httpx -silent | anew dlink_dsl_targets.txt
+```
+
+#### ⚡ Detect Vulnerable dnscfg.cgi Endpoint
+```bash
+cat dlink_dsl_targets.txt | httpx -silent -path /dnscfg.cgi -mc 200,401 | anew dlink_dnscfg.txt
+```
+
+#### ⚡ Mass D-Link Fingerprint
+```bash
+cat alive.txt | httpx -silent -match-string "D-Link" -match-string "DSL" -title -tech-detect | anew dlink_routers.txt
+```
+
+> **⚠️ Affected:** Legacy D-Link DSL Gateway Routers (EOL) | **✅ Fix:** Replace with supported devices
+
+---
+
+### ⚡🔥⚡ Veeam Backup RCE - CVE-2025-59470 (CVSS 9.0 - CRITICAL) ⚡🔥⚡
+
+> **💀 RCE via Postgres Parameter Injection in Veeam Backup & Replication 💀**
+
+#### ⚡ Detect Veeam Backup Servers
+```bash
+shodan search "Veeam" --fields ip_str,port | awk '{print "https://"$1":"$2}' | httpx -silent | anew veeam_targets.txt
+```
+
+#### ⚡ Fingerprint Veeam Instances
+```bash
+cat alive.txt | httpx -silent -match-string "Veeam" -title -tech-detect | grep -i "veeam" | anew veeam_instances.txt
+```
+
+> **⚠️ Affected:** Veeam B&R 13.0.1.180 and earlier | **✅ Fix:** Update to 13.0.1.1071+
+
+---
+
+### ⚡🔥⚡ Grafana Ghost XSS - CVE-2025-4123 (HIGH SEVERITY) ⚡🔥⚡
+
+> **💀 Zero-Day XSS in Grafana - 46,500+ instances still vulnerable! Account Takeover possible 💀**
+
+#### ⚡ Find Grafana Instances
+```bash
+shodan search "Grafana" --fields ip_str,port,hostnames | awk '{print "https://"$1":"$2}' | httpx -silent | anew grafana_targets.txt
+```
+
+#### ⚡ Detect Grafana Version
+```bash
+cat grafana_targets.txt | httpx -silent -path /api/frontend/settings -match-regex '"version":"[0-9]+\.[0-9]+\.[0-9]+"' | anew grafana_versions.txt
+```
+
+#### ⚡ Check Open Redirect (CVE-2025-4123 vector)
+```bash
+cat grafana_targets.txt | xargs -I@ sh -c 'curl -sI "@/login?redirect=//" 2>/dev/null | grep -i "location" && echo "CHECK: @"' | tee grafana_redirect_check.txt
+```
+
+#### ⚡ Mass Grafana Login Page Detection
+```bash
+cat alive.txt | httpx -silent -path /login -match-string "Grafana" -title | anew grafana_logins.txt
+```
+
+> **⚠️ Affected:** Multiple Grafana versions | **✅ Fix:** Update to latest patched version
+
+---
+
+## 🆕 Oneliners 2024-2025
 
 ### ⚡🔥⚡ React2Shell - CVE-2025-55182 (CVSS 10.0 - CRITICAL) ⚡🔥⚡
 
