@@ -1,206 +1,57 @@
 <div align="center">
 
-<pre>
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⡿⠋⠉⠉⠉⠉⠉⠉⠙⢿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⡿⠀⠀⢀⣤⣤⡀⠀⢀⣤⣤⡀⠀⢿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⡇⠀⠀⠈⣿⣿⡇⠀⢸⣿⣿⠁⠀⢸⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀
-⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠘⠛⠃⠀⠘⠛⠃⠀⠀⣼⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀
-⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣷⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣾⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠈⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⢿⣿⣿⣿⣿⣿⣿⡿⠿⠟⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-</pre>
+# KingOfBugBountyTips
 
-### ☠️ K I N G &nbsp; O F &nbsp; B U G &nbsp; B O U N T Y ☠️
+<img src="https://media.giphy.com/media/077i6AULCXc0FKTj9s/giphy.gif" width="500" alt="Tactical Recon">
 
-# 💀 KingOfBugBountyTips 💀
+**The Ultimate Bug Bounty Reconnaissance Arsenal**
 
-<img src="https://user-images.githubusercontent.com/50994705/228697976-c9e7e8b8-f6dd-4c5a-a7be-8c7b2e8e4a8c.gif" width="600" alt="Bug Bounty Hunter">
+*"In the shadows we hunt, in the code we trust"*
 
-### ☠️ The Ultimate Bug Bounty Reconnaissance Arsenal ☠️
+---
 
-> *"In the shadows we hunt, in the code we trust"* 🏴‍☠️
+[![Stars](https://img.shields.io/github/stars/KingOfBugbounty/KingOfBugBountyTips?style=flat-square&color=yellow)](https://github.com/KingOfBugbounty/KingOfBugBountyTips/stargazers)
+[![Forks](https://img.shields.io/github/forks/KingOfBugbounty/KingOfBugBountyTips?style=flat-square&color=blue)](https://github.com/KingOfBugbounty/KingOfBugBountyTips/network/members)
+[![Last Commit](https://img.shields.io/github/last-commit/KingOfBugbounty/KingOfBugBountyTips?style=flat-square&color=green)](https://github.com/KingOfBugbounty/KingOfBugBountyTips/commits/master)
+[![License](https://img.shields.io/github/license/KingOfBugbounty/KingOfBugBountyTips?style=flat-square)](LICENSE)
 
-<!-- Repository Statistics -->
-<p>
-  <img src="https://img.shields.io/github/stars/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=yellow&logo=github&logoColor=white" alt="Stars">
-  <img src="https://img.shields.io/github/forks/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=blue&logo=github&logoColor=white" alt="Forks">
-  <img src="https://img.shields.io/github/issues/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=red&logo=github&logoColor=white" alt="Issues">
-  <img src="https://img.shields.io/github/license/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=green&logoColor=white" alt="License">
-</p>
+---
 
-<!-- Activity Stats -->
-<p>
-  <img src="https://img.shields.io/github/last-commit/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=orange&logo=git&logoColor=white" alt="Last Commit">
-  <img src="https://img.shields.io/github/contributors/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=cyan&logo=github&logoColor=white" alt="Contributors">
-  <img src="https://img.shields.io/github/languages/top/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=purple&logoColor=white" alt="Language">
-</p>
-
-<!-- Custom Badges -->
-<p>
-  <img src="https://img.shields.io/badge/💀_Bug%20Bounty-Hunter-red?style=for-the-badge">
-  <img src="https://img.shields.io/badge/☠️_Recon-Methodology-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/🏴‍☠️_Oneliners-400+-green?style=for-the-badge">
-  <img src="https://img.shields.io/badge/⚔️_DoD-VDP-yellow?style=for-the-badge">
-  <img src="https://img.shields.io/badge/🎯_Updated-2026-ff69b4?style=for-the-badge">
-</p>
-
-<!-- Visitor Counter -->
-<p>
-  <img src="https://komarev.com/ghpvc/?username=KingOfBugbounty&style=for-the-badge&color=blueviolet&label=VISITORS" alt="Visitor Count">
-  <img src="https://img.shields.io/github/repo-size/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=teal&logoColor=white" alt="Repo Size">
-</p>
-
-### 🔗 Connect with the Hacker
-
-[![Telegram](https://img.shields.io/badge/Telegram-Join%20the%20Crew-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/joinchat/DN_iQksIuhyPKJL1gw0ttA)
-[![Twitter](https://img.shields.io/badge/Twitter-@ofjaaah-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/ofjaaah)
-[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/c/OFJAAAH)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/atjunior/)
-
-<!-- GitHub Stats Cards -->
-<table>
-  <tr>
-    <td>
-      <img src="https://github-readme-stats.vercel.app/api?username=KingOfBugbounty&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866&text_color=FFFFFF" alt="GitHub Stats" width="100%">
-    </td>
-    <td>
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=KingOfBugbounty&theme=radical&hide_border=true&background=0D1117&stroke=F85D7F&ring=F8D866&fire=F85D7F&currStreakLabel=FFFFFF" alt="GitHub Streak" width="100%">
-    </td>
-  </tr>
-</table>
-
-<!-- Language Stats -->
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=KingOfBugbounty&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=FFFFFF" alt="Top Languages" width="50%">
-
-```
-╔══════════════════════════════════════════════════════════════════╗
-║  "The quieter you become, the more you are able to hear" - Kali  ║
-╚══════════════════════════════════════════════════════════════════╝
-```
+[Telegram](https://t.me/joinchat/DN_iQksIuhyPKJL1gw0ttA) | [Twitter](https://twitter.com/ofjaaah) | [YouTube](https://www.youtube.com/c/OFJAAAH) | [LinkedIn](https://www.linkedin.com/in/atjunior/)
 
 </div>
 
 ---
 
-## 🎖️ Department of Defense - Bug Bounty Program
+## DoD VDP Scope
 
-<div align="center">
-
-[![DoD VDP](https://img.shields.io/badge/🛡️_DoD-Vulnerability_Disclosure_Program-DC143C?style=for-the-badge&labelColor=000080)](https://hackerone.com/deptofdefense)
-&nbsp;&nbsp;
-[![KingRecon DOD](https://img.shields.io/badge/⚔️_KingRecon__DOD-Automated_Recon-FFD700?style=for-the-badge&logo=github&logoColor=black)](https://github.com/KingOfBugbounty/KingRecon_DOD)
-
-<br><br>
-
-<table>
-  <tr>
-    <td align="center" width="140">
-      <img src="https://img.shields.io/badge/-000080?style=for-the-badge" width="80" height="40"><br>
-      <b>🛡️ DoD</b><br>
-      <sub>Department of Defense</sub>
-    </td>
-    <td align="center" width="140">
-      <img src="https://img.shields.io/badge/-4B5320?style=for-the-badge" width="80" height="40"><br>
-      <b>⭐ Army</b><br>
-      <sub>U.S. Army</sub>
-    </td>
-    <td align="center" width="140">
-      <img src="https://img.shields.io/badge/-000080?style=for-the-badge" width="80" height="40"><br>
-      <b>⚓ Navy</b><br>
-      <sub>U.S. Navy</sub>
-    </td>
-    <td align="center" width="140">
-      <img src="https://img.shields.io/badge/-00308F?style=for-the-badge" width="80" height="40"><br>
-      <b>✈️ Air Force</b><br>
-      <sub>U.S. Air Force</sub>
-    </td>
-    <td align="center" width="140">
-      <img src="https://img.shields.io/badge/-CC0000?style=for-the-badge" width="80" height="40"><br>
-      <b>🦅 Marines</b><br>
-      <sub>U.S. Marines</sub>
-    </td>
-    <td align="center" width="140">
-      <img src="https://img.shields.io/badge/-1C3A6E?style=for-the-badge" width="80" height="40"><br>
-      <b>🚀 Space Force</b><br>
-      <sub>U.S. Space Force</sub>
-    </td>
-  </tr>
-</table>
-
-<br>
+> [DoD Vulnerability Disclosure Program](https://hackerone.com/deptofdefense) | [KingRecon DOD](https://github.com/KingOfBugbounty/KingRecon_DOD)
 
 <details>
-<summary><b>📋 Full DoD Scope - 19 Domains (Click to expand)</b></summary>
-
-<br>
+<summary><b>Full DoD Scope - 19 Domains</b></summary>
 
 ```bash
-# 🎯 BBRF Scope - All DoD Domains (Copy & Paste Ready)
+# BBRF Scope - All DoD Domains
 bbrf inscope add '*.af.mil' '*.army.mil' '*.marines.mil' '*.navy.mil' '*.spaceforce.mil' '*.ussf.mil' '*.pentagon.mil' '*.osd.mil' '*.disa.mil' '*.dtra.mil' '*.dla.mil' '*.dcma.mil' '*.dtic.mil' '*.dau.mil' '*.health.mil' '*.ng.mil' '*.uscg.mil' '*.socom.mil' '*.dds.mil' '*.yellowribbon.mil'
 ```
 
-<table>
-  <tr>
-    <th align="center">🎖️ Military Branches</th>
-    <th align="center">🏛️ DoD Agencies</th>
-    <th align="center">🔧 Support Commands</th>
-  </tr>
-  <tr>
-    <td valign="top">
-      <code>*.af.mil</code> - Air Force<br>
-      <code>*.army.mil</code> - Army<br>
-      <code>*.marines.mil</code> - Marines<br>
-      <code>*.navy.mil</code> - Navy<br>
-      <code>*.spaceforce.mil</code> - Space Force<br>
-      <code>*.ussf.mil</code> - Space Force
-    </td>
-    <td valign="top">
-      <code>*.pentagon.mil</code> - Pentagon HQ<br>
-      <code>*.osd.mil</code> - Office of SecDef<br>
-      <code>*.disa.mil</code> - Defense Info Systems<br>
-      <code>*.dtra.mil</code> - Threat Reduction<br>
-      <code>*.dla.mil</code> - Logistics Agency<br>
-      <code>*.dcma.mil</code> - Contract Management
-    </td>
-    <td valign="top">
-      <code>*.dtic.mil</code> - Tech Info Center<br>
-      <code>*.dau.mil</code> - Acquisition Univ<br>
-      <code>*.health.mil</code> - Military Health<br>
-      <code>*.ng.mil</code> - National Guard<br>
-      <code>*.uscg.mil</code> - Coast Guard<br>
-      <code>*.socom.mil</code> - Special Operations<br>
-      <code>*.dds.mil</code> - Digital Service<br>
-      <code>*.yellowribbon.mil</code> - Yellow Ribbon
-    </td>
-  </tr>
-</table>
+| Military Branches | DoD Agencies | Support Commands |
+|:-----------------|:-------------|:-----------------|
+| `*.af.mil` - Air Force | `*.pentagon.mil` - Pentagon HQ | `*.dtic.mil` - Tech Info Center |
+| `*.army.mil` - Army | `*.osd.mil` - Office of SecDef | `*.dau.mil` - Acquisition Univ |
+| `*.marines.mil` - Marines | `*.disa.mil` - Defense Info Systems | `*.health.mil` - Military Health |
+| `*.navy.mil` - Navy | `*.dtra.mil` - Threat Reduction | `*.ng.mil` - National Guard |
+| `*.spaceforce.mil` - Space Force | `*.dla.mil` - Logistics Agency | `*.uscg.mil` - Coast Guard |
+| `*.ussf.mil` - Space Force | `*.dcma.mil` - Contract Management | `*.socom.mil` - Special Operations |
 
 </details>
 
-</div>
-
 ---
 
-## 🛡️ Security & Ethical Use
+## Security Notice
 
-<div align="center">
-
-```ascii
-╔═══════════════════════════════════════════════════════════════╗
-║              ⚠️  RESPONSIBLE DISCLOSURE NOTICE ⚠️              ║
-╠═══════════════════════════════════════════════════════════════╣
-║  This repository is for EDUCATIONAL and AUTHORIZED testing   ║
-║  ONLY. Always obtain proper authorization before testing.    ║
-╚═══════════════════════════════════════════════════════════════╝
-```
-
-</div>
+> **This repository is for EDUCATIONAL and AUTHORIZED testing ONLY.**
+> Always obtain proper authorization before testing.
 
 <details>
 <summary><b>📜 Click to read our Security Policy & Guidelines</b></summary>
