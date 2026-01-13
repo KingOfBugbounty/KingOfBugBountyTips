@@ -26,18 +26,34 @@
 
 > *"In the shadows we hunt, in the code we trust"* 🏴‍☠️
 
+<!-- Repository Statistics -->
 <p>
-  <img src="https://img.shields.io/github/stars/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=yellow&logo=github">
-  <img src="https://img.shields.io/github/forks/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=blue&logo=github">
-  <img src="https://img.shields.io/github/issues/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=red&logo=github">
-  <img src="https://img.shields.io/github/license/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=green">
+  <img src="https://img.shields.io/github/stars/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=yellow&logo=github&logoColor=white" alt="Stars">
+  <img src="https://img.shields.io/github/forks/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=blue&logo=github&logoColor=white" alt="Forks">
+  <img src="https://img.shields.io/github/issues/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=red&logo=github&logoColor=white" alt="Issues">
+  <img src="https://img.shields.io/github/license/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=green&logoColor=white" alt="License">
 </p>
 
+<!-- Activity Stats -->
+<p>
+  <img src="https://img.shields.io/github/last-commit/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=orange&logo=git&logoColor=white" alt="Last Commit">
+  <img src="https://img.shields.io/github/contributors/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=cyan&logo=github&logoColor=white" alt="Contributors">
+  <img src="https://img.shields.io/github/languages/top/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=purple&logoColor=white" alt="Language">
+</p>
+
+<!-- Custom Badges -->
 <p>
   <img src="https://img.shields.io/badge/💀_Bug%20Bounty-Hunter-red?style=for-the-badge">
   <img src="https://img.shields.io/badge/☠️_Recon-Methodology-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/🏴‍☠️_Oneliners-Collection-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/🏴‍☠️_Oneliners-400+-green?style=for-the-badge">
   <img src="https://img.shields.io/badge/⚔️_DoD-VDP-yellow?style=for-the-badge">
+  <img src="https://img.shields.io/badge/🎯_Updated-2026-ff69b4?style=for-the-badge">
+</p>
+
+<!-- Visitor Counter -->
+<p>
+  <img src="https://komarev.com/ghpvc/?username=KingOfBugbounty&style=for-the-badge&color=blueviolet&label=VISITORS" alt="Visitor Count">
+  <img src="https://img.shields.io/github/repo-size/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=teal&logoColor=white" alt="Repo Size">
 </p>
 
 ### 🔗 Connect with the Hacker
@@ -47,7 +63,20 @@
 [![YouTube](https://img.shields.io/badge/YouTube-Subscribe-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/c/OFJAAAH)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/atjunior/)
 
-<img src="https://github-readme-stats.vercel.app/api?username=KingOfBugbounty&show_icons=true&theme=radical" alt="GitHub Stats">
+<!-- GitHub Stats Cards -->
+<table>
+  <tr>
+    <td>
+      <img src="https://github-readme-stats.vercel.app/api?username=KingOfBugbounty&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&icon_color=F8D866&text_color=FFFFFF" alt="GitHub Stats" width="100%">
+    </td>
+    <td>
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=KingOfBugbounty&theme=radical&hide_border=true&background=0D1117&stroke=F85D7F&ring=F8D866&fire=F85D7F&currStreakLabel=FFFFFF" alt="GitHub Streak" width="100%">
+    </td>
+  </tr>
+</table>
+
+<!-- Language Stats -->
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=KingOfBugbounty&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=FFFFFF" alt="Top Languages" width="50%">
 
 ```
 ╔══════════════════════════════════════════════════════════════════╗
@@ -158,6 +187,61 @@ bbrf inscope add '*.af.mil' '*.army.mil' '*.marines.mil' '*.navy.mil' '*.spacefo
 
 ---
 
+## 🛡️ Security & Ethical Use
+
+<div align="center">
+
+```ascii
+╔═══════════════════════════════════════════════════════════════╗
+║              ⚠️  RESPONSIBLE DISCLOSURE NOTICE ⚠️              ║
+╠═══════════════════════════════════════════════════════════════╣
+║  This repository is for EDUCATIONAL and AUTHORIZED testing   ║
+║  ONLY. Always obtain proper authorization before testing.    ║
+╚═══════════════════════════════════════════════════════════════╝
+```
+
+</div>
+
+<details>
+<summary><b>📜 Click to read our Security Policy & Guidelines</b></summary>
+
+<br>
+
+### ✅ Permitted Use Cases
+
+- ✅ **Authorized Bug Bounty Programs** - HackerOne, Bugcrowd, Intigriti, etc.
+- ✅ **Authorized Penetration Testing** - With written permission
+- ✅ **Personal Lab Environments** - Your own infrastructure
+- ✅ **Educational Purposes** - Learning and research
+- ✅ **DoD VDP Program** - Following program rules
+
+### ❌ Prohibited Activities
+
+- ❌ **Unauthorized Testing** - Testing without explicit permission
+- ❌ **Malicious Intent** - Using techniques for harm or theft
+- ❌ **Out-of-Scope Testing** - Testing targets outside program scope
+- ❌ **Social Engineering** - Unless explicitly allowed in program
+- ❌ **DoS/DDoS Attacks** - Resource exhaustion attacks
+
+### 📋 Responsible Disclosure Guidelines
+
+1. **Read the Program Policy** - Always review scope and rules
+2. **Test Safely** - Don't cause harm to production systems
+3. **Document Everything** - Keep detailed notes of your findings
+4. **Report Privately** - Use official channels for disclosure
+5. **Give Time to Fix** - Allow vendors reasonable time to patch
+6. **Be Professional** - Maintain ethical standards
+
+### 🔒 Report Security Issues
+
+Found a security issue in this repository? Please report it responsibly:
+
+[![Report Issue](https://img.shields.io/badge/Report-Security%20Issue-red?style=for-the-badge&logo=github)](https://github.com/KingOfBugbounty/KingOfBugBountyTips/security/advisories/new)
+
+</details>
+
+---
+
 ## 📚 Table of Contents
 
 <details>
@@ -194,34 +278,162 @@ bbrf inscope add '*.af.mil' '*.army.mil' '*.marines.mil' '*.navy.mil' '*.spacefo
 
 ## 🎯 About
 
-Our main goal is to share tips from well-known bug hunters. Using recon methodology, we find subdomains, APIs, and tokens that are exploitable. We aim to influence the community with Oneliner tips for better understanding.
+<div align="center">
+
+```ascii
+╔═══════════════════════════════════════════════════════════════╗
+║                 🎯 MISSION STATEMENT 🎯                       ║
+╠═══════════════════════════════════════════════════════════════╣
+║  Share elite bug bounty techniques from world-class hunters   ║
+║  Build the most comprehensive one-liner collection           ║
+║  Empower the security research community                     ║
+╚═══════════════════════════════════════════════════════════════╝
+```
+
+</div>
+
+Our main goal is to share tips from well-known bug hunters. Using advanced recon methodology, we discover subdomains, APIs, tokens, and vulnerabilities that are exploitable. We aim to influence and educate the community with powerful one-liner techniques for better understanding and faster results.
 
 ### 🏆 What Makes This Repository Special?
 
-- **400+ Curated Oneliners** - Battle-tested commands from real bug bounty hunters
-- **Complete Methodology** - From recon to exploitation
-- **Constantly Updated** - New techniques added regularly
-- **Community Driven** - Contributions from top hunters worldwide
+<table>
+  <tr>
+    <td align="center" width="25%">
+      <img src="https://img.shields.io/badge/400+-Oneliners-brightgreen?style=for-the-badge&logo=terminal" alt="Oneliners"><br>
+      <b>💎 Curated Commands</b><br>
+      <sub>Battle-tested from real hunters</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="https://img.shields.io/badge/Complete-Methodology-blue?style=for-the-badge&logo=hackthebox" alt="Methodology"><br>
+      <b>🎯 Full Methodology</b><br>
+      <sub>Recon to exploitation</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="https://img.shields.io/badge/2026-Updated-orange?style=for-the-badge&logo=github" alt="Updated"><br>
+      <b>🔄 Constantly Updated</b><br>
+      <sub>New techniques weekly</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="https://img.shields.io/badge/Community-Driven-red?style=for-the-badge&logo=discord" alt="Community"><br>
+      <b>🌍 Community Driven</b><br>
+      <sub>Top hunters worldwide</sub>
+    </td>
+  </tr>
+</table>
 
-**Download BugBuntu:** [![BugBuntu](https://img.shields.io/badge/Download-BugBuntu-orange?style=flat-square&logo=linux)](https://sourceforge.net/projects/bugbuntu/)
+### 📦 Special Resources
+
+<div align="center">
+
+[![BugBuntu](https://img.shields.io/badge/Download-BugBuntu%20OS-orange?style=for-the-badge&logo=linux&logoColor=white)](https://sourceforge.net/projects/bugbuntu/)
+[![KingRecon](https://img.shields.io/badge/Try-KingRecon%20DOD-gold?style=for-the-badge&logo=github&logoColor=black)](https://github.com/KingOfBugbounty/KingRecon_DOD)
+[![Contribute](https://img.shields.io/badge/Contribute-Welcome-success?style=for-the-badge&logo=github&logoColor=white)](https://github.com/KingOfBugbounty/KingOfBugBountyTips/pulls)
+
+</div>
+
+### 📊 Repository Highlights
+
+<details>
+<summary><b>📈 Click to see detailed statistics</b></summary>
+
+<br>
+
+| Category | Count | Status |
+|:---------|:-----:|:------:|
+| **One-Liners** | 400+ | ✅ Active |
+| **Techniques** | 50+ | ✅ Active |
+| **Tools Covered** | 100+ | ✅ Active |
+| **CVE Examples** | 20+ | ✅ Active |
+| **DoD Domains** | 19 | ✅ Active |
+| **Contributors** | Growing | 🚀 Growing |
+| **Last Update** | 2026 | ✅ Current |
+
+</details>
 
 ---
 
 ## 🚀 Quick Start
 
-Get your first recon running in under 5 minutes:
+<div align="center">
+
+### ⚡ Get your first recon running in under 5 minutes
+
+</div>
+
+<table>
+  <tr>
+    <td width="33%" align="center">
+      <h3>1️⃣ Install Tools</h3>
+      <img src="https://img.shields.io/badge/Time-2%20mins-blue?style=for-the-badge" alt="Time">
+    </td>
+    <td width="33%" align="center">
+      <h3>2️⃣ Run Recon</h3>
+      <img src="https://img.shields.io/badge/Time-1%20min-green?style=for-the-badge" alt="Time">
+    </td>
+    <td width="33%" align="center">
+      <h3>3️⃣ Find Bugs</h3>
+      <img src="https://img.shields.io/badge/Time-2%20mins-red?style=for-the-badge" alt="Time">
+    </td>
+  </tr>
+</table>
 
 ```bash
-# 1. Install essential tools
+# 📥 Step 1: Install essential tools (ProjectDiscovery Suite)
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 
-# 2. Run your first recon
+# 🔍 Step 2: Run your first reconnaissance chain
 subfinder -d target.com -silent | httpx -silent | nuclei -severity critical,high
 
-# 3. Profit! 🎉
+# 🎉 Step 3: Analyze results and profit!
+# Check the output for vulnerabilities and start reporting!
 ```
+
+<details>
+<summary><b>🎬 Want a complete automated workflow? Click here!</b></summary>
+
+<br>
+
+```bash
+# 🚀 Advanced Quick Start - Complete Recon Pipeline
+TARGET="target.com"
+
+# Subdomain enumeration with multiple sources
+subfinder -d $TARGET -all -silent | \
+httpx -silent -title -status-code -tech-detect -follow-redirects | \
+tee subdomains_live.txt
+
+# Deep crawling and parameter discovery
+cat subdomains_live.txt | katana -silent -d 3 -jc | \
+grep -E '\\.js$' | \
+httpx -silent -mc 200 | \
+tee js_files.txt
+
+# Vulnerability scanning with Nuclei
+nuclei -l subdomains_live.txt -severity critical,high,medium -silent -o nuclei_results.txt
+
+# 💎 Results saved in:
+# - subdomains_live.txt (Live domains)
+# - js_files.txt (JavaScript files)
+# - nuclei_results.txt (Vulnerabilities found)
+```
+
+</details>
+
+<div align="center">
+
+### 🎯 Pro Tips for Beginners
+
+| Tip | Description |
+|:---:|:------------|
+| 🔑 | Always get proper authorization before testing |
+| 📝 | Keep detailed notes of your findings |
+| 🛠️ | Start with automated tools, then manual testing |
+| 💰 | Focus on high-impact vulnerabilities first |
+| 🤝 | Join the community and learn from others |
+
+</div>
 
 ---
 
@@ -2064,21 +2276,85 @@ curl -s https://target.com/favicon.ico | python3 -c "import mmh3,sys,codecs;prin
 
 ---
 
-## 📊 Repository Stats
+## 🤝 Contributing
 
 <div align="center">
 
-![GitHub stars](https://img.shields.io/github/stars/KingOfBugbounty/KingOfBugBountyTips?style=social)
-![GitHub forks](https://img.shields.io/github/forks/KingOfBugbounty/KingOfBugBountyTips?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/KingOfBugbounty/KingOfBugBountyTips?style=social)
+We welcome contributions from the community! Your expertise makes this repository better.
+
+[![Contributors](https://img.shields.io/github/contributors/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=blue)](https://github.com/KingOfBugbounty/KingOfBugBountyTips/graphs/contributors)
+[![Pull Requests](https://img.shields.io/github/issues-pr/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=green)](https://github.com/KingOfBugbounty/KingOfBugBountyTips/pulls)
+[![Issues](https://img.shields.io/github/issues/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=orange)](https://github.com/KingOfBugbounty/KingOfBugBountyTips/issues)
 
 </div>
 
+### 💡 How to Contribute
+
+<details>
+<summary><b>📝 Click to see contribution guidelines</b></summary>
+
+<br>
+
+1. **Fork the Repository**
+   ```bash
+   git clone https://github.com/KingOfBugbounty/KingOfBugBountyTips.git
+   cd KingOfBugBountyTips
+   ```
+
+2. **Create a New Branch**
+   ```bash
+   git checkout -b feature/your-contribution
+   ```
+
+3. **Add Your Content**
+   - Add new one-liners with proper documentation
+   - Include source references and explanations
+   - Follow the existing format and structure
+
+4. **Submit Pull Request**
+   - Write a clear description of your changes
+   - Reference any related issues
+   - Wait for review and feedback
+
+### ✨ What to Contribute
+
+- 🎯 New bug bounty one-liners and techniques
+- 🔧 Tool installation guides and tips
+- 📚 Additional resources and references
+- 🐛 Bug fixes and improvements
+- 📖 Documentation enhancements
+- 🌐 Translations to other languages
+
+</details>
+
 ---
 
-## ⭐ Star History
+## 📊 Repository Analytics
 
 <div align="center">
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://img.shields.io/github/stars/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&logo=github&color=yellow" alt="Stars"><br>
+      <b>Stars</b>
+    </td>
+    <td align="center">
+      <img src="https://img.shields.io/github/forks/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&logo=github&color=blue" alt="Forks"><br>
+      <b>Forks</b>
+    </td>
+    <td align="center">
+      <img src="https://img.shields.io/github/watchers/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&logo=github&color=green" alt="Watchers"><br>
+      <b>Watchers</b>
+    </td>
+    <td align="center">
+      <img src="https://img.shields.io/github/contributors/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&logo=github&color=orange" alt="Contributors"><br>
+      <b>Contributors</b>
+    </td>
+  </tr>
+</table>
+
+### 📈 Growth Chart
 
 [![Star History Chart](https://api.star-history.com/svg?repos=KingOfBugbounty/KingOfBugBountyTips&type=Date)](https://star-history.com/#KingOfBugbounty/KingOfBugBountyTips&Date)
 
@@ -2086,25 +2362,113 @@ curl -s https://target.com/favicon.ico | python3 -c "import mmh3,sys,codecs;prin
 
 ---
 
+## 💖 Support the Project
+
 <div align="center">
 
-<a href="https://www.buymeacoffee.com/OFJAAAH"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" width="180"></a>
+If this repository helped you in your bug bounty journey, consider supporting the project!
 
-<p>
-  <img src="https://img.shields.io/badge/Made%20with-Bash-1f425f.svg?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Made%20with-Go-00ADD8.svg?style=for-the-badge&logo=go">
-  <img src="https://img.shields.io/badge/Made%20with-%E2%9D%A4-red?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Open%20Source-Yes-green?style=for-the-badge&logo=github">
-</p>
+<a href="https://www.buymeacoffee.com/OFJAAAH" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="200">
+</a>
 
-### ⚠️ Disclaimer
+### ⭐ Show Your Support
 
-**For authorized security testing only. Always obtain proper authorization before testing.**
+Give this repository a star if you found it helpful!
 
-**The author is not responsible for any misuse of this information.**
+[![GitHub stars](https://img.shields.io/github/stars/KingOfBugbounty/KingOfBugBountyTips?style=social)](https://github.com/KingOfBugbounty/KingOfBugBountyTips/stargazers)
+
+</div>
 
 ---
 
-**Last Updated:** December 2024
+## 📜 License & Legal
+
+<div align="center">
+
+[![License](https://img.shields.io/github/license/KingOfBugbounty/KingOfBugBountyTips?style=for-the-badge&color=blue)](LICENSE)
+
+<p>
+  <img src="https://img.shields.io/badge/Made%20with-Bash-1f425f.svg?style=for-the-badge&logo=gnubash&logoColor=white">
+  <img src="https://img.shields.io/badge/Made%20with-Go-00ADD8.svg?style=for-the-badge&logo=go&logoColor=white">
+  <img src="https://img.shields.io/badge/Made%20with-Python-3776AB.svg?style=for-the-badge&logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/Made%20with-%E2%9D%A4-red?style=for-the-badge">
+</p>
+
+</div>
+
+### ⚠️ Important Disclaimer
+
+<div align="center">
+
+```ascii
+╔═══════════════════════════════════════════════════════════════╗
+║                    ⚠️  LEGAL NOTICE ⚠️                        ║
+╠═══════════════════════════════════════════════════════════════╣
+║  This repository is for EDUCATIONAL PURPOSES ONLY             ║
+║                                                                ║
+║  ✅ DO: Use for authorized security testing                   ║
+║  ✅ DO: Learn and understand the techniques                   ║
+║  ✅ DO: Contribute and share knowledge                        ║
+║                                                                ║
+║  ❌ DON'T: Use for unauthorized testing                       ║
+║  ❌ DON'T: Use for malicious purposes                         ║
+║  ❌ DON'T: Violate laws or regulations                        ║
+║                                                                ║
+║  The authors are NOT responsible for any misuse or damage     ║
+║  caused by this information. Always test responsibly!         ║
+╚═══════════════════════════════════════════════════════════════╝
+```
+
+</div>
+
+---
+
+## 🔗 Quick Links & Resources
+
+<div align="center">
+
+| Resource | Link |
+|:---------|:-----|
+| 🏠 **Homepage** | [King of Bug Bounty Tips](https://github.com/KingOfBugbounty/KingOfBugBountyTips) |
+| 🛠️ **KingRecon DOD** | [Automated Recon Tool](https://github.com/KingOfBugbounty/KingRecon_DOD) |
+| 🐧 **BugBuntu OS** | [Download Here](https://sourceforge.net/projects/bugbuntu/) |
+| 📺 **YouTube Channel** | [OFJAAAH](https://www.youtube.com/c/OFJAAAH) |
+| 💬 **Telegram Group** | [Join Community](https://t.me/joinchat/DN_iQksIuhyPKJL1gw0ttA) |
+| 🐦 **Twitter/X** | [@ofjaaah](https://twitter.com/ofjaaah) |
+| 💼 **LinkedIn** | [Connect](https://www.linkedin.com/in/atjunior/) |
+| 🐛 **Report Issues** | [GitHub Issues](https://github.com/KingOfBugbounty/KingOfBugBountyTips/issues) |
+| 🔐 **Security Issues** | [Security Advisory](https://github.com/KingOfBugbounty/KingOfBugBountyTips/security/advisories/new) |
+
+</div>
+
+---
+
+<div align="center">
+
+### 🌟 Special Thanks
+
+To all contributors, bug bounty hunters, and the security community who make this project possible!
+
+---
+
+**Last Updated:** January 2026 | **Version:** 4.5
+
+<img src="https://img.shields.io/badge/Maintained-Yes-success?style=for-the-badge">
+<img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge">
+<img src="https://img.shields.io/badge/Community-Growing-blue?style=for-the-badge">
+
+<br><br>
+
+```ascii
+╔══════════════════════════════════════════════════════════════════╗
+║          "Stay curious, stay ethical, stay hungry" 🏴‍☠️          ║
+║                  Happy Hunting! 💀                               ║
+╚══════════════════════════════════════════════════════════════════╝
+```
+
+<br>
+
+**Made with ❤️ by the Bug Bounty Community**
 
 </div>
