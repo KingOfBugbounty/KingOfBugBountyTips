@@ -1714,6 +1714,64 @@ cat alive.txt | httpx -silent -path /login -match-string "Grafana" -title | anew
 
 ---
 
+### ⚡🔥⚡ CVE-2026 Subdomain Hunting - Mass Detection Pipeline ⚡🔥⚡
+
+> **💀 10 Oneliners to hunt CVE-2026 vulnerabilities across subdomains at scale! 💀**
+
+#### ⚡ 1. Full Subdomain CVE-2026 Hunt Pipeline (n8n + Grafana + D-Link)
+```bash
+subfinder -d target.com -silent | httpx -silent -title -tech-detect | tee alive_subs.txt | while read line; do echo "$line" | grep -qiE "(n8n|grafana|d-link)" && echo "[CVE-2026 TARGET] $line"; done | anew cve2026_targets.txt
+```
+
+#### ⚡ 2. Mass n8n CVE-2026-21858 Detection on Subdomains
+```bash
+subfinder -d target.com -silent | httpx -silent | xargs -I@ -P30 sh -c 'curl -s "@/rest/settings" 2>/dev/null | grep -q "versionCli" && echo "[N8N FOUND] @"' | tee n8n_subs.txt | xargs -I@ nuclei -u @ -t http/cves/2026/CVE-2026-21858.yaml -silent
+```
+
+#### ⚡ 3. CVE-2026-21877 n8n Git Node RCE Subdomain Scanner
+```bash
+cat subdomains.txt | httpx -silent | xargs -I@ -P20 sh -c 'curl -s "@/rest/node-types" 2>/dev/null | grep -qi "git" && curl -s "@/rest/settings" 2>/dev/null | grep -qE "versionCli.*1\.(([0-9]|[0-9][0-9]|1[01][0-9]|120)\.[0-9]+)" && echo "[CVE-2026-21877 VULN] @"' | anew n8n_git_vuln.txt
+```
+
+#### ⚡ 4. Grafana CVE-2025-4123 XSS + Open Redirect Subdomain Hunt
+```bash
+subfinder -d target.com -silent | httpx -silent -path /api/frontend/settings -match-regex '"version":"' | tee grafana_subs.txt | xargs -I@ -P15 sh -c 'curl -sI "@/login?redirect=//evil.com" 2>/dev/null | grep -qi "location.*evil" && echo "[CVE-2025-4123 VULN] @"'
+```
+
+#### ⚡ 5. Multi-CVE-2026 Scanner with Nuclei (Parallel Templates)
+```bash
+subfinder -d target.com -silent | httpx -silent | nuclei -tags cve2026 -severity critical,high -c 50 -o cve2026_nuclei_results.txt
+```
+
+#### ⚡ 6. Subdomain n8n Webhook Fingerprint + CVE-2026-21858 Check
+```bash
+cat subdomains.txt | httpx -silent | xargs -I@ -P25 sh -c 'for path in /webhook /webhook-test /rest/workflows; do curl -s -o /dev/null -w "%{http_code}" "@$path" 2>/dev/null | grep -qE "^(200|401|403)$" && echo "[N8N ENDPOINT] @$path" && break; done' | anew n8n_webhooks.txt
+```
+
+#### ⚡ 7. CVE-2026 IoT/Router Hunt (D-Link DSL + Other Routers)
+```bash
+subfinder -d target.com -silent | httpx -silent -title -tech-detect | grep -iE "(d-link|router|gateway|modem|dsl)" | tee router_subs.txt | xargs -I@ -P10 sh -c 'curl -s "@/dnscfg.cgi" 2>/dev/null | grep -qi "dns" && echo "[CVE-2026-0625 POTENTIAL] @"'
+```
+
+#### ⚡ 8. Veeam CVE-2025-59470 Subdomain Detection
+```bash
+subfinder -d target.com -silent | httpx -silent -title -tech-detect | grep -i "veeam" | tee veeam_subs.txt | xargs -I@ -P10 sh -c 'curl -s "@/api/v1/version" 2>/dev/null | grep -qE "13\.0\.[01]\.[0-9]+" && echo "[CVE-2025-59470 VULN] @"'
+```
+
+#### ⚡ 9. Combined CVE-2026 Fingerprint + Version Extractor
+```bash
+subfinder -d target.com -silent | httpx -silent -json | jq -r 'select(.technologies != null) | "\(.url) \(.technologies[])"' | grep -iE "(n8n|grafana|veeam|next)" | while read url tech; do echo "[CVE-2026 CHECK] $url - $tech"; done | anew cve2026_tech_fingerprint.txt
+```
+
+#### ⚡ 10. Full CVE-2026 Recon Automation Script
+```bash
+domain="target.com"; mkdir -p recon_$domain && cd recon_$domain && subfinder -d $domain -silent | httpx -silent -title -tech-detect -json -o httpx_out.json && cat httpx_out.json | jq -r '.url' | nuclei -t ~/nuclei-templates/http/cves/2026/ -c 30 -o cve2026_vulns.txt && echo "[+] Found $(wc -l < cve2026_vulns.txt) CVE-2026 vulnerabilities!"
+```
+
+> **🎯 Pro Tip:** Combine with `notify` to get real-time alerts: `... | notify -silent -provider slack`
+
+---
+
 ## 🆕 Oneliners 2024-2025
 
 ### ⚡🔥⚡ React2Shell - CVE-2025-55182 (CVSS 10.0 - CRITICAL) ⚡🔥⚡
