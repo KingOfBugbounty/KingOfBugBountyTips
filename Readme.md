@@ -1835,6 +1835,74 @@ domain="target.com"; mkdir -p recon_$domain && cd recon_$domain && subfinder -d 
 
 ---
 
+### ⚡🔥⚡ Advanced Reconnaissance Pipeline - 2026 Edition ⚡🔥⚡
+
+> **🎯 10 Elite Oneliners for comprehensive reconnaissance - Multi-source enumeration, ASN discovery, JS analysis & more! 🎯**
+
+#### ⚡ 1. Multi-Source Subdomain Discovery + Tech Fingerprinting
+```bash
+subfinder -d target.com -all -silent | anew subs.txt && assetfinder --subs-only target.com | anew subs.txt && amass enum -passive -norecursive -noalts -d target.com | anew subs.txt && cat subs.txt | httpx -silent -threads 200 -tech-detect -status-code -title -o alive_with_tech.txt
+```
+> Combines Subfinder + Assetfinder + Amass for maximum subdomain coverage, then validates with httpx + technology fingerprinting
+
+#### ⚡ 2. ASN Enumeration + Reverse DNS Discovery
+```bash
+echo "target.com" | dnsx -silent -resp-only -a | xargs -I{} whois -h whois.cymru.com {} | awk '{print $1}' | grep -E "AS[0-9]+" | xargs -I{} sh -c 'whois -h whois.radb.net -- "-i origin {}" | grep -Eo "([0-9.]+){4}/[0-9]+"' | mapcidr -silent | dnsx -silent -ptr -resp-only | anew asn_discovered_hosts.txt
+```
+> Discovers ASN, enumerates IP blocks, performs reverse DNS to find hidden subdomains
+
+#### ⚡ 3. URL Discovery Pipeline (Wayback + GAU + Katana)
+```bash
+cat alive.txt | xargs -P 50 -I{} sh -c 'echo {} | waybackurls & echo {} | gau --threads 10 --blacklist png,jpg,gif,svg,woff,ttf & echo {} | katana -d 3 -jc -kf all -silent' | uro | anew all_urls.txt
+```
+> Parallel URL collection from Wayback Machine, Common Crawl, AlienVault + active crawling with smart deduplication
+
+#### ⚡ 4. JavaScript Deep Analysis + Secret Scanner
+```bash
+cat alive.txt | katana -silent -em js,json -jc -d 2 | httpx -silent -mc 200 | tee js_files.txt | xargs -P 20 -I{} sh -c 'curl -sk {} | tee /tmp/js_$$.tmp | grep -oE "(api_key|apikey|api-key|secret|token|password|aws_access|AKIA[0-9A-Z]{16})" && cat /tmp/js_$$.tmp | grep -oE "/(api|v[0-9]|admin|internal)/[a-zA-Z0-9_/?=&-]+" | sort -u' | anew js_secrets_and_endpoints.txt
+```
+> Finds JS files, extracts hardcoded secrets (API keys, tokens, AWS keys) and hidden API endpoints
+
+#### ⚡ 5. Certificate Transparency + Subdomain Permutation Attack
+```bash
+curl -s "https://crt.sh/?q=%25.target.com&output=json" | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | tee crt_subs.txt | dnsgen - | shuffledns -d target.com -r /usr/share/wordlists/resolvers.txt -silent -o permuted_subs.txt && cat permuted_subs.txt | httpx -silent -o alive_permuted.txt
+```
+> CT logs enumeration + intelligent permutation (api → api-dev, api-staging) with mass DNS resolution
+
+#### ⚡ 6. Port Discovery + Web Services on Non-Standard Ports
+```bash
+cat subs.txt | naabu -silent -top-ports 1000 -exclude-cdn -c 50 | sed 's/:/ /g' | awk '{print $1":"$2}' | httpx -silent -probe -status-code -title -tech-detect -follow-redirects -random-agent -o ports_with_web_services.txt
+```
+> Fast port scan + discovers web apps running on unusual ports (8080, 8443, 3000, etc)
+
+#### ⚡ 7. GitHub Dorking Automation for Target Organization
+```bash
+ORG="target"; for dork in "org:$ORG password" "org:$ORG api_key" "org:$ORG secret" "org:$ORG token" "org:$ORG aws_access" "org:$ORG credentials"; do echo "[+] Searching: $dork"; gh search repos "$dork" --limit 100 | grep "^$ORG" | tee -a github_secrets.txt; sleep 2; done
+```
+> Automated GitHub dorking for secrets, credentials and sensitive data exposure
+
+#### ⚡ 8. Cloud Storage Discovery (S3 + Azure + GCP)
+```bash
+cat all_urls.txt | grep -oE '(s3\.amazonaws\.com/[a-zA-Z0-9._-]+|[a-zA-Z0-9._-]+\.s3\.amazonaws\.com|storage\.googleapis\.com/[a-zA-Z0-9._-]+|[a-zA-Z0-9._-]+\.blob\.core\.windows\.net)' | sort -u | tee cloud_buckets.txt | xargs -I{} sh -c 'curl -sI https://{} | grep -q "200\|403" && echo "[+] {} - Accessible"'
+```
+> Extracts and validates misconfigured cloud storage buckets from collected URLs
+
+#### ⚡ 9. Parameter Discovery + Vulnerability Pattern Matching
+```bash
+cat all_urls.txt | uro | grep "=" | unfurl keys | sort -u | tee all_params.txt && cat all_urls.txt | gf xss | tee xss_params.txt && cat all_urls.txt | gf ssrf | tee ssrf_params.txt && cat all_urls.txt | gf sqli | tee sqli_params.txt && cat all_urls.txt | gf redirect | tee redirect_params.txt
+```
+> Extracts unique parameters and categorizes by vulnerability type (XSS, SSRF, SQLi, Redirect)
+
+#### ⚡ 10. Continuous Recon Monitor (Cron-Ready)
+```bash
+DOMAIN="target.com"; DATE=$(date +%Y%m%d); mkdir -p recon_$DATE; cd recon_$DATE; subfinder -d $DOMAIN -all -silent | anew subs_$DATE.txt; cat subs_$DATE.txt | httpx -silent -threads 200 -o alive_$DATE.txt; cat alive_$DATE.txt | nuclei -t exposures/ -silent -o new_exposures_$DATE.txt; diff ../recon_$(date -d "yesterday" +%Y%m%d)/subs_*.txt subs_$DATE.txt 2>/dev/null | grep ">" | awk '{print $2}' > new_subs_$DATE.txt; [ -s new_subs_$DATE.txt ] && notify -silent -bulk < new_subs_$DATE.txt
+```
+> Full persistent recon pipeline - detects new assets daily and sends notifications
+
+> **🎯 Pro Tip:** Run oneliner #10 via cron for 24/7 monitoring: `0 */6 * * * /path/to/recon_monitor.sh`
+
+---
+
 ## 🆕 Oneliners 2024-2025
 
 ### ⚡🔥⚡ React2Shell - CVE-2025-55182 (CVSS 10.0 - CRITICAL) ⚡🔥⚡
