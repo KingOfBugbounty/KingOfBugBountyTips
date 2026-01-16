@@ -1903,6 +1903,74 @@ DOMAIN="target.com"; DATE=$(date +%Y%m%d); mkdir -p recon_$DATE; cd recon_$DATE;
 
 ---
 
+### ⚡🔥⚡ JavaScript Endpoint Extraction - Elite Techniques 2026 ⚡🔥⚡
+
+> **🎯 10 Oneliners to extract endpoints, secrets and hidden APIs from JavaScript files! 🎯**
+
+#### ⚡ 1. Mass JS File Discovery + Download Pipeline
+```bash
+cat alive.txt | katana -silent -em js -jc -d 3 | grep -E "\.js(\?|$)" | httpx -silent -mc 200 -content-length | awk '$NF > 500 {print $1}' | anew js_files.txt && cat js_files.txt | xargs -P 30 -I{} sh -c 'curl -sk {} -o js_downloaded/$(echo {} | md5sum | cut -d" " -f1).js 2>/dev/null'
+```
+> Discovers all JS files with Katana, filters by size (>500 bytes), downloads for offline analysis
+
+#### ⚡ 2. Extract All API Endpoints from JS Files
+```bash
+cat js_files.txt | xargs -P 20 -I{} sh -c 'curl -sk {} 2>/dev/null' | grep -oE '["'"'"'](\/[a-zA-Z0-9_\-\.\/]+(\?[a-zA-Z0-9_\-\.=&]+)?)['"'"'"]' | sed 's/[\"'"'"']//g' | sort -u | grep -E "^/" | grep -vE "\.(css|png|jpg|svg|gif|woff|ico)$" | anew js_endpoints.txt
+```
+> Extracts all relative API paths from JavaScript, filters static assets
+
+#### ⚡ 3. AWS Keys Hunter in JS Files
+```bash
+cat js_files.txt | xargs -P 20 -I{} sh -c 'curl -sk {} 2>/dev/null | grep -oE "(AKIA|ABIA|ACCA|ASIA)[0-9A-Z]{16}" && echo "Found in: {}"' | tee aws_keys_js.txt
+```
+> Hunts for AWS Access Key IDs (AKIA, ABIA, ACCA, ASIA patterns)
+
+#### ⚡ 4. Google API Keys + Firebase URLs Extractor
+```bash
+cat js_files.txt | xargs -P 20 -I{} sh -c 'curl -sk {} 2>/dev/null | grep -oE "(AIza[0-9A-Za-z_-]{35}|[a-z0-9-]+\.firebaseio\.com|[a-z0-9-]+\.firebaseapp\.com)" && echo "[SOURCE] {}"' | tee google_firebase_keys.txt
+```
+> Extracts Google API keys and Firebase database/app URLs
+
+#### ⚡ 5. S3 Bucket Discovery in JavaScript
+```bash
+cat js_files.txt | xargs -P 20 -I{} sh -c 'curl -sk {} 2>/dev/null | grep -oE "([a-zA-Z0-9_-]+\.s3\.amazonaws\.com|s3\.amazonaws\.com\/[a-zA-Z0-9_-]+|[a-zA-Z0-9_-]+\.s3\.[a-z0-9-]+\.amazonaws\.com)" | sort -u' | anew s3_buckets_js.txt && cat s3_buckets_js.txt | xargs -I{} sh -c 'curl -sI https://{} 2>/dev/null | head -1 | grep -qE "200|403" && echo "[ACCESSIBLE] {}"'
+```
+> Finds S3 buckets in JS and validates accessibility
+
+#### ⚡ 6. Internal IP Addresses Leakage
+```bash
+cat js_files.txt | xargs -P 20 -I{} sh -c 'curl -sk {} 2>/dev/null | grep -oE "(10\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|172\.(1[6-9]|2[0-9]|3[01])\.[0-9]{1,3}\.[0-9]{1,3}|192\.168\.[0-9]{1,3}\.[0-9]{1,3})" && echo "[SOURCE] {}"' | sort -u | tee internal_ips_js.txt
+```
+> Discovers internal/private IP addresses leaked in JavaScript (10.x, 172.16-31.x, 192.168.x)
+
+#### ⚡ 7. Slack Webhooks + Discord Tokens in JS
+```bash
+cat js_files.txt | xargs -P 20 -I{} sh -c 'curl -sk {} 2>/dev/null | grep -oE "(https://hooks\.slack\.com/services/[A-Za-z0-9/]+|[MN][A-Za-z\d]{23,}\.[\w-]{6}\.[\w-]{27})" && echo "[SOURCE] {}"' | tee slack_discord_js.txt
+```
+> Extracts Slack webhook URLs and Discord bot tokens
+
+#### ⚡ 8. GitHub Tokens + Private Keys Detection
+```bash
+cat js_files.txt | xargs -P 20 -I{} sh -c 'curl -sk {} 2>/dev/null | grep -oE "(ghp_[a-zA-Z0-9]{36}|gho_[a-zA-Z0-9]{36}|ghu_[a-zA-Z0-9]{36}|ghs_[a-zA-Z0-9]{36}|ghr_[a-zA-Z0-9]{36}|github_pat_[a-zA-Z0-9]{22}_[a-zA-Z0-9]{59}|-----BEGIN (RSA |EC |DSA |OPENSSH )?PRIVATE KEY-----)" && echo "[SOURCE] {}"' | tee github_privkeys_js.txt
+```
+> Finds GitHub personal access tokens (all formats) and private key headers
+
+#### ⚡ 9. Email Addresses + Hidden Subdomains in JS
+```bash
+cat js_files.txt | xargs -P 20 -I{} sh -c 'curl -sk {} 2>/dev/null | grep -oE "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" | sort -u' | anew emails_js.txt && cat js_files.txt | xargs -P 20 -I{} sh -c 'curl -sk {} 2>/dev/null | grep -oE "https?://[a-zA-Z0-9._-]+\.target\.com[a-zA-Z0-9./?=_-]*"' | unfurl domains | sort -u | anew hidden_subdomains_js.txt
+```
+> Extracts email addresses and hidden subdomains referenced in JavaScript
+
+#### ⚡ 10. Full JS Recon Pipeline (All-in-One)
+```bash
+TARGET="target.com"; mkdir -p js_recon_$TARGET && cat alive.txt | katana -silent -em js -jc -d 3 | grep -iE "\.js(\?|$)" | httpx -silent -mc 200 | anew js_recon_$TARGET/js_urls.txt && cat js_recon_$TARGET/js_urls.txt | xargs -P 30 -I{} sh -c 'curl -sk {} 2>/dev/null | tee -a js_recon_$TARGET/all_js.txt' && grep -oE "(AKIA|ABIA|ACCA|ASIA)[0-9A-Z]{16}" js_recon_$TARGET/all_js.txt > js_recon_$TARGET/aws_keys.txt; grep -oE "AIza[0-9A-Za-z_-]{35}" js_recon_$TARGET/all_js.txt > js_recon_$TARGET/google_keys.txt; grep -oE "ghp_[a-zA-Z0-9]{36}" js_recon_$TARGET/all_js.txt > js_recon_$TARGET/github_tokens.txt; grep -oE '["'"'"']/[a-zA-Z0-9_/-]+["'"'"']' js_recon_$TARGET/all_js.txt | tr -d '\"'"'"'' | sort -u > js_recon_$TARGET/endpoints.txt; echo "[+] JS Recon Complete! Check js_recon_$TARGET/"
+```
+> Complete JS recon pipeline: discovers JS files, downloads all, extracts AWS/Google/GitHub keys and API endpoints
+
+> **🎯 Pro Tip:** Use `nuclei -t exposures/tokens/` on discovered secrets to validate if they're active!
+
+---
+
 ## 🆕 Oneliners 2024-2025
 
 ### ⚡🔥⚡ React2Shell - CVE-2025-55182 (CVSS 10.0 - CRITICAL) ⚡🔥⚡
