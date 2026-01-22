@@ -856,6 +856,85 @@ curl -s https://target.com/favicon.ico | md5sum | awk '{print $1}' | xargs -I@ s
 
 ---
 
+## 🔐 TLS/SSL Reconnaissance (TLSX)
+
+<div align="center">
+
+```
+████████╗██╗     ███████╗██╗  ██╗    ██████╗ ███████╗ ██████╗ ██████╗ ███╗   ██╗
+╚══██╔══╝██║     ██╔════╝╚██╗██╔╝    ██╔══██╗██╔════╝██╔════╝██╔═══██╗████╗  ██║
+   ██║   ██║     ███████╗ ╚███╔╝     ██████╔╝█████╗  ██║     ██║   ██║██╔██╗ ██║
+   ██║   ██║     ╚════██║ ██╔██╗     ██╔══██╗██╔══╝  ██║     ██║   ██║██║╚██╗██║
+   ██║   ███████╗███████║██╔╝ ██╗    ██║  ██║███████╗╚██████╗╚██████╔╝██║ ╚████║
+   ╚═╝   ╚══════╝╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝
+```
+
+**🔐 TLS/SSL Certificate Intelligence with TLSX 🔐**
+
+</div>
+
+### 🔐 Basic TLS Certificate Scan
+```bash
+# 🔐 Full TLS certificate details extraction
+echo target.com | tlsx -san -cn -so -sv -ss -serial -hash md5 -jarm -ja3 -wc -tps -ve -ce -ct -cdn -silent | tee tlsx_full.txt
+```
+
+### 🔐 Subdomain Discovery via SANs
+```bash
+# 🔐 Extract all subdomains from certificate SANs
+subfinder -d target.com -silent | tlsx -san -cn -silent -resp-only | grep -oE "[a-zA-Z0-9.-]+\.target\.com" | sort -u | anew san_subdomains.txt
+```
+
+### 🔐 Expired Certificate Hunter
+```bash
+# 🔐 Find hosts with expired SSL certificates
+cat hosts.txt | tlsx -expired -silent -cn -so | tee expired_certs.txt
+```
+
+### 🔐 Self-Signed Certificate Detection
+```bash
+# 🔐 Identify self-signed certificates (potential security issue)
+cat hosts.txt | tlsx -self-signed -silent -cn -so -hash sha256 | tee self_signed.txt
+```
+
+### 🔐 TLS Version Enumeration (Weak TLS)
+```bash
+# 🔐 Find hosts with deprecated TLS versions (TLS 1.0/1.1)
+cat hosts.txt | tlsx -tls-version -silent | grep -E "(tls10|tls11)" | tee weak_tls_versions.txt
+```
+
+### 🔐 JARM Fingerprinting Pipeline
+```bash
+# 🔐 JARM fingerprint for server identification and correlation
+subfinder -d target.com -silent | httpx -silent | tlsx -jarm -silent -json | jq -r '[.host, .jarm_hash] | @tsv' | sort -k2 | anew jarm_fingerprints.txt
+```
+
+### 🔐 Certificate Chain & Issuer Analysis
+```bash
+# 🔐 Analyze certificate chain and identify CA
+cat hosts.txt | tlsx -so -serial -hash sha256 -ve -ce -json -silent | jq -r '[.host, .issuer_cn, .not_after, .serial] | @tsv' | anew cert_chain_analysis.txt
+```
+
+### 🔐 Mass TLS Scan with Cipher Enumeration
+```bash
+# 🔐 Full cipher suite enumeration + TLS version
+subfinder -d target.com -silent | httpx -silent | tlsx -cipher -tls-version -silent -json | jq -r '[.host, .version, .cipher] | @tsv' | anew cipher_enum.txt
+```
+
+### 🔐 Mismatched Certificate Detection
+```bash
+# 🔐 Find certificates where CN doesn't match the hostname
+cat hosts.txt | tlsx -mismatched -cn -san -silent | tee mismatched_certs.txt
+```
+
+### 🔐 Ultimate TLS Recon Pipeline
+```bash
+# 🔐 Complete TLS intelligence gathering
+subfinder -d target.com -all -silent | httpx -silent -p 443,8443,4443,9443 | tlsx -san -cn -so -sv -ss -serial -expired -self-signed -mismatched -tls-version -jarm -hash sha256 -json -silent | jq -c '{host: .host, cn: .subject_cn, san: .san, issuer: .issuer_cn, expired: .expired, self_signed: .self_signed, tls: .version, jarm: .jarm_hash}' | tee tlsx_full_recon.json
+```
+
+---
+
 ## 📜 JavaScript Recon
 
 ### Complete JS Pipeline
