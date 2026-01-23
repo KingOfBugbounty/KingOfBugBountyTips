@@ -116,6 +116,7 @@ Found a security issue in this repository? Please report it responsibly:
 | [Monitoring](#Monitoring) | Monitoring Tools |
 | [API Security Testing](#-api-security-testing) | API vulnerabilities |
 | [Cloud Security](#-cloud-security) | AWS, GCP, Azure |
+| [waf-Evasion](#Waf-Bypasses) | Waf bypasses Tools |
 | [Automation Scripts](#-automation-scripts) | Ready-to-use scripts |
 | [Bash Functions](#-bash-functions) | Shell productivity |
 | [New Oneliners 2026](#-new-oneliners-2026) | CVE-2026 exploits & techniques |
@@ -1637,6 +1638,20 @@ cat urls.txt | gf ssrf | qsreplace "http://169.254.169.254/latest/meta-data/iam/
 cat alive.txt | httpx -silent -path /.aws/credentials,/.docker/config.json,/kubeconfig -mc 200 | anew cloud_creds.txt
 ```
 
+### Waf Evasion
+- Advanced tool for security researchers to bypass 403/40X restrictions :
+- install nomore403
+```bash
+go install github.com/devploit/nomore403@latest
+```
+- usage example : 
+```bash
+./nomore403 -u https://domain.com/admin
+```
+# bypass WAF Limitations use plugin nowafpls in burp sutie :
+```
+https://github.com/assetnote/nowafpls
+```
 ---
 
 ## 🤖 Automation Scripts
