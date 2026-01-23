@@ -113,6 +113,7 @@ Found a security issue in this repository? Please report it responsibly:
 | [Parameter Discovery](#-parameter-discovery) | Hidden params |
 | [Content Discovery](#-content-discovery) | Sensitive files |
 | [Nuclei Scanning](#-nuclei-scanning) | Automated scanning |
+| [Monitoring](#Monitoring) - Monitoring Tools |
 | [API Security Testing](#-api-security-testing) | API vulnerabilities |
 | [Cloud Security](#-cloud-security) | AWS, GCP, Azure |
 | [Automation Scripts](#-automation-scripts) | Ready-to-use scripts |
@@ -1419,6 +1420,27 @@ cat alive.txt | httpx -silent -path /database.sql,/db.sql,/backup.sql,/dump.sql 
 ### Full Template Scan
 ```bash
 nuclei -l alive.txt -t /nuclei-templates/ -severity critical,high,medium -c 50 -rl 150 -o nuclei_results.txt
+```
+### Monitoring
+- Monitor Scope Or New Program :
+. install bbscope tool
+```bash
+go install github.com/sw33tLie/bbscope@latest
+```
+- Get in-scope targets from bounty-based HackerOne programs :
+```bash
+bbscope h1 -t <YOUR_TOKEN> -u <YOUR_H1_USERNAME> -b -o t
+```
+- Monitor New Subdomains :
+- install notify tool :
+```bash
+go install -v github.com/projectdiscovery/notify/cmd/notify@latest
+```
+- read usage the tool form : ```bash https://github.com/projectdiscovery/notify ```
+- Monitor JavaScript files :
+```bash
+# use notify
+https://github.com/projectdiscovery/notify
 ```
 
 ### CVE Scanning
