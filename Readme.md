@@ -1423,7 +1423,8 @@ nuclei -l alive.txt -t /nuclei-templates/ -severity critical,high,medium -c 50 -
 ```
 
 
-## ⚡ Monitoring
+### Monitoring
+
 - Monitor Scope Or New Program :
 - install bbscope tool
 ```bash
