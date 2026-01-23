@@ -1421,9 +1421,11 @@ cat alive.txt | httpx -silent -path /database.sql,/db.sql,/backup.sql,/dump.sql 
 ```bash
 nuclei -l alive.txt -t /nuclei-templates/ -severity critical,high,medium -c 50 -rl 150 -o nuclei_results.txt
 ```
-### Monitoring
+
+
+## ⚡ Monitoring
 - Monitor Scope Or New Program :
-. install bbscope tool
+- install bbscope tool
 ```bash
 go install github.com/sw33tLie/bbscope@latest
 ```
@@ -1442,6 +1444,7 @@ go install -v github.com/projectdiscovery/notify/cmd/notify@latest
 ```bash
 # use notify
 ```
+
 
 ### CVE Scanning
 ```bash
