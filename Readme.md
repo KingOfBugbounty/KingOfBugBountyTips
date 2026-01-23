@@ -538,6 +538,7 @@ go install -v github.com/hakluke/hakrevdns@latest
 go install -v github.com/sensepost/gowitness@latest
 go install -v github.com/d3mondev/puredns/v2@latest
 go install -v github.com/owasp-amass/amass/v4/...@master
+go install -v github.com/glebarez/cero@latest
 
 # Python tools
 echo "[4/5] Installing Python tools..."
@@ -840,6 +841,20 @@ puredns bruteforce wordlist.txt target.com -r resolvers.txt -w puredns_subs.txt
 ```bash
 # ☠️ Extract subdomains from SSL certificates
 echo target.com | httpx -silent | xargs -I@ sh -c 'echo | openssl s_client -connect @:443 2>/dev/null | openssl x509 -noout -text | grep -oP "DNS:[^\s,]+" | sed "s/DNS://"' | sort -u | anew ssl_subs.txt
+```
+
+- usnig cero tool , Scrape domain names from SSL certificates of arbitrary hosts :
+```bash
+#install
+go install github.com/glebarez/cero@latest
+```
+- usage :
+```bash
+# domain
+cero yahoo.com
+
+# file
+cat subs.txt | cero -c 1000
 ```
 
 ### 💀 Favicon Hash -> Shodan
