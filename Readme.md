@@ -116,7 +116,7 @@ Found a security issue in this repository? Please report it responsibly:
 | [Monitoring](#Monitoring) | Monitoring Tools |
 | [API Security Testing](#-api-security-testing) | API vulnerabilities |
 | [Cloud Security](#-cloud-security) | AWS, GCP, Azure |
-| [waf-Evasion](#Waf-Bypasses) | Waf bypasses Tools |
+| [waf Evasion](#Waf-Bypasses) | Waf bypasses Tools |
 | [Automation Scripts](#-automation-scripts) | Ready-to-use scripts |
 | [Bash Functions](#-bash-functions) | Shell productivity |
 | [New Oneliners 2026](#-new-oneliners-2026) | CVE-2026 exploits & techniques |
