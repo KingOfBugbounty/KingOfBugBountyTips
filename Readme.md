@@ -113,7 +113,7 @@ Found a security issue in this repository? Please report it responsibly:
 | [Parameter Discovery](#-parameter-discovery) | Hidden params |
 | [Content Discovery](#-content-discovery) | Sensitive files |
 | [Nuclei Scanning](#-nuclei-scanning) | Automated scanning |
-| [Monitoring](#Monitoring) - Monitoring Tools |
+| [Monitoring](#Monitoring) | Monitoring Tools |
 | [API Security Testing](#-api-security-testing) | API vulnerabilities |
 | [Cloud Security](#-cloud-security) | AWS, GCP, Azure |
 | [Automation Scripts](#-automation-scripts) | Ready-to-use scripts |
@@ -1436,11 +1436,11 @@ bbscope h1 -t <YOUR_TOKEN> -u <YOUR_H1_USERNAME> -b -o t
 ```bash
 go install -v github.com/projectdiscovery/notify/cmd/notify@latest
 ```
-- read usage the tool form : ```bash https://github.com/projectdiscovery/notify ```
+- read how to use the tool form : ```https://github.com/projectdiscovery/notify ```
+
 - Monitor JavaScript files :
 ```bash
 # use notify
-https://github.com/projectdiscovery/notify
 ```
 
 ### CVE Scanning
