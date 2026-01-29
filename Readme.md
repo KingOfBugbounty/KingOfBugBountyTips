@@ -935,6 +935,87 @@ subfinder -d target.com -all -silent | httpx -silent -p 443,8443,4443,9443 | tls
 
 ---
 
+## 🌐 DNS Intelligence (DNSX)
+
+<div align="center">
+
+```
+██████╗ ███╗   ██╗███████╗██╗  ██╗    ██████╗ ███████╗ ██████╗ ██████╗ ███╗   ██╗
+██╔══██╗████╗  ██║██╔════╝╚██╗██╔╝    ██╔══██╗██╔════╝██╔════╝██╔═══██╗████╗  ██║
+██║  ██║██╔██╗ ██║███████╗ ╚███╔╝     ██████╔╝█████╗  ██║     ██║   ██║██╔██╗ ██║
+██║  ██║██║╚██╗██║╚════██║ ██╔██╗     ██╔══██╗██╔══╝  ██║     ██║   ██║██║╚██╗██║
+██████╔╝██║ ╚████║███████║██╔╝ ██╗    ██║  ██║███████╗╚██████╗╚██████╔╝██║ ╚████║
+╚═════╝ ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝
+```
+
+**🌐 DNS Reconnaissance & Intelligence Gathering with DNSX 🌐**
+
+</div>
+
+### 🌐 1. Mass DNS Resolution + Wildcard Filtering
+```bash
+# 🌐 Resolve subdomains and filter out wildcards
+subfinder -d target.com -silent | dnsx -silent -a -resp-only -wd target.com | sort -u | anew resolved_ips.txt
+```
+
+### 🌐 2. Multi-Record Type DNS Enumeration
+```bash
+# 🌐 Query A, AAAA, CNAME, MX, NS, TXT records simultaneously
+echo target.com | dnsx -silent -a -aaaa -cname -mx -ns -txt -resp | tee full_dns_records.txt
+```
+
+### 🌐 3. CNAME Extraction for Subdomain Takeover
+```bash
+# 🌐 Find dangling CNAMEs pointing to vulnerable services
+subfinder -d target.com -silent | dnsx -silent -cname -resp-only | grep -iE "(s3|cloudfront|herokuapp|github|azure|shopify|fastly|pantheon|zendesk|readme|ghost|surge|bitbucket|wordpress|tumblr)" | anew cname_takeover_candidates.txt
+```
+
+### 🌐 4. Reverse DNS (PTR) on IP Ranges
+```bash
+# 🌐 Discover hidden hosts via reverse DNS lookups
+prips 192.168.1.0/24 | dnsx -silent -ptr -resp-only | anew ptr_discovered_hosts.txt
+```
+
+### 🌐 5. MX Records for Email Security Analysis
+```bash
+# 🌐 Extract MX records to identify mail servers and SPF bypass opportunities
+cat domains.txt | dnsx -silent -mx -resp | awk '{print $1, $2}' | sort -u | tee mx_records.txt && cat domains.txt | dnsx -silent -txt -resp | grep -i "spf" | anew spf_records.txt
+```
+
+### 🌐 6. NS Records + DNS Zone Transfer Check
+```bash
+# 🌐 Enumerate nameservers and check for misconfigured zone transfers
+cat domains.txt | dnsx -silent -ns -resp-only | tee nameservers.txt && cat nameservers.txt | xargs -I@ -P10 sh -c 'host -t axfr target.com @ 2>&1 | grep -v "failed\|timed out" && echo "[ZONE TRANSFER] @"' | anew zone_transfers.txt
+```
+
+### 🌐 7. DNS Brute-force with Custom Resolvers
+```bash
+# 🌐 Mass DNS brute-force with custom resolver list
+cat wordlist.txt | sed 's/$/.target.com/' | dnsx -silent -r resolvers.txt -rl 500 -t 200 -retry 3 -resp-only | anew bruteforced_subs.txt
+```
+
+### 🌐 8. JSON Output for Advanced Parsing
+```bash
+# 🌐 Full DNS recon with JSON output for pipeline integration
+subfinder -d target.com -silent | dnsx -silent -a -aaaa -cname -mx -ns -txt -ptr -resp -json | jq -c '{host: .host, a: .a, aaaa: .aaaa, cname: .cname, mx: .mx, ns: .ns, txt: .txt}' | tee dns_full_recon.json
+```
+
+### 🌐 9. ASN Discovery via DNS + IP Correlation
+```bash
+# 🌐 Resolve domains, extract unique IPs, and identify ASN ownership
+subfinder -d target.com -silent | dnsx -silent -a -resp-only | sort -u | tee target_ips.txt | xargs -I{} sh -c 'whois {} 2>/dev/null | grep -iE "(netname|orgname|asn|origin)" | head -5' | anew asn_info.txt
+```
+
+### 🌐 10. Ultimate DNS Recon Pipeline
+```bash
+# 🌐 Complete DNS intelligence gathering
+domain="target.com"; subfinder -d $domain -all -silent | tee subs_$domain.txt | dnsx -silent -a -aaaa -cname -mx -ns -txt -resp -json -o dns_records_$domain.json; cat subs_$domain.txt | dnsx -silent -cname -resp-only | grep -iE "(s3|cloudfront|azure|github)" | anew takeover_$domain.txt; cat dns_records_$domain.json | jq -r '.a[]?' | sort -u | dnsx -silent -ptr -resp-only | anew ptr_$domain.txt; echo "[+] DNS Recon Complete: $(wc -l < subs_$domain.txt) subdomains | $(cat dns_records_$domain.json | wc -l) records"
+```
+
+> **🎯 Pro Tip:** Use custom resolvers for better performance: `dnsx -r resolvers.txt -rl 1000`
+
+---
+
 ## 📜 JavaScript Recon
 
 ### Complete JS Pipeline
