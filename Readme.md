@@ -724,6 +724,68 @@ TARGETS="hackerone|bugcrowd|intigriti|yeswehack"; certstream --full | jq -r '.da
 shodan domain target.com | awk '{print $3}' | httpx -silent | nuclei -t /nuclei-templates/ -severity critical,high
 ```
 
+### 💀 Clawdbot Discovery via Shodan (Mass Exploitation)
+
+#### ⚡ 1. Find Clawdbot Instances - Basic Search
+```bash
+# 💀 Locate Clawdbot servers exposed on the internet
+shodan search "Clawdbot" --fields ip_str,port,hostnames,org | awk '{print $1":"$2}' | anew clawdbot_targets.txt
+```
+
+#### ⚡ 2. Clawdbot HTTP Headers Discovery
+```bash
+# 💀 Find servers with Clawdbot in HTTP headers
+shodan search "http.headers:Clawdbot" --fields ip_str,port,http.title | tee clawdbot_http.txt | wc -l && echo "targets found"
+```
+
+#### ⚡ 3. Clawdbot User-Agent Detection
+```bash
+# 💀 Detect Clawdbot via User-Agent strings
+shodan search "http.user_agent:Clawdbot" --fields ip_str,port,org,hostnames | awk -F'\t' '{print "https://"$1":"$2" - "$3}' | anew clawdbot_ua.txt
+```
+
+#### ⚡ 4. Clawdbot + Nuclei Exploitation Pipeline
+```bash
+# 💀 Mass Clawdbot discovery -> httpx alive -> Nuclei scan
+shodan search "Clawdbot" --fields ip_str,port --limit 1000 | awk '{print $1":"$2}' | httpx -silent | nuclei -t ~/nuclei-templates/ -severity critical,high -o clawdbot_vulns.txt
+```
+
+#### ⚡ 5. Clawdbot Server Fingerprinting
+```bash
+# 💀 Extract detailed server info from Clawdbot hosts
+shodan search "Clawdbot" --fields ip_str,port,os,product,version,org | sort -t$'\t' -k4 | anew clawdbot_fingerprint.txt
+```
+
+#### ⚡ 6. Clawdbot ASN Distribution Analysis
+```bash
+# 💀 Map Clawdbot instances by ASN for targeted reconnaissance
+shodan search "Clawdbot" --fields ip_str,asn,org | awk '{print $2}' | sort | uniq -c | sort -rn | head -20 | tee clawdbot_asn_stats.txt
+```
+
+#### ⚡ 7. Clawdbot Geographic Distribution
+```bash
+# 💀 Find Clawdbot by country for geo-targeted testing
+for country in US BR DE FR GB RU CN JP KR IN; do echo "=== $country ===" && shodan search "Clawdbot country:$country" --fields ip_str,port,city --limit 100 | anew clawdbot_${country}.txt; done
+```
+
+#### ⚡ 8. Clawdbot + Port Range Scan
+```bash
+# 💀 Discover Clawdbot on common web ports
+shodan search "Clawdbot port:80,443,8080,8443,8000,3000,5000" --fields ip_str,port,http.server | awk '{print $1":"$2}' | httpx -silent -status-code -title | anew clawdbot_webports.txt
+```
+
+#### ⚡ 9. Clawdbot SSL Certificate Analysis
+```bash
+# 💀 Extract Clawdbot hosts with SSL certificate info
+shodan search "Clawdbot ssl:true" --fields ip_str,port,ssl.cert.subject.CN,ssl.cert.issuer.O | sort -u | anew clawdbot_ssl.txt
+```
+
+#### ⚡ 10. Clawdbot Realtime Monitor + Alert
+```bash
+# 💀 Continuous monitoring for new Clawdbot instances
+while true; do shodan search "Clawdbot" --fields ip_str,port,timestamp --limit 50 | sort -t$'\t' -k3 -r | head -10 | anew clawdbot_new.txt && sleep 3600; done &
+```
+
 ### 💀 ASN Discovery & Reverse DNS
 ```bash
 # ☠️ Find all IPs from organization ASN
