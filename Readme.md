@@ -113,8 +113,10 @@ Found a security issue in this repository? Please report it responsibly:
 | [Parameter Discovery](#-parameter-discovery) | Hidden params |
 | [Content Discovery](#-content-discovery) | Sensitive files |
 | [Nuclei Scanning](#-nuclei-scanning) | Automated scanning |
+| [Monitoring](#Monitoring) | Monitoring Tools |
 | [API Security Testing](#-api-security-testing) | API vulnerabilities |
 | [Cloud Security](#-cloud-security) | AWS, GCP, Azure |
+| [waf Evasion](#Waf-Bypasses) | Waf bypasses Tools |
 | [Automation Scripts](#-automation-scripts) | Ready-to-use scripts |
 | [Bash Functions](#-bash-functions) | Shell productivity |
 | [New Oneliners 2026](#-new-oneliners-2026) | CVE-2026 exploits & techniques |
@@ -537,6 +539,7 @@ go install -v github.com/hakluke/hakrevdns@latest
 go install -v github.com/sensepost/gowitness@latest
 go install -v github.com/d3mondev/puredns/v2@latest
 go install -v github.com/owasp-amass/amass/v4/...@master
+go install -v github.com/glebarez/cero@latest
 
 # Python tools
 echo "[4/5] Installing Python tools..."
@@ -901,6 +904,20 @@ puredns bruteforce wordlist.txt target.com -r resolvers.txt -w puredns_subs.txt
 ```bash
 # ☠️ Extract subdomains from SSL certificates
 echo target.com | httpx -silent | xargs -I@ sh -c 'echo | openssl s_client -connect @:443 2>/dev/null | openssl x509 -noout -text | grep -oP "DNS:[^\s,]+" | sed "s/DNS://"' | sort -u | anew ssl_subs.txt
+```
+
+- usnig cero tool , Scrape domain names from SSL certificates of arbitrary hosts :
+```bash
+#install
+go install github.com/glebarez/cero@latest
+```
+- usage :
+```bash
+# domain
+cero yahoo.com
+
+# file
+cat subs.txt | cero -c 1000
 ```
 
 ### 💀 Favicon Hash -> Shodan
@@ -1564,6 +1581,31 @@ cat alive.txt | httpx -silent -path /database.sql,/db.sql,/backup.sql,/dump.sql 
 nuclei -l alive.txt -t /nuclei-templates/ -severity critical,high,medium -c 50 -rl 150 -o nuclei_results.txt
 ```
 
+
+### Monitoring
+
+- Monitor Scope Or New Program :
+- install bbscope tool
+```bash
+go install github.com/sw33tLie/bbscope@latest
+```
+- Get in-scope targets from bounty-based HackerOne programs :
+```bash
+bbscope h1 -t <YOUR_TOKEN> -u <YOUR_H1_USERNAME> -b -o t
+```
+- Monitor New Subdomains :
+- install notify tool :
+```bash
+go install -v github.com/projectdiscovery/notify/cmd/notify@latest
+```
+- read how to use the tool form : ```https://github.com/projectdiscovery/notify ```
+
+- Monitor JavaScript files :
+```bash
+# use notify
+```
+
+
 ### CVE Scanning
 ```bash
 nuclei -l alive.txt -t cves/ -severity critical,high -c 30 -o cve_results.txt
@@ -1737,6 +1779,24 @@ cat urls.txt | gf ssrf | qsreplace "http://169.254.169.254/latest/meta-data/iam/
 ### Cloud Credential Files
 ```bash
 cat alive.txt | httpx -silent -path /.aws/credentials,/.docker/config.json,/kubeconfig -mc 200 | anew cloud_creds.txt
+```
+
+---
+
+## Waf Evasion
+- Advanced tool for security researchers to bypass 403/40X restrictions :
+- install nomore403
+```bash
+go install github.com/devploit/nomore403@latest
+```
+- usage example : 
+```bash
+./nomore403 -u https://domain.com/admin
+```
+
+# bypass WAF Limitations use plugin nowafpls in burp sutie :
+```
+https://github.com/assetnote/nowafpls
 ```
 
 ---
