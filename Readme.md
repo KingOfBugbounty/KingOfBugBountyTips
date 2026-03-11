@@ -2340,6 +2340,120 @@ cat urls.txt | parallel -j20 'curl -s -o /dev/null -w "{} - %{http_code}\n" -X P
 
 ---
 
+## 🆕 February 2026 CVE Discovery Oneliners
+
+> **🔍 Recon-focused oneliners para detectar vulnerabilidades críticas de fevereiro de 2026**
+
+### ⚡ Cisco Catalyst SD-WAN - CVE-2026-20127 Discovery
+
+> **Vulnerabilidade crítica (CVSS 10.0) que permite bypass de autenticação em Cisco SD-WAN Manager/Controller. Explorada desde 2023 por threat actors avançados. Detectar instâncias vulneráveis é crucial para proteção de infraestrutura crítica.**
+
+#### 1. Descobrir Cisco SD-WAN Manager/vManage expostos via Shodan
+```bash
+shodan search "title:\"Cisco vManage\" port:8443,443" --fields ip_str,port,org,isp,asn --separator " | " | tee cisco-sdwan-targets.txt
+```
+
+---
+
+### ⚡ Microsoft Azure Functions - CVE-2026-21532 Discovery
+
+> **Vulnerabilidade de divulgação de informações (CVSS 8.2) em Azure Functions que permite exposição de credenciais e configurações sensíveis sem autenticação. Identificar endpoints vulneráveis é essencial para prevenir vazamento de secrets.**
+
+#### 1. Enumerar Azure Function endpoints com nuclei
+```bash
+cat domains.txt | httpx -silent | nuclei -t ~/nuclei-templates/http/exposures/apis/azure-function-key.yaml -t ~/nuclei-templates/http/exposures/tokens/ -o azure-functions-exposed.txt
+```
+
+---
+
+### ⚡ Gradio Framework - CVE-2026-28414 Path Traversal Discovery
+
+> **Path traversal crítico (CVSS 7.5) em Gradio <6.7 rodando no Windows com Python 3.13+. Permite leitura arbitrária de arquivos. Detection de versões vulneráveis é vital para proteger apps de ML/AI.**
+
+#### 1. Identificar aplicações Gradio vulneráveis e detectar versão
+```bash
+echo "https://target.com" | httpx -silent -tech-detect -json | jq -r 'select(.technologies[]? | select(.name=="Gradio")) | "\(.url) - \(.technologies[] | select(.name=="Gradio").version // "unknown")"'
+```
+
+---
+
+### ⚡ Gradio Framework - CVE-2026-28416 SSRF Discovery
+
+> **SSRF de alta severidade (CVSS 8.2) em Gradio <6.6.0 que permite acesso a metadata services na nuvem (AWS/GCP/Azure). Crucial para prevenir comprometimento de credenciais cloud.**
+
+#### 1. Descobrir instâncias Gradio via Google Dorks e fingerprinting
+```bash
+echo "inurl:/gradio/ OR intitle:\"Gradio\"" | gau --subs --threads 10 | httpx -silent -status-code -title -tech-detect | grep -i gradio | tee gradio-instances.txt
+```
+
+---
+
+### ⚡ Fortinet FortiOS - CVE-2026-25815 LDAP Credentials Discovery
+
+> **Vulnerabilidade de divulgação de credenciais LDAP em FortiOS ≤7.6.6 devido a chave de criptografia padrão fraca. Explorada ativamente desde dezembro/2025. Detection de versões vulneráveis é crítica.**
+
+#### 1. Identificar FortiGate/FortiOS vulneráveis via Shodan com versão
+```bash
+shodan search "product:FortiOS" --fields ip_str,version,port,org --separator " | " | awk -F'|' '$2 ~ /^[1-6]\.|7\.[0-5]\.|7\.6\.[0-6]/ {print $1 " | Version:" $2 " | " $4}' | tee fortios-vulnerable.txt
+```
+
+---
+
+### ⚡ Dell RecoverPoint for VMs - CVE-2026-22769 Discovery
+
+> **Credenciais hardcoded críticas (CVSS 10.0) em Dell RecoverPoint <6.0.3.1 HF1. Permite acesso root remoto. Explorada por grupos APT chineses desde 2024. Detection urgente necessária.**
+
+#### 1. Detectar Dell RecoverPoint expostos e identificar Tomcat Manager
+```bash
+shodan search "title:\"RecoverPoint\" http.favicon.hash:-1153767654" --fields ip_str,port,http.title,version --separator " | " | anew dell-recoverpoint-targets.txt
+```
+
+---
+
+### ⚡ Windows Shell - CVE-2026-21510 Security Bypass Discovery
+
+> **Bypass de SmartScreen/Mark-of-the-Web (CVSS 8.8) em Windows 10/11. Permite execução de código via links/shortcuts maliciosos. Zero-day explorado ativamente. Fingerprinting de sistemas vulneráveis é essencial.**
+
+#### 1. Identificar endpoints Windows expostos e versões vulneráveis via SMB
+```bash
+nmap -p445 --script smb-os-discovery,smb-protocols --open -iL targets.txt -oG - | grep "Windows 10\|Windows 11" | awk '{print $2}' | tee windows-vulnerable-hosts.txt
+```
+
+---
+
+### ⚡ Statamic CMS - CVE-2026-28426 XSS Discovery
+
+> **Stored XSS crítico (CVSS 8.7) em Statamic <5.73.11 e <6.4.0 via SVG/PDF e Antlers templates. Permite escalação de privilégios. Detection de versões vulneráveis protege Control Panels.**
+
+#### 1. Descobrir sites Statamic e extrair versão do CMS
+```bash
+echo "Powered by Statamic" | gau --subs --blacklist jpg,jpeg,gif,css,tif,tiff,png,ttf,woff,woff2,ico | httpx -silent -tech-detect -status-code | grep -i statamic | nuclei -t ~/nuclei-templates/technologies/statamic-detect.yaml -o statamic-sites.txt
+```
+
+---
+
+### ⚡ Chartbrew - CVE-2026-27005 SQL Injection Discovery
+
+> **SQL Injection crítica sem autenticação (CVSS 9.8) em Chartbrew <4.8.3. Permite leitura/modificação de dados em MySQL/PostgreSQL conectados. Detection de instâncias vulneráveis é urgente.**
+
+#### 1. Identificar instâncias Chartbrew expostas e verificar versão via API
+```bash
+cat web-apps.txt | httpx -silent -path /api/health -mc 200 -json | jq -r 'select(.body | contains("chartbrew")) | "\(.url) - Version: \(.body | fromjson | .version // "unknown")"' | tee chartbrew-instances.txt
+```
+
+---
+
+### ⚡ Chartbrew - CVE-2026-25887 MongoDB RCE Discovery
+
+> **RCE via MongoDB query injection (CVSS 7.2) em Chartbrew <4.8.1. Permite execução de JavaScript arbitrário no servidor MongoDB. Crucial detectar instâncias vulneráveis antes de exploração.**
+
+#### 1. Enumerar endpoints Chartbrew com scanning de APIs vulneráveis
+```bash
+subfinder -d target.com -silent | httpx -silent | gau --subs | grep -E "chartbrew|/api/.*chart|/api/.*connection" | httpx -silent -status-code -title -tech-detect | grep -i "chartbrew\|mongo" | anew chartbrew-mongodb-endpoints.txt
+```
+
+---
+
 ### Nuclei DAST XSS
 ```bash
 echo "https://target.com" | nuclei -dast -t dast/vulnerabilities/xss/ -rl 5
