@@ -2776,3 +2776,479 @@ fepaas.whs.mil
 pki.fepaas.whs.mil
 fepaassupport.whs.mil
 prwebdb.whs.mil
+# ========================================
+# DoD Main Domains (TLDs) - Updated 2025
+# ========================================
+
+# Primary Service Branches
+army.mil
+navy.mil
+marines.mil
+uscg.mil
+spaceforce.mil
+
+# Defense Agencies
+defense.mil
+dod.mil
+pentagon.mil
+darpa.mil
+disa.mil
+dla.mil
+dtra.mil
+mda.mil
+nsa.gov
+dia.mil
+nga.mil
+nro.mil
+dfas.mil
+deca.mil
+dcaa.mil
+dcma.mil
+dhra.mil
+dha.mil
+whs.mil
+dau.mil
+dtic.mil
+dsca.mil
+dss.mil
+
+# Combatant Commands
+centcom.mil
+eucom.mil
+africom.mil
+indopacom.mil
+northcom.mil
+southcom.mil
+socom.mil
+stratcom.mil
+transcom.mil
+cybercom.mil
+spacecom.mil
+
+# Intelligence & Cyber
+dc3.mil
+nist.gov
+cisa.gov
+cert.mil
+iad.mil
+
+# Additional .mil Domains
+arl.mil
+arlingtoncemetery.mil
+armymedicine.mil
+biometrics.mil
+budget.mil
+cac.mil
+cap.mil
+coic.mil
+deploymenthealth.mil
+dfba.mil
+dimoc.mil
+dmdc.mil
+dodea.mil
+dodig.mil
+dodlive.mil
+dpaa.mil
+esgr.mil
+fvap.gov
+health.mil
+jcs.mil
+jfcom.mil
+jpra.mil
+milcloud.mil
+militaryonesource.mil
+militaryvoter.mil
+milsuite.mil
+move.mil
+mpsa.mil
+nationalguard.mil
+norad.mil
+osd.mil
+pentagonchannel.mil
+pfpa.mil
+safehelpline.mil
+sapr.mil
+tricare.mil
+usuhs.mil
+vaccines.mil
+warriorcare.mil
+yellowribbon.mil
+
+# ========================================
+# DoD Wildcards (Bug Bounty Scope)
+# ========================================
+*.army.mil
+*.navy.mil
+*.marines.mil
+*.af.mil
+*.usmc.mil
+*.uscg.mil
+*.spaceforce.mil
+*.disa.mil
+*.dla.mil
+*.darpa.mil
+*.defense.mil
+*.centcom.mil
+*.eucom.mil
+*.africom.mil
+*.indopacom.mil
+*.northcom.mil
+*.southcom.mil
+*.socom.mil
+*.stratcom.mil
+*.transcom.mil
+*.cybercom.mil
+*.spacecom.mil
+*.dc3.mil
+*.dia.mil
+*.nga.mil
+*.dod.mil
+*.pentagon.mil
+*.health.mil
+*.tricare.mil
+*.dfas.mil
+*.deca.mil
+*.mda.mil
+*.dtra.mil
+*.nationalguard.mil
+*.ang.af.mil
+*.arng.army.mil
+*.reserve.army.mil
+*.navyreserve.navy.mil
+*.marforres.usmc.mil
+*.afrc.af.mil
+
+# ========================================
+# .gov DoD Related Domains
+# ========================================
+defense.gov
+nsa.gov
+cisa.gov
+fvap.gov
+va.gov
+benefits.va.gov
+ebenefits.va.gov
+cem.va.gov
+
+# ========================================
+# Service Academy Domains
+# ========================================
+usma.edu
+usna.edu
+usafa.edu
+uscga.edu
+usma.army.mil
+usna.navy.mil
+usafa.af.mil
+
+# ========================================
+# Additional Subdomains - Army
+# ========================================
+goarmy.com
+armyreserve.army.mil
+usar.army.mil
+usarec.army.mil
+sill.army.mil
+benning.army.mil
+bragg.army.mil
+hood.army.mil
+campbell.army.mil
+stewart.army.mil
+carson.army.mil
+lewis.army.mil
+drum.army.mil
+bliss.army.mil
+riley.army.mil
+polk.army.mil
+irwin.army.mil
+korea.army.mil
+europe.army.mil
+pacific.army.mil
+forscom.army.mil
+tradoc.army.mil
+amc.army.mil
+inscom.army.mil
+medcom.army.mil
+arcyber.army.mil
+sddc.army.mil
+usace.army.mil
+imcom.army.mil
+netcom.army.mil
+ria.army.mil
+redstone.army.mil
+aberdeen.army.mil
+yuma.army.mil
+natick.army.mil
+pica.army.mil
+tacom.army.mil
+cecom.army.mil
+amrdec.army.mil
+rdecom.army.mil
+devcom.army.mil
+
+# ========================================
+# Additional Subdomains - Navy
+# ========================================
+navair.navy.mil
+navsea.navy.mil
+navsup.navy.mil
+navfac.navy.mil
+cnic.navy.mil
+bupers.navy.mil
+netc.navy.mil
+spawar.navy.mil
+navwar.navy.mil
+cnatra.navy.mil
+nsw.navy.mil
+sublant.navy.mil
+subpac.navy.mil
+surflant.navy.mil
+surfpac.navy.mil
+airlant.navy.mil
+airpac.navy.mil
+necc.navy.mil
+nwdc.navy.mil
+onr.navy.mil
+nrl.navy.mil
+nps.edu
+usni.org
+
+# ========================================
+# Additional Subdomains - Air Force
+# ========================================
+aetc.af.mil
+amc.af.mil
+afmc.af.mil
+afspc.af.mil
+afsoc.af.mil
+afgsc.af.mil
+pacaf.af.mil
+usafe.af.mil
+afrc.af.mil
+ang.af.mil
+acc.af.mil
+afrl.af.mil
+afcec.af.mil
+afpc.af.mil
+aflcmc.af.mil
+afnwc.af.mil
+afsc.af.mil
+kessel-run.af.mil
+cloud.af.mil
+
+# ========================================
+# Additional Subdomains - Marine Corps
+# ========================================
+marcorlogcom.usmc.mil
+mccdc.usmc.mil
+marcorsyscom.usmc.mil
+mcesg.usmc.mil
+mcrc.usmc.mil
+tecom.usmc.mil
+marforcom.usmc.mil
+marforpac.usmc.mil
+marforeur.usmc.mil
+marforcyber.usmc.mil
+marforres.usmc.mil
+marsoc.usmc.mil
+mcagcc.usmc.mil
+mcas.usmc.mil
+mcieast.usmc.mil
+mciwest.usmc.mil
+mcipac.usmc.mil
+hqmc.usmc.mil
+
+# ========================================
+# Additional Subdomains - Coast Guard
+# ========================================
+atlanticarea.uscg.mil
+pacificarea.uscg.mil
+dcms.uscg.mil
+forcecom.uscg.mil
+cgcyber.uscg.mil
+uscga.edu
+auxpa.cgaux.org
+
+# ========================================
+# Additional Subdomains - Space Force
+# ========================================
+ssc.spaceforce.mil
+starcom.spaceforce.mil
+spoc.spaceforce.mil
+spacedelta.spaceforce.mil
+
+# ========================================
+# Joint Commands & Organizations
+# ========================================
+jcs.mil
+cjcs.mil
+js.mil
+ndu.edu
+jfsc.ndu.edu
+icaf.ndu.edu
+nwc.ndu.edu
+gc.ndu.edu
+nps.edu
+afit.edu
+usawc.edu
+cgsc.edu
+
+# ========================================
+# Cyber & Intelligence
+# ========================================
+nsa.gov
+css.nsa.gov
+cisa.gov
+us-cert.cisa.gov
+ic.gov
+odni.gov
+cia.gov
+fbi.gov
+dhs.gov
+
+# ========================================
+# Procurement & Logistics
+# ========================================
+sam.gov
+fpds.gov
+usaspending.gov
+gsa.gov
+fbo.gov
+beta.sam.gov
+acquisition.gov
+
+# ========================================
+# Additional Known Subdomains
+# ========================================
+portal.navy.mil
+portal.army.mil
+portal.af.mil
+portal.usmc.mil
+webmail.navy.mil
+webmail.army.mil
+webmail.af.mil
+webmail.usmc.mil
+mail.mil
+apps.mil
+milconnect.dmdc.osd.mil
+mypay.dfas.mil
+my.army.mil
+mypers.af.mil
+mol.usmc.mil
+bol.navy.mil
+gko.portal.navy.mil
+ako.army.mil
+afnet.af.mil
+nmci.navy.mil
+sipr.mil
+jwics.mil
+nipr.mil
+
+# ========================================
+# VDP/Bug Bounty Specific Assets
+# ========================================
+dc3.mil
+vdp.dc3.mil
+hackerone.com/deptofdefense
+bugcrowd.com/dod-vdp
+
+# ========================================
+# Defense Industrial Base (DIB)
+# ========================================
+dibnet.dod.mil
+dcsa.mil
+dibcac.dcsa.mil
+
+# ========================================
+# Research & Development
+# ========================================
+darpa.mil
+arpa-e.energy.gov
+darpa.net
+arl.army.mil
+nrl.navy.mil
+afrl.af.mil
+onr.navy.mil
+afosr.af.mil
+aro.army.mil
+devcom.army.mil
+
+# ========================================
+# Medical & Health
+# ========================================
+health.mil
+tricare.mil
+afhsc.mil
+afms.af.mil
+afmes.mil
+armymedicine.army.mil
+med.navy.mil
+usmc.mil/medical
+usuhs.mil
+vaccines.mil
+pdhealth.mil
+dcoe.mil
+deploymenthealth.mil
+medicalmuseum.mil
+mhs.mil
+
+# ========================================
+# Veterans & Benefits
+# ========================================
+va.gov
+benefits.va.gov
+ebenefits.va.gov
+vets.gov
+move.mil
+warriorcare.mil
+militaryonesource.mil
+dodtap.mil
+yellowribbon.mil
+
+# ========================================
+# Additional DoD Assets (2026) - Verify before scope use
+# ========================================
+
+# --- Army ---
+recruiting.army.mil
+usareur.army.mil
+
+# --- Navy ---
+usff.navy.mil
+mynavyhr.navy.mil
+c6f.navy.mil
+c7f.navy.mil
+
+# --- Marine Corps ---
+mcicom.usmc.mil
+i.mef.usmc.mil
+
+# --- Coast Guard ---
+homeport.uscg.mil
+
+# --- Air Force / Guard ---
+goang.af.mil
+myairforcebenefits.us.af.mil
+
+# --- Defense Agencies & OSD ---
+diu.mil
+dodstarbase.mil
+dodhrissc.mil
+dodccrb.osd.mil
+milgears.osd.mil
+jko.jten.mil
+dhaappsexternal.health.mil
+militaryinstallation.dod.mil
+
+# --- Policy / Comptroller (.gov) ---
+comptroller.defense.gov
+policy.defense.gov
+prhome.defense.gov
+
+# --- Education & Media ---
+nps.edu
+afit.edu
+ndu.edu
+usmma.edu
+dliflc.edu
+dvidshub.net
