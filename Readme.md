@@ -2700,6 +2700,7 @@ cat ranges.txt | mapcidr -silent | naabu -silent -p 80,443,8080,8443 | httpx -si
 | **VirusTotal** | [virustotal.com](https://virustotal.com) | File/URL analysis |
 | **PublicWWW** | [publicwww.com](https://publicwww.com) | Source code search |
 | **Grep.app** | [grep.app](https://grep.app) | GitHub code search |
+| **Opsis** | [useopsis.com](https://useopsis.com) | Email/username account lookup |
 
 ---
 
