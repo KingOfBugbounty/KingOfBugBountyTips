@@ -1744,6 +1744,21 @@ cat alive.txt | httpx -silent -path /.aws/credentials,/.docker/config.json,/kube
 
 ## 🤖 Automation Scripts
 
+### Python recon runner (`bottest.py`)
+
+Run `python3 bottest.py` and enter the authorized domain when prompted. The runner uses Python 3, Bash (with `pipefail`), and the CLI tools invoked by the pipeline; GNU grep/PCRE is not required for parsing httpx JSON output.
+
+- Results are isolated by full domain: `recon_example.com/example.com_*` and `recon_example.org/example.org_*` are separate.
+- A step resumes only when its `.done.json` completion marker matches the size and modification time of all its input/output files. Successful empty results are also remembered. Keep the markers alongside the results.
+- Failed or interrupted steps stop the run and are retried from clean output files next time. Changed inputs or missing companion files (including httpx JSON) invalidate the affected step; empty upstream results clear stale downstream files.
+- Legacy `recon_<first-label>` folders are left untouched and are not reused. Unmarked files in the new output folder are regenerated; back up any files you want to keep before rerunning. To refresh a completed step, remove its `.done.json` marker.
+
+Run offline regression tests (fixture executables only; no target scans or additional Python packages):
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
 ### Full Recon Pipeline
 ```bash
 #!/bin/bash
