@@ -29,6 +29,40 @@ Add new one-liners to the matching topic file:
 If nothing fits, propose a new file rather than growing an existing one past
 a few hundred lines.
 
+### Structured one-liner data
+
+One file so far — [`docs/cve-feb-2026.md`](docs/cve-feb-2026.md) — is **generated**
+from structured data at [`data/oneliners/cve-feb-2026.yaml`](data/oneliners/cve-feb-2026.yaml)
+instead of being hand-edited as Markdown. The `.md` file itself says so in an
+HTML comment at the top (`GENERATED FILE — do not edit by hand`); look for
+that comment before editing any `docs/*.md` file by hand.
+
+To add or change an entry in a generated file:
+
+1. Edit the YAML (see the schema documented at the top of
+   [`scripts/generate_oneliners_md.py`](scripts/generate_oneliners_md.py)) —
+   each entry is either:
+   - `type: cve` — a CVE deep-dive with `cve_ids`, `description`, and one or
+     more numbered `steps` (each a `comment` + `command`), or
+   - `type: quick` — a single `title` + `command`, no description.
+2. Regenerate the Markdown:
+   ```bash
+   pip install pyyaml
+   python3 scripts/generate_oneliners_md.py data/oneliners/cve-feb-2026.yaml docs/cve-feb-2026.md
+   ```
+3. Commit both the `.yaml` change and the regenerated `.md` — PR review
+   should treat the YAML as the source of truth and the diff in the `.md`
+   as a sanity check that the generator did what you expected.
+
+Other `docs/*.md` files are still plain hand-written Markdown; migrating one
+to this structured format is a reasonable contribution but isn't required.
+If you do, use [`scripts/md_to_oneliners_yaml.py`](scripts/md_to_oneliners_yaml.py)
+to convert the existing file first (don't hand-transcribe — it's
+error-prone), verify the regenerated Markdown is byte-identical to the
+original (modulo the added generated-file notice) before committing, and
+fix the converter rather than hand-patching its output if anything comes
+back as an unparsed `type: raw` block.
+
 ### New CVE one-liners
 
 - **Current year, newest first:** add to `docs/oneliners-2026.md`.

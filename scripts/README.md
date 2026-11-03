@@ -11,5 +11,11 @@ anything here.
 | [`dod_site_crawler.py`](dod_site_crawler.py) | Scrapes defense.gov's public DoD website index to help maintain the DoD domain list. |
 | [`download_links.py`](download_links.py) | Generic bulk downloader for a newline-separated list of URLs (`links.txt`). Example input list: [`../data/chaos-dataset-links.txt`](../data/chaos-dataset-links.txt). |
 | [`telegram_bot_draft.py`](telegram_bot_draft.py) | **Draft/incomplete.** Proof-of-concept Telegram bot sketch for triggering a scan via chat command. Not production-ready — see its header for known gaps. |
+| [`generate_oneliners_md.py`](generate_oneliners_md.py) | Renders a structured `data/oneliners/*.yaml` file into a `docs/*.md` page. Run this after editing one of those YAML files — see [`../CONTRIBUTING.md`](../CONTRIBUTING.md) § "Structured one-liner data". |
+| [`md_to_oneliners_yaml.py`](md_to_oneliners_yaml.py) | One-time migration helper: converts an existing hand-written `docs/*.md` oneliner file into the structured YAML format. |
+| [`extract_bash_blocks.py`](extract_bash_blocks.py) | Pulls every ` ```bash ` block out of the Markdown docs for the CI shellcheck job (`.github/workflows/lint.yml`). Not meant to be run manually, but safe to. |
+
+`pip install -r requirements.txt` installs what these scripts need
+(`requests`, `beautifulsoup4`, `pyyaml`).
 
 See [`../CONTRIBUTING.md`](../CONTRIBUTING.md) before adding a new script here.

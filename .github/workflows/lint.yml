@@ -48,3 +48,26 @@ jobs:
             fi
           done
           exit "$fail"
+
+  generated-docs-in-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Regenerate docs/cve-feb-2026.md from its YAML source and diff
+        run: |
+          python3 scripts/generate_oneliners_md.py data/oneliners/cve-feb-2026.yaml /tmp/cve-feb-2026.md
+          if ! diff -u docs/cve-feb-2026.md /tmp/cve-feb-2026.md; then
+            echo ""
+            echo "::error::docs/cve-feb-2026.md is out of sync with data/oneliners/cve-feb-2026.yaml."
+            echo "Edit the YAML and regenerate: python3 scripts/generate_oneliners_md.py data/oneliners/cve-feb-2026.yaml docs/cve-feb-2026.md"
+            exit 1
+          fi

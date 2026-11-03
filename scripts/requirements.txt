@@ -1,0 +1,4 @@
+# Python dependencies for scripts/ — install with: pip install -r scripts/requirements.txt
+requests
+beautifulsoup4
+pyyaml
