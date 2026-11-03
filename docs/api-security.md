@@ -4,6 +4,9 @@
 
 ## 🔌 API Security Testing
 
+> 🧩 Related Nuclei templates: [`templates/nuclei/graphql-OFJAAAH.yaml`](../templates/nuclei/graphql-OFJAAAH.yaml) (GraphQL endpoint detection), [`templates/nuclei/docker2.yaml`](../templates/nuclei/docker2.yaml) (exposed Docker Registry API)
+> 🧩 Swagger-UI XSS PoC: [`templates/payloads/swagger.json`](../templates/payloads/swagger.json) + [`swagger.yaml`](../templates/payloads/swagger.yaml) — see [`templates/README.md`](../templates/README.md)
+
 ### GraphQL Introspection
 ```bash
 cat urls.txt | httpx -silent -path /graphql -mc 200 | xargs -I@ curl -s @ -H "Content-Type: application/json" -d '{"query":"{__schema{types{name}}}"}' | grep -v "error"

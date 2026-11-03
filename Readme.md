@@ -114,6 +114,9 @@ Found a security issue in this repository? Please report it responsibly:
 | [API Security Testing](docs/api-security.md) | API vulnerabilities |
 | [Cloud Security](docs/cloud-security.md) | AWS, GCP, Azure |
 | [Automation Scripts & Bash Functions](docs/automation.md) | Ready-to-use scripts, shell productivity |
+| [Standalone Scripts](scripts/README.md) | Recon pipeline, HTML reporter, downloader |
+| [Templates](templates/README.md) | Nuclei templates & PoC payload fixtures |
+| [Data](data/README.md) | Payload lists, sample URL lists, DoD domain list |
 | [New Oneliners 2026](docs/oneliners-2026.md) | CVE-2026 exploits & techniques |
 | [Oneliners 2024-2025](docs/oneliners-2024-2025.md) | Previous techniques |
 | [February 2026 CVE Discovery](docs/cve-feb-2026.md) | Latest CVE recon oneliners |

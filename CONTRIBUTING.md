@@ -89,12 +89,21 @@ general; per-entry attribution is for where a specific one-liner came from.
   Dual-use techniques (recon, fuzzing, auth testing) are welcome; techniques
   whose only use is causing harm are not.
 
-## Scripts
+## Scripts, templates, and data
 
-Standalone scripts live in [`scripts/`](scripts/), each with a header
-comment (purpose, usage, requirements) — see `scripts/README.md`. Give any
-new script the same treatment rather than adding it undocumented at the repo
-root.
+- Standalone scripts live in [`scripts/`](scripts/), each with a header
+  comment (purpose, usage, requirements) — see `scripts/README.md`. Give any
+  new script the same treatment rather than adding it undocumented at the
+  repo root.
+- Nuclei templates and PoC fixtures (like the Swagger-UI XSS pair) live in
+  [`templates/`](templates/) (`templates/nuclei/`, `templates/payloads/`) —
+  see `templates/README.md`.
+- Plain payload/reference data lists (SSRF bypass strings, sample URL
+  lists, the DoD domain list) live in [`data/`](data/) — see
+  `data/README.md`.
+
+Don't add a new `.yaml`/`.json`/`.txt` fixture at the repo root — put it in
+whichever of the above it fits, with an entry in that folder's README.
 
 ## Submitting
 

