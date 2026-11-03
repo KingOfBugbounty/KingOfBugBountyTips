@@ -1,0 +1,13 @@
+{
+  "ignorePatterns": [
+    { "pattern": "^https?://target\\.com" },
+    { "pattern": "^https?://.*YOUR_API_KEY" },
+    { "pattern": "^https?://localhost" },
+    { "pattern": "^https?://127\\.0\\.0\\.1" },
+    { "pattern": "^https?://0\\.0\\.0\\.0" }
+  ],
+  "retryOn429": true,
+  "retryCount": 3,
+  "fallbackRetryDelay": "30s",
+  "aliveStatusCodes": [200, 206, 301, 302, 303, 307, 308, 403, 429]
+}

