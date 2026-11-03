@@ -1,3 +1,32 @@
+"""
+recon_pipeline.py
+
+Purpose:
+    Interactive, resumable recon pipeline that chains the tools documented in
+    docs/subdomain-recon.md, docs/web-crawling.md, docs/nuclei.md and
+    docs/xss.md: subdomain enum -> live-host probing -> URL/JS crawling ->
+    Nuclei scanning -> XSS candidate extraction (gf) -> Dalfox confirmation ->
+    an HTML summary report (built with scripts/resolvhtml.go).
+
+Usage:
+    python3 scripts/recon_pipeline.py
+    (it then prompts interactively: "Domain to Search: ")
+
+    Steps are idempotent/resumable: if an output file already has results,
+    that step is skipped on a re-run (see skip_or_run()).
+
+Requirements:
+    - Go tools on PATH: subfinder, httpx, naabu, katana, nuclei, gf, dalfox
+      (see docs/setup.md for install commands)
+    - Go toolchain available if scripts/resolvhtml.go needs to be compiled
+      for the HTML report step.
+
+Notes:
+    - Only run against domains you are authorized to test (see the repo's
+      Security Notice / Responsible Disclosure guidelines in Readme.md).
+    - The notify/Discord/Slack/Telegram summary step is commented out by
+      default; configure a provider before enabling it.
+"""
 import re
 import subprocess
 import sys

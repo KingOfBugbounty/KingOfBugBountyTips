@@ -1,12 +1,32 @@
-bot telegram 
+"""
+telegram_bot_draft.py
 
+Purpose:
+    DRAFT / proof-of-concept only. Sketch of a Telegram bot that, on a
+    "/scan <url>" command, creates a per-target folder and kicks off
+    subfinder. Not a complete or hardened implementation.
+
+Usage (if completed):
+    Set a real bot token (never commit one), then: python3 scripts/telegram_bot_draft.py
+
+Requirements:
+    pip install pyTelegramBotAPI
+
+Known gaps before this is usable:
+    - 'TOKEN' is a placeholder; load it from an environment variable instead
+      of hardcoding it (os.environ["TELEGRAM_BOT_TOKEN"]).
+    - No validation that the user-supplied `url` is an authorized target
+      before running tools against it, and no polling/run loop is started.
+    - Needs rate limiting / allow-listing if ever exposed to more than a
+      trusted operator, since it shells out to subfinder with user input.
+"""
 import os
 import subprocess
 import telebot
 
 
 # Inicializar o bot do Telegram
-bot = telebot.TeleBot('TOKEN')
+bot = telebot.TeleBot(os.environ.get('TELEGRAM_BOT_TOKEN', 'TOKEN'))
 
 # Comando "/scan"
 @bot.message_handler(commands=['scan'])
@@ -31,6 +51,6 @@ def handle_scan_command(message):
 
     # Executar as ferramentas
     subprocess.run(['subfinder', '-d', url, '-o', 'subdomains.txt', '-silent'], capture_output=True)
-    
+
     # Enviar mensagem de conclusão
     bot.reply_to(message, 'Varredura concluída!')
