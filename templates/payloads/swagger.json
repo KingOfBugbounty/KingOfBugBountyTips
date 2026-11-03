@@ -1,0 +1,9 @@
+{
+    "url": "https://raw.githubusercontent.com/KingOfBugbounty/KingOfBugBountyTips/master/templates/payloads/swagger.yaml",
+    "urls": [
+        {
+            "url": "https://raw.githubusercontent.com/KingOfBugbounty/KingOfBugBountyTips/master/templates/payloads/swagger.yaml",
+            "name": "Foo"
+        }
+    ]
+}

@@ -1,3 +1,17 @@
+// resolvhtml.go
+//
+// Purpose:
+//     Convert `httpx -json` output (read from stdin, one JSON object per line)
+//     into a single static HTML report — grouping/coloring hosts by HTTP
+//     status class. Used as the final reporting step in
+//     scripts/recon_pipeline.py.
+//
+// Usage:
+//     go build -o resolvhtml resolvhtml.go
+//     cat httpx_200.json | ./resolvhtml report.html
+//
+// Requirements:
+//     Go toolchain (no external deps beyond the standard library).
 package main
 
 import (

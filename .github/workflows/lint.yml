@@ -1,0 +1,73 @@
+name: Lint
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check links in Markdown files
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-quiet-mode: 'yes'
+          use-verbose-mode: 'yes'
+          config-file: '.github/mlc_config.json'
+          check-modified-files-only: 'no'
+          folder-path: '.'
+
+  shellcheck-oneliners:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install shellcheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+
+      - name: Extract bash one-liners from docs
+        run: python3 -I scripts/extract_bash_blocks.py /tmp/blocks docs Readme.md
+
+      - name: Run shellcheck (syntax errors only)
+        run: |
+          set -e
+          shopt -s nullglob
+          fail=0
+          for f in /tmp/blocks/*.sh; do
+            if ! shellcheck -s bash -S error "$f"; then
+              fail=1
+            fi
+          done
+          exit "$fail"
+
+  generated-docs-in-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Regenerate docs/cve-feb-2026.md from its YAML source and diff
+        run: |
+          python3 scripts/generate_oneliners_md.py data/oneliners/cve-feb-2026.yaml /tmp/cve-feb-2026.md
+          if ! diff -u docs/cve-feb-2026.md /tmp/cve-feb-2026.md; then
+            echo ""
+            echo "::error::docs/cve-feb-2026.md is out of sync with data/oneliners/cve-feb-2026.yaml."
+            echo "Edit the YAML and regenerate: python3 scripts/generate_oneliners_md.py data/oneliners/cve-feb-2026.yaml docs/cve-feb-2026.md"
+            exit 1
+          fi
